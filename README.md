@@ -21,3 +21,5 @@ https://www.primt.es
 https://www.visitplanether.com/?accessToken=db5739da553025d818306b7fc0fb051c_1633114745&ae_session=87_9ebdb890c36d1ef1aaa34b1827a59f1f
 
 https://www.mouse-jp.co.jp/creator/ss/daiv/case_study/monark.html
+
+Enlace Trello https://trello.com/b/LTlEPEHw

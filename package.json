@@ -1,0 +1,26 @@
+{
+  "name": "proyectodhgrupo_3",
+  "version": "1.0.0",
+  "description": "Pensando en las diversas necesidades y requerimientos del mercado dirigido a personas que tienen un gran gusto y pasión por la cultura pop y diferentes series de tv, peliculas, series anime y videojuegos de culto se creo KRUTO STORE, una ecommerce con licencia para la venta y creación de productos acerca de la cultura pop de diferentes marcas. KRUTO diseña, obtiene y distribuye productos altamente coleccionables de multiples categorias, incluyendo figuras de vinilo, juguetes de acción, peluches, ropa, articulos para el hogar y accesorios. El objetivo de KRUTO es ayudar a los fanaticos a llevar su fandom fuera de linea al mundo real.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NamuraCode/ProyectoDHGrupo_3.git"
+  },
+  "author": "Cristina, David y Salome",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NamuraCode/ProyectoDHGrupo_3/issues"
+  },
+  "homepage": "https://github.com/NamuraCode/ProyectoDHGrupo_3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

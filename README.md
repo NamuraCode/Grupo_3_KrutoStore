@@ -28,3 +28,7 @@ El mercado objetivo de KRUTO STORE, es un público con nivel socioeconómico med
 ### [Cristina Gil](https://github.com/cris-gil)
 ### [David Naranjo](https://github.com/NamuraCode)
 ### [Salome Gomez](https://github.com/chalogmz)
+
+## instalar
+### npm nodemon
+### npm express

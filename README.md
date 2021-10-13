@@ -12,7 +12,7 @@ El mercado objetivo de KRUTO STORE, es un público con nivel socioeconómico med
 
 ## Páginas de referencia: 
 
-* ### [Amaterasu Store](https://amaterasustore.co/) 
+* ### [Amaterasu Store](https://github.com/beatrizgap25) 
 * ### [Osakamania](https://osakamania.jp/)
 * ### [Koaj](https://www.koaj.co)
 * ### [Sleepiest](https://www.sleepiest.com)

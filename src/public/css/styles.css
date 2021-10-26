@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
+
+@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+
+
+@font-face {
+    font-family: "Arigatou";
+    src: url(./css/aArigatouGozaimasu.ttf);
+}
+
+@font-face {
+    font-family: "futura std book";
+    src: url(./FuturaStdBook.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+   width: 100vw;
+}
+
+.top-bar{
+    width: 100%;
+    height: 30px;
+    color: #ef233c;
+    background:#EF233C;
+}
+
+
+.logo-kruto img {
+    display: block;
+    width: 100px;
+    margin:auto;
+    padding: 10px;
+}
+
+main{
+    width: 100vw;
+}
+
+.imagen{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.imagen img {
+    width: 600px;
+}
+
+.productos{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    background: hsl(236, 17%, 80%);
+}
+
+.productos img {
+    display: block;
+    margin: auto;
+    width: 10%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.sales_pic {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.sales {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    margin: auto;
+}
+
+.categories {
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: "aArigatouGozaimasu", sans-serif;
+    background: #EF233C;
+}
+
+.categories_prod {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+.categories_prod div {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    padding-top: 20px;
+    border: 1px solid hsl(353, 82%, 90%);
+}
+
+.categories_prod img {
+    width: 160px;
+}
+
+.options {
+    width: 100vw;
+    margin: auto;
+    margin-bottom: 80px;
+    background: #515372;
+}
+
+.options nav {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    color: white;    
+}
+
+.options ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+footer {
+    width: 100vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+footer .menu {
+    background: #ef233c;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    /* position: fixed; */
+    /* right: 32%;
+    bottom: 20px; */
+}
+footer nav {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding: 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    align-content: center;
+}
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    padding: 15px;
+}
+ .iconify {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+/* MEDIA QUIERIES */
+
+@media (min-width: 480px) {
+  /*   header {
+        width: 100vw;
+    }
+
+    .top-bar{
+        width: 100%;
+        height: 20px;
+    } */
+    
+    /* .logo-kruto img {
+        width: 20%;
+        
+    } */
+
+    main {
+        width: 100vw;
+    }
+
+    /* .imagen {
+        width: 100%;
+        margin: auto;
+    }
+
+    .imagen img {
+        width: 20%;
+        margin: auto;
+    } */
+
+/*     .productos {
+        width: 100%;
+        margin: auto;
+    }
+
+    .productos img {
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .sales {
+        margin: auto;
+        width: 100%;  
+    }
+
+    .sales_pic {
+        margin: auto;
+        width: 100%;
+    }
+
+    .sales_pic img {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .categories {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .categories_prod {
+        margin: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .categories_prod img {
+        margin: auto;
+        width: 100%;
+    }
+
+    h3 {
+        margin: auto;
+        padding:0px;
+        font-size: 1em;
+    }
+
+    .options {
+        width: 100%;
+        font-size: small;
+    }
+
+    .options nav {
+        display: block;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    footer {
+        width: 100%;
+        margin: auto;
+    }
+
+    footer .menu {
+        width: 40%;
+    }
+
+    footer .menu nav {
+        padding: 0%;
+        margin: auto;
+    }
+
+    footer .menu ul{
+        flex-wrap: nowrap;
+        padding: 5px;
+    }
+
+    footer .menu ul li a{
+        padding: 5px;
+    }
+    footer .menu ul li .iconify {
+        width: 20px;
+    } */
+
+}
+
+@media (max-width: 1200px) {
+/*     header {
+        width: 100vw;
+    }
+
+    .top-bar{
+        width: 100%;
+        height: 20px;
+    }
+    
+    .logo-kruto img {
+        width: 20%;
+        
+    }
+
+    main {
+        width: 100vw;
+    }
+
+    .imagen {
+        width: 100%;
+        margin: auto;
+    }
+
+    .imagen img {
+        margin: auto;
+        width: 100%;
+    }
+
+    .productos {
+        width: 100%;
+        margin: auto;
+    }
+
+    .productos img {
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .sales {
+        margin: auto;
+        width: 100%;  
+    }
+
+    .sales_pic {
+        margin: auto;
+        width: 100%;
+    }
+
+    .sales_pic img {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .categories {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .categories_prod {
+        margin: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .categories_prod img {
+        margin: auto;
+        width: 100%;
+    }
+
+    h3 {
+        margin: auto;
+        padding:0px;
+        font-size: 1em;
+    }
+
+    
+    footer {
+        width: 100%;
+        margin: auto;
+    }
+
+    footer .menu {
+        width: 30%;
+    }
+
+    footer .menu nav {
+        padding: 0%;
+    }
+
+    footer .menu ul{
+        flex-wrap: nowrap;
+        padding: 5px;
+    }
+
+    footer .menu ul li a{
+        padding: 10px;
+    }
+    
+    footer .menu ul li .iconify {
+        width: 30px;
+    } */
+
+}
+
+/* SHOPPING CART */
+
+/* HEADER */
+header#shoppingCart {
+    width: 100vw;
+}
+
+header#shoppingCart section .top-bar {
+    width: 100%;
+    height: 30px;
+    background: #515372;
+    color: #515372;
+}
+
+#shoppingCart section .top-bar {
+    width: 100%;
+    height: 30px;
+    background: #515372;
+    color: #515372;
+}
+
+/* MAIN */
+
+#shop {
+    width: 100vw;
+    margin:auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#shop .top-section {
+    width: 45%;
+    background: white;
+    border: 2px solid #E5E5E5;
+    border-radius: 30px;
+}
+
+#shop .top-section .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.intro ul {
+    list-style: none;
+    width: 80%;
+    align-items: center;
+}
+
+.intro ul li {
+    text-decoration: none;
+    text-align: left;
+    margin: 10px;
+    color: #515372;
+}
+
+.intro li .iconify {
+    color: #515372;
+    margin: 3px;
+}
+
+.intro li a {
+    margin: auto;
+    padding: 2px;
+    text-decoration: none;
+    color: #515372;
+}
+
+.logoBlue {
+    width: 20%;
+    text-align: right;
+}
+
+.logoBlue img{
+    display: block;
+    width: 100%;
+    margin:auto;
+    padding: 10px;
+}
+
+.product_detail {
+    width: 100%;
+    height: 60%;
+}
+
+.details {
+    width: 90%;
+    margin: auto;
+}
+
+.details .elements {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 28px;
+}
+
+.details .elements .desc {
+    display: block;
+
+}
+
+.desc ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.desc ul li {
+    display: block;
+    margin: auto;
+    margin-right: 15px;
+    margin-left: 10px;
+    justify-content: space-between;
+} 
+
+.product1 {
+    width: 90%;
+    height: 60px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product2 {
+    width: 90%;
+    height: 60px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_icon {
+    width: 35%;
+    display: flex;
+    padding: 10px;
+}
+
+.icon {
+    background: white;
+    width: 30px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.product_icon .product_ref {
+    list-style: none;
+    margin: auto;
+}
+
+.product_det {
+    width: 40%;
+    display: flex;
+    justify-content:flex-end;
+    margin: auto;
+    margin-right: 0px;
+
+}
+
+.price {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.price li p {
+    display: block;
+    width: 60px;
+    margin: 5px;
+    padding: 5px;
+    text-align: left;
+    justify-content:flex-start;
+    background: white;
+    border-radius: 10px;
+}
+
+.price li .quantity {
+    text-align: center;
+}
+
+.product1 {
+    background: hsl(236, 17%, 93%);
+    
+}
+
+.product2 {
+    background: hsl(353, 82%, 90%);
+}
+
+.product1 .iconify{
+    color: #515372;
+
+}
+
+.product2 .iconify {
+    color: #EF233C;
+}
+
+.subtotal {
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+ .subtotal .continue {
+    position: absolute;
+    right: 50px;
+    bottom: 2px;
+    margin: auto;
+}
+
+.continue form button {
+    width: 120px;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 0px;
+    background: hsl(236, 17%, 60%);
+    color: white;
+}
+
+#shop .clientInfo {
+    width: 45%;
+    background: hsl(238, 16%, 93%);
+    border: 2px solid #E5E5E5;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.clientProfile {
+    width: 90%;
+    height: 150px;
+    padding: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile img {
+    display: block;
+    width: 55%;
+    border: 0.5px solid hsl(236, 17%, 80%);
+    border-radius: 7px;
+}
+
+.clientProfile h3 {
+    width: 70%;
+    height: 110px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    
+}
+
+.payment {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+}
+
+.payment .iconify {
+    width: 60px;
+}
+
+.clientCard {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+}
+
+.clientCard form {
+    margin: auto;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.mainInfo label {
+    padding: 10px;
+}
+
+.mainInfo input {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 25px;
+    padding: 10px;
+    border: 0.5px solid hsl(236, 17%, 80%);
+    border-radius: 10px;
+}
+
+input placeholder {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.cardInfo {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardInfo input {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 25px;
+    padding: 10px;
+    border: 0.5px solid hsl(236, 17%, 80%);
+    border-radius: 10px;
+}
+
+.total {
+    width: 80%;
+    height: 40px;
+    margin: auto;
+    margin-top: 60px;
+    background: hsl(353, 82%, 80%);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total .total-p {
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.total-price {
+    background: white;
+    border-radius: 10px;
+    width: 90px;
+    height: 20;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.total button {
+    color: white;
+    background: hsl(353, 82%, 50%);
+    width: 90px;
+    height: 25px;
+    border: 0px;
+    border-radius: 20px;
+    margin: auto;
+}

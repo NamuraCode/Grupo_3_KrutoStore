@@ -1,16 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
+@font-face {
+    font-family: "futurastdbook";
+    src: url(./fonts/FuturaStdBook.otf);
+}
 
-@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+@font-face {
+    font-family: "Gotham-Thin";
+    src: url(./fonts/Gotham-Thin.otf);
+}
+
+@font-face {
+    font-family: "GothamBook";
+    src: url(./fonts/GothamBook.ttf);
+}
 
 
 @font-face {
     font-family: "Arigatou";
-    src: url(./css/aArigatouGozaimasu.ttf);
-}
-
-@font-face {
-    font-family: "futura std book";
-    src: url(./FuturaStdBook.otf);
+    src: url(./fonts/aArigatouGozaimasu.ttf);
 }
 
 
@@ -44,14 +50,14 @@ main{
     width: 100vw;
 }
 
-.imagen{
+main .imagen{
     display: block;
     text-align: center;
     width: 100%;
 }
 
 .imagen img {
-    width: 600px;
+    width: 80%;
 }
 
 .productos{
@@ -70,10 +76,16 @@ main{
     padding-bottom: 30px;
 }
 
-.sales_pic {
-    display: block;
+main .brands {
+    width: 100vw;
     margin: auto;
-    text-align: center;
+    display: flex;
+}
+
+main .brands img {
+    display: flex;
+    width: 80%;
+    margin: auto;
 }
 
 .sales {
@@ -83,38 +95,72 @@ main{
     margin: auto;
 }
 
-.categories {
+main .categories {
     text-align: center;
     padding: 25px;
     color: white;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: "aArigatouGozaimasu", sans-serif;
     background: #EF233C;
 }
 
-.categories_prod {
-    width: 80%;
+main .categories_sec {
+    width: 100vw;
     margin: auto;
-    display: flex;
-    justify-content: space-around;
-    padding: 60px;
+    margin-bottom: 20px;
+    
 }
 
-.categories_prod div {
+main .categories_sec {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+main .categories_sec article {
     width: 40%;
     margin: auto;
-    padding: 20px;
-    padding-top: 20px;
-    border: 1px solid hsl(353, 82%, 90%);
+    margin-top: 20px;
+    padding: 10px;
+    transition: all 8s transform;
 }
 
-.categories_prod img {
-    width: 160px;
+main .categories_sec article:hover {
+    box-shadow: 0px 0px 20px 0px hsl(236, 17%, 60%);
 }
 
-.options {
+main .categories_sec article img{
+    display: block;
+    margin: auto;
+    padding: 10px;
+    max-width: 50%;
+    justify-content: center;
+}
+
+main .categories_sec article p {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-family: Gotham;
+    font-style: italic;
+    border-radius: 10px;
+    width: 25%;
+    transition: all 5s transform;
+}
+
+main .categories_sec article p:hover {
+    transition: all 5s transform;
+    background:hsl(353, 82%, 80%);
+}
+
+h2 {
+    margin: auto;
+    font-size: 1.5em;
+    font-family: a Arigatou Gozaimasu;
+}
+
+main .options {
     width: 100vw;
     margin: auto;
     margin-bottom: 80px;
@@ -122,7 +168,7 @@ main{
 }
 
 .options nav {
-    width: 80%;
+    width: 100%;
     margin: auto;
     padding: 15px;
     color: white;    
@@ -147,6 +193,7 @@ main{
     color: white;
     text-decoration: none;
     padding: 8px;
+    font-family: Gotham;
 }
 
 footer {
@@ -161,9 +208,9 @@ footer .menu {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
-    /* position: fixed; */
-    /* right: 32%;
-    bottom: 20px; */
+    position: fixed;
+    right: 40%;
+    bottom: 20px;
 }
 footer nav {
     display: flex;
@@ -193,233 +240,34 @@ footer ul li a{
 /* MEDIA QUIERIES */
 
 @media (min-width: 480px) {
-  /*   header {
-        width: 100vw;
-    }
-
-    .top-bar{
-        width: 100%;
-        height: 20px;
-    } */
     
-    /* .logo-kruto img {
-        width: 20%;
-        
-    } */
+    main .sales_pic {
+        width: 50%;
+    }
 
-    main {
+    #shop {
+        display: block;
         width: 100vw;
-    }
-
-    /* .imagen {
-        width: 100%;
-        margin: auto;
-    }
-
-    .imagen img {
-        width: 20%;
-        margin: auto;
-    } */
-
-/*     .productos {
-        width: 100%;
-        margin: auto;
-    }
-
-    .productos img {
-        margin: auto;
-        width: 100%;
-
-    }
-
-    .sales {
-        margin: auto;
-        width: 100%;  
-    }
-
-    .sales_pic {
-        margin: auto;
-        width: 100%;
-    }
-
-    .sales_pic img {
-        display: block;
-        text-align: center;
-        margin: auto;
-        width: 80%;
-        padding: 10px;
-    }
-
-    .categories {
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .categories_prod {
-        margin: auto;
-        padding: 10px;
-        justify-content: center;
-    }
-
-    .categories_prod img {
-        margin: auto;
-        width: 100%;
-    }
-
-    h3 {
-        margin: auto;
-        padding:0px;
-        font-size: 1em;
-    }
-
-    .options {
-        width: 100%;
-        font-size: small;
-    }
-
-    .options nav {
-        display: block;
-        justify-content: center;
-        margin: 30px;
-    }
-
-    footer {
-        width: 100%;
-        margin: auto;
-    }
-
-    footer .menu {
-        width: 40%;
-    }
-
-    footer .menu nav {
-        padding: 0%;
-        margin: auto;
-    }
-
-    footer .menu ul{
         flex-wrap: nowrap;
-        padding: 5px;
     }
 
-    footer .menu ul li a{
-        padding: 5px;
+    main .top-section {
+        display: block;
+        width: 90%;
     }
-    footer .menu ul li .iconify {
-        width: 20px;
-    } */
 
+    main .clientInfo{
+        display: block;
+        width: 90%;
+    }
 }
-
-@media (max-width: 1200px) {
-/*     header {
-        width: 100vw;
-    }
-
-    .top-bar{
-        width: 100%;
-        height: 20px;
-    }
-    
-    .logo-kruto img {
-        width: 20%;
-        
-    }
-
-    main {
-        width: 100vw;
-    }
-
-    .imagen {
-        width: 100%;
-        margin: auto;
-    }
-
-    .imagen img {
-        margin: auto;
-        width: 100%;
-    }
-
-    .productos {
-        width: 100%;
-        margin: auto;
-    }
-
-    .productos img {
-        margin: auto;
-        width: 100%;
-
-    }
-
-    .sales {
-        margin: auto;
-        width: 100%;  
-    }
-
-    .sales_pic {
-        margin: auto;
-        width: 100%;
-    }
-
-    .sales_pic img {
-        display: block;
-        text-align: center;
-        margin: auto;
-        width: 80%;
-        padding: 10px;
-    }
-
-    .categories {
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .categories_prod {
-        margin: auto;
-        padding: 10px;
-        justify-content: center;
-    }
-
-    .categories_prod img {
-        margin: auto;
-        width: 100%;
-    }
-
-    h3 {
-        margin: auto;
-        padding:0px;
-        font-size: 1em;
+   
+@media (max-width: 768px) {
+    main .sales_pic {
+        width: 50%;
     }
 
     
-    footer {
-        width: 100%;
-        margin: auto;
-    }
-
-    footer .menu {
-        width: 30%;
-    }
-
-    footer .menu nav {
-        padding: 0%;
-    }
-
-    footer .menu ul{
-        flex-wrap: nowrap;
-        padding: 5px;
-    }
-
-    footer .menu ul li a{
-        padding: 10px;
-    }
-    
-    footer .menu ul li .iconify {
-        width: 30px;
-    } */
-
 }
 
 /* SHOPPING CART */
@@ -451,6 +299,7 @@ header#shoppingCart section .top-bar {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #shop .top-section {
@@ -607,6 +456,8 @@ header#shoppingCart section .top-bar {
 
 .price li .quantity {
     text-align: center;
+    padding: 20px;
+    border: 0px white;
 }
 
 .product1 {

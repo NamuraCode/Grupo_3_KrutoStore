@@ -11,3 +11,7 @@ app.listen(port,()=>{
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/index.html'))
 });
+
+app.get('/productCart',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./view/productCart.html'))
+});

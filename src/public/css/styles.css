@@ -244,22 +244,6 @@ footer ul li a{
     main .sales_pic {
         width: 50%;
     }
-
-    #shop {
-        display: block;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
-
-    main .top-section {
-        display: block;
-        width: 90%;
-    }
-
-    main .clientInfo{
-        display: block;
-        width: 90%;
-    }
 }
    
 @media (max-width: 768px) {
@@ -642,4 +626,26 @@ input placeholder {
     border: 0px;
     border-radius: 20px;
     margin: auto;
+}
+
+@media (min-width: 480px) {
+
+    #shop {
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+
+    main .top-section {
+        display: block;
+        width: 90%;
+    }
+
+    main .clientInfo{
+        display: block;
+        width: 90%;
+    }
+}
+   
+@media (max-width: 768px) {
+  
 }

@@ -207,6 +207,8 @@ footer ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 5px 5px 11px -6px #000000; 
+    box-shadow: 5px 5px 11px -6px #000000;
 }
 
 #marquee {

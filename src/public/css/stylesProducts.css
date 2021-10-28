@@ -90,7 +90,6 @@ main .main_products .main_articles .article_cost p {
     opacity: 75%;
     top: 6%;
     right: -4%;
-    z-index: 2;
     font-size: 18px;
 }
 
@@ -101,7 +100,7 @@ main .main_products .main_articles .article_form {
     flex-wrap: wrap;
 }
 
-main .main_products .main_articles .article_form form button {
+main .main_products .main_articles .article_form a button {
     border-radius: 10px;
     border: none;
     background-color: #767375;
@@ -112,7 +111,7 @@ main .main_products .main_articles .article_form form button {
     font-size:18px;
 }
 
-main .main_products .main_articles .article_form form #anadir{
+main .main_products .main_articles .article_form a #anadir{
     color: white;
     background-color:#f24f63;
 }
@@ -163,20 +162,20 @@ main .main_products .main_articles i {
         width: 10%;
     }
 
-    main .main_products .main_articles .article_form form button {
+    main .main_products .main_articles .article_form a button {
         margin: 20px 14px 35px 14px;
         width: 160px;
         height: 41px;
         font-size: 30px;
     }
 
-    main .main_products .main_articles .article_form form #anadir:hover {
+    main .main_products .main_articles .article_form a #anadir:hover {
         transition: all 0.1s;
         background-color: #e00f28;
         cursor: pointer;
     }
 
-    main .main_products .main_articles .article_form form #detalles:hover {
+    main .main_products .main_articles .article_form a #detalles:hover {
         transition: all 0.1s;
         background-color: #393D3F;
         cursor: pointer;
@@ -194,7 +193,7 @@ main .main_products .main_articles i {
 
     main .main_products .main_articles i {
         font-size:50px;
-        top: 65%;
+        top: 60%;
     }
 
     main .main_products .main_articles i:hover {
@@ -205,3 +204,46 @@ main .main_products .main_articles i {
     
 }
 
+/*-------------------------------------------------------------------------------------*/
+
+footer {
+    width: 100vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+footer .menu {
+    background: #ef233c;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    position: fixed;
+    right: 40%;
+    bottom: 20px;
+}
+footer nav {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    align-content: center;
+    padding: 0px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    padding: 15px;
+}
+ .iconify {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+}

@@ -145,7 +145,7 @@ main .main_products .main_articles i {
     }
     
     footer .menu {
-        width: 60px;
+        width: 50%;
     }
 }
 
@@ -205,6 +205,10 @@ main .main_products .main_articles i {
         transition: all 0.1s;
         font-size:55px
     }
+
+    footer .menu {
+        width: 60%;
+    }
     
 }
 
@@ -218,12 +222,12 @@ footer {
 
 footer .menu {
     background: #ef233c;
-    width: 90%;
+    width: 80%;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
     position: fixed;
-    right: 5%;
+    right: 10%;
     bottom: 20px;
 }
 footer nav {
@@ -251,3 +255,6 @@ footer ul li a{
     text-align: center;
     align-items: center;
 }
+
+/*DETALLES-PRODCTO--------------------------------------------------------------------------------------------*/
+

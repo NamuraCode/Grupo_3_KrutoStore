@@ -3,15 +3,15 @@
 @import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
 
 
-@font-face {
+/* @font-face {
     font-family: 'Arigatou';
-    src: url(.\view\fonts\Arigatou.ttf);
+    src: url(./fonts/aArigatouGozaimasu.ttf);
 }
 
 @font-face {
     font-family: "futura std book";
     src: url(./FuturaStdBook.otf);
-}
+} */
 
 
 *{
@@ -23,6 +23,7 @@
 
 header{
    width: 100vw;
+   background: #ef233c;
 }
 
 .top-bar{
@@ -32,19 +33,26 @@ header{
     background:#EF233C;
 }
 
+.logo {
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
 
-.logo-kruto img {
+
+/* .logo-kruto img {
     display: block;
     width: 100px;
     margin:auto;
     padding: 10px;
-}
+} */
 
 main{
     width: 100vw;
 }
 
-.imagen{
+/* .imagen{
     display: block;
     text-align: center;
     width: 100%;
@@ -147,7 +155,7 @@ main{
     color: white;
     text-decoration: none;
     padding: 8px;
-}
+} */
 
 footer {
     width: 100vw;
@@ -196,7 +204,8 @@ footer ul li a{
 }
 
 .ofertas h2 {
-    font-family: 'Arigatou';
+    font-family: 'Montserrat';
+    font-weight: 900;
     text-align: center;
     font-size: 50px;
     color: #EF233C;
@@ -207,8 +216,8 @@ footer ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-box-shadow: 5px 5px 11px -6px #000000; 
-    box-shadow: 5px 5px 11px -6px #000000;
+    /* -webkit-box-shadow: 5px 5px 11px -6px #000000; 
+    box-shadow: 5px 5px 11px -6px #000000; */
 }
 
 #marquee {
@@ -244,23 +253,52 @@ footer ul li a{
     align-items: center;
     flex-wrap: wrap;
     width: 90%;
+    margin-left: 50px;
 }
 
-.category-title p {
+.category-name p {
     text-align: center;
-    margin-top: -270px;
+    margin-top: -280px;
     margin-bottom: 170px;
+    margin-left: 90px;
     font-family: 'Montserrat';
     color: #fff;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 60px;
+}
+
+.category-name {
+    opacity: 0;
+}
+
+.category-name:hover {
+    opacity: 1;
 }
 
 #categories img {
     margin: 80px;
     width: 90%;
+    /* opacity: 0.8; */
 }
 
+
+/* #categories img:hover {
+    opacity: 0.3;
+} */
+
+.category-title {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#category-title {
+    background: #ef233c;
+}
 
 /*#categories p {
     display: none;
@@ -329,10 +367,67 @@ footer ul li a{
     100% { left: -400% }
 }
 
+/**************************************************SLIDESHOW*******************************************************************************/
+.options {
+    background: #515372;
+    height: 80px;
+    margin-top: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info i, p {
+    color: #fff;
+}
+
+.info i {
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.info p {
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+.opciones-pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.opciones-envio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.politica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+
 
 /* MEDIA QUIERIES */
 
-@media (min-width: 480px) {
+/*@media (min-width: 480px) {
   /*   header {
         width: 100vw;
     }
@@ -347,7 +442,7 @@ footer ul li a{
         
     } */
 
-    main {
+    /*main {
         width: 100vw;
     }
 
@@ -450,10 +545,9 @@ footer ul li a{
         width: 20px;
     } */
 
-}
 
-@media (max-width: 1200px) {
-/*     header {
+/*@media (max-width: 1200px) {
+    header {
         width: 100vw;
     }
 
@@ -560,12 +654,11 @@ footer ul li a{
         width: 30px;
     } */
 
-}
 
 /* SHOPPING CART */
 
 /* HEADER */
-header#shoppingCart {
+/* header#shoppingCart {
     width: 100vw;
 }
 
@@ -585,7 +678,7 @@ header#shoppingCart section .top-bar {
 
 /* MAIN */
 
-#shop {
+/* #shop {
     width: 100vw;
     margin:auto;
     margin-top: 40px;
@@ -931,4 +1024,4 @@ input placeholder {
     border: 0px;
     border-radius: 20px;
     margin: auto;
-}
+} */ 

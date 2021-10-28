@@ -228,12 +228,12 @@ footer {
 
 footer .menu {
     background: #ef233c;
-    width: 25%;
+    width: 20%;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
     position: fixed;
-    right: 40%;
+    right: 39%;
     bottom: 20px;
 }
 footer nav {
@@ -647,19 +647,65 @@ input placeholder {
 /* MEDIA QUIERIES */
    
 @media (max-width: 768px) {
+    header .header img {
+        width: 56%;
+    }
+    main .brands img {
+        display: flex;
+        width: 80%;
+    }
     .imagen img {
         width: 80%;
     }
     main .brands img {
         width: 80%;
     }
-  
+    main .categories_sec article p {
+        width: 90%;
+    }
+    .productos {
+       flex-direction: column;
+    }
+    .productos img {
+        width: 80%;
+    }
+    main .categories_sec {
+        flex-direction: column;
+    }
+
+    main .categories_sec article img {
+        max-width: 100%;
+    }
+
+    main .categories_sec article {
+        height: 250px;
+    }
+
+    main .categories_sec article {
+        width: 70%;
+    }
+    main .categories_sec article {
+        width: 60%;
+    }
+    .options ul {
+        flex-direction: column;
+    }
+
+    main .brands img {
+        display: none;
+    }
+
+    footer .menu {
+        background: #ef233c;
+        width: 80vw;
+        right: 10%;
+    }
 }
 
 
 @media (max-width: 361px) {
     header .header img {
-        width: 50%;
+        width: 56%;
     }
     main .brands img {
         display:none;
@@ -694,8 +740,8 @@ input placeholder {
     }
     footer section .menu {
         background-color: #EF233C;
-        width: 90vw;
-        right: 4%;
+        width: 80vw;
+        right: 10%;
     }
     
 }

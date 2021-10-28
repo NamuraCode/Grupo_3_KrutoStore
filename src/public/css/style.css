@@ -91,7 +91,8 @@ main .imagen{
     margin: auto;
     text-align: center;
     display: flex;
-    background: hsl(236, 17%, 80%);
+    /*background: hsl(236, 17%, 80%);*/
+    background: #fff;
 }
 
 .productos img {
@@ -106,6 +107,7 @@ main .brands {
     width: 100vw;
     margin: auto;
     display: flex;
+    background: #A0A2BF;
 }
 
 main .brands img {

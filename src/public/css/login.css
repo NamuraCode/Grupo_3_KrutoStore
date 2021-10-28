@@ -15,7 +15,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Arigatou', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
@@ -35,10 +35,12 @@ p {
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 span {
 	font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {

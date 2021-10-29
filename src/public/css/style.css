@@ -265,6 +265,8 @@ footer ul li a{
     color: #fff;
     font-weight: 900;
     font-size: 60px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.548);
 }
 
 .category-name {
@@ -298,6 +300,10 @@ footer ul li a{
 
 #category-title {
     background: #ef233c;
+}
+
+#categories a, p {
+    text-decoration: none;
 }
 
 /*#categories p {

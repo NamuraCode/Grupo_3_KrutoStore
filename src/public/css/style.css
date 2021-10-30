@@ -1,22 +1,22 @@
 @font-face {
     font-family: "futurastdbook";
-    src: url(./fonts/FuturaStdBook.otf);
+    src: url(./css/fonts/FuturaStdBook.otf);
 }
 
 @font-face {
     font-family: "Gotham-Thin";
-    src: url(./fonts/Gotham-Thin.otf);
+    src: url(./css/fonts/Gotham-Thin.otf);
 }
 
 @font-face {
     font-family: "GothamBook";
-    src: url(./fonts/GothamBook.ttf);
+    src: url(./css/fonts/GothamBook.ttf);
 }
 
 
 @font-face {
     font-family: "Arigatou";
-    src: url(./fonts/aArigatouGozaimasu.ttf);
+    src: url(./css/fonts/aArigatouGozaimasu.ttf);
 }
 
 
@@ -270,9 +270,6 @@ footer .menu .iconify:hover {
     border-radius: 50%;
 }
 
-
-
-
 /* SHOPPING CART */
 
 /* HEADER */
@@ -283,13 +280,7 @@ header#shoppingCart {
 header#shoppingCart section .top-bar {
     width: 100%;
     height: 30px;
-    background: #515372;
-    color: #515372;
-}
-
-#shoppingCart section .top-bar {
-    width: 100%;
-    height: 30px;
+    margin: auto;
     background: #515372;
     color: #515372;
 }
@@ -297,16 +288,16 @@ header#shoppingCart section .top-bar {
 /* MAIN */
 
 #shop {
-    width: 100vw;
+    width: 100%;
     margin:auto;
     margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    font-family: Gotham;
 }
 
 #shop .top-section {
-    width: 45%;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
     background: white;
     border: 2px solid #E5E5E5;
     border-radius: 30px;
@@ -345,7 +336,7 @@ header#shoppingCart section .top-bar {
 }
 
 .logoBlue {
-    width: 20%;
+    width: 30%;
     text-align: right;
 }
 
@@ -374,22 +365,22 @@ header#shoppingCart section .top-bar {
     padding-right: 28px;
 }
 
-.details .elements .desc {
-    display: block;
-
+.elements .desc {
+    width: 70%;
 }
 
-.desc ul {
+.details .desc ul{
+    
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .desc ul li {
     display: block;
     margin: auto;
-    margin-right: 15px;
-    margin-left: 10px;
+    margin-right: 14px;
+    margin-left: 26px;
     justify-content: space-between;
 } 
 
@@ -400,7 +391,7 @@ header#shoppingCart section .top-bar {
     margin-top: 15px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 .product2 {
@@ -410,18 +401,18 @@ header#shoppingCart section .top-bar {
     margin-top: 15px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 .product_icon {
-    width: 35%;
+    width: 40%;
     display: flex;
     padding: 10px;
 }
 
 .icon {
     background: white;
-    width: 30px;
+    width: 40px;
     margin: auto;
     border-radius: 5px;
 }
@@ -432,12 +423,19 @@ header#shoppingCart section .top-bar {
 }
 
 .product_det {
-    width: 40%;
-    display: flex;
-    justify-content:flex-end;
+    display: block;
     margin: auto;
-    margin-right: 0px;
+    margin-right: 14px;
+    margin-left: 22px;
+    justify-content: space-between;
+    width: 65%;
+}
 
+.product_det .clear li{
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }
 
 .price {
@@ -448,8 +446,9 @@ header#shoppingCart section .top-bar {
 
 .price li p {
     display: block;
-    width: 60px;
+    width: 80px;
     margin: 5px;
+    margin-top: 12px;
     padding: 5px;
     text-align: left;
     justify-content:flex-start;
@@ -474,11 +473,13 @@ header#shoppingCart section .top-bar {
 
 .product1 .iconify{
     color: #515372;
+    width: 100%;
 
 }
 
 .product2 .iconify {
-    color: #000000;
+    color: #EF233C;
+    width: 100%;
 }
 
 .subtotal {
@@ -492,7 +493,7 @@ header#shoppingCart section .top-bar {
  .subtotal .continue {
     position: absolute;
     right: 50px;
-    bottom: 2px;
+    bottom: 25px;
     margin: auto;
 }
 
@@ -507,10 +508,10 @@ header#shoppingCart section .top-bar {
 }
 
 #shop .clientInfo {
-    width: 45%;
+    width: 90%;
+    height: 590px;
+    margin: auto;
     background: hsl(238, 16%, 93%);
-    border: 2px solid #E5E5E5;
-    padding: 10px;
     border-radius: 30px;
 }
 
@@ -520,7 +521,6 @@ header#shoppingCart section .top-bar {
     padding: 20px;
     padding-left: 20px;
     margin-left: 20px;
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -562,13 +562,12 @@ header#shoppingCart section .top-bar {
 
 .clientCard {
     width: 100%;
-    height: 200px;
     margin: auto;
 }
 
 .clientCard form {
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 90%;
 }
 
@@ -578,7 +577,7 @@ header#shoppingCart section .top-bar {
 
 .mainInfo input {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
     width: 100%;
     height: 25px;
@@ -602,7 +601,7 @@ input placeholder {
 
 .cardInfo input {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 60%;
     height: 25px;
     padding: 10px;
@@ -611,108 +610,79 @@ input placeholder {
 }
 
 .total {
-    width: 80%;
+    width: 60%;
     height: 40px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 20px;
+    padding: 10px;
     background: hsl(353, 82%, 80%);
     border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .total .total-p {
     color: white;
-    padding: 20px;
-    margin-left: 20px;
+    display: flex;
+    margin: auto;
+    align-items: center;
 }
 
 .total-price {
+    width: 90px;
+    margin: auto;
     background: white;
     border-radius: 10px;
-    width: 90px;
-    height: 20;
-    padding-right: 10px;
     text-align: center;
 }
 
 .total button {
     color: white;
     background: hsl(353, 82%, 50%);
-    width: 90px;
+    width: 80px;
     height: 25px;
+    font-size: 12px;
     border: 0px;
     border-radius: 20px;
     margin: auto;
 }
+
+footer {
+    width: 100vw;
+}
+
+#shoppingCart section .bottom-bar {
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    background: #515372;
+    color: #515372;
+}
+
 /* MEDIA QUIERIES */
    
-@media (max-width: 768px) {
-
-    header .header img {
-        width: 15%;
+@media (min-width: 769px) {
+    #shop {
+        display: flex;
+        width: 90%;
+        font-size: 12px;
     }
 
-    .imagen img {
-        width: 75%;
-    }
-
-    main .categories_sec article {
-        height: 240px;
-    }
-
-    main .categories_sec article img {
-        max-width: 70%
-    }
-
-    footer .menu {
-        background: #ef233c;
-        width: 40vw;
-        right: 30%;
+    #shop .clientInfo {
+        height: 590px;
     }
 }
 
+@media (min-width: 1200px) {
+    #shop {
+        display: flex;
+        width: 90%;
+        font-size: 16px;
+    }
 
-@media (max-width: 361px) {
-    header .header img {
-        width: 56%;
+    #shop .clientInfo {
+        height: 620px;
+        margin-top: 5px;
     }
-    main .brands img {
-        display:none;
-    }
-    .imagen img {
-        width: 80%;
-    }
-    .productos img {
-        display: block;
-        margin: auto;
-        width: 92%;
-        padding-top: 20px;
-        padding-bottom: 30px;
-    }
-    .productos {
-        flex-direction: column;
-    }
-    main .categories_sec {
-        flex-direction: column;
-    }
-    main .categories_sec article p {
-        width: 100%;
-
-    }
-    main .categories_sec article {
-        height: 200px;
-        width: 50%;
-    }
-    .options ul {
-        flex-direction: column;
-        justify-content: center;
-    }
-    footer section .menu {
-        background-color: #EF233C;
-        width: 80vw;
-        right: 10%;
-    }
-    
 }

@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-body {
-    margin: 0px;
-}
-
-/*HEADER----------------------------------------------------------------*/
-header {
-    padding: 0px;
-    margin: 0px;
-    background-color: #393D3F;
-    border-radius: 0px 0px 4px 4px;
-}
-
-img {
-    max-width: 90%;
-}
-
-header .header {
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 40px;
-    box-shadow: 0px 9px 24px 4px rgb(0 0 0 / 20%);
-}
-
-header .header img {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 56%;
-    margin-bottom: 30px;
-    margin-top: 30px;
-
-}
-
-/*MAIN------------------------------------------------------------------*/
-
-main .main_products {
-=======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
 
 
@@ -149,7 +112,6 @@ header{
 
 
 main .main-products {
->>>>>>> forms
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -157,11 +119,7 @@ main .main-products {
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles {
-=======
 main .main-products .main-articles {
->>>>>>> forms
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -175,11 +133,7 @@ main .main-products .main-articles {
     margin-bottom: 25px;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles img {
-=======
 main .main-products .main-articles img {
->>>>>>> forms
     width: 90%;
     height: 90%;
     margin: auto;
@@ -191,35 +145,20 @@ main .main-products .main-articles img {
     box-shadow: 0px 8px 6px 1px rgb(0 0 0 / 10%);
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles img:hover {
-    cursor: pointer;
-}
-
-main .main_products .article_description p {
-=======
 main .main-products .main-articles img:hover {
     cursor: pointer;
 }
 
 main .main-products .article-description p {
->>>>>>> forms
     width: 90%;
     text-align: center;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-<<<<<<< HEAD
-    font-size: 24px;
-}
-
-main .main_products .main_articles .article_cost p {
-=======
     font-size: 18px;
 }
 
 main .main-products .main-articles .article-cost p {
->>>>>>> forms
     text-align: center;
     margin: auto;
     padding: 14px;
@@ -233,22 +172,14 @@ main .main-products .main-articles .article-cost p {
     font-size: 18px;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles .article_form {
-=======
 main .main-products .main-articles .article-form {
->>>>>>> forms
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles .article_form a button {
-=======
 main .main-products .main-articles .article-form a button {
->>>>>>> forms
     border-radius: 10px;
     border: none;
     background-color: #767375;
@@ -259,20 +190,12 @@ main .main-products .main-articles .article-form a button {
     font-size: 18px;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles .article_form a #anadir {
-=======
 main .main-products .main-articles .article-form a #anadir {
->>>>>>> forms
     color: white;
     background-color: #f24f63;
 }
 
-<<<<<<< HEAD
-main .main_products .main_articles i {
-=======
 main .main-products .main-articles i {
->>>>>>> forms
     position: absolute;
     font-size: 30px;
     left: 10%;
@@ -290,20 +213,12 @@ main .main-products .main-articles i {
         margin-bottom: 26px;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles {
-=======
     main .main-products .main-articles {
->>>>>>> forms
         width: 45%;
         margin: 10px;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles i {
-=======
     main .main-products .main-articles i {
->>>>>>> forms
         top: 62%;
         left: 11%;
     }
@@ -315,92 +230,51 @@ main .main-products .main-articles i {
 
 @media (min-width: 769px) {
 
-<<<<<<< HEAD
-    main .main_products .main_articles {
-=======
     main .main-products .main-articles {
->>>>>>> forms
         width: 26%;
         margin: 26px;
         box-shadow: none;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles:hover {
-        transition: all 0.2s;
-        box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%);
-=======
     main .mainproducts .main-articles:hover {
         transition: all 0.2s;
         /* box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%); */
         box-shadow: 9px 9px 20px -3px #51537259;
->>>>>>> forms
     }
 
     header .header img {
         width: 7%;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles .article_form a button {
-=======
     main .main-products .main-articles .article-form a button {
->>>>>>> forms
         margin: 20px 14px 35px 14px;
         width: 160px;
         height: 41px;
         font-size: 30px;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles .article_form a #anadir:hover {
-=======
     main .main-products .main-articles .article-form a #anadir:hover {
->>>>>>> forms
         transition: all 0.1s;
         background-color: #e00f28;
         cursor: pointer;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles .article_form a #detalles:hover {
-=======
     main .main-products .main-articles .article-form a #detalles:hover {
->>>>>>> forms
         transition: all 0.1s;
         background-color: #393D3F;
         cursor: pointer;
 
     }
 
-<<<<<<< HEAD
-    main .main_products .article_description p {
-        font-size: 40px;
-    }
-
-    main .main_products .main_articles .article_cost p {
-=======
     main .main-products .article-description p {
         font-size: 40px;
     }
 
     main .main-products .main-articles .article-cost p {
->>>>>>> forms
         font-size: 34px;
         padding: 22px;
     }
 
-<<<<<<< HEAD
-    main .main_products .main_articles i {
-        font-size: 50px;
-        top: 60%;
-    }
-
-    main .main_products .main_articles i:hover {
-        margin: auto;
-        transition: all 0.1s;
-        font-size: 55px
-=======
     main .main-products .main-articles i {
         font-size: 40px;
         top: 60%;
@@ -410,7 +284,6 @@ main .main-products .main-articles i {
         margin: auto;
         transition: all 0.1s;
         font-size: 45px
->>>>>>> forms
     }
 
     footer .menu {
@@ -467,28 +340,16 @@ footer ul li a {
 
 /*DETALLES-PRODCTO--------------------------------------------------------------------------------------------*/
 
-<<<<<<< HEAD
-main .main_producto .producto_detalle {
-=======
 main .main-producto .producto-detalle {
->>>>>>> forms
     margin: auto;
 }
 
 
-<<<<<<< HEAD
-main .main_producto .producto_detalle img {
-    width: 90%;
-}
-
-main .main_producto .producto_detalle {
-=======
 main .main-producto .producto-detalle img {
     width: 90%;
 }
 
 main .main-producto .producto-detalle {
->>>>>>> forms
     display: flex;
     width: 80vw;
     position: relative;
@@ -501,11 +362,7 @@ main .main-producto .producto-detalle {
     padding-bottom: 30px;
 }
 
-<<<<<<< HEAD
-main .main_producto .producto_detalle img {
-=======
 main .main-producto .producto-detalle img {
->>>>>>> forms
     margin: auto;
     display: flex;
     margin: auto;
@@ -515,11 +372,7 @@ main .main-producto .producto-detalle img {
     padding-top: 10px;
 }
 
-<<<<<<< HEAD
-main .main_producto .producto_detalle .producto_description {
-=======
 main .main-producto .producto-detalle .producto-description {
->>>>>>> forms
     display: flex;
     margin: auto;
     width: 68%;
@@ -528,41 +381,18 @@ main .main-producto .producto-detalle .producto-description {
     align-items: center;
 }
 
-<<<<<<< HEAD
-main .main_producto .producto_detalle .producto_description .description {
-=======
 main .main-producto .producto-detalle .producto-description .description {
->>>>>>> forms
     margin: 0;
     margin: 10px;
     width: 220px;
     font-size: 24px
 }
 
-<<<<<<< HEAD
-main .main_products {
-=======
 main .main-products {
->>>>>>> forms
     margin-bottom: 90px;
 }
 
 @media (min-width: 361px) {
-<<<<<<< HEAD
-    main .main_producto .producto_detalle img {
-        width: 40%;
-    }
-
-    main .main_producto .producto_detalle {
-        flex-direction: row;
-    }
-
-    main .main_producto .producto_detalle .producto_description {
-        width: 30%;
-    }
-
-    main .main_producto .producto_detalle {
-=======
     main .main-producto .producto-detalle img {
         width: 40%;
     }
@@ -576,7 +406,6 @@ main .main-products {
     }
 
     main .main-producto .producto-detalle {
->>>>>>> forms
         width: 76vw;
     }
 
@@ -584,8 +413,6 @@ main .main-products {
         width: 20%;
         left: 10%
     }
-<<<<<<< HEAD
-=======
 }
 
 /*PRICE TAG*/
@@ -662,5 +489,4 @@ main .main-products {
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
     }
->>>>>>> forms
 }

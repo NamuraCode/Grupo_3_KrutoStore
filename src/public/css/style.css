@@ -1,35 +1,17 @@
-@font-face {
-    font-family: "futurastdbook";
-    src: url(./css/fonts/FuturaStdBook.otf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
 
-@font-face {
-    font-family: "Gotham-Thin";
-    src: url(./css/fonts/Gotham-Thin.otf);
-}
+@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
 
-<<<<<<< HEAD:src/public/css/style.css
-@font-face {
-    font-family: "GothamBook";
-    src: url(./css/fonts/GothamBook.ttf);
-=======
+
 /* @font-face {
     font-family: 'Arigatou';
     src: url(./fonts/aArigatouGozaimasu.ttf);
->>>>>>> forms:src/public/css/styles.css
 }
-
 
 @font-face {
-<<<<<<< HEAD:src/public/css/style.css
-    font-family: "Arigatou";
-    src: url(./css/fonts/aArigatouGozaimasu.ttf);
-}
-=======
     font-family: "futura std book";
     src: url(./FuturaStdBook.otf);
 } */
->>>>>>> forms:src/public/css/styles.css
 
 
 *{
@@ -38,41 +20,10 @@
     box-sizing: border-box;
 }
 
-header {
-    width: 100vw;
-    padding: 0px;
-    margin: 0px;
-    background-color: #EF233C;
-    border-radius: 0px 0px 4px 4px;
-}
 
-img {
-    max-width: 80%;
-}
-
-<<<<<<< HEAD:src/public/css/style.css
-header .header {
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 40px;
-    box-shadow: 0px 9px 24px 4px rgb(0 0 0 / 20%);
-}
-
-header .header img {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 7%;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
-header .header {
-    margin-bottom: 26px;
-=======
 header{
    width: 100vw;
    background: #ef233c;
->>>>>>> forms:src/public/css/styles.css
 }
 
 .top-bar{
@@ -101,18 +52,14 @@ main{
     width: 100vw;
 }
 
-<<<<<<< HEAD:src/public/css/style.css
-main .imagen{
-=======
 /* .imagen{
->>>>>>> forms:src/public/css/styles.css
     display: block;
     text-align: center;
     width: 100%;
 }
 
 .imagen img {
-    width: 34%;
+    width: 600px;
 }
 
 .productos{
@@ -120,8 +67,7 @@ main .imagen{
     margin: auto;
     text-align: center;
     display: flex;
-    /*background: hsl(236, 17%, 80%);*/
-    background: #fff;
+    background: hsl(236, 17%, 80%);
 }
 
 .productos img {
@@ -132,17 +78,10 @@ main .imagen{
     padding-bottom: 30px;
 }
 
-main .brands {
-    width: 100vw;
+.sales_pic {
+    display: block;
     margin: auto;
-    display: flex;
-    background: #A0A2BF;
-}
-
-main .brands img {
-    display: flex;
-    width: 80%;
-    margin: auto;
+    text-align: center;
 }
 
 .sales {
@@ -152,78 +91,46 @@ main .brands img {
     margin: auto;
 }
 
-main .categories {
+.categories {
     text-align: center;
     padding: 25px;
     color: white;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-family: "aArigatouGozaimasu", sans-serif;
     background: #EF233C;
 }
 
-main .categories_sec {
-    width: 100vw;
+.categories_prod {
+    width: 80%;
     margin: auto;
-    
-}
-
-main .categories_sec {
     display: flex;
-    flex-wrap: wrap;    
+    justify-content: space-around;
+    padding: 60px;
 }
 
-main .categories_sec article {
+.categories_prod div {
     width: 40%;
     margin: auto;
-    margin-top: 20px;
-    padding: 10px;
-    height: 450px;
-    transition: all 8s transform;
+    padding: 20px;
+    padding-top: 20px;
+    border: 1px solid hsl(353, 82%, 90%);
 }
 
-main .categories_sec article:hover {
-    box-shadow: 0px 0px 20px 0px hsl(236, 17%, 60%);
+.categories_prod img {
+    width: 160px;
 }
 
-main .categories_sec article img{
-    display: block;
-    margin: auto;
-    padding: 5px;
-    max-width: 64%;
-    justify-content: center;
-}
-
-main .categories_sec article p {
-    margin: auto;
-    text-align: center;
-    font-family: Gotham;
-    font-style: italic;
-    border-radius: 10px;
-    width: 25%;
-    transition: all 5s transform;
-}
-
-main .categories_sec article p:hover {
-    background:hsl(353, 82%, 80%);
-}
-
-h2 {
-    margin: auto;
-    font-size: 1.5em;
-    font-family: a Arigatou Gozaimasu;
-}
-
-main .options {
+.options {
     width: 100vw;
     margin: auto;
-    margin-top: 20px;
     margin-bottom: 80px;
     background: #515372;
 }
 
 .options nav {
-    width: 100%;
+    width: 80%;
     margin: auto;
     padding: 15px;
     color: white;    
@@ -248,12 +155,7 @@ main .options {
     color: white;
     text-decoration: none;
     padding: 8px;
-<<<<<<< HEAD:src/public/css/style.css
-    font-family: Gotham;
-}
-=======
 } */
->>>>>>> forms:src/public/css/styles.css
 
 footer {
     width: 100vw;
@@ -267,9 +169,9 @@ footer .menu {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
-    position: fixed;
-    right: 39%;
-    bottom: 20px;
+    /* position: fixed; */
+    /* right: 32%;
+    bottom: 20px; */
 }
 footer nav {
     display: flex;
@@ -289,21 +191,13 @@ footer ul li a{
     margin: auto;
     padding: 15px;
 }
-footer .menu .iconify {
+ .iconify {
     width: 25px;
     height: 25px;
     text-align: center;
     align-items: center;
-    transition: all 5s transform;
 }
 
-<<<<<<< HEAD:src/public/css/style.css
-footer .menu .iconify:hover {
-    width: 50%;
-    background: hsl(353, 82%, 80%);
-    border-radius: 50%;
-}
-=======
 /**************************************************OFERTAS*******************************************************************************/
 .ofertas {
     background: #fff;
@@ -927,7 +821,6 @@ nav {
         width: 30px;
     } */
 
->>>>>>> forms:src/public/css/styles.css
 
 /* SHOPPING CART */
 
@@ -939,29 +832,29 @@ nav {
 header#shoppingCart section .top-bar {
     width: 100%;
     height: 30px;
-    margin: auto;
+    background: #515372;
+    color: #515372;
+}
+
+#shoppingCart section .top-bar {
+    width: 100%;
+    height: 30px;
     background: #515372;
     color: #515372;
 }
 
 /* MAIN */
 
-<<<<<<< HEAD:src/public/css/style.css
-#shop {
-    width: 100%;
-=======
 /* #shop {
     width: 100vw;
->>>>>>> forms:src/public/css/styles.css
     margin:auto;
     margin-top: 40px;
-    font-family: Gotham;
+    display: flex;
+    justify-content: center;
 }
 
 #shop .top-section {
-    width: 90%;
-    margin: auto;
-    margin-bottom: 10px;
+    width: 45%;
     background: white;
     border: 2px solid #E5E5E5;
     border-radius: 30px;
@@ -1000,7 +893,7 @@ header#shoppingCart section .top-bar {
 }
 
 .logoBlue {
-    width: 30%;
+    width: 20%;
     text-align: right;
 }
 
@@ -1029,22 +922,22 @@ header#shoppingCart section .top-bar {
     padding-right: 28px;
 }
 
-.elements .desc {
-    width: 70%;
+.details .elements .desc {
+    display: block;
+
 }
 
-.details .desc ul{
-    
+.desc ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .desc ul li {
     display: block;
     margin: auto;
-    margin-right: 14px;
-    margin-left: 26px;
+    margin-right: 15px;
+    margin-left: 10px;
     justify-content: space-between;
 } 
 
@@ -1055,7 +948,7 @@ header#shoppingCart section .top-bar {
     margin-top: 15px;
     border-radius: 10px;
     display: flex;
-    position: relative;
+    justify-content: space-between;
 }
 
 .product2 {
@@ -1065,18 +958,18 @@ header#shoppingCart section .top-bar {
     margin-top: 15px;
     border-radius: 10px;
     display: flex;
-    position: relative;
+    justify-content: space-between;
 }
 
 .product_icon {
-    width: 40%;
+    width: 35%;
     display: flex;
     padding: 10px;
 }
 
 .icon {
     background: white;
-    width: 40px;
+    width: 30px;
     margin: auto;
     border-radius: 5px;
 }
@@ -1087,19 +980,12 @@ header#shoppingCart section .top-bar {
 }
 
 .product_det {
-    display: block;
+    width: 40%;
+    display: flex;
+    justify-content:flex-end;
     margin: auto;
-    margin-right: 14px;
-    margin-left: 22px;
-    justify-content: space-between;
-    width: 65%;
-}
+    margin-right: 0px;
 
-.product_det .clear li{
-    width: 40px;
-    position: absolute;
-    right: 10px;
-    top: 20px;
 }
 
 .price {
@@ -1110,9 +996,8 @@ header#shoppingCart section .top-bar {
 
 .price li p {
     display: block;
-    width: 80px;
+    width: 60px;
     margin: 5px;
-    margin-top: 12px;
     padding: 5px;
     text-align: left;
     justify-content:flex-start;
@@ -1122,8 +1007,6 @@ header#shoppingCart section .top-bar {
 
 .price li .quantity {
     text-align: center;
-    padding: 20px;
-    border: 0px white;
 }
 
 .product1 {
@@ -1137,13 +1020,11 @@ header#shoppingCart section .top-bar {
 
 .product1 .iconify{
     color: #515372;
-    width: 100%;
 
 }
 
 .product2 .iconify {
     color: #EF233C;
-    width: 100%;
 }
 
 .subtotal {
@@ -1157,7 +1038,7 @@ header#shoppingCart section .top-bar {
  .subtotal .continue {
     position: absolute;
     right: 50px;
-    bottom: 25px;
+    bottom: 2px;
     margin: auto;
 }
 
@@ -1172,10 +1053,10 @@ header#shoppingCart section .top-bar {
 }
 
 #shop .clientInfo {
-    width: 90%;
-    height: 590px;
-    margin: auto;
+    width: 45%;
     background: hsl(238, 16%, 93%);
+    border: 2px solid #E5E5E5;
+    padding: 10px;
     border-radius: 30px;
 }
 
@@ -1185,6 +1066,7 @@ header#shoppingCart section .top-bar {
     padding: 20px;
     padding-left: 20px;
     margin-left: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -1226,12 +1108,13 @@ header#shoppingCart section .top-bar {
 
 .clientCard {
     width: 100%;
+    height: 200px;
     margin: auto;
 }
 
 .clientCard form {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 90%;
 }
 
@@ -1241,7 +1124,7 @@ header#shoppingCart section .top-bar {
 
 .mainInfo input {
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
     width: 100%;
     height: 25px;
@@ -1265,7 +1148,7 @@ input placeholder {
 
 .cardInfo input {
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 60%;
     height: 25px;
     padding: 10px;
@@ -1274,83 +1157,38 @@ input placeholder {
 }
 
 .total {
-    width: 60%;
+    width: 80%;
     height: 40px;
     margin: auto;
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 60px;
     background: hsl(353, 82%, 80%);
     border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .total .total-p {
     color: white;
-    display: flex;
-    margin: auto;
-    align-items: center;
+    padding: 20px;
+    margin-left: 20px;
 }
 
 .total-price {
-    width: 90px;
-    margin: auto;
     background: white;
     border-radius: 10px;
+    width: 90px;
+    height: 20;
+    padding-right: 10px;
     text-align: center;
 }
 
 .total button {
     color: white;
     background: hsl(353, 82%, 50%);
-    width: 80px;
+    width: 90px;
     height: 25px;
-    font-size: 12px;
     border: 0px;
     border-radius: 20px;
     margin: auto;
-<<<<<<< HEAD:src/public/css/style.css
-}
-
-footer {
-    width: 100vw;
-}
-
-#shoppingCart section .bottom-bar {
-    width: 100%;
-    height: 30px;
-    margin: auto;
-    background: #515372;
-    color: #515372;
-}
-
-/* MEDIA QUIERIES */
-   
-@media (min-width: 769px) {
-    #shop {
-        display: flex;
-        width: 90%;
-        font-size: 12px;
-    }
-
-    #shop .clientInfo {
-        height: 590px;
-    }
-}
-
-@media (min-width: 1200px) {
-    #shop {
-        display: flex;
-        width: 90%;
-        font-size: 16px;
-    }
-
-    #shop .clientInfo {
-        height: 620px;
-        margin-top: 5px;
-    }
-}
-=======
 } */ 
->>>>>>> forms:src/public/css/styles.css

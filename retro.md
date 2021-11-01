@@ -42,7 +42,26 @@
 * Dentro de carpeta VIEW crear carpeta para products y users.
 * Separar los componentes repetidos en archivos parciales
 * Formularios de carga y edicion de productos
+* Reporte daily de cada miembro 
+* Mejorar la comunicacion 
 
 ## Hacer más 
 * Mejorar los estilos
-* 
+* Mejorar responsive
+* Aplicar lo visto en clase
+
+## Continuar haciendo 
+* Mejorar el responsive
+* Mejorar los estilos
+* Hablar de los errores y dificultades para colaborarnos entre nosotros
+* Reunirnos en el horario establecido
+* Reunirnos 3 veces a la semana 
+
+## Hacer menos 
+* Complicarnos menos 
+* Cambios sin comunicar a los compañeros 
+
+## Dejar de hacer 
+* Posponer las reuniones
+
+

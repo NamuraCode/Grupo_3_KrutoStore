@@ -8,16 +8,28 @@
     src: url(./css/fonts/Gotham-Thin.otf);
 }
 
+<<<<<<< HEAD:src/public/css/style.css
 @font-face {
     font-family: "GothamBook";
     src: url(./css/fonts/GothamBook.ttf);
+=======
+/* @font-face {
+    font-family: 'Arigatou';
+    src: url(./fonts/aArigatouGozaimasu.ttf);
+>>>>>>> forms:src/public/css/styles.css
 }
 
 
 @font-face {
+<<<<<<< HEAD:src/public/css/style.css
     font-family: "Arigatou";
     src: url(./css/fonts/aArigatouGozaimasu.ttf);
 }
+=======
+    font-family: "futura std book";
+    src: url(./FuturaStdBook.otf);
+} */
+>>>>>>> forms:src/public/css/styles.css
 
 
 *{
@@ -38,6 +50,7 @@ img {
     max-width: 80%;
 }
 
+<<<<<<< HEAD:src/public/css/style.css
 header .header {
     padding: 10px 10px 10px 10px;
     margin-bottom: 40px;
@@ -55,6 +68,11 @@ header .header img {
 
 header .header {
     margin-bottom: 26px;
+=======
+header{
+   width: 100vw;
+   background: #ef233c;
+>>>>>>> forms:src/public/css/styles.css
 }
 
 .top-bar{
@@ -64,19 +82,30 @@ header .header {
     background:#EF233C;
 }
 
+.logo {
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
 
-.logo-kruto img {
+
+/* .logo-kruto img {
     display: block;
     width: 100px;
     margin:auto;
     padding: 10px;
-}
+} */
 
 main{
     width: 100vw;
 }
 
+<<<<<<< HEAD:src/public/css/style.css
 main .imagen{
+=======
+/* .imagen{
+>>>>>>> forms:src/public/css/styles.css
     display: block;
     text-align: center;
     width: 100%;
@@ -219,8 +248,12 @@ main .options {
     color: white;
     text-decoration: none;
     padding: 8px;
+<<<<<<< HEAD:src/public/css/style.css
     font-family: Gotham;
 }
+=======
+} */
+>>>>>>> forms:src/public/css/styles.css
 
 footer {
     width: 100vw;
@@ -264,16 +297,642 @@ footer .menu .iconify {
     transition: all 5s transform;
 }
 
+<<<<<<< HEAD:src/public/css/style.css
 footer .menu .iconify:hover {
     width: 50%;
     background: hsl(353, 82%, 80%);
     border-radius: 50%;
 }
+=======
+/**************************************************OFERTAS*******************************************************************************/
+.ofertas {
+    background: #fff;
+}
+
+.ofertas h2 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-align: center;
+    font-size: 50px;
+    color: #EF233C;
+    margin-bottom: 50px;
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* -webkit-box-shadow: 5px 5px 11px -6px #000000; 
+    box-shadow: 5px 5px 11px -6px #000000; */
+}
+
+#marquee {
+    padding: 50px 0px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+#marquee .ofertas {
+    overflow: hidden;
+    width: 100%;
+}
+
+#marquee .pic-container {
+    display: flex;
+    animation: marquee 50s infinite linear;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/**************************************************CATEGORIAS*******************************************************************************/
+#categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.category-name p {
+    text-align: center;
+    margin-top: -280px;
+    margin-bottom: 170px;
+    margin-left: 90px;
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 900;
+    font-size: 60px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.548);
+}
+
+.category-name {
+    opacity: 0;
+}
+
+.category-name:hover {
+    opacity: 1;
+}
+
+#categories img {
+    margin: 80px;
+    width: 90%;
+    /* opacity: 0.8; */
+}
+
+
+/* #categories img:hover {
+    opacity: 0.3;
+} */
+
+.category-title {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#category-title {
+    background: #ef233c;
+}
+
+#categories a, p {
+    text-decoration: none;
+}
+
+/*#categories p {
+    display: none;
+}*/
+
+/**************************************************BRANDS*******************************************************************************/
+
+.marcas {
+    background: hsl(236, 17%, 80%);;
+}
+
+.brands {
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+.brands img {
+    margin: 20px;
+    width: 10%;
+}
+
+.marvel {
+    height: 75%;
+}
+
+
+#about-us {
+    margin-top: 200px;
+}
+
+
+/**************************************************SLIDESHOW*******************************************************************************/
+#slider {
+    overflow: hidden;
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 10s slider infinite;
+    margin-top: 20px;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% { left: 0; }
+    20% { left: 0; }
+    25% { left: -100% }
+    45% { left: -100% }
+    50% { left: -200% }
+    70% { left: -200% }
+    75% { left: -300% }
+    95% { left: -300% }
+    100% { left: -400% }
+}
+
+/**************************************************SLIDESHOW*******************************************************************************/
+.options {
+    background: #515372;
+    height: 80px;
+    margin-top: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info i, p {
+    color: #fff;
+}
+
+.info i {
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.info p {
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+.opciones-pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.opciones-envio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.politica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+    margin-top: 24px;
+}
+.nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+
+/**************************************************MENU*******************************************************************************/
+nav {
+    margin-top: 60px;
+}
+
+.navigation {
+    position: relative;
+    width: 350px;
+    height: 70px;
+    background: #f53b57;
+    border-radius: 35px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: auto;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+
+.navigation .list .icon {
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+/*.navigation ul li:hover a .icon,*/
+.navigation ul li.active a .icon {
+    color: #f53b57;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    
+    background: #fff;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0,0.1);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation ul li:hover a .title {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 50%);
+}
+
+.navigation ul li a .title::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    bottom: -8px;
+    left: 48%;
+    transform: rotate(45deg) translateX(-50%);
+    border-radius: 2px;
+}
+
+.navigation ul .indicator {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    /*background: #ff0;*/
+    transition: 0.5s;
+}
+
+.navigation ul .indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+}
+
+
+
+.navigation ul li:nth-child(1).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator::before {
+    background: #fff;
+}
+
+
+/* MEDIA QUIERIES */
+
+/*@media (min-width: 480px) {
+  /*   header {
+        width: 100vw;
+    }
+
+    .top-bar{
+        width: 100%;
+        height: 20px;
+    } */
+    
+    /* .logo-kruto img {
+        width: 20%;
+        
+    } */
+
+    /*main {
+        width: 100vw;
+    }
+
+    /* .imagen {
+        width: 100%;
+        margin: auto;
+    }
+
+    .imagen img {
+        width: 20%;
+        margin: auto;
+    } */
+
+/*     .productos {
+        width: 100%;
+        margin: auto;
+    }
+
+    .productos img {
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .sales {
+        margin: auto;
+        width: 100%;  
+    }
+
+    .sales_pic {
+        margin: auto;
+        width: 100%;
+    }
+
+    .sales_pic img {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .categories {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .categories_prod {
+        margin: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .categories_prod img {
+        margin: auto;
+        width: 100%;
+    }
+
+    h3 {
+        margin: auto;
+        padding:0px;
+        font-size: 1em;
+    }
+
+    .options {
+        width: 100%;
+        font-size: small;
+    }
+
+    .options nav {
+        display: block;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    footer {
+        width: 100%;
+        margin: auto;
+    }
+
+    footer .menu {
+        width: 40%;
+    }
+
+    footer .menu nav {
+        padding: 0%;
+        margin: auto;
+    }
+
+    footer .menu ul{
+        flex-wrap: nowrap;
+        padding: 5px;
+    }
+
+    footer .menu ul li a{
+        padding: 5px;
+    }
+    footer .menu ul li .iconify {
+        width: 20px;
+    } */
+
+
+/*@media (max-width: 1200px) {
+    header {
+        width: 100vw;
+    }
+
+    .top-bar{
+        width: 100%;
+        height: 20px;
+    }
+    
+    .logo-kruto img {
+        width: 20%;
+        
+    }
+
+    main {
+        width: 100vw;
+    }
+
+    .imagen {
+        width: 100%;
+        margin: auto;
+    }
+
+    .imagen img {
+        margin: auto;
+        width: 100%;
+    }
+
+    .productos {
+        width: 100%;
+        margin: auto;
+    }
+
+    .productos img {
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .sales {
+        margin: auto;
+        width: 100%;  
+    }
+
+    .sales_pic {
+        margin: auto;
+        width: 100%;
+    }
+
+    .sales_pic img {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .categories {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .categories_prod {
+        margin: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .categories_prod img {
+        margin: auto;
+        width: 100%;
+    }
+
+    h3 {
+        margin: auto;
+        padding:0px;
+        font-size: 1em;
+    }
+
+    
+    footer {
+        width: 100%;
+        margin: auto;
+    }
+
+    footer .menu {
+        width: 30%;
+    }
+
+    footer .menu nav {
+        padding: 0%;
+    }
+
+    footer .menu ul{
+        flex-wrap: nowrap;
+        padding: 5px;
+    }
+
+    footer .menu ul li a{
+        padding: 10px;
+    }
+    
+    footer .menu ul li .iconify {
+        width: 30px;
+    } */
+
+>>>>>>> forms:src/public/css/styles.css
 
 /* SHOPPING CART */
 
 /* HEADER */
-header#shoppingCart {
+/* header#shoppingCart {
     width: 100vw;
 }
 
@@ -287,8 +946,13 @@ header#shoppingCart section .top-bar {
 
 /* MAIN */
 
+<<<<<<< HEAD:src/public/css/style.css
 #shop {
     width: 100%;
+=======
+/* #shop {
+    width: 100vw;
+>>>>>>> forms:src/public/css/styles.css
     margin:auto;
     margin-top: 40px;
     font-family: Gotham;
@@ -646,6 +1310,7 @@ input placeholder {
     border: 0px;
     border-radius: 20px;
     margin: auto;
+<<<<<<< HEAD:src/public/css/style.css
 }
 
 footer {
@@ -686,3 +1351,6 @@ footer {
         margin-top: 5px;
     }
 }
+=======
+} */ 
+>>>>>>> forms:src/public/css/styles.css

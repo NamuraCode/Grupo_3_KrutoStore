@@ -34,5 +34,9 @@ app.get('/register',(req,res)=>{
 
 app.get('/index',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/index.html'))
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> forms

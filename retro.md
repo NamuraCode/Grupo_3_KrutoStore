@@ -29,3 +29,20 @@
 ## Stop doing 
 
 * Aplazar menos las reuniones. 
+
+
+# RETROSPECTIVA TERCER SPRINT
+
+## Comenzar a hacer
+* Organizar las carpetas 
+* Crear carpetas de rutas
+* Implementar modula EJS
+* Modificar metodos de lso controladores para usar rendering.
+* Separar las vistas en carpetas
+* Dentro de carpeta VIEW crear carpeta para products y users.
+* Separar los componentes repetidos en archivos parciales
+* Formularios de carga y edicion de productos
+
+## Hacer más 
+* Mejorar los estilos
+* 

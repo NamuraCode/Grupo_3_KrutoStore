@@ -4,4 +4,6 @@ const controller = require('../controller/index.controller');
 
 router.get('/', controller.index);
 
+router.get('/', controller.productCart);
+
 module.exports = router;

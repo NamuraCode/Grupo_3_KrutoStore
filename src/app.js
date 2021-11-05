@@ -32,8 +32,8 @@ app.get('/register',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/register.html'))
 });
 
-app.get('/index',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/index.html'))
+app.get('/productForm',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./view/productForm.html'))
 
 });
 

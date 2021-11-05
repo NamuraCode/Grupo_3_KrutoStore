@@ -3,7 +3,7 @@
 @import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
 
 
-/* @font-face {
+@font-face {
     font-family: 'Arigatou';
     src: url(./fonts/aArigatouGozaimasu.ttf);
 }
@@ -11,7 +11,7 @@
 @font-face {
     font-family: "futura std book";
     src: url(./FuturaStdBook.otf);
-} */
+}
 
 
 *{

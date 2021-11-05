@@ -7,8 +7,9 @@ controller = {
     productCart:(req,res)=>{
         res.sendFile(path.join(__dirname,'./view/productCart.html'))
     },
-    
-
+    products:(req,res)=>{
+        res.sendFile(path.join(__dirname,'./view/products.html'))
+    }
 }
 
 module.exports = controller;

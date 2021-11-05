@@ -11,11 +11,9 @@ app.listen(port,()=>{
 });
 app.use('/', routers);
 
-app.use('/productCart', productCart);
+app.use('/productCart', routers);
 
-app.get('/products',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/products.html'))
-});
+app.get('/products', routers);
 
 app.get('/login',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/login.html'))

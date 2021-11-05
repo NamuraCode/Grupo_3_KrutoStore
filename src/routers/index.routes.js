@@ -6,4 +6,6 @@ router.get('/', controller.index);
 
 router.get('/', controller.productCart);
 
+router.get('/', controller.products)
+
 module.exports = router;

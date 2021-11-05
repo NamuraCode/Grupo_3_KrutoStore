@@ -869,6 +869,12 @@ header#shoppingCart section .top-bar {
     padding: 10px;
 }
 
+.intro ul {
+    list-style: none;
+    width: 80%;
+    align-items: center;
+}
+
 .intro ul li {
     text-decoration: none;
     text-align: left;
@@ -938,7 +944,7 @@ header#shoppingCart section .top-bar {
 } 
 
 .product1 {
-    width: 90%;
+    width: 95%;
     height: 60px;
     margin: auto;
     margin-top: 15px;
@@ -949,7 +955,7 @@ header#shoppingCart section .top-bar {
 }
 
 .product2 {
-    width: 90%;
+    width: 95%;
     height: 60px;
     margin: auto;
     margin-top: 15px;
@@ -983,6 +989,7 @@ header#shoppingCart section .top-bar {
     align-items: center;
     margin: auto;
     margin-right: 0px;
+    margin-top: 10px;
 }
 
 .price {
@@ -993,10 +1000,10 @@ header#shoppingCart section .top-bar {
 
 .price li p {
     display: block;
-    width: 60px;
+    width: 65px;
     margin: 5px;
-    padding: 5px;
-    text-align: left;
+    margin-right: 20px;
+    padding: 8px;
     justify-content:flex-start;
     background: white;
     color: black;
@@ -1004,8 +1011,10 @@ header#shoppingCart section .top-bar {
 }
 
 .price li .quantity {
+    margin: auto;
+    margin-right: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     border: 0px white;
 }
 
@@ -1041,6 +1050,11 @@ header#shoppingCart section .top-bar {
     padding: 20px;
     position: relative;
 }
+
+.subtotal p{
+    color: black;
+}
+
  .subtotal .continue {
     position: absolute;
     right: 50px;

@@ -19,9 +19,7 @@ app.get('/login', routers);
 
 app.get('/productDetail', routers);
 
-app.get('/register',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/register.html'))
-});
+app.get('/register', routers);
 
 app.get('/index',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/index.html'))

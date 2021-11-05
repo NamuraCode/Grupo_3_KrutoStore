@@ -21,9 +21,6 @@ app.get('/productDetail', routers);
 
 app.get('/register', routers);
 
-app.get('/index',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/index.html'))
-
-});
+app.get('/index', routers);
 
 

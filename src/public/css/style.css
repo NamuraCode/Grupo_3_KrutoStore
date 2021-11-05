@@ -825,7 +825,7 @@ nav {
 /* SHOPPING CART */
 
 /* HEADER */
-/* header#shoppingCart {
+header#shoppingCart {
     width: 100vw;
 }
 
@@ -845,16 +845,18 @@ header#shoppingCart section .top-bar {
 
 /* MAIN */
 
-/* #shop {
+#shop {
     width: 100vw;
     margin:auto;
     margin-top: 40px;
-    display: flex;
-    justify-content: center;
+    font-family: Gotham;
+    font-size: 14px;
 }
 
 #shop .top-section {
-    width: 45%;
+    width: 90%;
+    margin: auto; 
+    margin-bottom: 10px;
     background: white;
     border: 2px solid #E5E5E5;
     border-radius: 30px;
@@ -865,12 +867,6 @@ header#shoppingCart section .top-bar {
     flex-direction: row;
     justify-content: center;
     padding: 10px;
-}
-
-.intro ul {
-    list-style: none;
-    width: 80%;
-    align-items: center;
 }
 
 .intro ul li {
@@ -912,6 +908,7 @@ header#shoppingCart section .top-bar {
 .details {
     width: 90%;
     margin: auto;
+    position: relative;
 }
 
 .details .elements {
@@ -924,7 +921,6 @@ header#shoppingCart section .top-bar {
 
 .details .elements .desc {
     display: block;
-
 }
 
 .desc ul {
@@ -949,6 +945,7 @@ header#shoppingCart section .top-bar {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .product2 {
@@ -959,6 +956,7 @@ header#shoppingCart section .top-bar {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .product_icon {
@@ -980,12 +978,11 @@ header#shoppingCart section .top-bar {
 }
 
 .product_det {
-    width: 40%;
-    display: flex;
-    justify-content:flex-end;
+    width: 65%;
+    justify-content:space-around;
+    align-items: center;
     margin: auto;
     margin-right: 0px;
-
 }
 
 .price {
@@ -1007,24 +1004,32 @@ header#shoppingCart section .top-bar {
 
 .price li .quantity {
     text-align: center;
+    padding: 20px;
+    border: 0px white;
 }
 
 .product1 {
-    background: hsl(236, 17%, 93%);
-    
+    background: hsl(236, 17%, 93%);   
 }
 
 .product2 {
     background: hsl(353, 82%, 90%);
 }
 
-.product1 .iconify{
+.product1 .clear .iconify{
     color: #515372;
-
+    font-size: 25px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0px;
 }
 
 .product2 .iconify {
     color: #EF233C;
+    font-size: 25px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0px;
 }
 
 .subtotal {
@@ -1191,4 +1196,4 @@ input placeholder {
     border: 0px;
     border-radius: 20px;
     margin: auto;
-} */ 
+}

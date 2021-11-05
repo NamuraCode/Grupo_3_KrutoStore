@@ -1123,6 +1123,7 @@ header#shoppingCart section .top-bar {
 
 .mainInfo label {
     padding: 10px;
+    color: black;
 }
 
 .mainInfo input {
@@ -1149,9 +1150,15 @@ input placeholder {
     justify-content: space-around;
 }
 
+.cardInfo label {
+    padding: 10px;
+    color: black;
+}
+
 .cardInfo input {
     margin: auto;
     margin-bottom: 20px;
+    margin-top: 10px;
     width: 60%;
     height: 25px;
     padding: 10px;

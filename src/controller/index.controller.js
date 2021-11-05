@@ -1,8 +1,8 @@
-const paht = require('paht');
+const path = require('path');
 
 controller = {
     index: (req, res) => {
-        res.sendFile(path.join(__dirname, '../view/index.html'))
+        res.sendFile(path.resolve(__dirname, '../view/index.html'))
     }
 }
 

@@ -3,14 +3,13 @@ const app = express();
 const path = require('path');
 const publicPath = path.resolve(__dirname,'./public');
 const port = process.env.PORT || 3000;
+const routers = require('./routers/index.routes')
 
 app.use(express.static(publicPath));
 app.listen(port,()=>{
     console.log('listen on')
 });
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/index.html'))
-});
+app.use('/', routers);
 
 app.get('/productCart',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/productCart.html'))

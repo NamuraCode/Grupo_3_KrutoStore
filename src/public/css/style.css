@@ -999,6 +999,7 @@ header#shoppingCart section .top-bar {
     text-align: left;
     justify-content:flex-start;
     background: white;
+    color: black;
     border-radius: 10px;
 }
 
@@ -1024,7 +1025,7 @@ header#shoppingCart section .top-bar {
     right: 0px;
 }
 
-.product2 .iconify {
+.product2 .clear .iconify {
     color: #EF233C;
     font-size: 25px;
     margin-top: 10px;
@@ -1043,7 +1044,7 @@ header#shoppingCart section .top-bar {
  .subtotal .continue {
     position: absolute;
     right: 50px;
-    bottom: 2px;
+    bottom: 25px;
     margin: auto;
 }
 
@@ -1058,10 +1059,10 @@ header#shoppingCart section .top-bar {
 }
 
 #shop .clientInfo {
-    width: 45%;
+    width: 90%;
+    height: 590px;
+    margin: auto;
     background: hsl(238, 16%, 93%);
-    border: 2px solid #E5E5E5;
-    padding: 10px;
     border-radius: 30px;
 }
 
@@ -1071,7 +1072,6 @@ header#shoppingCart section .top-bar {
     padding: 20px;
     padding-left: 20px;
     margin-left: 20px;
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -1090,8 +1090,7 @@ header#shoppingCart section .top-bar {
     background: white;
     border-radius: 10px;
     padding: 40px;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 .payment {
@@ -1113,13 +1112,12 @@ header#shoppingCart section .top-bar {
 
 .clientCard {
     width: 100%;
-    height: 200px;
     margin: auto;
 }
 
 .clientCard form {
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 90%;
 }
 
@@ -1129,7 +1127,7 @@ header#shoppingCart section .top-bar {
 
 .mainInfo input {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
     width: 100%;
     height: 25px;
@@ -1153,7 +1151,7 @@ input placeholder {
 
 .cardInfo input {
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 60%;
     height: 25px;
     padding: 10px;
@@ -1162,38 +1160,78 @@ input placeholder {
 }
 
 .total {
-    width: 80%;
+    width: 60%;
     height: 40px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 20px;
     background: hsl(353, 82%, 80%);
     border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .total .total-p {
     color: white;
-    padding: 20px;
-    margin-left: 20px;
+    display: flex;
 }
 
-.total-price {
-    background: white;
-    border-radius: 10px;
-    width: 90px;
-    height: 20;
+.total .total-p p {
+    font-size: 14px;
     padding-right: 10px;
+} 
+
+.total-p .total-price {
+    margin: auto;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    width: 75px;
+    font-size: 12px;
     text-align: center;
 }
 
 .total button {
     color: white;
     background: hsl(353, 82%, 50%);
-    width: 90px;
+    width: 80px;
     height: 25px;
+    font-size: 12px;
     border: 0px;
     border-radius: 20px;
     margin: auto;
+}
+
+footer {
+    width: 100vw;
+}
+
+#shoppingCart .bottom-bar {
+    width: 100vw;
+    height: 30px;
+    margin:auto;
+    background: #515372;
+    color: #515372;
+}
+
+.product_icon .clear .iconify {
+    text-align: left;
+    position: absolute;
+    right: 0px;
+}
+
+@media (min-width: 769px) {
+    #shop {
+        display: flex;
+        width: 90%;
+    }
+    .details {
+        position: relative;
+    }
+    
+    .details .elements .desc {
+        display: block;
+        position: absolute;
+        right: 70px;
+    }   
 }

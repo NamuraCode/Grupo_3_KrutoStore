@@ -15,13 +15,9 @@ app.use('/productCart', routers);
 
 app.get('/products', routers);
 
-app.get('/login',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/login.html'))
-});
+app.get('/login', routers);
 
-app.get('/productDetail',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./view/productDetail.html'))
-});
+app.get('/productDetail', routers);
 
 app.get('/register',(req,res)=>{
     res.sendFile(path.join(__dirname,'./view/register.html'))

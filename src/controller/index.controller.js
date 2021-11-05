@@ -9,6 +9,12 @@ controller = {
     },
     products:(req,res)=>{
         res.sendFile(path.join(__dirname,'./view/products.html'))
+    },
+    login:(req,res)=>{
+        res.sendFile(path.join(__dirname,'./view/login.html'))
+    },
+    productDetail:(req,res)=>{
+        res.sendFile(path.join(__dirname,'./view/productDetail.html'))
     }
 }
 

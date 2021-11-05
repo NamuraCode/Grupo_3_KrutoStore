@@ -5,19 +5,19 @@ controller = {
         res.sendFile(path.resolve(__dirname, '../view/index.html'))
     },
     productCart:(req,res)=>{
-        res.sendFile(path.join(__dirname,'./view/productCart.html'))
+        res.sendFile(path.join(__dirname,'../view/productCart.html'))
     },
     products:(req,res)=>{
-        res.sendFile(path.join(__dirname,'./view/products.html'))
+        res.sendFile(path.join(__dirname,'../view/products.html'))
     },
     login:(req,res)=>{
-        res.sendFile(path.join(__dirname,'./view/login.html'))
+        res.sendFile(path.join(__dirname,'../view/login.html'))
     },
     productDetail:(req,res)=>{
-        res.sendFile(path.join(__dirname,'./view/productDetail.html'))
+        res.sendFile(path.join(__dirname,'../view/productDetail.html'))
     },
     register:(req,res)=>{
-        res.sendFile(path.join(__dirname,'./view/register.html'))
+        res.sendFile(path.join(__dirname,'../view/register.html'))
     }
 }
 

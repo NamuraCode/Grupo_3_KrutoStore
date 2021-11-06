@@ -11,7 +11,7 @@ app.listen(port,()=>{
     console.log('listen on')
 });
 
-app.set('view','./views')
+app.set('views','./views')
 
 app.set('view engine', 'ejs')
 

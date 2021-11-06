@@ -2,7 +2,7 @@ const path = require('path');
 
 controller = {
     index: (req, res) => {
-        res.render('index.ejs')
+        res.render('index')
     },
 
     productCart:(req,res)=>{

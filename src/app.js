@@ -6,9 +6,15 @@ const port = process.env.PORT || 3000;
 const routers = require('./routers/index.routes')
 
 app.use(express.static(publicPath));
+
 app.listen(port,()=>{
     console.log('listen on')
 });
+
+app.set('view','./views')
+
+app.set('view engine', 'ejs')
+
 app.use('/', routers);
 
 app.use('/productCart', routers);

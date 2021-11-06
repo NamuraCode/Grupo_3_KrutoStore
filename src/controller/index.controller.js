@@ -2,22 +2,27 @@ const path = require('path');
 
 controller = {
     index: (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../view/index.html'))
+        res.render('index.ejs')
     },
+
     productCart:(req,res)=>{
-        res.sendFile(path.join(__dirname,'../view/productCart.html'))
+        res.render('productCart')
     },
+
     products:(req,res)=>{
-        res.sendFile(path.join(__dirname,'../view/products.html'))
+        res.render('products')
     },
+
     login:(req,res)=>{
-        res.sendFile(path.join(__dirname,'../view/login.html'))
+        res.render('login')
     },
+
     productDetail:(req,res)=>{
-        res.sendFile(path.join(__dirname,'../view/productDetail.html'))
+        res.render('productDetail')
     },
+
     register:(req,res)=>{
-        res.sendFile(path.join(__dirname,'../view/register.html'))
+        res.render('register')
     }
 }
 

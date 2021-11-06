@@ -38,3 +38,141 @@ header{
      margin: auto;
      padding-bottom: 20px;
  }
+
+
+ 
+ .product_detail {
+    width: 100%;
+    height: 60%;
+}
+
+/* .details {
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.details .elements {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 28px;
+}
+
+.details .elements .desc {
+    display: block;
+}
+
+.desc ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.desc ul li {
+    display: block;
+    margin: auto;
+    margin-right: 15px;
+    margin-left: 10px;
+    justify-content: space-between;
+} 
+
+.product1 {
+    width: 95%;
+    height: 60px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.product2 {
+    width: 95%;
+    height: 60px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.product_icon {
+    width: 35%;
+    display: flex;
+    padding: 10px;
+}
+
+.icon {
+    background: white;
+    width: 30px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.product_icon .product_ref {
+    list-style: none;
+    margin: auto;
+}
+
+.product_det {
+    width: 65%;
+    justify-content:space-around;
+    align-items: center;
+    margin: auto;
+    margin-right: 0px;
+    margin-top: 10px;
+}
+
+.price {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.price li p {
+    display: block;
+    width: 65px;
+    margin: 5px;
+    margin-right: 20px;
+    padding: 8px;
+    justify-content:flex-start;
+    background: white;
+    color: black;
+    border-radius: 10px;
+}
+
+.price li .quantity {
+    margin: auto;
+    margin-right: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 0px white;
+}
+
+.product1 {
+    background: hsl(236, 17%, 93%);   
+}
+
+.product2 {
+    background: hsl(353, 82%, 90%);
+}
+
+.product1 .clear .iconify{
+    color: #515372;
+    font-size: 25px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0px;
+}
+
+.product2 .clear .iconify {
+    color: #EF233C;
+    font-size: 25px;
+    margin-top: 10px;
+    position: absolute;
+    right: 0px;
+} */

@@ -16,4 +16,6 @@ router.get('/register', controller.register)
 
 router.get('/index', controller.index)
 
+router.get('/productForm', controller.productForm)
+
 module.exports = router;

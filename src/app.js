@@ -19,8 +19,8 @@ app.get('/login', routers);
 
 app.get('/productDetail', routers);
 
+app.get('/productForm', routers);
+
 app.get('/register', routers);
 
 app.get('/index', routers);
-
-

@@ -18,6 +18,9 @@ controller = {
     },
     register:(req,res)=>{
         res.sendFile(path.join(__dirname,'../view/register.html'))
+    }, 
+    productForm:(req,res)=>{
+        res.sendFile(path.join(__dirname,'../view/productForm.html'))
     }
 }
 

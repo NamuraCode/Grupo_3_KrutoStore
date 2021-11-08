@@ -22,8 +22,8 @@
 
 
 header{
-   width: 100vw;
-   background: #ef233c;
+    width: 100vw;
+    background: #ef233c;
 }
 
 .top-bar{
@@ -40,122 +40,9 @@ header{
     padding-bottom: 20px;
 }
 
-
-/* .logo-kruto img {
-    display: block;
-    width: 100px;
-    margin:auto;
-    padding: 10px;
-} */
-
 main{
     width: 100vw;
 }
-
-/* .imagen{
-    display: block;
-    text-align: center;
-    width: 100%;
-}
-
-.imagen img {
-    width: 600px;
-}
-
-.productos{
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    background: hsl(236, 17%, 80%);
-}
-
-.productos img {
-    display: block;
-    margin: auto;
-    width: 10%;
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-
-.sales_pic {
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-
-.sales {
-    text-align: center;
-    margin-top: 40px;
-    padding: 10px;
-    margin: auto;
-}
-
-.categories {
-    text-align: center;
-    padding: 25px;
-    color: white;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: "aArigatouGozaimasu", sans-serif;
-    background: #EF233C;
-}
-
-.categories_prod {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    padding: 60px;
-}
-
-.categories_prod div {
-    width: 40%;
-    margin: auto;
-    padding: 20px;
-    padding-top: 20px;
-    border: 1px solid hsl(353, 82%, 90%);
-}
-
-.categories_prod img {
-    width: 160px;
-}
-
-.options {
-    width: 100vw;
-    margin: auto;
-    margin-bottom: 80px;
-    background: #515372;
-}
-
-.options nav {
-    width: 80%;
-    margin: auto;
-    padding: 15px;
-    color: white;    
-}
-
-.options ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.options ul li {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.options ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-} */
 
 footer {
     width: 100vw;
@@ -216,8 +103,6 @@ footer ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* -webkit-box-shadow: 5px 5px 11px -6px #000000; 
-    box-shadow: 5px 5px 11px -6px #000000; */
 }
 
 #marquee {
@@ -283,10 +168,6 @@ footer ul li a{
     /* opacity: 0.8; */
 }
 
-
-/* #categories img:hover {
-    opacity: 0.3;
-} */
 
 .category-title {
     font-family: 'Montserrat';

@@ -23,7 +23,11 @@ controller = {
 
     register:(req,res)=>{
         res.render('register')
-    }
+    },
+
+    productForm:(req,res)=>{
+        res.render('productForm')
+    },
 }
 
 module.exports = controller;

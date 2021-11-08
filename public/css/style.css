@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'Arigatou';
-    src: url(./fonts/aArigatouGozaimasu.ttf);
+    src: url(./fonts/Arigatou.ttf);
 }
 
 @font-face {
@@ -40,19 +40,11 @@ header{
     padding-bottom: 20px;
 }
 
-
-/* .logo-kruto img {
-    display: block;
-    width: 100px;
-    margin:auto;
-    padding: 10px;
-} */
-
 main{
     width: 100vw;
 }
 
-/* .imagen{
+.imagen{
     display: block;
     text-align: center;
     width: 100%;
@@ -155,7 +147,7 @@ main{
     color: white;
     text-decoration: none;
     padding: 8px;
-} */
+}
 
 footer {
     width: 100vw;
@@ -480,13 +472,13 @@ nav {
 .navigation ul li a .icon {
     position: relative;
     display: block;
-    line-height: 75px;
+    /* line-height: 75px; */
     text-align: center;
     transition: 0.5s;
 }
 
 /*.navigation ul li:hover a .icon,*/
-.navigation ul li.active a .icon {
+/*.navigation ul li.active a .icon {
     color: #f53b57;
 }
 
@@ -533,8 +525,8 @@ nav {
     width: 70px;
     height: 70px;
     /*background: #ff0;*/
-    transition: 0.5s;
-}
+   /* transition: 0.5s;
+}/* 
 
 .navigation ul .indicator::before {
     content: '';
@@ -589,7 +581,7 @@ nav {
 
 .navigation ul li:nth-child(5).active ~ .indicator::before {
     background: #fff;
-}
+} */
 
 
 /* MEDIA QUIERIES */

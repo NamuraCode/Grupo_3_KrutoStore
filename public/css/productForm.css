@@ -18,6 +18,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Gotham;
 }
 /* ------------HEADER------------------ */
 header{
@@ -40,49 +41,123 @@ header{
  }
 
 /* -------------------MAIN----------------- */
-
+main {
+    width: 100vw;
+    margin: auto;
+}
 h2 {
     font-family: a Arigatou Gozaimasu;
     text-align: center;
     margin: auto;
     padding: 30px;
     color: hsl(353, 82%, 50%);
-
 }
 
-.details {
-    width: 90vw;
-}
-
- .details .producto {
-    width: 90%;
-    margin: auto;
+.actions {
+    width: 95%;
     display: flex;
-    position: relative;
+    margin: auto;
+    margin-right: 10px;
+}
+
+.actions ul {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
     padding: 10px;
 }
 
-.details .actions ul{
+.actions div {
     width: 60%;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.actions ul li {
     list-style: none;
-    display: flex;
     margin: auto;
-    padding-left: 25px;
-    padding-right: 28px;
+    margin-right: 10px;
 }
 
-.actions li {
-    margin: auto;
-    margin-right: 30px ;
-}
-.product1 {
+.items {
     width: 95%;
-    height: 60px;
-    margin: auto;
-    margin-top: 15px;
-    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    position: relative;
+    margin: auto;
+    background: hsl(353, 82%, 90%);
+    border-radius: 20px;
 }
 
+.items ul {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.items ul div {
+    width: 80%;
+}
+
+.items ul li {
+    list-style: none;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    margin-left: 0%;
+}
+
+img {
+    width: 100%;
+    border: 1px solid #515372;
+    border-radius: 20%;
+}
+
+.items .iconify {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+@media (min-width: 769px) {
+    .actions ul{
+        width: 95%;
+    }
+    .items section div {
+        width: 50%;
+    }
+
+    .actions ul li {
+        width: 26%;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+    
+    .items ul li {
+        width: 26%;
+        margin-left: 20px;
+        margin-right: 60px;
+    }    
+}
+
+@media (min-width: 1200px) {
+    .actions ul{
+        width: 95%;
+    }
+    .items section div {
+        width: 40%;
+    }
+
+    .actions ul li {
+        width: 20%;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+    
+    .items ul li {
+        width: 30%;
+        margin-left: 20px;
+        margin-right: 60px;
+    } 
+}

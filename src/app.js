@@ -30,3 +30,5 @@ app.get('/productForm', routers);
 app.get('/register', routers);
 
 app.get('/index', routers);
+
+app.get('/addProduct', routers)

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
+
+@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+
+
+@font-face {
+    font-family: 'Arigatou';
+    src: url(./fonts/Arigatou.ttf);
+}
+
+@font-face {
+    font-family: "futura std book";
+    src: url(./FuturaStdBook.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+

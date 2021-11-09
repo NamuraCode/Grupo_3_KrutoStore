@@ -591,6 +591,10 @@ header#shoppingCart section .top-bar {
     color: #515372;
 }
 
+#shoppingCart {
+    width: 100vw;
+}
+
 #shoppingCart section .top-bar {
     width: 100%;
     height: 30px;

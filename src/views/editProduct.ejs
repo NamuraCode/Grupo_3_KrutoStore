@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link rel="stylesheet" href="./css/addProduct.css">
+    <link rel="stylesheet" href="./css/editProduct.css">
     <title>Agregar Producto</title>
 </head>
 
@@ -16,13 +16,13 @@
 
     <main>
         <div class="container" id="container">
-            <div class="container-form add-container">
+            <div class="container-form edit-container">
                 <h2>Edita un producto</h2>
-                
-                <img src=".\images\productos\chibi1.png" alt="">
-            
                 <form action="/products" method="post">
-                    <div class="newProduct-container">
+                    <div class="editProduct-container">
+                    <div class="container-edit">
+                        <img src=".\images\productos\chibi1.png" alt="">
+                    </div>
                         <input class="file" type="file" name="new-porduct" id="product">
                         <p>
                             <label for="product-name">Nombre del Producto</label>

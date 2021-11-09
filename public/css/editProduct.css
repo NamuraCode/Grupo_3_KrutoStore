@@ -44,22 +44,29 @@ h2 {
     padding: 20px;
 }
 
-img {
-    width: 10%;
-}
-
 .container-form {
     margin: auto;
     padding: 20px;
-    letter-spacing: 1px;
     height: 100%;
 }
 
-.newProduct-container {
+.editProduct-container {
     width: 100%;
     margin: auto;
     line-height: 35px;
     font-size: 14px;
+}
+
+.container-edit {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid hsl(353, 82%, 80%);
+    border-radius: 20%;
+}
+
+.container-edit img {
+    width: 100%;
 }
 
 input {

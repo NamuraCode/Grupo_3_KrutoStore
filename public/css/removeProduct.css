@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
+
+@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+
+
+@font-face {
+    font-family: 'Arigatou';
+    src: url(./fonts/Arigatou.ttf);
+}
+
+@font-face {
+    font-family: "futura std book";
+    src: url(./FuturaStdBook.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gotham;
+}
+
+body {
+    width: 100vw;
+    height: 100vw;
+    margin: auto;
+
+}
+/* MAIN */
+.container {
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    border-radius: 30px;
+    border: 1px solid #515372;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-family: a arigatou gozaimasu, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container-form {
+    margin: auto;
+    padding: 20px;
+    height: 100%;
+}
+
+.removeproduct-container {
+    width: 100%;
+    margin: auto;
+    line-height: 35px;
+    font-size: 14px;
+}
+
+.container-remove {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid hsl(353, 82%, 80%);
+    border-radius: 20%;
+}
+
+.container-remove img {
+    width: 100%;
+}
+
+input {
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 1px solid hsl(353, 82%, 80%);
+}
+
+.file{
+    width: 90%;
+    border-radius: 20px;
+    border: 1px solid hsl(353, 82%, 80%);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    border-radius: 20px;
+	border: 1px solid hsl(353, 82%, 70%);
+	background-color: hsl(353, 82%, 70%);
+	color: #FFFFFF;
+}
+
+@media (min-width: 769px) {
+   .container{
+        width: 40%;
+        height: 60%;
+    }   
+}
+
+@media (min-width: 1200px) {
+    .container{
+         width: 20%;
+         height: 60%;
+     }   
+ }

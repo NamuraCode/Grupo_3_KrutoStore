@@ -22,4 +22,7 @@ router.get('/addProduct', controller.addProduct)
 
 router.get('/editProduct', controller.editProduct)
 
+router.get('/removeProduct', controller.removeProduct)
+
+
 module.exports = router;

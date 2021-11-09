@@ -34,3 +34,5 @@ app.get('/index', routers);
 app.get('/addProduct', routers);
 
 app.get('/editProduct', routers);
+
+app.get('/removeProduct', routers);

@@ -44,7 +44,6 @@ main{
     width: 100vw;
 }
 
-<<<<<<< HEAD
 .imagen{
     display: block;
     text-align: center;
@@ -150,8 +149,6 @@ main{
     padding: 8px;
 }
 
-=======
->>>>>>> fd9e27b6fbece489a1c35dfe1e8024d691c9fb08
 footer {
     width: 100vw;
     margin: auto;
@@ -457,7 +454,6 @@ footer ul li a {
     padding: 15px;
 }
 
-<<<<<<< HEAD
 .navigation ul li a .icon {
     position: relative;
     display: block;
@@ -467,7 +463,7 @@ footer ul li a {
 }
 
 /*.navigation ul li:hover a .icon,*/
-/*.navigation ul li.active a .icon {
+.navigation ul li.active a .icon {
     color: #f53b57;
 }
 
@@ -570,22 +566,22 @@ footer ul li a {
 
 .navigation ul li:nth-child(5).active ~ .indicator::before {
     background: #fff;
-} */
-=======
+} 
+
 .iconify {
     width: 25px;
     height: 25px;
     text-align: center;
     align-items: center;
 }
->>>>>>> fd9e27b6fbece489a1c35dfe1e8024d691c9fb08
 
-
-/** ------------------------------ SHOPPIN CART ------------------------------ **/
+/*------------------------------ SHOPPING CART ------------------------------ */
 
 /* HEADER */
+
 header#shoppingCart {
     width: 100vw;
+
 }
 
 header#shoppingCart section .top-bar {

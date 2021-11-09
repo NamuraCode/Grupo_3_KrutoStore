@@ -36,6 +36,10 @@ controller = {
     editProduct:(req,res) =>{
         res.render('editProduct')
     },
+
+    removeProduct:(req,res) =>{
+        res.render('removeProduct')
+    },
 }
 
 module.exports = controller;

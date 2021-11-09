@@ -8,9 +8,94 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
 </head>
 <body>
-    <div class="container" id="container">
+<!-- ------------------------------- HEADER -------------------------------- -->
+    <header>
+        <section>
+            <div class="top-bar">""
+            </div>
+            <div class="logo-kruto">
+                <!-- <img class="mascota" src=".\images\logos\MASCOTA_BLANCO.png"> -->
+                <a href="/"><img class="logo" src=".\images\logos\logo-kruto-rojo.png" alt="kruto_rojo"></a>
+            </div>
+        </section>
+    </header>
+
+<!-- ----------------------------- FORMULARIO ------------------------------ -->
+    <main>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="social-icons">
+                    <img src="./images/productos/google.png">
+                    <img src="./images/productos/facebook.png">
+                    <img src="./images/productos/twitter.png">
+                </div>
+                <!-- -------------------------------- LOGIN -------------------------------- -->
+                <form id="login" action="#" class="input-group">
+                    <input type="text" class="input-field" placeholder="username" required>
+                    <input type="password" class="input-field" placeholder="password" required>
+                    <input type="checkbox" class="check-box"><span>Recordarme</span>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                <!-- ------------------------------ REGISTER ------------------------------- -->
+                <!-- <form id="register" action="#" class="input-group">
+                    <input type="text" class="input-field" placeholder="username" required>
+                    <input type="email" class="input-field" placeholder="email" required>
+                    <input type="password" class="input-field" placeholder="password" required>
+                    <input type="checkbox" class="check-box"><span>I agree the terms & conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form> -->
+            </div>
+        </div>
+    </main>
+
+<!-- -------------------------------- MENU --------------------------------- -->
+    <footer>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
+                    <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
+                    <li><a href="/productCart"><span class="iconify"
+                                    data-icon="ic:baseline-local-grocery-store"></span></a></li>
+                    <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
+                    <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        let x = document.getElementById("login");
+        let y = document.getElementById("register");
+        let x = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+        
+    </script>
+
+
+
+
+    <!-- <div class="container" id="container">
         <div class="form-container login-container">
             <form action="#">
                 <h1>Login</h1>
@@ -64,6 +149,6 @@
         </section>
         <div class="top-bar">""
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>

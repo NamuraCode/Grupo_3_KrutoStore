@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
-
-@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 @font-face {
     font-family: 'Arigatou';
-    src: url(./fonts/aArigatouGozaimasu.ttf);
+    src: url(./Arigatou.ttf);
 }
 
 @font-face {
@@ -20,7 +18,7 @@
     box-sizing: border-box;
 }
 
-
+/** --------------------------------- HEADER --------------------------------- **/
 header{
     width: 100vw;
     background: #ef233c;
@@ -56,9 +54,6 @@ footer .menu {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
-    /* position: fixed; */
-    /* right: 32%;
-    bottom: 20px; */
 }
 footer nav {
     display: flex;
@@ -91,7 +86,7 @@ footer ul li a{
 }
 
 .ofertas h2 {
-    font-family: 'Montserrat';
+    font-family: 'Arigatou';
     font-weight: 900;
     text-align: center;
     font-size: 50px;
@@ -170,8 +165,7 @@ footer ul li a{
 
 
 .category-title {
-    font-family: 'Montserrat';
-    font-weight: 900;
+    font-family: 'Arigatou';
     font-size: 50px;
     text-align: center;
     color: #fff;

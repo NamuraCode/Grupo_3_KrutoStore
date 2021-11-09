@@ -24,21 +24,21 @@
 header{
     width: 100vw;
     background: #515372;;
- }
- 
- .top-bar{
-     width: 100%;
-     height: 30px;
-     color: #515372;
-     background: #515372;
- }
- 
- .logo {
-     display: block;
-     width: 20%;
-     margin: auto;
-     padding-bottom: 20px;
- }
+}
+
+.top-bar{
+    width: 100%;
+    height: 30px;
+    color: #515372;
+    background: #515372;
+}
+
+.logo {
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
 
 /* -------------------MAIN----------------- */
 main {

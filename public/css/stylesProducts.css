@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 body {
     margin: 0px;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', 'Raleway';
 }
 
 /*HEADER----------------------------------------------------------------*/
@@ -72,45 +74,6 @@ header{
     }
 }
 
-/* .tracking-in-expand-fwd {
-	-webkit-animation: tracking-in-expand-fwd 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	animation: tracking-in-expand-fwd 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-}
-
-@-webkit-keyframes tracking-in-expand-fwd {
-    0% {
-    letter-spacing: -0.5em;
-    -webkit-transform: translateZ(-700px);
-    transform: translateZ(-700px);
-    opacity: 0;
-    }
-    40% {
-    opacity: 0.6;
-    }
-    100% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-    }
-}
-@keyframes tracking-in-expand-fwd {
-    0% {
-    letter-spacing: -0.5em;
-    -webkit-transform: translateZ(-700px);
-    transform: translateZ(-700px);
-    opacity: 0;
-    }
-    40% {
-    opacity: 0.6;
-    }
-    100% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-    }
-} */
-
-
 main .main-products {
     display: flex;
     justify-content: center;
@@ -140,13 +103,13 @@ main .main-products .main-articles img {
     border-radius: 16px;
     margin-top: 0;
     margin-bottom: 20px;
-    background: #515372;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    box-shadow: 0px 8px 6px 1px rgb(0 0 0 / 10%);
 }
 
 main .main-products .main-articles img:hover {
     cursor: pointer;
+    background: #515372;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    box-shadow: 0px 8px 6px 1px rgb(0 0 0 / 10%);
 }
 
 main .main-products .article-description p {
@@ -155,7 +118,8 @@ main .main-products .article-description p {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 12px;
+    font-family: 'Raleway';
 }
 
 main .main-products .main-articles .article-cost p {
@@ -169,7 +133,7 @@ main .main-products .main-articles .article-cost p {
     opacity: 75%;
     top: 6%;
     right: -4%;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 main .main-products .main-articles .article-form {
@@ -292,7 +256,7 @@ main .main-products .main-articles i {
 
 }
 
-/*-------------------------------------------------------------------------------------*/
+/* --------------------------------- FOOTER --------------------------------- */
 
 footer {
     width: 100vw;

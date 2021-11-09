@@ -22,8 +22,8 @@
 
 
 header{
-   width: 100vw;
-   background: #ef233c;
+    width: 100vw;
+    background: #ef233c;
 }
 
 .top-bar{
@@ -44,6 +44,7 @@ main{
     width: 100vw;
 }
 
+<<<<<<< HEAD
 .imagen{
     display: block;
     text-align: center;
@@ -149,6 +150,8 @@ main{
     padding: 8px;
 }
 
+=======
+>>>>>>> fd9e27b6fbece489a1c35dfe1e8024d691c9fb08
 footer {
     width: 100vw;
     margin: auto;
@@ -208,8 +211,6 @@ footer ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* -webkit-box-shadow: 5px 5px 11px -6px #000000; 
-    box-shadow: 5px 5px 11px -6px #000000; */
 }
 
 #marquee {
@@ -275,10 +276,6 @@ footer ul li a{
     /* opacity: 0.8; */
 }
 
-
-/* #categories img:hover {
-    opacity: 0.3;
-} */
 
 .category-title {
     font-family: 'Montserrat';
@@ -423,52 +420,44 @@ footer ul li a{
 
 
 /**************************************************MENU*******************************************************************************/
-nav {
-    margin-top: 60px;
+footer {
+    width: 100vw;
+    margin: auto;
+    margin-top: 20px;
 }
 
-.navigation {
-    position: relative;
-    width: 350px;
-    height: 70px;
-    background: #f53b57;
-    border-radius: 35px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    display: block;
+footer .menu {
+    background: #ef233c;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    position: fixed;
+    right: 40%;
+    bottom: 20px;
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-around;
     margin: auto;
 }
 
-.navigation ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-}
-
-.navigation ul li {
-    position: relative;
+footer ul {
     list-style: none;
-    width: 70px;
-    height: 70px;
-    z-index: 1;
-}
-
-.navigation ul li a {
-    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    color: #333;
-    font-weight: 500;
+    align-content: center;
+    padding: 0px;
 }
 
-.navigation .list .icon {
-    color: #fff;
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    padding: 15px;
 }
 
+<<<<<<< HEAD
 .navigation ul li a .icon {
     position: relative;
     display: block;
@@ -582,239 +571,17 @@ nav {
 .navigation ul li:nth-child(5).active ~ .indicator::before {
     background: #fff;
 } */
+=======
+.iconify {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+}
+>>>>>>> fd9e27b6fbece489a1c35dfe1e8024d691c9fb08
 
 
-/* MEDIA QUIERIES */
-
-/*@media (min-width: 480px) {
-  /*   header {
-        width: 100vw;
-    }
-
-    .top-bar{
-        width: 100%;
-        height: 20px;
-    } */
-    
-    /* .logo-kruto img {
-        width: 20%;
-        
-    } */
-
-    /*main {
-        width: 100vw;
-    }
-
-    /* .imagen {
-        width: 100%;
-        margin: auto;
-    }
-
-    .imagen img {
-        width: 20%;
-        margin: auto;
-    } */
-
-/*     .productos {
-        width: 100%;
-        margin: auto;
-    }
-
-    .productos img {
-        margin: auto;
-        width: 100%;
-
-    }
-
-    .sales {
-        margin: auto;
-        width: 100%;  
-    }
-
-    .sales_pic {
-        margin: auto;
-        width: 100%;
-    }
-
-    .sales_pic img {
-        display: block;
-        text-align: center;
-        margin: auto;
-        width: 80%;
-        padding: 10px;
-    }
-
-    .categories {
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .categories_prod {
-        margin: auto;
-        padding: 10px;
-        justify-content: center;
-    }
-
-    .categories_prod img {
-        margin: auto;
-        width: 100%;
-    }
-
-    h3 {
-        margin: auto;
-        padding:0px;
-        font-size: 1em;
-    }
-
-    .options {
-        width: 100%;
-        font-size: small;
-    }
-
-    .options nav {
-        display: block;
-        justify-content: center;
-        margin: 30px;
-    }
-
-    footer {
-        width: 100%;
-        margin: auto;
-    }
-
-    footer .menu {
-        width: 40%;
-    }
-
-    footer .menu nav {
-        padding: 0%;
-        margin: auto;
-    }
-
-    footer .menu ul{
-        flex-wrap: nowrap;
-        padding: 5px;
-    }
-
-    footer .menu ul li a{
-        padding: 5px;
-    }
-    footer .menu ul li .iconify {
-        width: 20px;
-    } */
-
-
-/*@media (max-width: 1200px) {
-    header {
-        width: 100vw;
-    }
-
-    .top-bar{
-        width: 100%;
-        height: 20px;
-    }
-    
-    .logo-kruto img {
-        width: 20%;
-        
-    }
-
-    main {
-        width: 100vw;
-    }
-
-    .imagen {
-        width: 100%;
-        margin: auto;
-    }
-
-    .imagen img {
-        margin: auto;
-        width: 100%;
-    }
-
-    .productos {
-        width: 100%;
-        margin: auto;
-    }
-
-    .productos img {
-        margin: auto;
-        width: 100%;
-
-    }
-
-    .sales {
-        margin: auto;
-        width: 100%;  
-    }
-
-    .sales_pic {
-        margin: auto;
-        width: 100%;
-    }
-
-    .sales_pic img {
-        display: block;
-        text-align: center;
-        margin: auto;
-        width: 80%;
-        padding: 10px;
-    }
-
-    .categories {
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .categories_prod {
-        margin: auto;
-        padding: 10px;
-        justify-content: center;
-    }
-
-    .categories_prod img {
-        margin: auto;
-        width: 100%;
-    }
-
-    h3 {
-        margin: auto;
-        padding:0px;
-        font-size: 1em;
-    }
-
-    
-    footer {
-        width: 100%;
-        margin: auto;
-    }
-
-    footer .menu {
-        width: 30%;
-    }
-
-    footer .menu nav {
-        padding: 0%;
-    }
-
-    footer .menu ul{
-        flex-wrap: nowrap;
-        padding: 5px;
-    }
-
-    footer .menu ul li a{
-        padding: 10px;
-    }
-    
-    footer .menu ul li .iconify {
-        width: 30px;
-    } */
-
-
-/* SHOPPING CART */
+/** ------------------------------ SHOPPIN CART ------------------------------ **/
 
 /* HEADER */
 header#shoppingCart {

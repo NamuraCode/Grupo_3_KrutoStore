@@ -20,4 +20,6 @@ router.get('/productForm', controller.productForm)
 
 router.get('/addProduct', controller.addProduct)
 
+router.get('/editProduct', controller.editProduct)
+
 module.exports = router;

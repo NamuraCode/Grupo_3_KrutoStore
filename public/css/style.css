@@ -1181,17 +1181,19 @@ input placeholder {
     border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    
 }
 
 .total .total-p {
     color: white;
     display: flex;
+    justify-content: space-around;
 }
 
 .total .total-p p {
     font-size: 14px;
-    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
 } 
 
 .total-p .total-price {

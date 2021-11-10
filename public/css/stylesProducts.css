@@ -29,6 +29,10 @@ header{
 }
 
 /*MAIN------------------------------------------------------------------*/
+main {
+    background: url(../images/productos/fondo-ppal30.png);
+    background-size: repeat;
+}
 
 .title {
     font-family: 'Montserrat';
@@ -44,7 +48,7 @@ header{
     width: 40%;
 }
 
-.text-focus-in {
+/* .text-focus-in {
 	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
@@ -72,7 +76,7 @@ header{
     filter: blur(0px);
     opacity: 1;
     }
-}
+} */
 
 main .main-products {
     display: flex;
@@ -88,12 +92,13 @@ main .main-products .main-articles {
     flex-direction: column;
     position: relative;
     border-radius: 16px;
-    border: 4px solid;
+    border: 1px solid;
     border-color: #5153722e;
     box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%);
     padding-top: 10px;
     width: 90%;
     margin-bottom: 25px;
+    background: #fff;
 }
 
 main .main-products .main-articles img {

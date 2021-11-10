@@ -3,7 +3,11 @@
 
 @font-face {
     font-family: 'Arigatou';
+<<<<<<< HEAD
     src: url(./Arigatou.ttf);
+=======
+    src: url(./fonts/Arigatou.ttf);
+>>>>>>> 8905c61bc5b7df1ffdf834aacd2626d21e44cee8
 }
 
 @font-face {
@@ -40,6 +44,111 @@ header{
 
 main{
     width: 100vw;
+}
+
+.imagen{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.imagen img {
+    width: 600px;
+}
+
+.productos{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    background: hsl(236, 17%, 80%);
+}
+
+.productos img {
+    display: block;
+    margin: auto;
+    width: 10%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.sales_pic {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.sales {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    margin: auto;
+}
+
+.categories {
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: "aArigatouGozaimasu", sans-serif;
+    background: #EF233C;
+}
+
+.categories_prod {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+.categories_prod div {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    padding-top: 20px;
+    border: 1px solid hsl(353, 82%, 90%);
+}
+
+.categories_prod img {
+    width: 160px;
+}
+
+.options {
+    width: 100vw;
+    margin: auto;
+    margin-bottom: 80px;
+    background: #515372;
+}
+
+.options nav {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    color: white;    
+}
+
+.options ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
 }
 
 footer {
@@ -343,6 +452,120 @@ footer ul li a {
     padding: 15px;
 }
 
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    /* line-height: 75px; */
+    text-align: center;
+    transition: 0.5s;
+}
+
+/*.navigation ul li:hover a .icon,*/
+.navigation ul li.active a .icon {
+    color: #f53b57;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    
+    background: #fff;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0,0.1);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation ul li:hover a .title {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 50%);
+}
+
+.navigation ul li a .title::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    bottom: -8px;
+    left: 48%;
+    transform: rotate(45deg) translateX(-50%);
+    border-radius: 2px;
+}
+
+.navigation ul .indicator {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    /*background: #ff0;*/
+   /* transition: 0.5s;
+}/* 
+
+.navigation ul .indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+}
+
+
+
+.navigation ul li:nth-child(1).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator::before {
+    background: #fff;
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator::before {
+    background: #fff;
+} 
+
 .iconify {
     width: 25px;
     height: 25px;
@@ -350,12 +573,13 @@ footer ul li a {
     align-items: center;
 }
 
-
-/** ------------------------------ SHOPPIN CART ------------------------------ **/
+/*------------------------------ SHOPPING CART ------------------------------ */
 
 /* HEADER */
+
 header#shoppingCart {
     width: 100vw;
+
 }
 
 header#shoppingCart section .top-bar {
@@ -363,6 +587,10 @@ header#shoppingCart section .top-bar {
     height: 30px;
     background: #515372;
     color: #515372;
+}
+
+#shoppingCart {
+    width: 100vw;
 }
 
 #shoppingCart section .top-bar {
@@ -718,17 +946,19 @@ input placeholder {
     border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    
 }
 
 .total .total-p {
     color: white;
     display: flex;
+    justify-content: space-around;
 }
 
 .total .total-p p {
     font-size: 14px;
-    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
 } 
 
 .total-p .total-price {

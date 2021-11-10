@@ -12,60 +12,31 @@
 </head>
 
 <body>
-    <header>
-        <section>
-            <div class="top-bar">""
-            </div>
-            <div class="logo-kruto">
-                <!-- <img class="mascota" src=".\images\logos\MASCOTA_BLANCO.png"> -->
-                <img class="logo" src=".\images\logos\logo-kruto-azul.png" alt="kruto_rojo">
-            </div>
-        </section>
-    </header>
+    <%- include ('./partials/header-rojo') %>
+   
     <main>
         <h2>FORMULARIO PRODUCTOS</h2>
-        <section class="details">
-            <div class="producto">
-                <p>Producto</p>
-            </div>
-            <div>
-                <ul>
-                    <li>Agregar</li>
-                    <li>Editar</li>
-                    <li>Eliminar</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <div class="product-icon">
-                <div class="icon">
-
+        <section class="actions">
+            <ul>
+                <div>
+                    <li>Producto</li>
                 </div>
-                <ul class="product-ref">
-                    <li>Item name</li>
-                    <li>ref:123</li>
-                </ul>
-            </div>
-            <div class="product_detail">
-                <ul class="productEdit">
-                    <li>
-                        <span class="iconify" data-icon="ic:baseline-production-quantity-limits"></span>
-                    </li>
-                    <li>
-                        <span class="iconify" data-icon="bx:bx-message-square-edit"></span>
-                    </li>
-                    <li>
-                        <span class="iconify" data-icon="akar-icons:comment-add"></span>
-                    </li>
-                    <div class="clear">
-                        <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
-                    </div>
-                </ul>
-            </div>
-            </article>
+                <li>Agregar</li>
+                <li>Editar</li>
+                <li>Eliminar</li>
+            </ul>
+        </section>
+        <section class="items">
+            <ul>
+                <div>
+                    <li><img src=".\images\productos\chibi1.png" alt=""></li>
+                </div>
+                <li><a href="/addProduct"><span class="iconify" data-icon="ic:baseline-production-quantity-limits"></span></a>
+                </li>
+                <li><a href="/editProduct"><span class="iconify" data-icon="bx:bx-message-square-edit"></span></a></li>
+                <li><a href="/removeProduct"><span class="iconify" data-icon="mdi:trash-can"></span></a></li>
+            </ul>
         </section>
     </main>
-
 </body>
-
 </html>

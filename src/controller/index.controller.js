@@ -28,6 +28,18 @@ controller = {
     productForm:(req,res)=>{
         res.render('productForm')
     },
+
+    addProduct:(req,res) =>{
+        res.render('addProduct')
+    },
+
+    editProduct:(req,res) =>{
+        res.render('editProduct')
+    },
+
+    removeProduct:(req,res) =>{
+        res.render('removeProduct')
+    },
 }
 
 module.exports = controller;

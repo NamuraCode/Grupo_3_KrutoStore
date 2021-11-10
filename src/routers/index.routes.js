@@ -18,4 +18,11 @@ router.get('/index', controller.index)
 
 router.get('/productForm', controller.productForm)
 
+router.get('/addProduct', controller.addProduct)
+
+router.get('/editProduct', controller.editProduct)
+
+router.get('/removeProduct', controller.removeProduct)
+
+
 module.exports = router;

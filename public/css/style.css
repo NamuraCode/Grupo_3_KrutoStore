@@ -504,73 +504,7 @@ footer ul li a {
     width: 70px;
     height: 70px;
 }
-    /*background: #ff0;*/
-   /* transition: 0.5s;
-}/* 
-
-
-.navigation ul .indicator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #333;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: 0.5s;
-}
-
-.navigation ul li:nth-child(1).active ~ .indicator {
-    transform: translateX(calc(70px * 0));
-}
-
-.navigation ul li:nth-child(2).active ~ .indicator {
-    transform: translateX(calc(70px * 1));
-}
-
-.navigation ul li:nth-child(3).active ~ .indicator {
-    transform: translateX(calc(70px * 2));
-}
-
-.navigation ul li:nth-child(4).active ~ .indicator {
-    transform: translateX(calc(70px * 3));
-}
-
-.navigation ul li:nth-child(5).active ~ .indicator {
-    transform: translateX(calc(70px * 4));
-}
-
-
-
-.navigation ul li:nth-child(1).active ~ .indicator::before {
-    background: #fff;
-}
-
-.navigation ul li:nth-child(2).active ~ .indicator::before {
-    background: #fff;
-}
-
-.navigation ul li:nth-child(3).active ~ .indicator::before {
-    background: #fff;
-}
-
-.navigation ul li:nth-child(4).active ~ .indicator::before {
-    background: #fff;
-}
-
-.navigation ul li:nth-child(5).active ~ .indicator::before {
-    background: #fff;
-} 
-
-.iconify {
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    align-items: center;
-}
-
+   
 /*------------------------------ SHOPPING CART ------------------------------ */
 
 /* HEADER */
@@ -586,11 +520,11 @@ header#shoppingCart section .top-bar {
     color: #515372;
 }
 
-#shoppingCart {
+#shopping-cart {
     width: 100vw;
 }
 
-#shoppingCart section .top-bar {
+#shopping-cart section .top-bar {
     width: 100%;
     height: 30px;
     background: #515372;

@@ -64,4 +64,29 @@
 ## Dejar de hacer 
 * Posponer las reuniones
 
+## RETROSPECTIVA SPRINT CUATRO
+
+## Comenzar a hacer
+* Implementación de Crud
+* Cración de formularios
+* Conexión de la página y base de datos
+
+## Hacer más
+* Implementar los partials
+* Consultar más funcionalidades que le aporten a la página
+* Trabajar sincrónicamente
+
+## Continuar haciendo
+* Creación de archivos json
+* Correciones necesarias a la página
+* Cambios de estilo
+* Realizar los dailys
+* Optimizar el código
+
+## Hacer menos
+* Dejar código comentado que no se va a utilizar
+
+## Dejar de hacer
+* Olvidar hacer push cuando se termina una tarea
+
 

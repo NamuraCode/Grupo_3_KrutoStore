@@ -503,9 +503,11 @@ footer ul li a {
     left: 0;
     width: 70px;
     height: 70px;
+}
     /*background: #ff0;*/
    /* transition: 0.5s;
 }/* 
+
 
 .navigation ul .indicator::before {
     content: '';
@@ -573,7 +575,7 @@ footer ul li a {
 
 /* HEADER */
 
-header#shoppingCart {
+header #shoppingCart {
     width: 100vw;
 }
 

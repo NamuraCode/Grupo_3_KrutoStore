@@ -927,7 +927,102 @@ footer {
     right: 0px;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 769px) {
+    /*HEADER*/
+    .logo {
+        width: 34%;
+        padding-bottom: 40px;
+        margin: -3px 0px 0px 238px;
+    }
+
+    .top-bar{
+        width: 100vw;
+    }
+
+    /*BODY*/
+    #slider {
+        width: 100vw;
+        margin-top: -21px;
+    }
+
+    .brands{
+        width: 100vw;
+        flex-direction: column;
+        margin: 50px;
+        height: 926px;
+        margin: 0px;
+    }
+
+    .brands img{
+        width: 24%;
+        height: 40%;
+        margin: auto;
+    }
+
+    #categories {
+        width: 100vw;
+        margin: auto;
+    }
+
+    #categories img {
+        margin: 27px;
+        width: 93%;
+    }
+
+    #marquee {
+        width: 100vw;
+        padding: 0px;
+    }
+
+    .ofertas h2 {
+        margin-bottom: 70px;
+    }
+
+    .category-name {
+        opacity: 1;
+    }
+
+    .category-name p {
+    text-align: center;
+    margin-top:0px;
+    margin-bottom: 0px;
+    margin-left: 0px; 
+    color: #ef233c;
+    width: 95vw;
+    }
+
+    /*FOOTER*/
+
+    .opciones-pago {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        margin-right: 0px;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .options {
+        background: #515372;
+        height: 270px;
+        margin-top: 20px;
+    }
+
+    .opciones-envio {
+        margin-right: 0px; 
+    }
+
+    .politica {
+        margin-right: 0px; 
+    }
+
+    footer .menu {
+        width: 40vw;
+        right: 30vw
+    }
     #shop {
         display: flex;
         width: 90%;

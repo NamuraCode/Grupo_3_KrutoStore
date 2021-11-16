@@ -23,9 +23,11 @@ header{
 
 .logo {
     display: block;
-    width: 20%;
     margin: auto;
-    padding-bottom: 20px;
+    width: 83%;
+    padding-bottom: 40px;
+    margin:-3px 0px 0px 40px;
+
 }
 
 /*MAIN------------------------------------------------------------------*/
@@ -40,43 +42,14 @@ main {
     font-size: 50px;
     text-align: center;
     color: #ef233c;
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 40px;
 }
 
 .title img {
-    width: 40%;
+    width: 80%;
 }
 
-/* .text-focus-in {
-	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-
-@-webkit-keyframes text-focus-in {
-    0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
-    opacity: 0;
-    }
-    100% {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-    }
-}
-@keyframes text-focus-in {
-    0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
-    opacity: 0;
-    }
-    100% {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-    }
-} */
 
 main .main-products {
     display: flex;
@@ -96,7 +69,7 @@ main .main-products .main-articles {
     border-color: #5153722e;
     box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%);
     padding-top: 10px;
-    width: 90%;
+    width: 60%;
     margin-bottom: 25px;
     background: #fff;
 }
@@ -123,7 +96,7 @@ main .main-products .article-description p {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 20px;
     font-family: 'Raleway';
 }
 
@@ -138,7 +111,7 @@ main .main-products .main-articles .article-cost p {
     opacity: 75%;
     top: 6%;
     right: -4%;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 main .main-products .main-articles .article-form {
@@ -173,7 +146,7 @@ main .main-products .main-articles i {
 }
 
 
-@media (min-width: 361px) {
+@media (min-width: 480px) {
     header .header img {
         width: 15%;
     }
@@ -271,13 +244,13 @@ footer {
 
 footer .menu {
     background: #ef233c;
-    width: 80%;
     margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
     position: fixed;
-    right: 10%;
     bottom: 20px;
+    width: 60vw;
+    right: 20vw
 }
 
 footer nav {
@@ -291,6 +264,7 @@ footer ul {
     display: flex;
     align-content: center;
     padding: 0px;
+    margin: 8px;
 }
 
 footer ul li a {
@@ -361,7 +335,7 @@ main .main-products {
     margin-bottom: 90px;
 }
 
-@media (min-width: 361px) {
+@media (min-width: 480px) {
     main .main-producto .producto-detalle img {
         width: 40%;
     }
@@ -378,10 +352,6 @@ main .main-products {
         width: 76vw;
     }
 
-    footer .menu {
-        width: 20%;
-        left: 10%
-    }
 }
 
 /*PRICE TAG*/

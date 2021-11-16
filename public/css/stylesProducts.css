@@ -249,8 +249,8 @@ footer .menu {
     border-radius: 40px;
     position: fixed;
     bottom: 20px;
-    width: 40vw;
-    right: 30vw
+    width: 60vw;
+    right: 20vw
 }
 
 footer nav {
@@ -281,14 +281,14 @@ footer ul li a {
     align-items: center;
 }
 
-/*DETALLES-PRODCTO--------------------------------------------------------------------------------------------*/
-
-main .main-producto .producto-detalle {
-    margin: auto;
+/*DETALLES-PRODUCTO--------------------------------------------------------------------------------------------*/
+main {
+    width: 100vw;
 }
 
-main .main-producto .producto-detalle img {
-    width: 70%;
+main .main-producto {
+    margin: auto;
+    width: 80%;
 }
 
 main .main-producto .producto-detalle {
@@ -308,7 +308,7 @@ main .main-producto .producto-detalle img {
     margin: auto;
     display: flex;
     margin: auto;
-    width: 100%;
+    width: 80%;
     position: relative;
     border-radius: 16px;
     padding-top: 10px;

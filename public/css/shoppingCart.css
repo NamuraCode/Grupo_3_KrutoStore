@@ -439,7 +439,7 @@ footer {
     right: 0px;
 }
 
-@media (max-width: 769px) {
+@media (min-width: 480px) {
 
     /*HEADER*/
     .logo {
@@ -453,9 +453,10 @@ footer {
     }
 }
 
-@media (max-width: 1200px){
+@media (min-width: 768px){
     #shop {
         width: 90%;
+        display:flex
     }
 
     .details {

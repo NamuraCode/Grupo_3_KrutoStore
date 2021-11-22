@@ -18,7 +18,12 @@ controller = {
     },
 
     productDetail:(req,res)=>{
-        res.render('productDetail')
+        let inf = req.parms
+        let itemId = users.filter((item)=>{
+            return item.id == inf
+        })
+        console.log(itemId)
+        res.render('productDetail',{"ingresan":users,"item":itemId})
     },
 
     register:(req,res)=>{

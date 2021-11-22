@@ -23,7 +23,7 @@ app.get('/products', routers);
 
 app.get('/login', routers);
 
-app.get('/productDetail', routers);
+app.get('/productDetail/:id', routers);
 
 app.get('/productForm', routers);
 

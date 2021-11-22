@@ -12,16 +12,9 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <!-- <header>
-        <div class="header">
-            <a href="/index"><img src="./images/logos/KRUTO_BLANCO.png"></a>
-        </div>
-    </header> -->
-
     <header>
         <section>
-            <div class="top-bar">""
+            <div class="top-bar">
             </div>
             <div class="logo-kruto">
                 <a href="/index"><img class="logo" src=".\images\logos\logo-kruto-azul.png" alt="kruto_rojo"></a>
@@ -44,117 +37,26 @@
             </div>
         </article>
         <section class="main-products">
-            <article class="main-articles">
-                <img src="./images/products/NARUTO/ino.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
-            <article class="main-articles">
-                <img src="./images/products/NARUTO/Sarutobi-hokage-statue-naruto-oniri-creations3.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
-            <article class="main-articles">
-                <img
-                    src="./images/products/NARUTO/megahouse-pvc-scale-figures-naruto-shippuden-gaara-g-e-m-series-scale-figure-re-run-28638519361580_2000x2000.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
-            <article class="main-articles">
-                <img
-                    src="./images/products/NARUTO/megahouse-pvc-scale-figures-naruto-naruto-uzumaki-g-e-m-figure-shinobi-world-war-ver-16727901765676_2000x2000.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
-            <article class="main-articles">
-                <img src="./images/products/NARUTO/e3194f95bd704e67bd94fa058f27bc48.jpg.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
-            <article class="main-articles">
-                <img
-                    src="./images/products/NARUTO/megahouse-corporation-pvc-scale-figures-naruto-hinata-hyuga-gals-dx-ver-3-figure-28855388635180_2000x2000.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
+            <% for(i=0; i<ingresan.length; i++){%>
+                <article class="main-articles">
+                    <img src=<%=ingresan[i].image%>>
+                    <div class="article-description">
+                        <p><%=ingresan[i].name%></p>
+                    </div>
+                    <div class="article-cost">
+                        <p><%=ingresan[i].price%></p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                    <div class="article-form">
+                        <a href="/productCart">
+                            <button id="anadir" class="heartbeat">Añadir</button>
+                        </a>
+                        <a href="/productDetail">
+                            <button id="detalles">Detalles</button>
+                        </a>
+                    </div>
+                </article>
+            <% } %>
         </section>
     </main>
     <footer>

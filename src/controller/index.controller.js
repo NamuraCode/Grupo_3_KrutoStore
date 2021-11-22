@@ -1,5 +1,5 @@
 const path = require('path');
-
+const users = require('../data/product.json');
 controller = {
     index: (req, res) => {
         res.render('index')
@@ -10,7 +10,7 @@ controller = {
     },
 
     products:(req,res)=>{
-        res.render('products')
+        res.render('products',{"ingresan":users})
     },
 
     login:(req,res)=>{

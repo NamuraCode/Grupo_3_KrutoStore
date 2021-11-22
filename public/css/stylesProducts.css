@@ -22,13 +22,11 @@ header{
 }
 
 .logo {
-    display: block;
-    margin: auto;
     width: 83%;
     padding-bottom: 40px;
-    margin:-3px 0px 0px 40px;
-
+    margin: -3px 0px 0px 40px;
 }
+
 
 /*MAIN------------------------------------------------------------------*/
 main {
@@ -47,7 +45,7 @@ main {
 }
 
 .title img {
-    width: 80%;
+    width: 50%;
 }
 
 
@@ -145,95 +143,6 @@ main .main-products .main-articles i {
     cursor: pointer;
 }
 
-
-@media (min-width: 480px) {
-    header .header img {
-        width: 15%;
-    }
-
-    header .header {
-        margin-bottom: 26px;
-    }
-
-    main .main-products .main-articles {
-        width: 45%;
-        margin: 10px;
-    }
-
-    main .main-products .main-articles i {
-        top: 62%;
-        left: 11%;
-    }
-
-    footer .menu {
-        width: 50%;
-    }
-}
-
-@media (min-width: 769px) {
-
-    main .main-products .main-articles {
-        width: 26%;
-        margin: 26px;
-        box-shadow: none;
-    }
-
-    main .mainproducts .main-articles:hover {
-        transition: all 0.2s;
-        /* box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%); */
-        box-shadow: 9px 9px 20px -3px #51537259;
-    }
-
-    header .header img {
-        width: 7%;
-    }
-
-    main .main-products .main-articles .article-form a button {
-        margin: 20px 14px 35px 14px;
-        width: 160px;
-        height: 41px;
-        font-size: 30px;
-    }
-
-    main .main-products .main-articles .article-form a #anadir:hover {
-        transition: all 0.1s;
-        background-color: #e00f28;
-        cursor: pointer;
-    }
-
-    main .main-products .main-articles .article-form a #detalles:hover {
-        transition: all 0.1s;
-        background-color: #393D3F;
-        cursor: pointer;
-
-    }
-
-    main .main-products .article-description p {
-        font-size: 40px;
-    }
-
-    main .main-products .main-articles .article-cost p {
-        font-size: 34px;
-        padding: 22px;
-    }
-
-    main .main-products .main-articles i {
-        font-size: 40px;
-        top: 60%;
-    }
-
-    main .main-products .main-articles i:hover {
-        margin: auto;
-        transition: all 0.1s;
-        font-size: 45px
-    }
-
-    footer .menu {
-        width: 60%;
-    }
-
-}
-
 /* --------------------------------- FOOTER --------------------------------- */
 
 footer {
@@ -280,6 +189,109 @@ footer ul li a {
     text-align: center;
     align-items: center;
 }
+
+
+@media (min-width: 480px) {
+
+    .logo {
+        width: 34%;
+        padding-bottom: 40px;
+        margin: -3px 0px 0px 238px;
+    }
+    
+    header img {
+        width: 15%;
+    }
+
+    header {
+        margin-bottom: 26px;
+    }
+
+    main .main-products .main-articles {
+        width: 45%;
+        margin: 10px;
+    }
+
+    main .main-products .main-articles i {
+        top: 62%;
+        left: 11%;
+    }
+
+    footer .menu {
+        width: 40vw;
+        right:30vw
+    }
+}
+
+@media (min-width: 769px) {
+
+    main .main-products .main-articles {
+        width: 26%;
+        margin: 26px;
+        box-shadow: none;
+    }
+
+    main .mainproducts .main-articles:hover {
+        transition: all 0.2s;
+        /* box-shadow: 9px 9px 20px -3px rgb(0 0 0 / 32%); */
+        box-shadow: 9px 9px 20px -3px #51537259;
+    }
+
+    .logo {
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+    main .main-products .main-articles .article-form a button {
+        margin: 20px 14px 35px 14px;
+        width: 160px;
+        height: 41px;
+        font-size: 30px;
+    }
+
+    main .main-products .main-articles .article-form a #anadir:hover {
+        transition: all 0.1s;
+        background-color: #e00f28;
+        cursor: pointer;
+    }
+
+    main .main-products .main-articles .article-form a #detalles:hover {
+        transition: all 0.1s;
+        background-color: #393D3F;
+        cursor: pointer;
+
+    }
+
+    main .main-products .article-description p {
+        font-size: 40px;
+    }
+
+    main .main-products .main-articles .article-cost p {
+        font-size: 34px;
+        padding: 22px;
+    }
+
+    main .main-products .main-articles i {
+        font-size: 40px;
+        top: 60%;
+    }
+
+    main .main-products .main-articles i:hover {
+        margin: auto;
+        transition: all 0.1s;
+        font-size: 45px
+    }
+
+    footer .menu {
+        width: 20vw;
+        right: 39vw
+    }
+
+}
+
+
 
 /*DETALLES-PRODUCTO--------------------------------------------------------------------------------------------*/
 main {

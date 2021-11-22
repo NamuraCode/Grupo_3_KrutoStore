@@ -983,12 +983,12 @@ footer {
     }
 
     .category-name p {
-    text-align: center;
-    margin-top:0px;
-    margin-bottom: 0px;
-    margin-left: 0px; 
-    color: #ef233c;
-    width: 95vw;
+        text-align: center;
+        margin-top:0px;
+        margin-bottom: 0px;
+        margin-left: 0px; 
+        color: #ef233c;
+        width: 95vw;
     }
 
     /*FOOTER*/

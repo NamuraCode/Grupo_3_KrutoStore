@@ -19,20 +19,20 @@ app.use('/', routers);
 
 app.use('/productCart', routers);
 
-app.get('/products', routers);
+app.use('/products', routers);
 
-app.get('/login', routers);
+app.use('/login', routers);
 
 app.use('/productDetail', routers);
 
-app.get('/productForm', routers);
+app.use('/productForm', routers);
 
-app.get('/register', routers);
+app.use('/register', routers);
 
-app.get('/index', routers);
+app.use('/index', routers);
 
-app.get('/addProduct', routers);
+app.use('/addProduct', routers);
 
-app.get('/editProduct', routers);
+app.use('/editProduct', routers);
 
-app.get('/removeProduct', routers);
+app.use('/removeProduct', routers);

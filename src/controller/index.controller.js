@@ -1,5 +1,6 @@
 const path = require('path');
-const users = require('../data/product.json');
+const users = require('../model/product.json');
+
 controller = {
     index: (req, res) => {
         res.render('index')

@@ -19,8 +19,9 @@ controller = {
     },
 
     productDetail:(req,res)=>{
-        let indice = req.params.id
-        res.render('productDetail',{"ingresan":users, "item":itemIndice,})
+        let id = req.params.id
+        console.log(id)
+        res.render('productDetail',{"ingresan":users, "id":id})
     },
 
     register:(req,res)=>{

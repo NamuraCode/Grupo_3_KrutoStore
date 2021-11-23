@@ -10,7 +10,7 @@ router.get('/products', controller.products)
 
 router.get('/login', controller.login)
 
-router.get('/productDetail', controller.productDetail)
+router.get('/productDetail/:id', controller.productDetail)
 
 router.get('/register', controller.register)
 

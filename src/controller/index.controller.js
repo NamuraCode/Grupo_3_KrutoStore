@@ -1,5 +1,6 @@
 const path = require('path');
-const users = require('../data/product.json');
+const users = require('../model/product.json');
+
 controller = {
     index: (req, res) => {
         res.render('index')
@@ -18,7 +19,9 @@ controller = {
     },
 
     productDetail:(req,res)=>{
-        res.render('productDetail')
+        let id = req.params.id;
+        console.log(id)
+        res.render('productDetail',{"ingresan":users,"id":id})
     },
 
     register:(req,res)=>{

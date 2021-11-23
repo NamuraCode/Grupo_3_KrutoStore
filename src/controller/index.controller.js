@@ -18,12 +18,16 @@ controller = {
     },
 
     productDetail:(req,res)=>{
-        let inf = req.parms
-        let itemId = users.filter((item)=>{
-            return item.id == inf
+        let indice = req.params.id
+        let itemIndice = users.filter((item)=>{
+            return item.id == indice
         })
-        console.log(itemId)
-        res.render('productDetail',{"ingresan":users,"item":itemId})
+        console.log(itemIndice)
+        if (itemIndice!=undefined){
+            res.render('productDetail',{"ingresan":users, "item":itemIndice,})
+        }else{
+        
+        }    
     },
 
     register:(req,res)=>{

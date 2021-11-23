@@ -37,24 +37,26 @@
             </div>
         </article>
         <section class="main-products">
-            <article class="main-articles">
-                <img src="/images/products/NARUTO/ino.jpg">
-                <div class="article-description">
-                    <p>Nombre del producto</p>
-                </div>
-                <div class="article-cost">
-                    <p><strong>$ </strong>16.0</p>
-                </div>
-                <i class="far fa-heart"></i>
-                <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir">Añadir</button>
-                    </a>
-                    <a href="/productDetail">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                </div>
-            </article>
+            <% for(i=0; i<ingresan.length; i++){%>
+                <article class="main-articles">
+                    <img src=<%=ingresan[i].image%>>
+                    <div class="article-description">
+                        <p><%=ingresan[i].name%></p>
+                    </div>
+                    <div class="article-cost">
+                        <p><%=ingresan[i].price%></p>
+                    </div>
+                    <i class="far fa-heart"></i>
+                    <div class="article-form">
+                        <a href="/productCart">
+                            <button id="anadir" class="heartbeat">Añadir</button>
+                        </a>
+                        <a href="/productDetail/<%=i%>">
+                            <button id="detalles">Detalles</button>
+                        </a>
+                    </div>
+                </article>
+                <% } %>
         </section>
     </main>
     <footer>

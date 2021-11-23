@@ -26,12 +26,12 @@
     <main>
         <article class="main-producto">
             <div class="producto-detalle">
-                <img src=<%ingresan[id].image%>>
+                <img src="<%=ingresan[id].image%>">
                 <div class="producto_description">
-                    <p class="description"><strong>Categorias</strong></p>
-                    <h2 class="description">Nombre del producto</h2>
+                    <p class="description"><strong><%=ingresan[id].category%></strong></p>
+                    <h2 class="description"><%=ingresan[id].name%></h2>
                     <p class="description"><%=ingresan[id].description%></p>
-                    <h3 class="description"><strong>$ </strong>124.34</h3>
+                    <h3 class="description"><strong>$ </strong><%=ingresan[id].price%></h3>
                     <a href="/productCart"><button id="anadir"><i class="fas fa-shopping-cart"></i>Añadir</button></a>
                 </div>
             </div>

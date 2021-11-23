@@ -326,7 +326,7 @@ main .main-producto .producto-detalle img {
     padding-top: 10px;
 }
 
-main .main-producto .producto-detalle .producto-description {
+main .main-producto .producto-detalle .producto_description {
     display: flex;
     margin: auto;
     width: 68%;

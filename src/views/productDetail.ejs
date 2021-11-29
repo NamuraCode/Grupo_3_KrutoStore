@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/stylesProducts.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <link rel="shortcut icon" href="/images/logos/FAVICON_2_ROJO.png" type="image/png">
     <title>Kruto Store</title>
@@ -28,11 +29,32 @@
             <div class="producto-detalle">
                 <img src="<%=ingresan[id].image%>">
                 <div class="producto_description">
-                    <p class="description"><strong><%=ingresan[id].category%></strong></p>
                     <h2 class="description"><%=ingresan[id].name%></h2>
-                    <p class="description"><%=ingresan[id].description%></p>
                     <h3 class="description"><strong>$ </strong><%=ingresan[id].price%></h3>
-                    <a href="/productCart"><button id="anadir"><i class="fas fa-shopping-cart"></i>Añadir</button></a>
+                    <p class="description"><strong><%=ingresan[id].category%></strong></p>
+                    <p class="description"><%=ingresan[id].description%></p>
+                    <a href="/productCart"><button id="anadir"></i>Comprar ahora</button></a>
+                    <a href="/productCart"><button id="anadir"></i>Agregar al carrito</button></a>
+                </div>
+                <div class="producto-caprin">
+                    <div class="producto-Ga">
+                        <h3 class="Ga">Garantia</h3>
+                        <p class="Co">Compra Protegida con Kruto payment</p>
+                        <p class="Re">Recibe el producto que esperabas o te devolvemos tu dinero</p>
+                    </div>
+                </div>
+                <div class="producto-Other">
+                    <h3>Garantia</h3>
+                    <p>Compra Protegida con Kruto payment</p>
+                    <p>Recibe el producto que esperabas o te devolvemos tu dinero</p>
+                </div>
+                <div class="producto-Other">
+                    <h3>Opiniones Stars</h3>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
                 </div>
             </div>
         </article>

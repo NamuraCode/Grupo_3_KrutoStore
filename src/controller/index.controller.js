@@ -52,7 +52,14 @@ controller = {
     },
 
     create: (req, res) => {
-        let create=req.body;
+        let create={
+            id:(arrayProducts.length + 1),
+            name:req.body.product,
+            image:req.body.image,
+            description:req.body.description,
+            category:req.body.category,
+            price:req.body.price,
+        };
         arrayProducts.push(create)
         const producto = JSON.stringify(arrayProducts, null, 2)
         fs.writeFileSync(path.join(__dirname,'../model/addProducts.json'),producto)

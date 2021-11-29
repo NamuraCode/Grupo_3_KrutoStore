@@ -43,6 +43,7 @@ header{
 /* -------------------MAIN----------------- */
 main {
     width: 100vw;
+    height: 56vw;
     margin: auto;
 }
 h2 {
@@ -86,6 +87,7 @@ h2 {
     margin: auto;
     background: hsl(353, 82%, 90%);
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .items ul {
@@ -160,6 +162,7 @@ img {
     .items {
         width: 80%;
         margin: auto;
+        margin-bottom: 10px;
     }
 
     .items ul {

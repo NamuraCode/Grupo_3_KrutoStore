@@ -36,7 +36,7 @@ controller = {
     },
 
     productForm: (req, res) => {
-        res.render('productForm')
+        res.render('productForm',{array:arrayProducts})
     },
 
     addProduct: (req, res) => {

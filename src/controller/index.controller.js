@@ -60,8 +60,8 @@ controller = {
             category:req.body.category,
             price:req.body.price,
         };
-        arrayProducts.push(create)
-        const producto = JSON.stringify(arrayProducts, null, 4)
+        users.push(create)
+        const producto = JSON.stringify(users, null, 4)
         fs.writeFileSync(path.join(__dirname,'../model/addProducts.json'),producto)
         console.log(create)
         res.redirect('/productForm')

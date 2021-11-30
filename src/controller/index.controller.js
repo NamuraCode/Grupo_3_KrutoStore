@@ -1,6 +1,5 @@
 const path = require('path');
 const users = require('../model/product.json');
-const arrayProducts = require('../model/addProducts.json')
 const fs = require('fs');
 
 controller = {
@@ -53,7 +52,7 @@ controller = {
 
     create: (req, res) => {
         let create={
-            id:(arrayProducts.length + 1),
+            id:(users.length + 1),
             name:req.body.product,
             image:req.body.image,
             description:req.body.description,
@@ -61,10 +60,10 @@ controller = {
             price:req.body.price,
         };
         users.push(create)
-        const producto = JSON.stringify(users, null, 4)
-        fs.writeFileSync(path.join(__dirname,'../model/addProducts.json'),producto)
+        const producto = JSON.stringify(users)
+        fs.writeFileSync(path.join(__dirname,'../model/product.json'),producto)
         console.log(create)
-        res.redirect('/productForm')
+        res.redirect('/products')
     }
 }
 

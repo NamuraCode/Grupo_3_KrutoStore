@@ -25,15 +25,41 @@
         </section>
     </header>
 
-
     <main>
-
         <div class="title text-focus-in">
             <img class="title-img" src=".\images\logos\anime.png" alt="">
             <!-- <h1>ANIME</h1> -->
         </div>
 <!-- ------------------------------ PRODUCTOS ------------------------------ -->
-
+        <section class="form">
+                <form action="/addProduct" method="post">
+                    <div class="newProduct-container">
+                        <p>
+                            <label for="product-name">Nombre del Producto</label>
+                            <input type="text" name="product" id="name">
+                        </p>
+                        <p>
+                            <label for="product-price">Categoria</label>
+                            <input type="text" name="category" id="price">
+                        </p>
+                        <p>
+                            <label for="product-price">Precio</label>
+                            <input type="text" name="price" id="price">
+                        </p>
+                        <p>
+                            <label for="product-price">Descripción</label>
+                            <textarea name="description" id="description"></textarea>
+                        </p>
+                        <input class="file" type="file" name="image" id="product">
+                        <p>
+                            <a href="/index"><button type="submit">Guardar</button></a>
+                        </p>
+                        <p>
+                            <a href="/productForm"><button type="button">Volver</button></a>
+                        </p>
+                    </div>
+                </form>
+        </section>
         <section class="main-products">
             <% for(i=0; i<ingresan.length; i++){%>
             <article class="main-articles">
@@ -52,11 +78,16 @@
                     <a href="/productDetail/<%=i%>">
                         <button id="detalles">Detalles</button>
                     </a>
+                    <a href="/productCart">
+                        <button id="anadir" class="heartbeat">Editar</button>
+                    </a>
+                    <a href="/productDetail/<%=i%>">
+                        <button id="detalles">Eliminar</button>
+                    </a>
                 </div>
             </article>
             <% } %>
         </section>
-        
     </main>
 
 <!-- -------------------------------- MENU --------------------------------- -->

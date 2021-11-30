@@ -19,16 +19,26 @@
         <div class="container" id="container">
             <div class="container-form add-container">
                 <h2>Agrega un nuevo producto</h2>
+
                 <form action="/addProduct" method="get">
+                <form action="/addProduct" method="post">
                     <div class="newProduct-container">
-                        <input class="file" type="file" name="new-porduct" id="product">
+                        <input class="file" type="file" name="image" id="product">
                         <p>
                             <label for="product-name">Nombre del Producto</label>
                             <input type="text" name="product" id="name">
                         </p>
                         <p>
+                            <label for="product-price">Categoria</label>
+                            <input type="text" name="category" id="price">
+                        </p>
+                        <p>
                             <label for="product-price">Precio</label>
                             <input type="text" name="price" id="price">
+                        </p>
+                        <p>
+                            <label for="product-price">Descripción</label>
+                            <textarea name="description" id="description"></textarea>
                         </p>
                         <p>
                             <a href=""><button type="submit">Guardar</button></a>

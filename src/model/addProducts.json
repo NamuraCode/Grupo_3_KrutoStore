@@ -1,0 +1,23 @@
+[
+  {
+    "new-porduct": "",
+    "product": "asd",
+    "price": "123"
+  },
+  {
+    "id": 2,
+    "name": "Shikamaru",
+    "image": "d76.1.jpg",
+    "description": "Funko",
+    "category": "Anime",
+    "price": "15466"
+  },
+  {
+    "id": 3,
+    "name": "Iruka",
+    "image": "d76.1.jpg",
+    "description": "Funko Iruka ",
+    "category": "Anime",
+    "price": "4500"
+  }
+]

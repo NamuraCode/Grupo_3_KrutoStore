@@ -12,8 +12,8 @@ const product = {
         descripcion: req.body.description,
         imagen: req.body.image,
         }
-       res.send (producto);
-    
+       //res.send (producto);
+    console.log(producto);
     },
     edit:(req, res) => {
         res.render ('editProduct');

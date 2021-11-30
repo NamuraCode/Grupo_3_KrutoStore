@@ -21,6 +21,8 @@ router.get('/productForm', controller.productForm)
 
 router.get('/addProduct', controller.addProduct)
 
+router.post('/addProduct', controller.create)
+
 router.get('/editProduct', controller.editProduct)
 
 router.get('/removeProduct', controller.removeProduct)

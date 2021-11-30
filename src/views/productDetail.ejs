@@ -12,74 +12,58 @@
     <title>Kruto Store</title>
 </head>
 
-<body>
-    <header>
-        <section>
-            <div class="top-bar">
-            </div>
-            <div class="logo-kruto">
-                <a href="/index"><img class="logo" src="\images\logos\logo-kruto-azul.png" alt="kruto_rojo"></a>
-            </div>
-        </section>
-    </header>
-
+<body class="bodyP">
     <!-- MAIN -->
-    <main>
+    <main class="main-productDetail">
         <article class="main-producto">
-            <div class="producto-detalle">
-                <img src="<%=ingresan[id].image%>">
-                <div class="producto_description">
-                    <h2 class="description"><%=ingresan[id].name%></h2>
-                    <h3 class="description"><strong>$ </strong><%=ingresan[id].price%></h3>
-                    <p class="description"><strong><%=ingresan[id].category%></strong></p>
-                    <p class="description"><%=ingresan[id].description%></p>
-                    <a href="/productCart"><button id="anadir"></i>Comprar ahora</button></a>
-                    <a href="/productCart"><button id="anadir"></i>Agregar al carrito</button></a>
+            <div class="img">
+                <div class="logoo">
+                    <a href="/index"><img class="loge" src="\images\logos\NOMBRE_NEGRO.png" alt="kruto_rojo"></a>
                 </div>
-                <div class="producto-caprin">
-                    <div class="producto-Ga">
-                        <h3 class="Ga">Garantia</h3>
-                        <p class="Co">Compra Protegida con Kruto payment</p>
-                        <p class="Re">Recibe el producto que esperabas o te devolvemos tu dinero</p>
-                    </div>
-                </div>
-                <div class="producto-Other">
-                    <h3>Garantia</h3>
-                    <p>Compra Protegida con Kruto payment</p>
-                    <p>Recibe el producto que esperabas o te devolvemos tu dinero</p>
-                </div>
-                <div class="producto-Other">
-                    <h3>Opiniones Stars</h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                <div class="imgee">
+                    <img src="<%=ingresan[id].image%>">
                 </div>
             </div>
+           
+                <div class="producto_description">
+                    <div class="titleOne">
+                        <h3>Descripcion</h3>
+                        <div class="contOne">
+                            <h2 class="description"><%=ingresan[id].name%></h2>
+                            <h3 class="description"><strong>$ </strong><%=ingresan[id].price%></h3>
+                            <p class="description"><strong><%=ingresan[id].category%></strong></p>
+                            <p class="description"><%=ingresan[id].description%></p>
+                            <a href="/productCart"><button id="anadir"></i>Comprar ahora</button></a>
+                            <a href="/productCart"><button id="anadir"></i>Agregar al carrito</button></a>
+                        </div>
+                    </div>
+                    <div class="titleTwo">
+                        <h3>Calificación</h3>
+                        <div class="contTwo">
+                            <div class="producto-caprin">
+                                <div class="producto-Ga">
+                                    <h3 class="Ga">Garantia</h3>
+                                    <p class="Co">Compra Protegida con Kruto payment</p>
+                                    <p class="Re">Recibe el producto que esperabas o te devolvemos tu dinero</p>
+                                </div>
+                            </div>
+                            <div class="producto-Other">
+                                <h3>Garantia</h3>
+                                <p>Compra Protegida con Kruto payment</p>
+                                <p>Recibe el producto que esperabas o te devolvemos tu dinero</p>
+                            </div>
+                            <div class="producto-Other">
+                                <h3>Opiniones Stars</h3>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </article>
-        <section class="main-products">
-            <% for(i=0; i<ingresan.length; i++){%>
-                <article class="main-articles">
-                    <img src=<%=ingresan[i].image%>>
-                    <div class="article-description">
-                        <p><%=ingresan[i].name%></p>
-                    </div>
-                    <div class="article-cost">
-                        <p><%=ingresan[i].price%></p>
-                    </div>
-                    <i class="far fa-heart"></i>
-                    <div class="article-form">
-                        <a href="/productCart">
-                            <button id="anadir" class="heartbeat">Añadir</button>
-                        </a>
-                        <a href="/productDetail/<%=i%>">
-                            <button id="detalles">Detalles</button>
-                        </a>
-                    </div>
-                </article>
-                <% } %>
-        </section>
     </main>
     <footer>
         <section>
@@ -96,8 +80,6 @@
                 </nav>
             </div>
         </section>
-        <div class="top-bar">
-        </div>
     </footer>
 </body>
 

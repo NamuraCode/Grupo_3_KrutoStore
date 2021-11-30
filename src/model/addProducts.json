@@ -19,5 +19,13 @@
     "description": "Funko Iruka ",
     "category": "Anime",
     "price": "4500"
+  },
+  {
+    "id": 4,
+    "name": "AAAAAAAA",
+    "image": "",
+    "description": "asd",
+    "category": "Anime",
+    "price": "54"
   }
 ]

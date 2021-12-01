@@ -72,18 +72,24 @@
                 </div>
                 <i class="far fa-heart"></i>
                 <div class="article-form">
-                    <a href="/productCart">
-                        <button id="anadir" class="heartbeat">Añadir</button>
-                    </a>
-                    <a href="/productDetail/<%=i%>">
-                        <button id="detalles">Detalles</button>
-                    </a>
-                    <a href="/productCart">
-                        <button id="anadir" class="heartbeat">Editar</button>
-                    </a>
-                    <a href="/productDetail/<%=i%>">
-                        <button id="detalles">Eliminar</button>
-                    </a>
+                    <form action="/product" method="post">
+                        <a href="/productCart">
+                            <button id="anadir" class="heartbeat">Añadir</button>
+                        </a>
+                    </form>
+                        <a href="/productDetail/<%=i%>">
+                            <button id="detalles">Detalles</button>
+                        </a>
+                    <form action="/product" method="post">
+                        <a href="/products">
+                            <button id="anadir" class="heartbeat">Editar</button>
+                        </a>
+                    </form>
+                    <form action="/product" method="post">
+                        <a href="/products">
+                            <button id="detalles">Eliminar</button>
+                        </a>
+                    </form>
                 </div>
             </article>
             <% } %>

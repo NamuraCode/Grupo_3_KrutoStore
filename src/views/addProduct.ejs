@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_AZUL.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link rel="stylesheet" href="./css/addProduct.css">
+    <link rel="stylesheet" href="/css/addProduct.css">
     <title>Agregar Producto</title>
 </head>
 
@@ -19,6 +19,8 @@
         <div class="container" id="container">
             <div class="container-form add-container">
                 <h2>Agrega un nuevo producto</h2>
+
+                <form action="/addProduct" method="get">
                 <form action="/addProduct" method="post">
                     <div class="newProduct-container">
                         <input class="file" type="file" name="image" id="product">

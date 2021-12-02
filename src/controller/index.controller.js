@@ -1,5 +1,6 @@
 const path = require('path');
 const productos = require('../model/product.json');
+const favorites = require('../model/productsCart.json')
 const fs = require('fs');
 
 controller = {
@@ -51,19 +52,29 @@ controller = {
     },
 
     create: (req, res) => {
-        let create={
-            id:(productos.length + 1),
-            name:req.body.product,
-            image:req.body.image,
-            description:req.body.description,
-            category:req.body.category,
-            price:req.body.price,
+        let create = {
+            id: (productos.length + 1),
+            name: req.body.product,
+            image: req.body.image,
+            description: req.body.description,
+            category: req.body.category,
+            price: req.body.price,
         };
         productos.push(create)
         const producto = JSON.stringify(productos, null, 6)
-        fs.writeFileSync(path.join(__dirname,'../model/product.json'),producto)
+        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         console.log(create)
         res.redirect('/products')
+    },
+
+    agregarCart: (req, res) => {
+        let id = req.body.id
+        let favorite = found = productos.find(element => element.id == id);
+        console.log(favorite)
+        favorites.push(favorite)
+        let favor = JSON.stringify(favorite, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/productsCart.json'), favor)
+        res.redirect('/productCart')
     }
 }
 

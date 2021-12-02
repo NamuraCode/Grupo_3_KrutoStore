@@ -72,24 +72,15 @@
                 </div>
                 <i class="far fa-heart"></i>
                 <div class="article-form">
-                    <form action="/products" method="post">
-                        <a href="/productCart">
+                    <a href="/productCart">
+                        <form action="/products" method="post">
+                            <input type="hidden" name="id" value=<%=ingresan[i].id%>>
                             <button id="anadir" class="heartbeat">Añadir</button>
-                        </a>
-                    </form>
-                        <a href="/productDetail/<%=i%>">
-                            <button id="detalles">Detalles</button>
-                        </a>
-                    <form action="/products" method="post">
-                        <a href="/products">
-                            <button id="anadir" class="heartbeat">Editar</button>
-                        </a>
-                    </form>
-                    <form action="/products" method="post">
-                        <a href="/products">
-                            <button id="detalles">Eliminar</button>
-                        </a>
-                    </form>
+                        </form>
+                    </a>
+                    <a href="/productDetail/<%=i%>">
+                        <button id="detalles">Detalles</button>
+                    </a>
                 </div>
             </article>
             <% } %>

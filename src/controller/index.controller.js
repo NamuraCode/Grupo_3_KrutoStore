@@ -1,6 +1,6 @@
 const path = require('path');
 const productos = require('../model/product.json');
-const favorites = require('../model/productsCart.json')
+const favorites = require('../model/shoppingCart.json')
 const fs = require('fs');
 
 controller = {
@@ -69,11 +69,11 @@ controller = {
 
     agregarCart: (req, res) => {
         let id = req.body.id
-        let favorite = found = productos.find(element => element.id == id);
+        let favorite = productos.find(element => element.id == id);
         console.log(favorite)
         favorites.push(favorite)
         let favor = JSON.stringify(favorite, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/productsCart.json'), favor)
+        fs.writeFileSync(path.join(__dirname, '../model/shoppingCart.json'), favor)
         res.redirect('/productCart')
     }
 }

@@ -5,72 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/stylesProducts.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <link rel="shortcut icon" href="/images/logos/FAVICON_2_ROJO.png" type="image/png">
     <title>Kruto Store</title>
 </head>
 
-<body class="bodyP">
-    <!-- MAIN -->
-    <main class="main-productDetail">
-        <article class="main-producto">
-            <div class="img">
-                <div class="logoo">
-                    <a href="/index"><img class="loge" src="\images\logos\NOMBRE_NEGRO.png" alt="kruto_rojo"></a>
-                </div>
-                <div class="imgee">
-                    <img src="<%=ingresan[id].image%>">
-                </div>
+<body>
+<!-- ------------------------------- HEADER -------------------------------- -->
+    <header>
+        <section>
+            <div class="top-bar">
             </div>
-           
-                <div class="producto_description">
-                    <div class="titleOne">
-                        <h3>Descripcion</h3>
-                        <div class="contOne">
-                            <h2 class="description"><%=ingresan[id].name%></h2>
-                            <h3 class="description"><strong>$ </strong><%=ingresan[id].price%></h3>
-                            <p class="description"><strong><%=ingresan[id].category%></strong></p>
-                            <p class="description"><%=ingresan[id].description%></p>
-                            <a href="/productCart"><button id="anadir"></i>Comprar ahora</button></a>
-                            <a href="/productCart"><button id="anadir"></i>Agregar al carrito</button></a>
-                        </div>
-                    </div>
-                    <div class="titleTwo">
-                        <h3>Calificación</h3>
-                        <div class="contTwo">
-                            <div class="producto-caprin">
-                                <div class="producto-Ga">
-                                    <h3 class="Ga">Garantia</h3>
-                                    <p class="Co">Compra Protegida con Kruto payment</p>
-                                    <p class="Re">Recibe el producto que esperabas o te devolvemos tu dinero</p>
-                                </div>
-                            </div>
-                            <div class="producto-Other">
-                                <h3>Garantia</h3>
-                                <p>Compra Protegida con Kruto payment</p>
-                                <p>Recibe el producto que esperabas o te devolvemos tu dinero</p>
-                            </div>
-                            <div class="producto-Other">
-                                <h3>Opiniones Stars</h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </article>
-    </main>
+            <div class="logo-kruto">
+                <a href="/"><img class="logo" src="..\images\logos\logo-kruto-azul.png" alt="kruto_azul"></a>
+            </div>
+        </section>
+    </header>
+
+<!-- -------------------------------- MAIN --------------------------------- -->
+    <div class="main">
+        <div class="card">
+            <div class="circle"></div>
+            <div class="content">
+                <h2>Sasuke Nendoroid</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit corporis numquam aut ut asperiores cupiditate consequatur vitae, ipsa et assumenda.</p>
+                <h3>$450.00</h3>
+                <a href="#">Buy Now</a>
+            </div>
+            <img src="..\images\productos\nendo18-NB.png">
+        </div>
+    </div>
+
+<!-- ------------------------------- MENU -------------------------------- -->
     <footer>
         <section>
             <div class="menu">
                 <nav>
                     <ul>
-                        <li><a href="#"><span class="iconify" data-icon="cil:home"></span></a></li>
+                        <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
                         <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
                         <li><a href="/productCart"><span class="iconify"
                                     data-icon="ic:baseline-local-grocery-store"></span></a></li>
@@ -80,6 +54,8 @@
                 </nav>
             </div>
         </section>
+        <div class="top-bar">
+        </div>
     </footer>
 </body>
 

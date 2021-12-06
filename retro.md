@@ -104,7 +104,7 @@
 
 ## Hacer más
 
-* 
+* Trabajar sincrónicamente.
 
 ## Continuar haciendo
 

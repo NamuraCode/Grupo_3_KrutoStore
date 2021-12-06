@@ -7,6 +7,11 @@ const multer = require('multer');
 const {body} = require('express-validator');
 
 
+const validations = [
+    body('username').notEmpty().withMessage('Completa el campo'),
+    body('email').notEmpty().withMessage('Completa el campo'),
+    body('password').notEmpty().withMessage('Completa el campo'),
+]
 
 
 // Formulario de registro

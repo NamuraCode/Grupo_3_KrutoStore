@@ -109,6 +109,7 @@
 ## Continuar haciendo
 
 * Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
 
 ## Hacer menos
 

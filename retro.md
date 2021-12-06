@@ -105,7 +105,7 @@
 ## Hacer más
 
 * Trabajar sincrónicamente.
-* Verificar el correcto funcinamiento de la página.
+* Verificar el correcto funcionamiento de la página.
 
 ## Continuar haciendo
 
@@ -114,6 +114,8 @@
 * Implementar estilos que hagan la página más atractiva.
 
 ## Hacer menos
+
+* Dejar código comentado que no se va a utilizar.
 
 ## Dejar de hacer
 

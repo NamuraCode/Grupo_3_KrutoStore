@@ -32,7 +32,7 @@
         </div>
 <!-- ------------------------------ PRODUCTOS ------------------------------ -->
         <section class="form">
-                <form action="/addProduct" method="post">
+                <form action="/addProduct" method="post" enctype="multipart/form-data">
                     <div class="newProduct-container">
                         <p>
                             <label for="product-name">Nombre del Producto</label>
@@ -50,7 +50,7 @@
                             <label for="product-price">Descripción</label>
                             <textarea name="description" id="description"></textarea>
                         </p>
-                        <input class="file" type="file" name="image" id="product">
+                            <input class="file" type="file" name="image" id="product">
                         <p>
                             <a href="/index"><button type="submit">Guardar</button></a>
                         </p>

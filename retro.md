@@ -92,7 +92,7 @@
 ## RETROSPECTIVA SPRINT CUATRO
 
 ## Comenzar a hacer
-
+* Implementación de registro y login del usuario
 
 ## Hacer más
 

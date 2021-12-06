@@ -10,3 +10,7 @@ const userController = {
     login: (req, res) => {
         return res.render ('userLoginForm');
     },
+    profile: (req, res) => {
+        return res.render ('userProfile');
+    },
+}

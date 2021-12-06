@@ -105,6 +105,7 @@
 ## Hacer más
 
 * Trabajar sincrónicamente.
+* Verificar el correcto funcinamiento de la página.
 
 ## Continuar haciendo
 

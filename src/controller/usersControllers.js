@@ -14,3 +14,5 @@ const userController = {
         return res.render ('userProfile');
     },
 }
+
+module.exports = userController;

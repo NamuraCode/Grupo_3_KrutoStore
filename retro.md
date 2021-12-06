@@ -112,6 +112,7 @@
 * Continuar implementando diferentes funcionalidades a la página.
 * Hacer las correcciones necesarias a la página.
 * Implementar estilos que hagan la página más atractiva.
+* Realizar los dailys
 
 ## Hacer menos
 

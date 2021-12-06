@@ -89,7 +89,7 @@
 ## Dejar de hacer
 * Olvidar hacer push cuando se termina una tarea
 
-## RETROSPECTIVA SPRINT CUATRO
+## RETROSPECTIVA SPRINT CINCO
 
 ## Comenzar a hacer
 
@@ -102,13 +102,13 @@
 * Creación de rutas para ingreso de usuarios sin cuenta.
 * Crear ruta para redireccionamiento para los diferentes casos.
 
-
-
 ## Hacer más
 
+* 
 
 ## Continuar haciendo
 
+* Continuar implementando diferentes funcionalidades a la página.
 
 ## Hacer menos
 

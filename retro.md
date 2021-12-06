@@ -92,9 +92,12 @@
 ## RETROSPECTIVA SPRINT CUATRO
 
 ## Comenzar a hacer
+
 * Implementación de registro y login del usuario
+* Formulario register: primer nombre, apellido, correo, contraseña, foto perfil en los campos
 * Creación de rutas para mostar login de usuario
-* Creación de rutas para ngreso de usuarios sin cuenta
+* Creación de rutas para ingreso de usuarios sin cuenta
+
 
 
 ## Hacer más

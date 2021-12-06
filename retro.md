@@ -100,6 +100,7 @@
 * Generar archivo jason para almacenamiento de datos.
 * Creación de rutas para mostar login de usuario.
 * Creación de rutas para ingreso de usuarios sin cuenta.
+* Crear ruta para redireccionamiento para los diferentes casos.
 
 
 

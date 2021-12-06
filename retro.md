@@ -94,6 +94,8 @@
 ## Comenzar a hacer
 * Implementación de registro y login del usuario
 * Creación de rutas para mostar login de usuario
+* Creación de rutas para ngreso de usuarios sin cuenta
+
 
 ## Hacer más
 

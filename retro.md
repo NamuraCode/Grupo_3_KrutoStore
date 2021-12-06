@@ -119,4 +119,4 @@
 
 ## Dejar de hacer
 
-
+* Olvidar hacer push cuando se termina una tarea.

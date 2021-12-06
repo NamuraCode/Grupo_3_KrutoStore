@@ -96,6 +96,7 @@
 * Implementación de registro y login del usuario
 * Formulario register: primer nombre, apellido, correo, contraseña, foto perfil en los campos.
 * Implementación de multer para subir imágen.
+* Implementar bcryptjs para encriptar password.
 * Creación de rutas para mostar login de usuario.
 * Creación de rutas para ingreso de usuarios sin cuenta.
 

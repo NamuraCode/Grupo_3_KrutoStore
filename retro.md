@@ -89,4 +89,35 @@
 ## Dejar de hacer
 * Olvidar hacer push cuando se termina una tarea
 
+## RETROSPECTIVA SPRINT CINCO
 
+## Comenzar a hacer
+
+* Implementación de registro y login del usuario
+* Formulario register: primer nombre, apellido, correo, contraseña, foto perfil en los campos.
+* Implementación de multer para subir imágen.
+* Implementar bcryptjs para encriptar password.
+* Generar archivo jason para almacenamiento de datos.
+* Creación de rutas para mostar login de usuario.
+* Creación de rutas para ingreso de usuarios sin cuenta.
+* Crear ruta para redireccionamiento para los diferentes casos.
+
+## Hacer más
+
+* Trabajar sincrónicamente.
+* Verificar el correcto funcionamiento de la página.
+
+## Continuar haciendo
+
+* Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
+* Implementar estilos que hagan la página más atractiva.
+* Realizar los dailys
+
+## Hacer menos
+
+* Dejar código comentado que no se va a utilizar.
+
+## Dejar de hacer
+
+* Olvidar hacer push cuando se termina una tarea.

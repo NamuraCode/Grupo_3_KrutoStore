@@ -55,7 +55,7 @@ controller = {
         let create = {
             id: (productos.length + 1),
             name: req.body.product,
-            image: req.body.image,
+            image: '/images/avatars/' + req.file.filename,
             description: req.body.description,
             category: req.body.category,
             price: req.body.price,

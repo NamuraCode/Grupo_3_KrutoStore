@@ -48,7 +48,20 @@ controller = {
     },
 
     removeProduct: (req, res) => {
-        res.render('removeProduct')
+        let id = req.params.id
+        let elementToDelete = productos.find(element => element.id == id);
+        res.render('removeProduct',{product:elementToDelete})
+    },
+
+    deleteProduct: (req, res) => {
+        let id = req.params.id
+        let elementToDelete = productos.find(element => element.id == id)
+        let productoTodelete = productos.splice(elementToDelete.id, 1)
+        let producto = JSON.stringify(productoTodelete, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        console.log(productoTodelete)
+        res.redirect('/products')
+        
     },
 
     create: (req, res) => {
@@ -71,7 +84,7 @@ controller = {
         let id = req.body.id
         let favorite = productos.find(element => element.id == id);
         console.log(favorite)
-        favorites.push(favorite)
+        productos.push(favorite)
         let favor = JSON.stringify(favorite, null, 6)
         fs.writeFileSync(path.join(__dirname, '../model/shoppingCart.json'), favor)
         res.redirect('/productCart')

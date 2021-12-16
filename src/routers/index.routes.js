@@ -50,7 +50,11 @@ router.get('/addProduct', controller.addProduct)
 
 router.get('/editProduct', controller.editProduct)
 
-router.get('/removeProduct', controller.removeProduct)
+/* DELETE */
+/* Delete es un metodo para elimiar datos de un formulario */
+router.get('/removeProduct/:id/delete', controller.removeProduct)
+
+router.delete('/removeProduct/:id/delete', controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */

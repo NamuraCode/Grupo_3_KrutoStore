@@ -19,25 +19,33 @@
         <div class="container" id="container">
             <div class="container-form edit-container">
                 <h2>Edita un producto</h2>
-                <form action="/products" method="post">
+                <form action="/products/<%=product.id%>?_method=PUT" method="post">
                     <div class="editProduct-container">
                     <div class="container-edit">
-                        <img src=".\images\productos\chibi1.png" alt="">
+                        <img src="<%=product.image%>" alt="">
                     </div>
                         <input class="file" type="file" name="new-porduct" id="product">
                         <p>
                             <label for="product-name">Nombre del Producto</label>
-                            <input type="text" name="product" id="name">
+                            <input type="text" name="product" id="name" value="<%=product.name%>">
+                        </p>
+                        <p>
+                            <label for="product-name">Descripción</label>
+                            <input type="textarea" name="description" id="description" value="<%=product.description%>">
+                        </p>
+                        <p>
+                            <label for="product-name">categoria</label>
+                            <input type="text" name="category" id="category" value="<%=product.category%>">
                         </p>
                         <p>
                             <label for="product-price">Precio</label>
-                            <input type="text" name="price" id="price">
+                            <input type="text" name="price" id="price" value="<%=product.price%>">
                         </p>
                         <p>
-                            <a href=""><button type="submit">Guardar</button></a>
+                            <button type="submit">Guardar</button>
                         </p>
                         <p>
-                            <a href="/productForm"><button type="button">Volver</button></a>
+                            <a href="/products"><button type="button">Volver</button></a>
                         </p>
                     </div>
                 </form>

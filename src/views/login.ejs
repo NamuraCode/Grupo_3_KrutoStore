@@ -30,8 +30,12 @@
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
+                    <a href="/login">
                     <button type="button" class="toggle-btn" onclick="login()">Login</button>
-                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                    </a>
+                    <a href="/register">
+                    <button type="button" class="toggle-btn" onclick="register()">Sing Up</button>
+                    </a>
                 </div>
                 <div class="social-icons">
                     <img src="./images/productos/google.png">
@@ -39,7 +43,7 @@
                     <img src="./images/productos/twitter.png">
                 </div>
                 <!-- -------------------------------- LOGIN -------------------------------- -->
-                <form id="login" action="#" class="input-group">
+                <form id="login" action="/register" class="input-group">
                     <input type="text" class="input-field" placeholder="username" required>
                     <input type="password" class="input-field" placeholder="password" required>
                     <input type="checkbox" class="check-box"><span>Recordarme</span>
@@ -52,7 +56,7 @@
                     <input type="password" class="input-field" placeholder="password" required>
                     <input type="checkbox" class="check-box"><span>I agree the terms & conditions</span>
                     <button type="submit" class="submit-btn">Register</button>
-                </form> -->
+                    </form> -->
             </div>
         </div>
     </main>

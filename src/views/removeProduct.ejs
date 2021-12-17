@@ -18,7 +18,7 @@
         <div class="container" id="container">
             <div class="container-form edit-container">
                 <h2>Elimina un producto</h2>
-                <form action="/removeProduct/<%=product.id%>" method="post">
+                <form action="/removeProduct/<%=product.id%>?_method=DELETE" method="post">
                     <div class="removeProduct-container">
                     <div class="container-remove">
                         <img src="<%=product.image%>" alt="">

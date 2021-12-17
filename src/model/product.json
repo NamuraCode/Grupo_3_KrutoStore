@@ -78,29 +78,6 @@
             "image": "/images/products/fotosBase/nendo19.png",
             "category": "películas",
             "price": 2133.83
-      },
-      {
-            "id": 11,
-            "name": "Pain",
-            "image": "d76.1.jpg",
-            "description": "Funko",
-            "category": "Anime",
-            "price": "45.00"
-      },
-      {
-            "id": 12,
-            "name": "sda",
-            "image": "",
-            "description": "asd",
-            "category": "asd",
-            "price": "asd"
-      },
-      {
-            "id": 13,
-            "name": "asd",
-            "image": "Material Extra - Tipos de dato (Nuevo).pdf",
-            "description": "asd",
-            "category": "asd",
-            "price": "asd"
       }
+
 ]

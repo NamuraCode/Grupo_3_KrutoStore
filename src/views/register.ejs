@@ -40,11 +40,11 @@
                     <img src="./images/productos/twitter.png">
                 </div>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
-                <form id="register" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="username" required>
-                    <input type="email" class="input-field" placeholder="email" required>
-                    <input type="password" class="input-field" placeholder="password" required>
-                    <input type="checkbox" class="check-box"><span>I agree the terms & conditions</span>
+                <form id="register" action="register" class="input-group" method="POST">
+                    <input name="username" type="text" class="input-field" placeholder="username" required>
+                    <input name="email" type="email" class="input-field" placeholder="email" required>
+                    <input name="password" type="password" class="input-field" placeholder="password" required>
+                    <input name="check-box" type="checkbox" class="check-box"><span>I agree the terms & conditions</span>
                     <button type="submit" class="submit-btn">Sign Up</button>
                 </form>
             </div>

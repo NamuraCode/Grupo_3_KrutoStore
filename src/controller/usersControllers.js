@@ -8,8 +8,10 @@ const userController = {
     register: (req, res) => {
         res.render(path.resolve(__dirname, '../views/usuarios/register'));
     },
-    login: (req, res) => {
-        res.render(path.resolve(__dirname, '../views/usuarios/login')); 
+    processRegister: (req, res) => {
+        res.render(path.resolve(__dirname, '../views/login')); 
+
+        res.redirect('/')
     },
     profile: (req, res) => {
         return res.render ('userProfile');

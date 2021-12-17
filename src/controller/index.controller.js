@@ -49,14 +49,13 @@ controller = {
 
     removeProduct: (req, res) => {
         let id = req.params.id
-        let elementToDelete = productos.find(element => element.id == id);
+        let elementToDelete = productos.find(productos => productos.id == id)
         res.render('removeProduct',{product:elementToDelete})
     },
 
     deleteProduct: (req, res) => {
         let id = req.params.id
-        let elementToDelete = productos.find(element => element.id == id)
-        let productoTodelete = productos.splice(elementToDelete.id, 1)
+        let productoTodelete = productos.filter(producto => producto.id != id)
         let producto = JSON.stringify(productoTodelete, null, 6)
         fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         console.log(productoTodelete)

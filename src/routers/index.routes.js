@@ -48,13 +48,17 @@ router.get('/productForm', controller.productForm)
 
 router.get('/addProduct', controller.addProduct)
 
-router.get('/editProduct', controller.editProduct)
+/* DELETE */
+/* Delete es un metodo para elimiar datos de un formulario */
+router.get('/editProduct/:id', controller.editProduct)
+
+router.get('/editProduct/:id/edit', controller.editProduct)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
-router.get('/removeProduct/:id/delete', controller.removeProduct)
+router.get('/removeProduct/:id', controller.removeProduct)
 
-router.delete('/removeProduct/:id/delete', controller.deleteProduct)
+router.delete('/removeProduct/delete/:id', controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */

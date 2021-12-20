@@ -4,9 +4,17 @@ const path = require('path');
 const publicPath = path.resolve(__dirname,'../public');
 const port = process.env.PORT || 3000;
 const routers = require('./routers/index.routes')
+const session = require('express-session');
+
 
 
 app.use(express.static(publicPath));
+app.use(methodOverride('_method'));
+app.use(session({
+    secret : 'topSecret',
+    resave: true,
+    saveUninitialized: true,
+}))
 
 app.listen(port,()=>{
     console.log('listen on')

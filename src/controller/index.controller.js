@@ -5,7 +5,7 @@ const users = require('../model/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('./model/users.json');
+const products = require('../model/users.json');
 const { validationResult } = require('express-validator');
 
 controller = {

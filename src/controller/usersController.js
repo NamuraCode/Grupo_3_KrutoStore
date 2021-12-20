@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('./model/users.json');
+const products = require('../model/users.json');
 const { validationResult } = require('express-validator');
 
 const user = {

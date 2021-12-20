@@ -5,28 +5,33 @@ const publicPath = path.resolve(__dirname,'../public');
 const port = process.env.PORT || 3000;
 const routers = require('./routers/index.routes')
 const session = require('express-session');
+const methodOverride = require('method-override')
+const cookieParser = require('cookie-parser');
 
 
 
 app.use(express.static(publicPath));
-app.use(methodOverride('_method'));
-app.use(session({
-    secret : 'topSecret',
-    resave: true,
-    saveUninitialized: true,
-}))
 
 app.listen(port,()=>{
     console.log('listen on')
 });
 
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
+app.use(session({
+    secret : 'Secret',
+    resave: true,
+    saveUninitialized: true,
+}))
 
 app.use(express.json())
+
+app.use(cookieParser)
 
 app.set('views',path.join(__dirname,'./views'))
 
 app.set('view engine', 'ejs')
+
 
 app.use('/', routers);
 

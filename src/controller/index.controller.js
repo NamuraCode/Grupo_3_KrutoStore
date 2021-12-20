@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const products = require('../model/users.json');
 const { validationResult } = require('express-validator');
+const session = require('express-session')
 
 controller = {
     index: (req, res) => {

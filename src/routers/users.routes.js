@@ -18,7 +18,8 @@ const validations = [
 router.get('/register', usersController.register);
 
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister);
+//router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister);
+router.post('/register', usersController.processRegister)
 
 // Formulario de Login
 router.get('/login', usersController.login);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 </head>
+
 <body>
     <header>
         <section>
@@ -21,17 +23,17 @@
         </section>
     </header>
 
-<!-- ----------------------------- FORMULARIO ------------------------------ -->
+    <!-- ----------------------------- FORMULARIO ------------------------------ -->
     <main>
         <div class="hero">
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
                     <a href="/login">
-                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                        <button type="button" class="toggle-btn" onclick="login()">Login</button>
                     </a>
                     <a href="/register">
-                    <button type="button" class="toggle-btn" onclick="register()">Sing Up</button>
+                        <button type="button" class="toggle-btn" onclick="register()">Sing Up</button>
                     </a>
                 </div>
                 <div class="social-icons">
@@ -40,18 +42,43 @@
                     <img src="./images/productos/twitter.png">
                 </div>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
-                <form id="register" action="register" class="input-group" method="POST">
-                    <input name="username" type="text" class="input-field" placeholder="username" required>
-                    <input name="email" type="email" class="input-field" placeholder="email" required>
-                    <input name="password" type="password" class="input-field" placeholder="password" required>
-                    <input name="check-box" type="checkbox" class="check-box"><span>I agree the terms & conditions</span>
+                <form method="" action="/register" id="register" class="input-group" enctype="multipart/form-data">
+                    <input name="username" type="text"
+                        class="input-field <%= locals.errors && errors.username ? 'is-invalid' : null %>"
+                        placeholder="username" value="<%= locals.oldData ? oldData.username : null %>" required>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                        <% } %>
+
+                    <input name="email" type="email"
+                        class="input-field <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        placeholder="email" value="<%= locals.oldData ? oldData.email : null %>" required>
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                              <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+                    
+                    <input name="password" type="password"
+                        class="input-field <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                        placeholder="password" required>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                                <%= errors.password.msg %>
+                        </div>
+                        <% } %>
+
+                    <input name="check-box" type="checkbox" class="check-box"><span>I agree the terms &
+                    conditions</span>
                     <button type="submit" class="submit-btn">Sign Up</button>
                 </form>
             </div>
         </div>
     </main>
 
-<!-- -------------------------------- MENU --------------------------------- -->
+    <!-- -------------------------------- MENU --------------------------------- -->
 
     <footer>
         <div class="menu">
@@ -60,7 +87,7 @@
                     <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
                     <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
                     <li><a href="/productCart"><span class="iconify"
-                                    data-icon="ic:baseline-local-grocery-store"></span></a></li>
+                                data-icon="ic:baseline-local-grocery-store"></span></a></li>
                     <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
                     <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
                 </ul>
@@ -68,4 +95,5 @@
         </div>
     </footer>
 </body>
+
 </html>

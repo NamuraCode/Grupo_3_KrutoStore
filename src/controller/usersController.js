@@ -8,7 +8,7 @@ const { validationResult } = require('express-validator');
 
 const user = {  
     'register': (req, res) => {
-        res.render(path.resolve(__dirname, '../views/usuarios/registro'))
+        res.render('register')
     },
     'createUser': (req, res) => {
         let user = {
@@ -16,11 +16,7 @@ const user = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
         }
-        user.push(createUser)
-        const userFile = JSON.stringify(userFile, null, 4)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), userFile)
-        console.log(create)
-        res.redirect('/register')
+        res.redirect('/')
     },
     login: (req, res) => {
         res.render('login')

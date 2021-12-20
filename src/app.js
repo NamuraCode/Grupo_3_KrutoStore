@@ -56,3 +56,7 @@ app.use('/addProduct', routers);
 app.use('/editProduct', routers);
 
 app.use('/removeProduct', routers);
+
+/* app.use((req, res, next) => {
+    res.status(404).render('Not found')
+}); */

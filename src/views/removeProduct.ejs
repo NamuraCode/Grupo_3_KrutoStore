@@ -18,22 +18,19 @@
         <div class="container" id="container">
             <div class="container-form edit-container">
                 <h2>Elimina un producto</h2>
-                <form action="/products" method="post">
+                <form action="/removeProduct/<%=product.id%>?_method=DELETE" method="post">
                     <div class="removeProduct-container">
                     <div class="container-remove">
-                        <img src=".\images\productos\chibi1.png" alt="">
+                        <img src="<%=product.image%>" alt="">
                     </div>
-                        <input class="file" type="file" name="remove-porduct" id="product">
                         <p>
-                            <label for="product-name">Nombre del Producto</label>
-                            <input type="text" name="product" id="name">
+                            <label for="product-name"><%=product.name%></label>
                         </p>
                         <p>
-                            <label for="product-price">Precio</label>
-                            <input type="text" name="price" id="price">
+                            <label for="product-price"><%=product.price%></label>
                         </p>
                         <p>
-                            <a href="#"><button type="submit">Eliminar</button></a>
+                            <button type="submit">Eliminar</button>
                         </p>
                         <p>
                             <a href="/productForm"><button type="button">Volver</button></a>

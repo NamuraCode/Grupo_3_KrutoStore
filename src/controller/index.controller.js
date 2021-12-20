@@ -38,12 +38,12 @@ controller = {
     },
 
     register: (req, res) => {
-        let user = {
-            id:users.length +1,
-            username: req.body.username,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            }
+        let id = req.body.id
+        let newUser = users.find(element => element.id == id);
+        console.log(newUser)
+        newUser.push(newUser)
+        let newRegister = JSON.stringify(newU, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/users.json'), newRegister)
         res.redirect('/')
     },
 

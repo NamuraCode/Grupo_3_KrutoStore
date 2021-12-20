@@ -17,7 +17,6 @@ const storage = multer.diskStorage ({
     }
  })
 
-
 const validations = [
     body('username').notEmpty().withMessage('Completa el campo'),
     body('email').notEmpty().withMessage('Completa el campo').bail()
@@ -25,13 +24,11 @@ const validations = [
     body('password').notEmpty().withMessage('Completa el campo'),
 ]
 
-
 // Formulario de registro
 router.get('/register', usersController.register);
 
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), validations, usersController.processRegister);
-
+router.post('/register', uploadFile.single('avatar'), validations, usersController.createUser);
 
 // Formulario de Login
 router.get('/login', usersController.login);

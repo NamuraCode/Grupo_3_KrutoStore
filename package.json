@@ -27,11 +27,9 @@
     "express-validator": "^6.13.0",
     "i": "^0.3.7",
     "method-override": "^3.0.0",
-<<<<<<< HEAD
-    "multer": "^1.4.4"
-=======
+    "multer": "^1.4.4",
     "multer": "^1.4.3"
->>>>>>> 06a309b9a791cc176c7bcc9e7494cda724bc16b8
+
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

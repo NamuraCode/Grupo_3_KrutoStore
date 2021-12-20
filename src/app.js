@@ -4,6 +4,7 @@ const path = require('path');
 const publicPath = path.resolve(__dirname,'../public');
 const port = process.env.PORT || 3000;
 const routers = require('./routers/index.routes')
+<<<<<<< HEAD
 const session = require('express-session');
 const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');
@@ -11,12 +12,17 @@ const cookieParser = require('cookie-parser');
 
 
 app.use(express.static(publicPath));
+=======
+const methodOverride = require('method-override')
+>>>>>>> 06a309b9a791cc176c7bcc9e7494cda724bc16b8
 
 app.listen(port,()=>{
     console.log('listen on')
 });
 
+app.use(express.static(publicPath));
 app.use(express.urlencoded({extended: true}));
+<<<<<<< HEAD
 app.use(methodOverride('_method'));
 app.use(session({
     secret : 'Secret',
@@ -28,8 +34,11 @@ app.use(express.json())
 
 app.use(cookieParser)
 
+=======
+app.use(express.json())
+app.use(methodOverride('_method'))
+>>>>>>> 06a309b9a791cc176c7bcc9e7494cda724bc16b8
 app.set('views',path.join(__dirname,'./views'))
-
 app.set('view engine', 'ejs')
 
 

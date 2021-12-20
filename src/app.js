@@ -5,6 +5,7 @@ const publicPath = path.resolve(__dirname,'../public');
 const port = process.env.PORT || 3000;
 const routers = require('./routers/index.routes')
 
+
 app.use(express.static(publicPath));
 
 app.listen(port,()=>{

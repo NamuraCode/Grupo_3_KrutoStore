@@ -6,6 +6,17 @@ const indexController = require('../controller/indexController');
 const multer = require('multer');
 const {body} = require('express-validator');
 
+const storage = multer.diskStorage ({
+    destination: (req, file, callback) => {
+        let folder = path.join(__dirname, '../public/images/avatar');
+        callback(null, folder);
+    },
+    filename: (req, file, callback)=>{
+        let imagName= Date.now() + path.extname(file.originalname);
+        callback(null, imagName);
+    }
+ })
+
 
 const validations = [
     body('username').notEmpty().withMessage('Completa el campo'),

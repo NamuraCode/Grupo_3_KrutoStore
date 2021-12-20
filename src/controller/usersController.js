@@ -6,14 +6,21 @@ const products = require('./model/users.json');
 const { validationResult } = require('express-validator');
 
 const user = {
-    register: (req, res) => {
-        let user = {
-            id:users.length +1,
-            username: req.body.username,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-        }
+    'register': (req, res) => {
+        res.render('register')
     },
+    'processRegister': (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0){
+            return res.render ('index', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        return res.redirect('/')
+    },
+    
 }
 
 module.exports = user;

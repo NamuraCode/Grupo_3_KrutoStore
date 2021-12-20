@@ -1,7 +1,12 @@
 const path = require('path');
 const productos = require('../model/product.json');
 const favorites = require('../model/shoppingCart.json')
+const users = require('../model/users.json')
 const fs = require('fs');
+const bcrypt = require('bcryptjs');
+const multer = require('multer');
+const products = require('./model/users.json');
+const { validationResult } = require('express-validator');
 
 controller = {
     index: (req, res) => {
@@ -32,7 +37,13 @@ controller = {
     },
 
     register: (req, res) => {
-        res.render('register')
+        let user = {
+            id:users.length +1,
+            username: req.body.username,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            }
+        res.redirect('/')
     },
 
     productForm: (req, res) => {

@@ -57,4 +57,29 @@ header{
 .content p {
     font-size: 1.1em;
     color: #777;
+    line-height: 1.8em;
+}
+
+.sci {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 30px;
+    right: 60px;
+}
+
+.sci h3 {
+    font-weight: 500;
+    color: #bdbdbd;
+    letter-spacing: 1px;
+}
+
+.sci li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.sci li img {
+    max-width: 30px;
 }

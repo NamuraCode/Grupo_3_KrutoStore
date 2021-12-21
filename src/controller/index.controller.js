@@ -46,22 +46,21 @@ controller = {
     editProduct: (req, res) => {
         let id = req.params.id
         let producto = productos.find(productos => productos.id == id)
-        res.render('editProduct', {
-            product: producto
-        })
+        res.render('editProduct', {product: producto})
     },
 
-    edit: (req, res) => {
+    edit:(req, res) => {
         let id = req.params.id
-        res.send(id)
+        let productos = JSON.stringify(productos, null, 6);
+        fs.writeFileSync(path.join(__dirname, '../model/product.json'), productos)
+        console.log(productos)
+        res.redirect('/products')
     },
 
     removeProduct: (req, res) => {
         let id = req.params.id
         let elementToDelete = productos.find(productos => productos.id == id)
-        res.render('removeProduct', {
-            product: elementToDelete
-        })
+        res.render('removeProduct',{product:elementToDelete})
     },
 
     deleteProduct: (req, res) => {
@@ -71,7 +70,7 @@ controller = {
         fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         console.log(productoTodelete)
         res.redirect('/products')
-
+        
     },
 
     create: (req, res) => {

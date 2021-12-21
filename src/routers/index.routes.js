@@ -52,9 +52,7 @@ router.get('/addProduct', controller.addProduct)
 /* Put es un metodo para editar datos de un formulario */
 router.get('/editProduct/:id', controller.editProduct)
 
-router.put('/editProduct/:id/edit', (req, res) => {
-    res.render('login')
-})
+router.put('/editProduct/:id', controller.edit)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */

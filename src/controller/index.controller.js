@@ -37,6 +37,18 @@ controller = {
         })
     },
 
+    aboutUs: (req, res) => {
+        res.render('about')
+    },
+
+    opcionesPagos: (req, res) => {
+        res.render('opcionesPagos')
+    },
+
+    opcionesEnvios: (req, res) => {
+        res.render('opcionesEnvios')
+    },
+
     register: (req, res) => {
         let user = {
             usename: req.body.username,

@@ -48,7 +48,7 @@ controller = {
         fs.writeFileSync(path.join(__dirname, '../model/users.json), users)
         console.log(register);
     },
-
+    
     /* productos.push(create)
         const producto = JSON.stringify(productos, null, 6)
         fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)

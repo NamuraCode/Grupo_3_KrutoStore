@@ -114,3 +114,32 @@ header{
     object-fit: cover;
 }
 
+/** --------------------------------- RESPONSIVE ------------------------------ **/
+@media (max-width: 991px) {
+    .banner {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    .banner .box .content {
+        height: 70vh;
+    }
+
+    .banner .box .images {
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .content h2 {
+        font-size: 3em;
+    }
+
+    .images .imgBx {
+        width: 100%;
+        height: 40vh;
+    }
+}

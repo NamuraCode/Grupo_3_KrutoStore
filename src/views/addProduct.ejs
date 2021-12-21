@@ -20,7 +20,6 @@
             <div class="container-form add-container">
                 <h2>Agrega un nuevo producto</h2>
 
-                <form action="/addProduct" method="get">
                 <form action="/addProduct" method="post">
                     <div class="newProduct-container">
                         <input class="file" type="file" name="image" id="product">
@@ -41,7 +40,7 @@
                             <textarea name="description" id="description"></textarea>
                         </p>
                         <p>
-                            <a href=""><button type="submit">Guardar</button></a>
+                            <a href="/products"><button type="submit">Guardar</button></a>
                         </p>
                         <p>
                             <a href="/productForm"><button type="button">Volver</button></a>

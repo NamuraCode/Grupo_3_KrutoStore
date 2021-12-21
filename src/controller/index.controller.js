@@ -71,18 +71,17 @@ controller = {
 
     edit:(req, res) => {
         let id = req.params.id
-        for (let i = 0; i <data.length; i++) {
+        for (let i = 0; i <productos.length; i++) {
             if(productos[i].id == id){
                 productos[i].name = req.body.name,
                 productos[i].description = req.body.description,
-                productos[i].image = '/images/productos' + req.file.filename,
+                productos[i].image = req.body.image, '/images/productos/' + req.file.filename
                 productos[i].category = req.body.category,
                 productos[i].price = req.body.price
             }
         }
-        let productos = JSON.stringify(productos, null, 4);
-        fs.writeFileSync(path.join(__dirname, './data.json'), productos)
-        console.log(data)
+        let producto = JSON.stringify(productos, null, 4);
+        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         res.redirect('/products')
     },
 

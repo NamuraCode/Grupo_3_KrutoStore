@@ -1,7 +1,13 @@
 const path = require('path');
 const productos = require('../model/product.json');
 const favorites = require('../model/shoppingCart.json')
+const users = require('../model/users.json')
 const fs = require('fs');
+const bcrypt = require('bcryptjs');
+const multer = require('multer');
+const products = require('../model/users.json');
+const { validationResult } = require('express-validator');
+const session = require('express-session')
 
 controller = {
     index: (req, res) => {
@@ -32,8 +38,22 @@ controller = {
     },
 
     register: (req, res) => {
-        res.render('register')
+        let user = {
+            usename: req.body.username,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+        }
+        users.push(register) 
+        const user = JSON.stringify(users, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/users.json), users)
+        console.log(register);
     },
+
+    /* productos.push(create)
+        const producto = JSON.stringify(productos, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        console.log(create)
+        res.redirect('/products') */
 
     productForm: (req, res) => {
         res.render('productForm')
@@ -59,8 +79,13 @@ controller = {
 
     removeProduct: (req, res) => {
         let id = req.params.id
+<<<<<<< HEAD
         let elementToDelete = productos.find(productos => productos.id == id)
         res.render('removeProduct',{product:elementToDelete})
+=======
+        let elementToDelete = productos.find(element => element.id == id);
+        res.render('removeProduct', { product: elementToDelete })
+>>>>>>> c7a0f98f1b92774d1e5eee856f40fc67a4a1cd2d
     },
 
     deleteProduct: (req, res) => {
@@ -70,7 +95,7 @@ controller = {
         fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         console.log(productoTodelete)
         res.redirect('/products')
-        
+
     },
 
     create: (req, res) => {

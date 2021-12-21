@@ -56,6 +56,8 @@ router.get('/opcionesPagos', controller.opcionesPagos)
 
 router.get('/opcionesEnvios', controller.opcionesEnvios)
 
+router.get('/politicaDevoluciones', controller.politicaDevoluciones)
+
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
 router.get('/removeProduct/:id/delete', controller.removeProduct)

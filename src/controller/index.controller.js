@@ -49,6 +49,10 @@ controller = {
         res.render('opcionesEnvios')
     },
 
+    politicaDevoluciones: (req, res) => {
+        res.render('politicaDevoluciones')
+    },
+
     register: (req, res) => {
         let user = {
             usename: req.body.username,

@@ -39,6 +39,22 @@ controller = {
         })
     },
 
+    aboutUs: (req, res) => {
+        res.render('about')
+    },
+
+    opcionesPagos: (req, res) => {
+        res.render('opcionesPagos')
+    },
+
+    opcionesEnvios: (req, res) => {
+        res.render('opcionesEnvios')
+    },
+
+    politicaDevoluciones: (req, res) => {
+        res.render('politicaDevoluciones')
+    },
+
     register: (req, res) => {
         let newUser = {
             id: (usuarios.length +1),

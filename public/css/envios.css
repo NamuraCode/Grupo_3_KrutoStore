@@ -39,7 +39,7 @@ header{
 }
 
 .banner .box:last-child {
-    background: #ff0;
+    background: #fff;
 }
 
 .content {
@@ -93,16 +93,16 @@ header{
     position: relative;
     width: 50%;
     height: 50%;
-    background: #0f0;
+    background: #fff;
 }
 
 .images .imgBx:nth-child(2) {
-    background: #00f;
+    background: #fff;
 }
 
 .images .imgBx:nth-child(3) {
     width: 100%;
-    background: #ff0;
+    background: #fff;
 }
 
 .images .imgBx img {

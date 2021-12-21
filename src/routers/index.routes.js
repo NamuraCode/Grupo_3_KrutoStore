@@ -25,8 +25,24 @@ let multerDiskStorage = multer.diskStorage({
     }
 })
 
+/*Este es para otra carpeta de procductos*/
+let multerDiskStorag = multer.diskStorage({
+    /* Destino de los archivos */
+    destination: (req, file, callback) => {
+        let folder = path.join(__dirname, '../../public/images/productos');
+        callback(null, folder);
+    },
+    /* renombrar los archivos */
+    filename: (req, file, callback)=>{
+        let imagName= Date.now() + path.extname(file.originalname);
+        callback(null, imagName);
+    }
+})
+
 /* Guardarlo en variable para llamarlo como middleware */
 let fileUpload = multer({ storage: multerDiskStorage})
+/* Guardarlo en variable para llamarlo como middleware para subir en otra carpeta*/
+let fileUploa = multer({ storage: multerDiskStorag})
 
 /* GET */
 /* Get es un metodo HTTP para obtener las vistas y enviar datos no seguros de formulario */
@@ -52,7 +68,7 @@ router.get('/addProduct', controller.addProduct)
 /* Put es un metodo para editar datos de un formulario */
 router.get('/editProduct/:id', controller.editProduct)
 
-router.put('/editProduct/:id', controller.edit)
+router.put('/editProduct/:id', fileUploa.single('image'), controller.edit)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */

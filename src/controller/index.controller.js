@@ -55,10 +55,6 @@ controller = {
         console.log(create)
         res.redirect('/products') */
 
-    productForm: (req, res) => {
-        res.render('productForm')
-    },
-
     addProduct: (req, res) => {
         res.render('addProduct')
     },

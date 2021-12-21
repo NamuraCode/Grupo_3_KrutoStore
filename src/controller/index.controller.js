@@ -56,17 +56,21 @@ controller = {
     },
 
     register: (req, res) => {
-        let newUser = {
+        let register = {
             id: (usuarios.length +1),
             username: req.body.username,
             email: req.body.email,
-<<<<<<< HEAD
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: bcrypt.hashSync(req.body.password, 10)
         }
-        users.push(register) 
-        let useres = JSON.stringify(users, null, 6)
+        usuarios.push(register) 
+        let useres = JSON.stringify(usuarios, null, 6)
         fs.writeFileSync(path.join(__dirname, '../model/users.json'), useres)
-        console.log(register);
+        // console.log(register);
+        res.redirect('/index')
+    },
+
+    regi: (req, res) => {
+        res.render('register')
     },
 
     /* productos.push(create)
@@ -74,34 +78,6 @@ controller = {
         fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
         console.log(create)
         res.redirect('/products') */
-=======
-            password: req.body.password
-        };
-        newUser = JSON.stringify(newUser)
-        usuarios.push(newUser)
-        const usuariosJson = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
-        res.render('register')
-    },
-
-    newUser: (req, res) => {
-        let newUser = {
-            id: (usuarios.length +1),
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-        };
-        newUser = JSON.stringify(newUser)
-        usuarios.push(newUser)
-        const usuariosJson = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
-        res.render('register')
-    },
-    
-    productForm: (req, res) => {
-        res.render('productForm')
-    },
->>>>>>> 947ef08a9cab218a63121eee8692b95e42f3199e
 
     addProduct: (req, res) => {
         res.render('addProduct')
@@ -119,7 +95,7 @@ controller = {
             if(productos[i].id == id){
                 productos[i].name = req.body.name,
                 productos[i].description = req.body.description,
-                productos[i].image = req.body.image, '/images/productos/' + req.file.filename
+                productos[i].image = '/images/products/' + req.body.image,
                 productos[i].category = req.body.category,
                 productos[i].price = req.body.price
             }

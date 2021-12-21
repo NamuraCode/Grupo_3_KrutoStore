@@ -40,7 +40,9 @@ router.get('/login', controller.login)
 
 router.get('/productDetail/:id', controller.productDetail)
 
-router.get('/register', controller.register)
+router.get('/register', controller.regi)
+router.post('/register', controller.register)
+
 
 router.get('/index', controller.index)
 

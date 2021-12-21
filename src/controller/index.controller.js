@@ -79,13 +79,8 @@ controller = {
 
     removeProduct: (req, res) => {
         let id = req.params.id
-<<<<<<< HEAD
         let elementToDelete = productos.find(productos => productos.id == id)
         res.render('removeProduct',{product:elementToDelete})
-=======
-        let elementToDelete = productos.find(element => element.id == id);
-        res.render('removeProduct', { product: elementToDelete })
->>>>>>> c7a0f98f1b92774d1e5eee856f40fc67a4a1cd2d
     },
 
     deleteProduct: (req, res) => {

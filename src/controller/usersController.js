@@ -37,8 +37,8 @@ const user = {
         users.push(createUser)
         const usersJson = JSON.stringify(users, null, 6)
         fs.writeFileSync(path.join(__dirname, '../model/users.json'), usersJson)
-        console.log(register)
-        //res.render('register')
+        //console.log(register)
+        res.render('register')
 
     },
 

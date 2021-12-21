@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const publicPath = path.resolve(__dirname,'../public');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const routers = require('./routers/index.routes')
 const session = require('express-session');
 const methodOverride = require('method-override')
@@ -56,6 +56,14 @@ app.use('/addProduct', routers);
 app.use('/editProduct', routers);
 
 app.use('/removeProduct', routers);
+
+app.use('/aboutUs', routers);
+
+app.use('/opcionesPagos', routers);
+
+app.use('/opcionesEnvios', routers);
+
+app.use('/politicaDevoluciones', routers);
 
 /* app.use((req, res, next) => {
     res.status(404).render('Not found')

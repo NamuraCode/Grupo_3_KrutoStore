@@ -93,7 +93,7 @@ header{
     position: relative;
     width: 50%;
     height: 50%;
-    background: #fff;
+    /* background: #0f0; */
 }
 
 .images .imgBx:nth-child(2) {

@@ -1,13 +1,15 @@
 const path = require('path');
 const productos = require('../model/product.json');
 const favorites = require('../model/shoppingCart.json')
-const users = require('../model/users.json')
+const usuarios = require('../model/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const products = require('../model/users.json');
 const { validationResult } = require('express-validator');
-const session = require('express-session')
+const session = require('express-session');
+const { createUser } = require('./usersController');
+const user = require('./usersController');
 
 controller = {
     index: (req, res) => {
@@ -38,23 +40,33 @@ controller = {
     },
 
     register: (req, res) => {
-        let user = {
-            usename: req.body.username,
+        let newUser = {
+            id: (usuarios.length +1),
+            username: req.body.username,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-        }
-        users.push(register) 
-        const user = JSON.stringify(users, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json), users)
-        console.log(register);
+            password: req.body.password
+        };
+        newUser = JSON.stringify(newUser)
+        usuarios.push(newUser)
+        const usuariosJson = JSON.stringify(usuarios, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
+        res.render('register')
+    },
+
+    newUser: (req, res) => {
+        let newUser = {
+            id: (usuarios.length +1),
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        };
+        newUser = JSON.stringify(newUser)
+        usuarios.push(newUser)
+        const usuariosJson = JSON.stringify(usuarios, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
+        res.render('register')
     },
     
-    /* productos.push(create)
-        const producto = JSON.stringify(productos, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
-        console.log(create)
-        res.redirect('/products') */
-
     productForm: (req, res) => {
         res.render('productForm')
     },

@@ -4,22 +4,49 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const products = require('../model/users.json');
+const users = require('../model/users.json');
 const { validationResult } = require('express-validator');
 
-const user = {  
+const user = {
     'register': (req, res) => {
+        let newUser = {
+            id: (usuarios.length + 1),
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        };
+        let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../database/usuarios.json'), {
+            encoding: 'utf-8'
+        });
+        let users;
+        if (archivoUsers == "") {
+            users = [];
+        } else {
+            users = JSON.parse(archivoUsers)
+        }
         res.render('register')
     },
+
     'createUser': (req, res) => {
-        let user = {
-            usename: req.body.username,
+        let newUser = {
+            id: (usuarios.length + 1),
+            username: req.body.username,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-        }
-        res.redirect('/')
+            password: req.body.password
+        };
+        users.push(createUser)
+        const usersJson = JSON.stringify(users, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usersJson)
+        console.log(register)
+        //res.render('register')
+
     },
+
     login: (req, res) => {
         res.render('login')
+    },
+    profile: (req, res) => {
+        res.render('profile')
     }
 }
 

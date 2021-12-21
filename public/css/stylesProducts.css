@@ -143,6 +143,10 @@ main .main-products .main-articles i {
     cursor: pointer;
 }
 
+/* FORM */
+.form {
+    background: #fff;
+}
 /* --------------------------------- FOOTER --------------------------------- */
 
 footer {

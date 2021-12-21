@@ -57,6 +57,14 @@ app.use('/editProduct', routers);
 
 app.use('/removeProduct', routers);
 
+app.use('/aboutUs', routers);
+
+app.use('/opcionesPagos', routers);
+
+app.use('/opcionesEnvios', routers);
+
+app.use('/politicaDevoluciones', routers);
+
 /* app.use((req, res, next) => {
     res.status(404).render('Not found')
 }); */

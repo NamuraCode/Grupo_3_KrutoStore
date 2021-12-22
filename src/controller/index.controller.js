@@ -9,6 +9,7 @@ const session = require('express-session');
 const { createUser } = require('./usersController');
 const user = require('./usersController');
 
+
 controller = {
     index: (req, res) => {
         res.render('index')

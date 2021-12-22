@@ -75,20 +75,20 @@ controller = {
         res.render('politicaDevoluciones')
     },
 
-    dashboard: (req, res) => {
-        res.render('dashboard')
+    admin: (req, res) => {
+        res.render('admin')
     },
 
-    editarProducto: (req, res) => {
-        res.render('editarProducto')
+    editProducts: (req, res) => {
+        res.render('editProducts')
     },
 
-    eliminarProducto: (req, res) => {
-        res.render('eliminarProducto')
+    eliminateProducts: (req, res) => {
+        res.render('eliminateProducts')
     },
 
-    agregarProducto: (req, res) => {
-        res.render('agregarProducto')
+    addProducts: (req, res) => {
+        res.render('addProducts')
     },
 
 

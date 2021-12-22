@@ -5,7 +5,6 @@ const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const users = require('../data/users.json');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
 const { createUser } = require('./usersController');
@@ -40,10 +39,15 @@ controller = {
 
         }else {
             let nombre = req.body.username
-            let usuario = users.filter(user => user.username == nombre )
-           
-            console.log()
-            res.redirect('/index')
+            let contraseña = req.body.password
+            let usuario = usuarios.find(user => user.username == nombre && user.password == contraseña )
+            req.session.user = usuario
+           if (req.session.user == undefined){
+                res.render('login', { errores:{problemUser:'Usuario no econtrado', problemPass:'Contraseña incorrecta'}})
+           }else{
+                console.log(req.session.user)
+                res.redirect('/index')
+           }
         }
     },   
 
@@ -87,8 +91,7 @@ controller = {
         }else{
             let p1 = req.body.password
             let p2 = req.body.coPassword
-            if (p1 == p2){
-                let register = {
+            let register = {
                     id: (usuarios.length +1),
                     username: req.body.username,
                     email: req.body.email,
@@ -96,15 +99,17 @@ controller = {
                     password: bcrypt.hashSync(req.body.password, 10),
                     profile: "user",
                 }
-                let auth = usuarios.filter(function(user) {user.email == req.body.email})
-                if(auth){
-                    res.render('register', {problem : "El correo ya existe", oldData: req.body})
-                }else{
+            if (p1 == p2){
+                let auth = usuarios.find(function(user) {user.email == req.body.email})
+                if(auth == undefined) {
                     usuarios.push(register) 
                     let useres = JSON.stringify(usuarios, null, 6)
                     fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
                     res.redirect('/index')
+                }else{
+                    res.render('register', {problem : "El correo ya existe", oldData: req.body})
                 }
+                
             }else{
                 res.render('register', {problema : "Las contraseñas no son iguales",oldData: req.body})
             }

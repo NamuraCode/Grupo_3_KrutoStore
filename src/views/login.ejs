@@ -50,11 +50,17 @@
                         <% if(locals.errors && errors.username) { %>
                         <%= errors.username.msg %>
                         <% } %>
+                        <% if(locals.errores && errores.problemUser) { %>
+                        <%= errores.problemUser %>
+                        <% } %>
                     </div>
                     <input type="password" class="input-field" name="password" placeholder="password">
                     <div class=text-danger style="color: rgb(170, 23, 23);">
                         <% if(locals.errors && errors.password) { %>
-                        <%= errors.password.msg %>
+                            <%= errors.password.msg %>
+                        <% } %>
+                        <% if(locals.errores && errores.problemPass) { %>
+                            <%= errores.problemPass %>
                         <% } %>
                     </div>
                     <input type="checkbox" class="check-box" name="checkbox"><span>Recordarme</span>

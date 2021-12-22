@@ -19,7 +19,8 @@ const validations = [
         .notEmpty().withMessage('Campo email vacio').bail()
         .isEmail().withMessage('Formato de correo no valido'),
     body('password')
-        .notEmpty().withMessage('Campo contraseña vacio'),
+        .notEmpty().withMessage('Campo contraseña vacio').bail()
+        .isLength({min: 8}).withMessage('Campo contraseña minimo 8 caracteres'),
     body('coPassword')
         .notEmpty().withMessage('Campo contraseña vacio'),
     body('checkbox')
@@ -30,7 +31,8 @@ const validation = [
     body('username')
         .notEmpty().withMessage('Campo username vacio'),
     body('password')
-        .notEmpty().withMessage('Campo contraseña vacio'),
+        .notEmpty().withMessage('Campo contraseña vacio').bail()
+        .isLength({min: 8}).withMessage('Campo contraseña minimo 8 caracteres'),
 ]
 /* diskStorage para decirle a multer donde guardar los archivos y que queremos agregarles a esos archivos */
 

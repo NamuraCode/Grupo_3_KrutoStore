@@ -10,7 +10,29 @@ const controller = require('../controller/index.controller');
 const products = require('../routers/products.routes')
 const { body } = require('express-validator')
 
+/*Variable de validaciones */
 
+const validations = [
+    body('username')
+        .notEmpty().withMessage('Campo username vacio').bail(),
+    body('email')
+        .notEmpty().withMessage('Campo email vacio').bail()
+        .isEmail().withMessage('Formato de correo no valido'),
+    body('password')
+        .notEmpty().withMessage('Campo password vacio'),
+    body('coPassword')
+        .notEmpty().withMessage('Campo password vacio'),
+    body('checkbox')
+        .notEmpty().withMessage('Acepta terminos y condiciones'),
+]
+
+const validation = [
+    body('email')
+        .notEmpty().withMessage('Campo email vacio').bail()
+        .isEmail().withMessage('Formato de correo no valido'),
+    body('password')
+        .notEmpty().withMessage('Campo password vacio'),
+]
 /* diskStorage para decirle a multer donde guardar los archivos y que queremos agregarles a esos archivos */
 
 let multerDiskStorage = multer.diskStorage({
@@ -51,11 +73,12 @@ router.get('/productCart', controller.productCart);
 router.get('/products', controller.products)
 
 router.get('/login', controller.login)
+router.post('/login', validation, controller.log)
 
 router.get('/productDetail/:id', controller.productDetail)
 
-router.get('/register', fileUpload.single('file') ,controller.regi)
-router.post('/register', controller.register)
+router.get('/register', controller.regi)
+router.post('/register',fileUpload.single('file'), validations, controller.register)
 
 
 router.get('/index', controller.index)

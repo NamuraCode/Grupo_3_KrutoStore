@@ -43,46 +43,71 @@
                 </div>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
                 <form action="/register" method="post" id="register" class="input-group" enctype="multipart/form-data">
-                    <input name="username" type="text"
+                    <input 
+                        name="username" 
+                        type="text"
                         class="input-field <%= locals.errors && errors.username ? 'is-invalid' : null %>"
-                        placeholder="username" value="<%= locals.oldData ? oldData.username : null %>" required>
-                    <% if (locals.errors && errors.name) { %>
-                    <div class="text-danger">
-                        <%= errors.name.msg %>
-                    </div>
-                    <% } %>
+                        placeholder="username" 
+                        value="<%= locals.oldData ? oldData.username : null %>">
+                        <div class=text-danger style="color: rgb(170, 23, 23);">
+                            <% if(locals.errors && errors.username) { %>
+                                <%= errors.username.msg %>
+                            <% } %>
+                        </div>
 
-                    <input name="email" type="email"
+
+                    <input 
+                        name="email" 
+                        type="email"
                         class="input-field <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                        placeholder="email" value="<%= locals.oldData ? oldData.email : null %>" required>
-                    <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                        <%= errors.email.msg %>
-                    </div>
-                    <% } %>
+                        placeholder="email" 
+                        value="<%= locals.oldData ? oldData.email : null %>">
+                        <div class=text-danger style="color: rgb(170, 23, 23);">
+                            <% if(locals.errors && errors.email) { %>
+                                <%= errors.email.msg %>
+                            <% } %>
+                        </div>
 
-                    <input name="password" type="password"
+                    <input 
+                        name="password" 
+                        type="password"
                         class="input-field <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                        placeholder="password" required>
-                    <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                        <%= errors.password.msg %>
-                    </div>
-                    <% } %>
-                    <input name="password" type="password"
-                        class="input-field <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                        placeholder="password" required>
-                    <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                        <%= errors.password.msg %>
-                    </div>
-                    <% } %>
-                    
-                    <input name=file type="file" class="input-field ">
+                        placeholder="password"
+                        value="<%= locals.oldData ? oldData.password : null %>">
+                        <div class=text-danger style="color: rgb(170, 23, 23);">
+                            <% if(locals.errors && errors.password) { %>
+                                <%= errors.password.msg %>
+                            <% } %>
+                        </div>
+                    <input 
+                        name="coPassword" 
+                        type="password"
+                        class="input-field <%= locals.errors && errors.coPassword ? 'is-invalid' : null %>"
+                        placeholder="password">
+                        <div class=text-danger style="color: rgb(170, 23, 23);">
+                            <% if(locals.errors && errors.coPassword) { %>
+                                <%= errors.coPassword.msg %>
+                            <% } %>
+                        </div>
 
-                    <input name="check-box" type="checkbox" class="check-box"><span>I agree the terms &
-                        conditions</span>
-                    
+                    <input 
+                        name=file 
+                        type="file" 
+                        class="input-field" 
+                        value="Avatar">
+
+                    <input 
+                        name="checkbox" 
+                        type="checkbox" 
+                        class="check-box">
+                        <span>I agree the terms & conditions</span>
+                        <div class=text-danger style="color: rgb(170, 23, 23);">
+                            <% if(locals.errors && errors.checkbox) { %>
+                                <%= errors.checkbox.msg %>
+                            <% } %>
+                        </div>
+
+
                     <button type="submit" class="submit-btn">Sign Up</button>
                 </form>
             </div>

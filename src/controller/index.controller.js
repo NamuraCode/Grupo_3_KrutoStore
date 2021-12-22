@@ -30,6 +30,16 @@ controller = {
         res.render('login')
     },
 
+    log: (req, res) => {
+        const resultValidations = validationResult(req)
+        if (resultValidations.errors.length > 0){
+            res.render('login',{
+                errors: resultValidations.mapped(),
+                oldData: req.body
+            })
+        }
+    },   
+
     productDetail: (req, res) => {
         let id = req.params.id
         console.log(id)
@@ -56,17 +66,25 @@ controller = {
     },
 
     register: (req, res) => {
-        let register = {
-            id: (usuarios.length +1),
-            username: req.body.username,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10)
+        const resultValidations = validationResult(req)
+        if (resultValidations.errors.length > 0){
+            res.render('register',{
+                errors: resultValidations.mapped(),
+                oldData: req.body
+            })
         }
-        usuarios.push(register) 
-        let useres = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
-        // console.log(register);
-        res.redirect('/index')
+        // let register = {
+        //     id: (usuarios.length +1),
+        //     username: req.body.username,
+        //     email: req.body.email,
+        //     password: bcrypt.hashSync(req.body.password, 10),
+        //     profile: "user",
+        // }
+        // usuarios.push(register) 
+        // let useres = JSON.stringify(usuarios, null, 6)
+        // fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+        // // console.log(register);
+        // res.redirect('/index')
     },
 
     regi: (req, res) => {

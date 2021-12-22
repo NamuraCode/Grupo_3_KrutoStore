@@ -53,10 +53,9 @@ controller = {
 
     productDetail: (req, res) => {
         let id = req.params.id
-        console.log(id)
+        let producto = productos.find(producto => producto.id == id)
         res.render('productDetail', {
-            "ingresan": productos,
-            "id": id
+            ingresan: producto
         })
     },
 

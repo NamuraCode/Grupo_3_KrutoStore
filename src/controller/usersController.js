@@ -7,6 +7,7 @@ const products = require('../data/users.json');
 const users = require('../data/users.json');
 const { validationResult } = require('express-validator');
 
+
 const user = {
     'register': (req, res) => {
         let newUser = {
@@ -46,8 +47,16 @@ const user = {
         res.render('login')
     },
     profile: (req, res) => {
-        res.render('profile')
-    }
+		return res.render('profile', {
+			user: req.session.userLogged
+		});
+	},
+
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	},
 }
 
 module.exports = user;

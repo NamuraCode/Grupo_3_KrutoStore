@@ -34,11 +34,11 @@ const user = {
             email: req.body.email,
             password: req.body.password
         };
-        users.push(createUser)
-        const usersJson = JSON.stringify(users, null, 6)
+        users.push(newUser)
+        let usersJson = JSON.stringify(users, null, 6)
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJson)
         console.log(register)
-        //res.render('register')
+        res.redirect('/index')
 
     },
 

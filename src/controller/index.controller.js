@@ -40,7 +40,7 @@ controller = {
     },
 
     aboutUs: (req, res) => {
-        res.render('about')
+        res.render('aboutUs')
     },
 
     opcionesPagos: (req, res) => {

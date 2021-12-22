@@ -23,6 +23,7 @@ El mercado objetivo de KRUTO STORE, es un público con nivel socioeconómico med
 
 ## Trello
 ### [Enlace Trello Grupo 3](https://trello.com/b/LTlEPEHw)
+### [Entregables Trello 3](https://trello.com/b/fGuVE1f0/elementos-del-sitio)
 
 ## Integrantes del equipo
 ### [Cristina Gil](https://github.com/cris-gil)

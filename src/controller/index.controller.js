@@ -180,6 +180,9 @@ controller = {
         res.redirect('/products')
 
     },
+    del:(req, res) => {
+        res.render('eliminateProducts')
+    },
 
     create: (req, res) => {
         let create = {

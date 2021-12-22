@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <link rel="stylesheet" href="./css/editProduct.css">
-    <title>Agregar Producto</title>
+    <title>Editar Producto</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="container" id="container">
             <div class="container-form edit-container">
                 <h2>Edita un producto</h2>
-                <form action="/editProduct/<%=product.id%>?_method=PUT" method="post">
+                <form action="/editProduct/<%=product.id%>?_method=PUT" method="post" enctype="multipart/form-data">
                     <div class="editProduct-container">
                     <div class="container-edit">
                         <img src="<%=product.image%>" alt="">

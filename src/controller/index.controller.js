@@ -95,7 +95,7 @@ controller = {
             if(productos[i].id == id){
                 productos[i].name = req.body.name,
                 productos[i].description = req.body.description,
-                productos[i].image = '/images/products/' + req.body.image,
+                productos[i].image = '/images/productos/' + req.file.filename,
                 productos[i].category = req.body.category,
                 productos[i].price = req.body.price
             }

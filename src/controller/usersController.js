@@ -38,7 +38,7 @@ const user = {
         let usersJson = JSON.stringify(users, null, 6)
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJson)
         console.log(register)
-        res.redirect('/index')
+        res.redirect('/register')
 
     },
 

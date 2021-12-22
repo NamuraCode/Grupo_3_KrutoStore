@@ -9,6 +9,7 @@ const path = require('path')
 const controller = require('../controller/index.controller');
 const products = require('../routers/products.routes')
 const { body } = require('express-validator')
+const auth = require('../middlewares/authMiddleware')
 
 /*Variable de validaciones */
 
@@ -79,18 +80,18 @@ router.post('/login', validation, controller.log)
 router.get('/productDetail/:id', controller.productDetail)
 
 router.get('/register', controller.regi)
-router.post('/register',fileUpload.single('file'), validations, controller.register)
+router.post('/register', fileUpload.single('file'), validations, controller.register)
 
 
 router.get('/index', controller.index)
 
-router.get('/addProduct', controller.addProduct)
+router.get('/addProduct', auth ,controller.addProduct)
 
 /* PUT */
 /* Put es un metodo para editar datos de un formulario */
-router.get('/editProduct/:id', controller.editProduct)
+router.get('/editProduct/:id', auth, controller.editProduct)
 
-router.put('/editProduct/:id', fileUploa.single('image'), controller.edit)
+router.put('/editProduct/:id', fileUploa.single('image'), auth, controller.edit)
 
 router.get('/aboutUs', controller.aboutUs)
 
@@ -102,7 +103,7 @@ router.get('/politicaDevoluciones', controller.politicaDevoluciones)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
-router.get('/removeProduct/:id', controller.removeProduct)
+router.get('/removeProduct/:id', auth, controller.removeProduct)
 
 router.delete('/removeProduct/delete/:id', controller.deleteProduct)
 

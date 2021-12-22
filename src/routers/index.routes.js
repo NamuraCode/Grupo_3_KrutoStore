@@ -123,7 +123,8 @@ router.post('/products', controller.agregarCart)
 /* ADMINISTRADOR */
 router.get('/admin/admin', controller.admin)
 router.get('/admin/addProducts', controller.addProducts)
-router.get('/admin//removeProduct/delete/:id', controller.deleteProducts)
+router.get('/admin/removeProduct/delete/:id', auth, controller.removeProduct)
+router.get('/admin/removeProduct/delete/:id', auth, controller.deleteProduct)
 
 module.exports = router;
 

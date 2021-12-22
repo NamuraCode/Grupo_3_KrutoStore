@@ -48,7 +48,7 @@ app.use('/addProduct', routers);
 
 app.use('/editProduct', routers);
 
-app.use('/removeProduct', routers);
+app.use('/admin/removeProduct/delete', routers);
 
 app.use('/aboutUs', routers);
 

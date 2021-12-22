@@ -1,11 +1,11 @@
 const path = require('path');
-const productos = require('../model/product.json');
-const favorites = require('../model/shoppingCart.json')
-const usuarios = require('../model/users.json')
+const productos = require('../data/product.json');
+const favorites = require('../data/shoppingCart.json')
+const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('../model/users.json');
+const products = require('../data/users.json');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
 const { createUser } = require('./usersController');
@@ -17,7 +17,7 @@ controller = {
     },
 
     productCart: (req, res) => {
-        res.render('productCart')
+        res.render('productCart', { favorite:favorites })
     },
 
     products: (req, res) => {
@@ -64,7 +64,7 @@ controller = {
         }
         usuarios.push(register) 
         let useres = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), useres)
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
         // console.log(register);
         res.redirect('/index')
     },
@@ -75,7 +75,7 @@ controller = {
 
     /* productos.push(create)
         const producto = JSON.stringify(productos, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         console.log(create)
         res.redirect('/products') */
 
@@ -101,7 +101,7 @@ controller = {
             }
         }
         let producto = JSON.stringify(productos, null, 4);
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         res.redirect('/products')
     },
 
@@ -115,7 +115,7 @@ controller = {
         let id = req.params.id
         let productoTodelete = productos.filter(producto => producto.id != id)
         let producto = JSON.stringify(productoTodelete, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         console.log(productoTodelete)
         res.redirect('/products')
 
@@ -132,7 +132,7 @@ controller = {
         };
         productos.push(create)
         const producto = JSON.stringify(productos, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         console.log(create)
         res.redirect('/products')
     },
@@ -143,7 +143,7 @@ controller = {
         console.log(favorite)
         productos.push(favorite)
         let favor = JSON.stringify(favorite, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/shoppingCart.json'), favor)
+        fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
         res.redirect('/productCart')
     }
 }

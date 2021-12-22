@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('../model/users.json');
-const users = require('../model/users.json');
+const products = require('../data/users.json');
+const users = require('../data/users.json');
 const { validationResult } = require('express-validator');
 
 const user = {
@@ -36,7 +36,7 @@ const user = {
         };
         users.push(createUser)
         const usersJson = JSON.stringify(users, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usersJson)
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJson)
         console.log(register)
         //res.render('register')
 

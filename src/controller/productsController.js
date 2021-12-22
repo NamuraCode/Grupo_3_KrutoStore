@@ -1,5 +1,5 @@
 const path = require('path');
-const products = require('../model/product.json');
+const products = require('../data/product.json');
 
 
 const product = {

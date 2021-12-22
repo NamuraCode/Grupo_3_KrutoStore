@@ -122,9 +122,9 @@ button {
     margin-left: 5px;
 }
 
-
+/** ------------------------------- RESPONSIVE ------------------------------- **/
 @media (min-width: 769px) {
-   .container{
+    .container{
         width: 40%;
         height: 60%;
     }   
@@ -132,7 +132,7 @@ button {
 
 @media (min-width: 1200px) {
     .container{
-         width: 20%;
-         height: 60%;
-     }   
- }
+        width: 20%;
+        height: 60%;
+    }   
+}

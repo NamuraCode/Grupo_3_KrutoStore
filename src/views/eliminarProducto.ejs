@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logos/FAVICON_2_AZUL.png" type="image/png">
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    <link rel="stylesheet" href="/css/eliminar.css">
+    <title>Eliminar Producto</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <section>
+            <div class="top-bar">
+            </div>
+            <div class="logo-kruto">
+                <a href="/"><img class="logo" src="..\images\logos\logo-kruto-rojo.png" alt="kruto_azul"></a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="box">
+            <div class="container" id="container">
+                <div class="container-form add-container">
+                    <h2>Eliminar un producto</h2>
+            
+                    <form action="/addProduct" method="post">
+                        <div class="newProduct-container">
+                            <img src="..\images\productos\unnamed.png" class="producto">
+                            <p>
+                                <label for="product-name">Nombre del Producto</label>
+                                <input type="text" name="product" id="name">
+                            </p>
+                            <p>
+                                <label for="product-price">Categoria</label>
+                                <input type="text" name="category" id="price">
+                            </p>
+                            <p>
+                                <label for="product-price">Referencia</label>
+                                <input type="text" name="price" id="price">
+                            </p>
+                            <div class="btn">
+                                <p class="btn-left">
+                                    <a href="/admin/dashboard"><button type="button">Eliminar</button></a>
+                                </p>
+                                <p class="btn-right">
+                                    <a href="/admin/dashboard"><button type="button">Volver</button></a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

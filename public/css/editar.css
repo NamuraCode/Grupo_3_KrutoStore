@@ -64,6 +64,13 @@ main {
     background-color: #fff;
 }
 
+.producto {
+    width: 40%;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
 h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;

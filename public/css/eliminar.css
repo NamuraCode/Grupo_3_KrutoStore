@@ -64,6 +64,13 @@ main {
     background-color: #fff;
 }
 
+.producto {
+    width: 40%;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
 h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -107,6 +114,21 @@ button {
 	color: #FFFFFF;
 }
 
+.btn {
+    display: flex;
+    align-content: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+.btn-left {
+    margin-right: 5px;
+}
+
+.btn-right {
+    margin-left: 5px;
+}
+
 @media (min-width: 769px) {
     .container{
         width: 40%;
@@ -116,7 +138,7 @@ button {
 
 @media (min-width: 1200px) {
     .container{
-    width: 20%;
-    height: 60%;
+        width: 20%;
+        height: 60%;
     }   
 }

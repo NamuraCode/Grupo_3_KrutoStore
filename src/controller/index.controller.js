@@ -33,7 +33,7 @@ controller = {
     log: (req, res) => {
         const resultValidations = validationResult(req)
         if (resultValidations.errors.length > 0){
-            res.render('login',{
+            res.render('login', {
                 errors: resultValidations.mapped(),
                 oldData: req.body
             })

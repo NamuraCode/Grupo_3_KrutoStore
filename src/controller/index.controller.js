@@ -41,9 +41,8 @@ controller = {
         }else {
             let nombre = req.body.username
             let usuario = users.filter(user => user.username == nombre )
-            req.session.login = usuario
-            let usser = req.session.login
-            console.log(usser)
+           
+            console.log()
             res.redirect('/index')
         }
     },   

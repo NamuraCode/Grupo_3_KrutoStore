@@ -35,6 +35,10 @@ header{
 }
 
 /** ------------------------------ CARD ------------------------------ **/
+main {
+    background: url(../images/productos/fondo-admin30.png);
+}
+
 .flex {
     display: -webkit-box;
     display: -ms-flexbox;

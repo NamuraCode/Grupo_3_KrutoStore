@@ -86,6 +86,10 @@ router.get('/index', controller.index)
 
 router.get('/addProduct', controller.addProduct)
 
+router.get('removeProduct', controller.removeProduct)
+
+router.get('editProduct', controller.editProduct)
+
 /* PUT */
 /* Put es un metodo para editar datos de un formulario */
 router.get('/editProduct/:id', controller.editProduct)
@@ -100,7 +104,7 @@ router.get('/opcionesEnvios', controller.opcionesEnvios)
 
 router.get('/politicaDevoluciones', controller.politicaDevoluciones)
 
-router.get('/admin', controller.admin)
+// router.get('/admin', controller.admin)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
@@ -114,4 +118,11 @@ router.post('/addProduct', fileUploa.single('image'), controller.create)
 
 router.post('/products', controller.agregarCart)
 
+
+/* ADMINISTRADOR */
+router.get('/admin/admin', controller.admin)
+router.get('/admin/addProducts', controller.addProducts)
+router.get('/admin/eliminateProducts', controller.eliminateProducts)
+
 module.exports = router;
+

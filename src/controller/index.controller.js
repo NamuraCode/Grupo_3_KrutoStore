@@ -75,6 +75,24 @@ controller = {
         res.render('politicaDevoluciones')
     },
 
+    admin: (req, res) => {
+        res.render('admin')
+    },
+
+    editProducts: (req, res) => {
+        res.render('editProducts')
+    },
+
+    eliminateProducts: (req, res) => {
+        res.render('eliminateProducts')
+    },
+
+    addProducts: (req, res) => {
+        res.render('addProducts')
+    },
+
+
+
     register: (req, res) => {
         const resultValidations = validationResult(req)
         if (resultValidations.errors.length > 0){

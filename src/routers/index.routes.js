@@ -122,7 +122,7 @@ router.post('/products', controller.agregarCart)
 
 /* ADMINISTRADOR */
 router.get('/admin/dashboard', controller.dashboard)
-router.get('/admin/agregarProducto', controller.agregarProducto)
+router.get('/admin/agregarProducto', controller.agregarProductos)
 router.get('/admin/eliminarProducto', controller.eliminarProducto)
 router.get('/admin/editarProducto', controller.editarProducto)
 

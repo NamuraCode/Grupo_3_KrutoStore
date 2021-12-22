@@ -4,7 +4,6 @@ const favorites = require('../data/shoppingCart.json')
 const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const multer = require('multer');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
 const { createUser } = require('./usersController');
@@ -40,7 +39,7 @@ controller = {
         }else {
             let nombre = req.body.username
             let contraseña = req.body.password
-            let usuario = usuarios.find(user => user.username == nombre && user.password == contraseña )
+            let usuario = usuarios.find(user => user.username == nombre && bcrypt.compareSync(contraseña, user.password))
             req.session.user = usuario
            if (req.session.user == undefined){
                 res.render('login', { errores:{problemUser:'Usuario no econtrado', problemPass:'Contraseña incorrecta'}})
@@ -105,7 +104,7 @@ controller = {
                 }else{
                     res.render('register', {problem : "El correo ya existe", oldData: req.body})
                 }
-                
+
             }else{
                 res.render('register', {problema : "Las contraseñas no son iguales",oldData: req.body})
             }

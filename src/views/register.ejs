@@ -69,6 +69,14 @@
                         <%= errors.password.msg %>
                     </div>
                     <% } %>
+                    <input name="password" type="password"
+                        class="input-field <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                        placeholder="password" required>
+                    <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %>
                     
                     <input name=file type="file" class="input-field ">
 

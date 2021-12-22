@@ -8,6 +8,7 @@ const path = require('path')
 /* Controller un objeto con metodos de respuesta (res) */
 const controller = require('../controller/index.controller');
 const products = require('../routers/products.routes')
+const { body } = require('express-validator')
 
 
 /* diskStorage para decirle a multer donde guardar los archivos y que queremos agregarles a esos archivos */
@@ -53,7 +54,7 @@ router.get('/login', controller.login)
 
 router.get('/productDetail/:id', controller.productDetail)
 
-router.get('/register', fileUpload.single('image') ,controller.regi)
+router.get('/register', fileUpload.single('file') ,controller.regi)
 router.post('/register', controller.register)
 
 

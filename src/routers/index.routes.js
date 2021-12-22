@@ -14,24 +14,23 @@ const { body } = require('express-validator')
 
 const validations = [
     body('username')
-        .notEmpty().withMessage('Campo username vacio').bail(),
+        .notEmpty().withMessage('Campo username vacio'),
     body('email')
         .notEmpty().withMessage('Campo email vacio').bail()
         .isEmail().withMessage('Formato de correo no valido'),
     body('password')
-        .notEmpty().withMessage('Campo password vacio'),
+        .notEmpty().withMessage('Campo contraseña vacio'),
     body('coPassword')
-        .notEmpty().withMessage('Campo password vacio'),
+        .notEmpty().withMessage('Campo contraseña vacio'),
     body('checkbox')
         .notEmpty().withMessage('Acepta terminos y condiciones'),
 ]
 
 const validation = [
-    body('email')
-        .notEmpty().withMessage('Campo email vacio').bail()
-        .isEmail().withMessage('Formato de correo no valido'),
+    body('username')
+        .notEmpty().withMessage('Campo username vacio'),
     body('password')
-        .notEmpty().withMessage('Campo password vacio'),
+        .notEmpty().withMessage('Campo contraseña vacio'),
 ]
 /* diskStorage para decirle a multer donde guardar los archivos y que queremos agregarles a esos archivos */
 

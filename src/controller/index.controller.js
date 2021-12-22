@@ -5,7 +5,7 @@ const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('../data/users.json');
+const users = require('../data/users.json');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
 const { createUser } = require('./usersController');
@@ -37,6 +37,14 @@ controller = {
                 errors: resultValidations.mapped(),
                 oldData: req.body
             })
+
+        }else {
+            let nombre = req.body.username
+            let usuario = users.filter(user => user.username == nombre )
+            req.session.login = usuario
+            let usser = req.session.login
+            console.log(usser)
+            res.redirect('/index')
         }
     },   
 
@@ -71,20 +79,33 @@ controller = {
             res.render('register',{
                 errors: resultValidations.mapped(),
                 oldData: req.body
-            })
+            }) 
+
+        }else{
+            let p1 = req.body.password
+            let p2 = req.body.coPassword
+            if (p1 == p2){
+                let register = {
+                    id: (usuarios.length +1),
+                    username: req.body.username,
+                    email: req.body.email,
+                    image: '/images/avatars/' + req.file.filename,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    profile: "user",
+                }
+                let auth = usuarios.filter(function(user) {user.email == req.body.email})
+                if(auth){
+                    res.render('register', {problem : "El correo ya existe", oldData: req.body})
+                }else{
+                    usuarios.push(register) 
+                    let useres = JSON.stringify(usuarios, null, 6)
+                    fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+                    res.redirect('/index')
+                }
+            }else{
+                res.render('register', {problema : "Las contraseñas no son iguales",oldData: req.body})
+            }
         }
-        // let register = {
-        //     id: (usuarios.length +1),
-        //     username: req.body.username,
-        //     email: req.body.email,
-        //     password: bcrypt.hashSync(req.body.password, 10),
-        //     profile: "user",
-        // }
-        // usuarios.push(register) 
-        // let useres = JSON.stringify(usuarios, null, 6)
-        // fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
-        // // console.log(register);
-        // res.redirect('/index')
     },
 
     regi: (req, res) => {
@@ -143,7 +164,7 @@ controller = {
         let create = {
             id: (productos.length + 1),
             name: req.body.product,
-            image: '/images/avatars/' + req.file.filename,
+            image: '/images/productos/' + req.file.filename,
             description: req.body.description,
             category: req.body.category,
             price: req.body.price,

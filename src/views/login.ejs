@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,11 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
-<!-- ------------------------------- HEADER -------------------------------- -->
+    <!-- ------------------------------- HEADER -------------------------------- -->
     <header>
         <section>
             <div class="top-bar">""
@@ -24,17 +25,17 @@
         </section>
     </header>
 
-<!-- ----------------------------- FORMULARIO ------------------------------ -->
+    <!-- ----------------------------- FORMULARIO ------------------------------ -->
     <main>
         <div class="hero">
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
                     <a href="/login">
-                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                        <button type="button" class="toggle-btn" onclick="login()">Login</button>
                     </a>
                     <a href="/register">
-                    <button type="button" class="toggle-btn" onclick="register()">Sing Up</button>
+                        <button type="button" class="toggle-btn" onclick="register()">Sing Up</button>
                     </a>
                 </div>
                 <div class="social-icons">
@@ -43,10 +44,20 @@
                     <img src="./images/productos/twitter.png">
                 </div>
                 <!-- -------------------------------- LOGIN -------------------------------- -->
-                <form id="login" action="/register" class="input-group">
-                    <input type="text" class="input-field" placeholder="username" required>
-                    <input type="password" class="input-field" placeholder="password" required>
-                    <input type="checkbox" class="check-box"><span>Recordarme</span>
+                <form id="login" action="/login" class="input-group" method="post">
+                    <input type="text" class="input-field" name="username" placeholder="username">
+                    <div class=text-danger style="color: rgb(170, 23, 23);">
+                        <% if(locals.errors && errors.username) { %>
+                        <%= errors.username.msg %>
+                        <% } %>
+                    </div>
+                    <input type="password" class="input-field" name="password" placeholder="password">
+                    <div class=text-danger style="color: rgb(170, 23, 23);">
+                        <% if(locals.errors && errors.password) { %>
+                        <%= errors.password.msg %>
+                        <% } %>
+                    </div>
+                    <input type="checkbox" class="check-box" name="checkbox"><span>Recordarme</span>
                     <button type="submit" class="submit-btn">Login</button>
                 </form>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
@@ -61,7 +72,7 @@
         </div>
     </main>
 
-<!-- -------------------------------- MENU --------------------------------- -->
+    <!-- -------------------------------- MENU --------------------------------- -->
     <footer>
         <div class="menu">
             <nav>
@@ -69,7 +80,7 @@
                     <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
                     <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
                     <li><a href="/productCart"><span class="iconify"
-                                    data-icon="ic:baseline-local-grocery-store"></span></a></li>
+                                data-icon="ic:baseline-local-grocery-store"></span></a></li>
                     <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
                     <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
                 </ul>
@@ -93,7 +104,6 @@
             y.style.left = "450px";
             z.style.left = "0px";
         }
-        
     </script>
 
 
@@ -155,4 +165,5 @@
         </div>
     </footer> -->
 </body>
+
 </html>

@@ -66,6 +66,9 @@
                             <% if(locals.errors && errors.email) { %>
                                 <%= errors.email.msg %>
                             <% } %>
+                            <% if(locals.problem) { %>
+                                <%= problem %>
+                            <%}%>
                         </div>
 
                     <input 
@@ -88,6 +91,9 @@
                             <% if(locals.errors && errors.coPassword) { %>
                                 <%= errors.coPassword.msg %>
                             <% } %>
+                            <% if(locals.problema) { %>
+                                <%= problema %>
+                            <%}%>
                         </div>
 
                     <input 

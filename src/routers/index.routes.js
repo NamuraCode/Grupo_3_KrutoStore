@@ -24,9 +24,22 @@ let multerDiskStorage = multer.diskStorage({
         callback(null, imagName);
     }
 })
+let multerDiskStorag = multer.diskStorage({
+    /* Destino de los archivos */
+    destination: (req, file, callback) => {
+        let folder = path.join(__dirname, '../../public/images/productos');
+        callback(null, folder);
+    },
+    /* renombrar los archivos */
+    filename: (req, file, callback)=>{
+        let imagName= Date.now() + path.extname(file.originalname);
+        callback(null, imagName);
+    }
+})
 
 /* Guardarlo en variable para llamarlo como middleware */
 let fileUpload = multer({ storage: multerDiskStorage})
+let fileUploa = multer({ storage: multerDiskStorag})
 
 /* GET */
 /* Get es un metodo HTTP para obtener las vistas y enviar datos no seguros de formulario */
@@ -40,15 +53,19 @@ router.get('/login', controller.login)
 
 router.get('/productDetail/:id', controller.productDetail)
 
-router.get('/register', controller.register)
+router.get('/register', fileUpload.single('image') ,controller.regi)
+router.post('/register', controller.register)
+
 
 router.get('/index', controller.index)
 
-router.get('/productForm', controller.productForm)
-
 router.get('/addProduct', controller.addProduct)
 
-router.get('/editProduct', controller.editProduct)
+/* PUT */
+/* Put es un metodo para editar datos de un formulario */
+router.get('/editProduct/:id', controller.editProduct)
+
+router.put('/editProduct/:id', fileUploa.single('image'), controller.edit)
 
 router.get('/aboutUs', controller.aboutUs)
 
@@ -60,13 +77,13 @@ router.get('/politicaDevoluciones', controller.politicaDevoluciones)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
-router.get('/removeProduct/:id/delete', controller.removeProduct)
+router.get('/removeProduct/:id', controller.removeProduct)
 
-router.delete('/removeProduct/:id/delete', controller.deleteProduct)
+router.delete('/removeProduct/delete/:id', controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */
-router.post('/addProduct', fileUpload.single('image'), controller.create)
+router.post('/addProduct', fileUploa.single('image'), controller.create)
 
 router.post('/products', controller.agregarCart)
 

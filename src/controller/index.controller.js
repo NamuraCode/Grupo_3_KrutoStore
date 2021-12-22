@@ -1,11 +1,11 @@
 const path = require('path');
-const productos = require('../model/product.json');
-const favorites = require('../model/shoppingCart.json')
-const usuarios = require('../model/users.json')
+const productos = require('../data/product.json');
+const favorites = require('../data/shoppingCart.json')
+const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
-const products = require('../model/users.json');
+const products = require('../data/users.json');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
 const { createUser } = require('./usersController');
@@ -17,7 +17,7 @@ controller = {
     },
 
     productCart: (req, res) => {
-        res.render('productCart')
+        res.render('productCart', { favorite:favorites })
     },
 
     products: (req, res) => {
@@ -56,57 +56,66 @@ controller = {
     },
 
     register: (req, res) => {
-        let newUser = {
+        let register = {
             id: (usuarios.length +1),
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
-        };
-        newUser = JSON.stringify(newUser)
-        usuarios.push(newUser)
-        const usuariosJson = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
+            password: bcrypt.hashSync(req.body.password, 10)
+        }
+        usuarios.push(register) 
+        let useres = JSON.stringify(usuarios, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+        // console.log(register);
+        res.redirect('/index')
+    },
+
+    regi: (req, res) => {
         res.render('register')
     },
 
-    newUser: (req, res) => {
-        let newUser = {
-            id: (usuarios.length +1),
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-        };
-        newUser = JSON.stringify(newUser)
-        usuarios.push(newUser)
-        const usuariosJson = JSON.stringify(usuarios, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/users.json'), usuariosJson)
-        res.render('register')
-    },
-    
-    productForm: (req, res) => {
-        res.render('productForm')
-    },
+    /* productos.push(create)
+        const producto = JSON.stringify(productos, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
+        console.log(create)
+        res.redirect('/products') */
 
     addProduct: (req, res) => {
         res.render('addProduct')
     },
 
     editProduct: (req, res) => {
-        res.render('editProduct')
+        let id = req.params.id
+        let producto = productos.find(productos => productos.id == id)
+        res.render('editProduct', {product: producto})
+    },
+
+    edit:(req, res) => {
+        let id = req.params.id
+        for (let i = 0; i <productos.length; i++) {
+            if(productos[i].id == id){
+                productos[i].name = req.body.name,
+                productos[i].description = req.body.description,
+                productos[i].image = '/images/productos/' + req.file.filename,
+                productos[i].category = req.body.category,
+                productos[i].price = req.body.price
+            }
+        }
+        let producto = JSON.stringify(productos, null, 4);
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
+        res.redirect('/products')
     },
 
     removeProduct: (req, res) => {
         let id = req.params.id
-        let elementToDelete = productos.find(element => element.id == id);
-        res.render('removeProduct', { product: elementToDelete })
+        let elementToDelete = productos.find(productos => productos.id == id)
+        res.render('removeProduct',{product:elementToDelete})
     },
 
     deleteProduct: (req, res) => {
         let id = req.params.id
-        let elementToDelete = productos.find(element => element.id == id)
-        let productoTodelete = productos.splice(elementToDelete.id, 1)
+        let productoTodelete = productos.filter(producto => producto.id != id)
         let producto = JSON.stringify(productoTodelete, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         console.log(productoTodelete)
         res.redirect('/products')
 
@@ -123,7 +132,7 @@ controller = {
         };
         productos.push(create)
         const producto = JSON.stringify(productos, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/product.json'), producto)
+        fs.writeFileSync(path.join(__dirname, '../data/product.json'), producto)
         console.log(create)
         res.redirect('/products')
     },
@@ -132,9 +141,9 @@ controller = {
         let id = req.body.id
         let favorite = productos.find(element => element.id == id);
         console.log(favorite)
-        productos.push(favorite)
-        let favor = JSON.stringify(favorite, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../model/shoppingCart.json'), favor)
+        favorites.push(favorite)
+        let favor = JSON.stringify(favorites, null, 6)
+        fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
         res.redirect('/productCart')
     }
 }

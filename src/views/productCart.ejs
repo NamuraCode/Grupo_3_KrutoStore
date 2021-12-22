@@ -15,7 +15,6 @@
     <header class="shopping-cart">
         <section>
             <div class="top-bar">
-                " "
             </div>
         </section>
     </header>
@@ -47,191 +46,53 @@
                         </div>
                     </div>
                 </article>
-                <article class="product1">
-                    <div class="product_icon">
-                        <div class="icon">
-                            <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
-                        </div>
-                        <ul class="product_ref">
-                            <li>Item name</li>
-                            <li>ref:123</li>
-                        </ul>
-                    </div>
-                    <div class="product_det">
-                        <ul class="price">
-                            <li>
-                                <p> $12.345 </p>
-                            </li>
-                            <li>
-                                <form class="quantity" action="/quantity" method="GET">
-                                    <select name="quantity">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    </select>
-                                    </form>
-                            </li>
-                            <li>
-                                <p> $12.345</p>
-                            </li>
-                            <div class="clear">
-                                <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
+                <% for(let i = 0; i <favorite.length; i++) {%>
+                    <article class="product1">
+                        <div class="product_icon">
+                            <div class="icon">
+                                <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
                             </div>
-                        </ul>
-                    </div>
-                </article>
-                <article class="product2">
-                    <div class="product_icon">
-                        <div class="icon">
-                            <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
+                            <ul class="product_ref">
+                                <li><%= favorite[i].name%></li>
+                                <li>ref: <%= favorite[i].category%></li>
+                            </ul>
                         </div>
-                        <ul class="product_ref">
-                            <li>Item name</li>
-                            <li>ref:123</li>
-                        </ul>
-                    </div>
-                    <div class="product_det">
-                        <ul class="price">
-                            <li>
-                                <p> $12.345 </p>
-                            </li>
-                            <li>
-                                <form class="quantity" action="/quantity" method="GET">
-                                    <select name="quantity">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    </select>
-                                    </form>
-                            </li>
-                            <li>
-                                <p> $12.345</p>
-                            </li>
-                            <div class="clear">
-                                <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
-                            </div>
-                        </ul>
-                    </div>
-                </article>
-                <article class="product1">
-                    <div class="product_icon">
-                        <div class="icon">
-                            <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
+                        <div class="product_det">
+                            <ul class="price">
+                                <li>
+                                    <p><%=favorite[i].price%></p>
+                                </li>
+                                <li>
+                                    <form class="quantity" action="/quantity" method="GET">
+                                            <select name="quantity">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </form>
+                                </li>
+                                <li>
+                                    <p><%=favorite[i].price%></p>
+                                </li>
+                                <div class="clear">
+                                    <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
+                                </div>
+                            </ul>
                         </div>
-                        <ul class="product_ref">
-                            <li>Item name</li>
-                            <li>ref:123</li>
-                        </ul>
-                    </div>
-                    <div class="product_det">
-                        <ul class="price">
-                            <li>
-                                <p> $12.345 </p>
-                            </li>
-                            <li>
-                                <form class="quantity" action="/quantity" method="GET">
-                                    <select name="quantity">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    </select>
-                                    </form>
-                            </li>
-                            <li>
-                                <p> $12.345</p>
-                            </li>
-                            <div class="clear">
-                                <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
-                            </div>
-                        </ul>
-                    </div>
-                </article>
-                <article class="product2">
-                    <div class="product_icon">
-                        <div class="icon">
-                            <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
-                        </div>
-                        <ul class="product_ref">
-                            <li>Item name</li>
-                            <li>ref:123</li>
-                        </ul>
-                    </div>
-                    <div class="product_det">
-                        <ul class="price">
-                            <li>
-                                <p> $12.345 </p>
-                            </li>
-                            <li>
-                                <form class="quantity" action="/quantity" method="GET">
-                                    <select name="quantity">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    </select>
-                                    </form>
-                            </li>
-                            <li>
-                                <p> $12.345</p>
-                            </li>
-                            <div class="clear">
-                                <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
-                            </div>
-                        </ul>
-                    </div>
-                </article>
-                <article class="product1">
-                    <div class="product_icon">
-                        <div class="icon">
-                            <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
-                        </div>
-                        <ul class="product_ref">
-                            <li>Item name</li>
-                            <li>ref:123</li>
-                        </ul>
-                    </div>
-                    <div class="product_det">
-                        <ul class="price">
-                            <li>
-                                <p> $12.345 </p>
-                            </li>
-                            <li>
-                                <form class="quantity" action="/quantity" method="GET">
-                                    <select name="quantity">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    </select>
-                                    </form> 
-                            </li>
-                            <li>
-                                <p> $12.345</p>
-                            </li>
-                            <div class="clear">
-                                <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
-                            </div>
-                        </ul>
-                    </div>
-                </article>
+                    </article>
+                <% } %>
             </section>
 
             <article class="subtotal">
                 <div class="subtotal_item">
-                    <p>Subtotal: 123.456</p>
+                    <%let contador = 0%>
+                    <% for (let i = 0; i < favorite.length; i++) {%>
+                        <% contador = contador + favorite[i].price %>
+                    <% } %>
+                    <p><%= contador %></p>
                     <p>IVA: % 19</p>
                     <p>Descuento $0</p>
                 </div>

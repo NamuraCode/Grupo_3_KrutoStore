@@ -79,7 +79,10 @@
             "password": "doesS9ph",
             "profile": "https://robohash.org/cumquequamfuga.png?size=50x50&set=set1"
       },
-      "{\"id\":11}",
-      "{\"id\":12}",
-      "{\"id\":13}"
+      {
+            "id": 11,
+            "username": "000471420",
+            "email": "dnaran22@gmail.com",
+            "password": "$2a$10$xlGGJlym3ihAVO7aKnGLku/xRCvkYHZmZpblzvuqhqT.k2oyJr7xa"
+      }
 ]

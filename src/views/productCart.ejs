@@ -53,29 +53,29 @@
                                 <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
                             </div>
                             <ul class="product_ref">
-                                <li><%= favorite[i].name %></li>
-                                <li>ref:123</li>
+                                <li><%= favorite[i].name%></li>
+                                <li>ref: <%= favorite[i].category%></li>
                             </ul>
                         </div>
                         <div class="product_det">
                             <ul class="price">
                                 <li>
-                                    <p> $12.345 </p>
+                                    <p><%=favorite[i].price%></p>
                                 </li>
                                 <li>
                                     <form class="quantity" action="/quantity" method="GET">
-                                        <select name="quantity">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        </select>
+                                            <select name="quantity">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
                                         </form>
                                 </li>
                                 <li>
-                                    <p> $12.345</p>
+                                    <p><%=favorite[i].price%></p>
                                 </li>
                                 <div class="clear">
                                     <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
@@ -88,7 +88,11 @@
 
             <article class="subtotal">
                 <div class="subtotal_item">
-                    <p>Subtotal: 123.456</p>
+                    <%let contador = 0%>
+                    <% for (let i = 0; i < favorite.length; i++) {%>
+                        <% contador = contador + favorite[i].price %>
+                    <% } %>
+                    <p><%= contador %></p>
                     <p>IVA: % 19</p>
                     <p>Descuento $0</p>
                 </div>

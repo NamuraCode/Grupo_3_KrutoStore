@@ -141,8 +141,8 @@ controller = {
         let id = req.body.id
         let favorite = productos.find(element => element.id == id);
         console.log(favorite)
-        productos.push(favorite)
-        let favor = JSON.stringify(favorite, null, 6)
+        favorites.push(favorite)
+        let favor = JSON.stringify(favorites, null, 6)
         fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
         res.redirect('/productCart')
     }

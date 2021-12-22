@@ -72,6 +72,10 @@ controller = {
         res.render('politicaDevoluciones')
     },
 
+    admin: (req, res) => {
+        res.render('admin')
+    },
+
     register: (req, res) => {
         const resultValidations = validationResult(req)
         if (resultValidations.errors.length > 0){

@@ -118,7 +118,7 @@ router.delete('/removeProduct/delete/:id', controller.deleteProduct)
 router.post('/addProduct', fileUploa.single('image'), controller.create)
 
 router.post('/products', controller.agregarCart)
-
+/*Hello para commit*/ 
 
 /* ADMINISTRADOR */
 router.get('/admin/dashboard', controller.dashboard)

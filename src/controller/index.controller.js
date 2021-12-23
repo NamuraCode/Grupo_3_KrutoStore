@@ -42,6 +42,10 @@ controller = {
             let contraseña = req.body.password
             let usuario = usuarios.find(user => user.username == nombre && bcrypt.compareSync(contraseña, user.password))
             req.session.user = usuario
+
+            if (req.body.checkbox){
+                res.cookie('email', req.body.email, {maxAge: (1000 * 60) * 3})
+            }
            if (req.session.user == undefined){
                 res.render('login', { errores:{problemUser:'Usuario no econtrado', problemPass:'Contraseña incorrecta'}})
            }else{
@@ -127,6 +131,7 @@ controller = {
                 res.render('register', {problema : "Las contraseñas no son iguales",oldData: req.body})
             }
         }
+
     },
 
     regi: (req, res) => {

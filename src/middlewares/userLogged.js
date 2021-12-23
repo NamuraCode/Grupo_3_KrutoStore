@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-function userLoggedMiddleware(req, res, next) {
+function userLogged(req, res, next) {
 	res.locals.isLogged = false;
 
 	let emailInCookie = req.cookies.userEmail;

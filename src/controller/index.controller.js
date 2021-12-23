@@ -130,6 +130,7 @@ controller = {
                 res.render('register', {problema : "Las contraseñas no son iguales",oldData: req.body})
             }
         }
+
     },
 
     regi: (req, res) => {

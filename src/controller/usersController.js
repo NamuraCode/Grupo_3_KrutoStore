@@ -25,6 +25,7 @@ const user = {
         } else {
             users = JSON.parse(archivoUsers)
         }
+        res.cookie('testing', 'session', {maxAge: 1000 * 30})
         res.render('register')
     },
 
@@ -43,9 +44,31 @@ const user = {
 
     },
 
+
     login: (req, res) => {
-        res.render('login')
+        console.log(req.cookies.testing)
+        let userLogged = req.session.userLogged
+        res.render('login', {userLogged:userLogged}) 
     },
+
+    log: function userLogged(req, res, next) {
+        res.locals.isLogged = false;
+    
+        let emailInCookie = req.cookies.userEmail;
+        let userFromCookie = User.findByField('email', emailInCookie);
+    
+        if (userFromCookie) {
+            req.session.userLogged = userFromCookie;
+        }
+    
+        if (req.session.userLogged) {
+            res.locals.isLogged = true;
+            res.locals.userLogged = req.session.userLogged;
+        }
+    
+        next();
+    },
+
     profile: (req, res) => {
 		return res.render('profile', {
 			user: req.session.userLogged

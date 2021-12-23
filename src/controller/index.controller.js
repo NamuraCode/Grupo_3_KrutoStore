@@ -42,12 +42,15 @@ controller = {
             let contraseña = req.body.password
             let usuario = usuarios.find(user => user.username == nombre && bcrypt.compareSync(contraseña, user.password))
             req.session.user = usuario
-           if (req.session.user == undefined){
+            if(req.body.checkbox != undefined){
+                res.cookie('user', req.session.email, {maxAge: 300000} )
+            }
+            if (req.session.user == undefined){
                 res.render('login', { errores:{problemUser:'Usuario no econtrado', problemPass:'Contraseña incorrecta'}})
-           }else{
+            }else{
                 console.log(req.session.user)
                 res.redirect('/index')
-           }
+            }
         }
     },   
 

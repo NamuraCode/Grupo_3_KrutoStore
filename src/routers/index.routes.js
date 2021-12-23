@@ -79,6 +79,10 @@ router.post('/login', validation, controller.log)
 
 router.get('/productDetail/:id', controller.productDetail)
 
+router.get('/check', (req, res) => {
+    res.send(req.session.user)
+})
+
 router.get('/register', controller.regi)
 router.post('/register', fileUpload.single('file'), validations, controller.register)
 

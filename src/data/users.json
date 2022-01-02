@@ -6,7 +6,7 @@
             "image": "/images/avatars/1640205063770.jpg",
             "password": "$2a$10$sAPwL77ROH7jzbwf3UJVUOtZ4qRQAqcZnp9sSKjnn5PJQ2gXcOeyS",
             "profile": "admin"
-      },
+      }, 
       {
             "id": 2,
             "username": "David",
@@ -14,21 +14,7 @@
             "image": "/images/avatars/1640197526461.jpg",
             "password": "$2a$10$MOdH6W0xFzWey3s6KzLhZ.yj8nODQdArONuiHp9LdOK3EYKWeITMq",
             "profile": "user"
-      },
-      {
-            "id": 3,
-            "username": "Cris",
-            "email": "cristinagil82@gmail.com",
-            "image": "/images/avatars/1640222241378.jfif",
-            "password": "$2a$10$v6ytCa6rs/Ew1S8Adl7j7.FYTZU.U/6MbEqk9etzzTQSNXtSvVWvK",
-            "profile": "user"
-      },
-      {
-            "id": 4,
-            "username": "Cris",
-            "email": "cristinagil82@gmail.com",
-            "image": "/images/avatars/1640223024777.jfif",
-            "password": "$2a$10$6Y3U7edfRFSIkWBWrZLj3eJ6pv/5PenDxKC5H18wzY7CtwfXqhkca",
-            "profile": "user"
       }
+     
 ]
+     

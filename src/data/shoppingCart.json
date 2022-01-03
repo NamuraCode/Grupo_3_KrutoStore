@@ -6,29 +6,5 @@
             "image": "/images/products/fotosBase/nendo11.png",
             "category": "anime",
             "price": 2812.74
-      },
-      {
-            "id": 1,
-            "name": "Sasuke",
-            "description": "nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
-            "image": "/images/products/fotosBase/nendo18.png",
-            "category": "libros",
-            "price": "621.07"
-      },
-      {
-            "id": 10,
-            "name": "Hinata",
-            "description": "lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi",
-            "image": "/images/products/fotosBase/nendo19.png",
-            "category": "películas",
-            "price": 2133.83
-      },
-      {
-            "id": 1,
-            "name": "Sasuke",
-            "description": "nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
-            "image": "/images/productos/nendo18.png",
-            "category": "libros",
-            "price": "621.07"
       }
 ]

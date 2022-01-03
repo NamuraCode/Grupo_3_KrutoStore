@@ -29,7 +29,7 @@
                 <div class="container-form add-container">
                     <h2>Agrega un nuevo producto</h2>
             
-                    <form action="/addProduct" method="post">
+                    <form action="/admin/agregarProducto" method="post" enctype="multipart/form-data">
                         <div class="newProduct-container">
                             <input class="file" type="file" name="image" id="product">
                             <p>
@@ -50,7 +50,7 @@
                             </p>
                             <div class="btn">
                                 <p class="btn-left">
-                                    <a href="/admin/dashboard"><button type="button">Guardar</button></a>
+                                    <button type="submit">Guardar</button>
                                 </p>
                                 <p class="btn-right">
                                     <a href="/admin/dashboard"><button type="button">Volver</button></a>

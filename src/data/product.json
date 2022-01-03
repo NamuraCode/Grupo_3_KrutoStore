@@ -78,5 +78,13 @@
             "image": "/images/products/fotosBase/nendo19.png",
             "category": "películas",
             "price": 2133.83
+      },
+      {
+            "id": 11,
+            "name": "David",
+            "image": "/images/productos/1641157035372.png",
+            "description": "a",
+            "category": "Anime",
+            "price": "45"
       }
 ]

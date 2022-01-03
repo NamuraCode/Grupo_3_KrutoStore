@@ -119,7 +119,7 @@ router.delete('/removeProduct/delete/:id', controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */
-router.post('/addProduct', fileUploa.single('image'), controller.create)
+//router.post('/addProduct', fileUploa.single('image'), controller.create)
 
 router.post('/products', controller.agregarCart)
 /*Hello para commit*/ 
@@ -127,6 +127,7 @@ router.post('/products', controller.agregarCart)
 /* ADMINISTRADOR */
 router.get('/admin/dashboard', controller.dashboard)
 router.get('/admin/agregarProducto', controller.agregarProducto)
+router.post('/admin/agregarProducto', fileUploa.single('image'), controller.create)
 router.get('/admin/eliminarProducto', controller.eliminarProducto)
 router.get('/admin/editarProducto', controller.editarProducto)
 

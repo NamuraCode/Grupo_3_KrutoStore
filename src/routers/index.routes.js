@@ -91,15 +91,11 @@ router.get('/index', controller.index)
 
 router.get('/addProduct', auth ,controller.addProduct)
 
-router.get('removeProduct', controller.removeProduct)
-
-router.get('editProduct', controller.editProduct)
-
 /* PUT */
 /* Put es un metodo para editar datos de un formulario */
 router.get('/editProduct/:id', auth, controller.editProduct)
 
-router.put('/editProduct/:id', fileUploa.single('image'), auth, controller.edit)
+router.put('/editProduct/:id', auth, fileUploa.single('image'), controller.edit)
 
 router.get('/aboutUs', controller.aboutUs)
 
@@ -125,11 +121,11 @@ router.post('/products', controller.agregarCart)
 /*Hello para commit*/ 
 
 /* ADMINISTRADOR */
-router.get('/admin/dashboard', controller.dashboard)
-router.get('/admin/agregarProducto', controller.agregarProducto)
+router.get('/admin/dashboard', auth, controller.dashboard)
+router.get('/admin/agregarProducto', auth, controller.agregarProducto)
 router.post('/admin/agregarProducto', fileUploa.single('image'), controller.create)
-router.get('/admin/eliminarProducto', controller.eliminarProducto)
-router.get('/admin/editarProducto', controller.editarProducto)
+router.get('/admin/eliminarProducto', auth, controller.eliminarProducto)
+router.get('/admin/editarProducto', auth, controller.editarProducto)
 
 module.exports = router;
 

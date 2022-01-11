@@ -111,7 +111,7 @@ router.get('/politicaDevoluciones', controller.politicaDevoluciones)
 /* Delete es un metodo para elimiar datos de un formulario */
 router.get('/removeProduct/:id', auth, controller.removeProduct)
 
-router.delete('/removeProduct/delete/:id', controller.deleteProduct)
+router.delete('/removeProduct/delete/:id', auth, controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */
@@ -123,7 +123,7 @@ router.post('/products', controller.agregarCart)
 /* ADMINISTRADOR */
 router.get('/admin/dashboard', auth, controller.dashboard)
 router.get('/admin/agregarProducto', auth, controller.agregarProducto)
-router.post('/admin/agregarProducto', fileUploa.single('image'), controller.create)
+router.post('/admin/agregarProducto', auth,fileUploa.single('image'), controller.create)
 router.get('/admin/eliminarProducto', auth, controller.eliminarProducto)
 router.get('/admin/editarProducto', auth, controller.editarProducto)
 

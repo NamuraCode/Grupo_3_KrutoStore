@@ -6,8 +6,6 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const session = require('express-session');
-const { createUser } = require('./usersController');
-const user = require('./usersController');
 
 
 controller = {

@@ -22,5 +22,21 @@
             "image": "/images/avatars/1642201523936.png",
             "password": "$2a$10$4m6vS06f/f/ZNInEGNkSye0yW6ByCQ7pB2DyE6M/0LGcRDprhMc/C",
             "profile": "user"
+      },
+      {
+            "id": 4,
+            "username": "David",
+            "email": "D@gmail.com",
+            "image": "/images/avatars/1642201742266.png",
+            "password": "$2a$10$d/XImTQo51s5/OLeiUX0meIk4FhRcgW1oHGDQd24XMUkpBObG4Epi",
+            "profile": "user"
+      },
+      {
+            "id": 5,
+            "username": "David",
+            "email": "D@gmail.com",
+            "image": "/images/avatars/1642201917249.png",
+            "password": "$2a$10$nFT6XlBk/iJ5wBTHZ4WMX.jQX.FRYZJyfGrV3SyAu3KwW46kAaZvS",
+            "profile": "user"
       }
 ]

@@ -7,9 +7,9 @@ const multer = require('multer');
 const path = require('path')
 /* Controller un objeto con metodos de respuesta (res) */
 const controller = require('../controller/index.controller');
-const products = require('../routers/products.routes')
 const { body } = require('express-validator')
-const auth = require('../middlewares/authMiddleware')
+const admin = require('../middlewares/adminSessionMiddleware')
+const user = require('../middlewares/usersSessionMiddleware')
 
 /*Variable de validaciones */
 
@@ -89,13 +89,13 @@ router.post('/register', fileUpload.single('file'), validations, controller.regi
 
 router.get('/index', controller.index)
 
-router.get('/addProduct', auth ,controller.addProduct)
+router.get('/addProduct', admin ,controller.addProduct)
 
 /* PUT */
 /* Put es un metodo para editar datos de un formulario */
-router.get('/editProduct/:id', auth, controller.editProduct)
+router.get('/editProduct/:id', admin, controller.editProduct)
 
-router.put('/editProduct/:id', auth, fileUploa.single('image'), controller.edit)
+router.put('/editProduct/:id', admin, fileUploa.single('image'), controller.edit)
 
 router.get('/aboutUs', controller.aboutUs)
 
@@ -109,9 +109,9 @@ router.get('/politicaDevoluciones', controller.politicaDevoluciones)
 
 /* DELETE */
 /* Delete es un metodo para elimiar datos de un formulario */
-router.get('/removeProduct/:id', auth, controller.removeProduct)
+router.get('/removeProduct/:id', admin, controller.removeProduct)
 
-router.delete('/removeProduct/delete/:id', auth, controller.deleteProduct)
+router.delete('/removeProduct/delete/:id', admin, controller.deleteProduct)
 
 /* POST */
 /* Post es un metodo para recibir datos de un formulario */
@@ -121,11 +121,11 @@ router.post('/products', controller.agregarCart)
 /*Hello para commit*/ 
 
 /* ADMINISTRADOR */
-router.get('/admin/dashboard', auth, controller.dashboard)
-router.get('/admin/agregarProducto', auth, controller.agregarProducto)
-router.post('/admin/agregarProducto', auth,fileUploa.single('image'), controller.create)
-router.get('/admin/eliminarProducto', auth, controller.eliminarProducto)
-router.get('/admin/editarProducto', auth, controller.editarProducto)
+router.get('/admin/dashboard', admin, controller.dashboard)
+router.get('/admin/agregarProducto', admin, controller.agregarProducto)
+router.post('/admin/agregarProducto', admin,fileUploa.single('image'), controller.create)
+router.get('/admin/eliminarProducto', admin, controller.eliminarProducto)
+router.get('/admin/editarProducto', admin, controller.editarProducto)
 
 module.exports = router;
 

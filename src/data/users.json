@@ -6,7 +6,7 @@
             "image": "/images/avatars/1640205063770.jpg",
             "password": "$2a$10$sAPwL77ROH7jzbwf3UJVUOtZ4qRQAqcZnp9sSKjnn5PJQ2gXcOeyS",
             "profile": "admin"
-      }, 
+      },
       {
             "id": 2,
             "username": "Carlos",
@@ -14,7 +14,13 @@
             "image": "/images/avatars/1640197526461.jpg",
             "password": "$2a$10$MOdH6W0xFzWey3s6KzLhZ.yj8nODQdArONuiHp9LdOK3EYKWeITMq",
             "profile": "user"
+      },
+      {
+            "id": 3,
+            "username": "David",
+            "email": "D@gmail.com",
+            "image": "/images/avatars/1642201523936.png",
+            "password": "$2a$10$4m6vS06f/f/ZNInEGNkSye0yW6ByCQ7pB2DyE6M/0LGcRDprhMc/C",
+            "profile": "user"
       }
-     
 ]
-     

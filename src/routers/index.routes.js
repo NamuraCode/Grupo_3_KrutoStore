@@ -66,7 +66,7 @@ let multerDiskStorag = multer.diskStorage({
 /* Guardarlo en variable para llamarlo como middleware */
 let fileUpload = multer({ storage: multerDiskStorage})
 let fileUploa = multer({ storage: multerDiskStorag})
-
+//
 /* GET */
 /* Get es un metodo HTTP para obtener las vistas y enviar datos no seguros de formulario */
 router.get('/', controller.index);

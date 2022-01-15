@@ -9,7 +9,8 @@ const path = require('path')
 const controller = require('../controller/index.controller');
 const { body } = require('express-validator')
 const admin = require('../middlewares/adminSessionMiddleware')
-const paraRegistrarse = require('../middlewares/usuarioRegistradoMiddleware')
+const autenticacionRegistro = require('../middlewares/usuarioRegistradoMiddleware')
+const registrado = require('../middlewares/usuarioNoRegistradoMiddleware')
  
 /*Variable de validaciones */
 
@@ -70,11 +71,11 @@ let fileUploa = multer({ storage: multerDiskStorag})
 /* Get es un metodo HTTP para obtener las vistas y enviar datos no seguros de formulario */
 router.get('/', controller.index);
 
-router.get('/productCart', controller.productCart);
+router.get('/productCart', registrado, controller.productCart);
 
 router.get('/products', controller.products)
 
-router.get('/login', controller.login)
+router.get('/login', autenticacionRegistro, controller.login)
 router.post('/login', validation, controller.log)
 
 router.get('/productDetail/:id', controller.productDetail)
@@ -83,7 +84,7 @@ router.get('/check', (req, res) => {
     res.send(req.session.user)
 })
 
-router.get('/register', paraRegistrarse, controller.regi)
+router.get('/register', autenticacionRegistro, controller.regi)
 router.post('/register', fileUpload.single('file'), validations, controller.register)
 
 

@@ -9,8 +9,8 @@ const path = require('path')
 const controller = require('../controller/index.controller');
 const { body } = require('express-validator')
 const admin = require('../middlewares/adminSessionMiddleware')
-const user = require('../middlewares/usersSessionMiddleware')
-
+const paraRegistrarse = require('../middlewares/usuarioRegistradoMiddleware')
+ 
 /*Variable de validaciones */
 
 const validations = [
@@ -83,7 +83,7 @@ router.get('/check', (req, res) => {
     res.send(req.session.user)
 })
 
-router.get('/register', controller.regi)
+router.get('/register', paraRegistrarse, controller.regi)
 router.post('/register', fileUpload.single('file'), validations, controller.register)
 
 

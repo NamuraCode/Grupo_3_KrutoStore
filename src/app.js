@@ -64,5 +64,5 @@ app.use('/opcionesEnvios', routers);
 app.use('/politicaDevoluciones', routers);
 
 app.use((req, res, next) => {
-    res.status(404).render('Not found')
+    res.status(404).render('error')
 });

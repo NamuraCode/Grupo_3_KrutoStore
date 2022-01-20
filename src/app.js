@@ -4,6 +4,7 @@ const path = require('path');
 const publicPath = path.resolve(__dirname,'../public');
 const port = process.env.PORT || 3001;
 const routers = require('./routers/index.routes')
+require('dotenv').config()
 const session = require('express-session');
 const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');

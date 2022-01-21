@@ -13,7 +13,7 @@ const remember = require('./middlewares/cokieAuthMiddleware')
 app.use(express.static(publicPath));
 
 app.listen(port,()=>{
-    console.log('listen on')
+    console.log(`listen on ${port}`)
 });
 
 app.use(express.static(publicPath));

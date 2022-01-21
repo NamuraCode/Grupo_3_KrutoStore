@@ -4,11 +4,7 @@ const favorites = require('../data/shoppingCart.json')
 const usuarios = require('../data/users.json')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const db = require('../database/models')
-let res = async ()=>{
-    let contes = await db.Producto.findAll()
-    return console.log(contes)
-}
+
 const {
     validationResult
 } = require('express-validator');
@@ -17,8 +13,6 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Producto.findAll()
-        .then(res=>{console.log(res)})
         res.render('index')
     },
     productCart: (req, res) => {

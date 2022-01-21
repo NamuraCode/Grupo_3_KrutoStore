@@ -2,7 +2,7 @@ module.exports={
   "development": {
     "username": "root",
     "password": "12345",
-    "database": "Kruto_Store",
+    "database": "Kruto_Store_Grupo3",
     "host": "localhost",
     "dialect": "mysql",
     "port":"3307"
@@ -16,8 +16,8 @@ module.exports={
   },
   "production": {
     "username": "root",
-    "password": "null",
-    "database": "Kruto_Store",
+    "password": null,
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

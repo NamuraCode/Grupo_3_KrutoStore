@@ -47,23 +47,23 @@ module.exports = (sequelize, DataTypes) => {
     Producto.associate = (models) => {
         Producto.belongsToMany(models.User,{ 
             as: 'Users_id_Users', 
-            through: Favoritos_Productos, 
+            through: "Favorito_Producto", 
             foreignKey: "Productos_id", 
             otherKey: "Users_id" 
         });
-        Producto.belongsTo(models.Categorias, { 
+        Producto.belongsTo(models.categoria, { 
             as: "Categoria", 
             foreignKey: "Categorias_id"
         });
-        Producto.hasMany(models.Favoritos_Productos, { 
-            as: "favoritos_productos", 
+        Producto.hasMany(models.Favorito_Producto, { 
+            as: "Favorito_Producto", 
             foreignKey: "Productos_id"
         });
-        Producto.hasMany(models.Images, { 
-            as: "images", 
+        Producto.hasMany(models.Image, { 
+            as: "Image", 
             foreignKey: "Productos_id"
         });
-        Producto.belongsTo(models.Users, { 
+        Producto.belongsTo(models.User, { 
             as: "User", 
             foreignKey: "Users_id"
         });

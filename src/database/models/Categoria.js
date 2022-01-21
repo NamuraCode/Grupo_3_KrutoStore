@@ -21,15 +21,14 @@ module.exports = (sequelize, DataTypes) => {
     
 
     Categorias.associate= (models)=>{
-        Categorias.hasMany(models.Productos,{ 
+        Categorias.hasMany(models.Producto,{ 
             as: "productos", 
             foreignKey: "Categorias_id"})
-            
+
         Categorias.belongsToMany(models.User,{ 
             as: 'Users_id_Users_productos', 
-            through: Productos, 
-            foreignKey: 
-            "Categorias_id", 
+            through: "Producto", 
+            foreignKey: "Categorias_id", 
             otherKey: "Users_id" })
     }
 

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Imagen'
+    let alias = 'Image'
     let colums = {
         id: {
             autoIncrement: true,
@@ -22,17 +22,16 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-        tableName= 'Images',
         timestamps: false
     }
 
-    let Imagen = sequelize.define(alias, colums, config)
+    let Image = sequelize.define(alias, colums, config)
     
-    Imagen.associate = (models) => {
-        Imagen.belongsTo(models.Producto, { 
+    Image.associate = (models) => {
+        Image.belongsTo(models.Producto, { 
             as: "Producto", 
             foreignKey: "Productos_id"});
     }
 
-    return Imagen
+    return Image
 }

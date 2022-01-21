@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Logins'
+    let alias = 'Login'
     let colums = {
         id: {
             autoIncrement: true,

@@ -37,24 +37,24 @@ module.exports = (sequelize, DataTypes) => {
             as: "Perfil",
             foreignKey: "Perfiles_id"
         })
-        User.belongsToMany(models.Categoria, { 
+        User.belongsToMany(models.categoria, { 
             as: 'Categorias_id_Categoria', 
-            through: Productos, 
+            through: "Producto", 
             foreignKey: "Users_id", 
             otherKey: "Categorias_id" 
         });
         User.belongsToMany(models.Producto, { 
             as: 'Productos_id_Productos', 
-            through: Favoritos_Productos, 
+            through: "Favoritos_Productos", 
             foreignKey: "Users_id", 
             otherKey: "Productos_id" 
         });
         User.hasMany(models.Favorito_Producto, { 
-            as: "favoritos_productos", 
+            as: "favorito_producto", 
             foreignKey: "Users_id"
         });
         User.hasMany(models.Login, { 
-            as: "logins", 
+            as: "login", 
             foreignKey: "Users_id"
         });
     }

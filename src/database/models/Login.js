@@ -21,6 +21,14 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
         tableName: 'Logins'
     }
-    let login = sequelize.define(alias, colums, config)
-    return login
+    const Login = sequelize.define(alias, colums, config)
+
+    Login.associate = (models) => {
+        Login.belongsTo(models.User, {
+            as: "User", 
+            foreignKey: "Users_id"
+        })
+    }
+
+    return Login
 }

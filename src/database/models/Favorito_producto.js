@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  let alias = 'Favoritos_Productos'
+  let alias = 'Favorito_Producto'
   let colums = {
     Productos_id: {
       type: DataTypes.INTEGER,
@@ -24,6 +24,16 @@ module.exports = function (sequelize, DataTypes) {
     tableName: 'Favoritos_Productos',
     timestamps: false,
   }
-  const productosFavoritos = sequelize.define(alias, colums, config);
-  return productosFavoritos
+  const ProductosFavoritos = sequelize.define(alias, colums, config);
+  ProductosFavoritos.associate = (models) => {
+    ProductosFavoritos.belongsTo(models.Proucto, {
+      as: "Producto", 
+      foreignKey: "Productos_id"
+    })
+    Favoritos_Productos.belongsTo(models.User, { 
+      as: "User", 
+      foreignKey: "Users_id"
+    })
+  } 
+  return ProductosFavoritos
 };

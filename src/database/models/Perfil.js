@@ -1,21 +1,21 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias ="Categorias"
+    const alias = "Perfiles"
     const colums = {
-        id:{
-            type: dataTypes.INTEGER,
+        id: {
+            type: dataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        categoria:{
+        perfil: {
             type: dataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         }
     }
     const config = {
-        tableName:"Caregorias",
+        tableName: "Perfiles",
         timestamps: false
     }
-    const Categoria = sequelize.define(alias, colums, config)
-    return Categoria
+    const Perfil = sequelize.define(alias, colums, config)
+    return Perfil
 }

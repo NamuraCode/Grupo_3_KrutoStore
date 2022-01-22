@@ -6,9 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-        },
-        User_id:{
-            type: dataTypes.INTEGER(11),
         }
     }
     const config = {

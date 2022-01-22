@@ -13,8 +13,8 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Productos.findAll()
-        .then(res => {console.log(res)})
+        db.Usuarios.findAll()
+            .then(respuesta => console.log(respuesta))
         res.render('index')
     },
     productCart: (req, res) => {
@@ -127,29 +127,29 @@ controller = {
                 password: bcrypt.hashSync(req.body.password, 10),
                 profile: "user",
             }
-                if (p1 == p2) {
-                    let auth = usuarios.filter(function (user) {
-                        user.email == req.body.email
-                    })
-                    
-                    if (auth == undefined) {
-                        usuarios.push(register)
-                        let useres = JSON.stringify(usuarios, null, 6)
-                        fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
-                        res.redirect('/index')
-                    } else {
-                        res.render('register', {
-                            problem: "El correo ya existe",
-                            oldData: req.body
-                        })
-                    }
+            if (p1 == p2) {
+                let auth = usuarios.filter(function (user) {
+                    user.email == req.body.email
+                })
 
+                if (auth == undefined) {
+                    usuarios.push(register)
+                    let useres = JSON.stringify(usuarios, null, 6)
+                    fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+                    res.redirect('/index')
                 } else {
                     res.render('register', {
-                        problema: "Las contraseñas no son iguales",
+                        problem: "El correo ya existe",
                         oldData: req.body
                     })
                 }
+
+            } else {
+                res.render('register', {
+                    problema: "Las contraseñas no son iguales",
+                    oldData: req.body
+                })
+            }
         }
     },
 

@@ -7,23 +7,17 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        nombre: {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        description: {
+        descripcion: {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        categorias_id: {
-            type: dataTypes.INTEGER,
-        },
-        price:{
+        precio:{
             type:dataTypes.INTEGER,
             allowNull: false
-        },
-        User_id:{
-            type: dataTypes.INTEGER,
         }
     }
     const config = {

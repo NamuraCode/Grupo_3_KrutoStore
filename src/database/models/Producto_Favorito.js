@@ -3,17 +3,9 @@ module.exports = (sequelize, dataTypes) => {
     const colums = {
         Productos_id:{
             type: dataTypes.INTEGER,
-            references: {
-                model: Productos,
-                key: "id"
-            }
         },
         Users_id:{
             type:dataTypes.INTEGER,
-            references:{
-                model:Users,
-                key:"id"
-            }
         }
     }
     const config = {

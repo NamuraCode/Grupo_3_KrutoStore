@@ -9,10 +9,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         User_id:{
             type: dataTypes.INTEGER(11),
-            references:{
-                model: Users,
-                key: "id"
-            }
         }
     }
     const config = {

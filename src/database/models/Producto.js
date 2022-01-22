@@ -17,10 +17,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         categorias_id: {
             type: dataTypes.INTEGER,
-            references: {
-                model: Categorias,
-                key: "id"
-            }
         },
         price:{
             type:dataTypes.INTEGER,
@@ -28,10 +24,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         User_id:{
             type: dataTypes.INTEGER,
-            references: {
-                model: Users,
-                key: "id"
-            }
         }
     }
     const config = {

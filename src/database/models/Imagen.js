@@ -9,10 +9,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         productos_id: {
             type: dataTypes.INTEGER,
-            references: {
-                model: Productos,
-                key: "id"
-            }
         },
         image:{
             type: dataTypes.STRING,

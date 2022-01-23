@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     const config = {
-        tableName:"Logins",
+        tableName:"logins",
         timestamps: false
     }
     const Login = sequelize.define(alias, colums, config)

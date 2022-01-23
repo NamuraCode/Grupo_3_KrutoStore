@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     const config = {
-        tableName: "Perfiles",
+        tableName: "perfiles",
         timestamps: false
     }
     const Perfil = sequelize.define(alias, colums, config)

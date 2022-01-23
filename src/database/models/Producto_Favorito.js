@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     const colums = {
     }
     const config = {
-        tableName:"Productos_Favoritos",
+        tableName:"productos_favoritos",
         timestamps: false
     }
     const Producto_Favorito = sequelize.define(alias, colums, config)

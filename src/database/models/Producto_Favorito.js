@@ -1,6 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     const alias ="Productos_Favoritos"
-    const colums = {
+    const colums = {    
+        
     }
     const config = {
         tableName:"productos_favoritos",

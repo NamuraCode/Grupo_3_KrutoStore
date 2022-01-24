@@ -13,8 +13,13 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Productos.findAll()
+        db.Productos.findAll({
+            include:["categorias"]
+        })
             .then(respuesta => console.log(respuesta))
+            .catch(error => {
+                console.log(error)
+            })
         res.render('index')
     },
     productCart: (req, res) => {
@@ -179,7 +184,7 @@ controller = {
         let id = req.params.id
         for (let i = 0; i < productos.length; i++) {
             if (productos[i].id == id) {
-                productos[i].name = req.body.name,
+                    productos[i].name = req.body.name,
                     productos[i].description = req.body.description,
                     productos[i].image = '/images/productos/' + req.file.filename,
                     productos[i].category = req.body.category,

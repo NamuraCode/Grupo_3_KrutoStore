@@ -9,15 +9,31 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: {
             type: dataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         descripcion: {
             type: dataTypes.STRING,
-            allowNull: false,
-        },
-        precio:{
-            type:dataTypes.INTEGER,
             allowNull: false
+        },
+        categorias_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "Categorias",
+                key: "id"
+            }
+        },
+        precio: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        usuarios_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "Usuarios",
+                key: "id"
+            }
         }
     }
     const config = {
@@ -25,5 +41,11 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Producto = sequelize.define(alias, colums, config)
+    Producto.associate = (modelos) => {
+        Producto.belongsTo(modelos.Categorias, {
+            as: "categorias",
+            foreignKey: "categorias_id"
+        })
+    }
     return Producto
 }

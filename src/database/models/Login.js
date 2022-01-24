@@ -1,15 +1,23 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias ="Logins"
+    const alias = "Logins"
     const colums = {
-        id:{
+        id: {
             type: dataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
+        },
+        usuarios_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "Usuarios",
+                key: "id"
+            }
         }
     }
     const config = {
-        tableName:"logins",
+        tableName: "logins",
         timestamps: false
     }
     const Login = sequelize.define(alias, colums, config)

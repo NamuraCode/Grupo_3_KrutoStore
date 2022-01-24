@@ -13,8 +13,6 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Productos.findAll()
-        .then(respuesta => console.log(respuesta))
         res.render('index')
     },
     productCart: (req, res) => {

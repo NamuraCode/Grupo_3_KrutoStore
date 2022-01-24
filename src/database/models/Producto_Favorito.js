@@ -22,5 +22,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Producto_Favorito = sequelize.define(alias, colums, config)
+    Producto_Favorito.associate = (modelos) => {
+        Producto_Favorito.belongsTo(modelos.Productos, {
+            as:"productos",
+            foreignKey: "productos_id"
+        })
+        Producto_Favorito.belongsTo(modelos.Usuarios, {
+            as:"usuarios",
+            foreignKey: "productos_id"
+        })
+    }
     return Producto_Favorito
 }

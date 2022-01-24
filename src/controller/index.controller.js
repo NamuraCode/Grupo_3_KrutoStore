@@ -13,11 +13,6 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Imagenes.findAll()
-            .then(respuesta => console.log(respuesta))
-            .catch(error => {
-                console.log(error)
-            })
         res.render('index')
     },
     productCart: (req, res) => {

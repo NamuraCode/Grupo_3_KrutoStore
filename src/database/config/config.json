@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "franAdmin",
-    "password": "Adrian12234..",
-    "database": "Kruto_Store_Grupo3",
-    "host": "45.79.201.214",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "port":"3306"
   },

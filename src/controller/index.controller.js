@@ -13,9 +13,7 @@ const session = require('express-session');
 
 controller = {
     index: (req, res) => {
-        db.Productos.findAll({
-            include:["productos_usuarios"]
-        })
+        db.Imagenes.findAll()
             .then(respuesta => console.log(respuesta))
             .catch(error => {
                 console.log(error)

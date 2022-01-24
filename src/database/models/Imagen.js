@@ -7,14 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        productos_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model:"Productos",
-                key:"id"
-            }
-        },
         image: {
             type: dataTypes.STRING,
             allowNull: false
@@ -25,5 +17,11 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Imagen = sequelize.define(alias, colums, config)
+    Imagen.associate = (modelos) => {
+        Imagen.belongsTo(modelos.Productos, {
+            as: "productos",
+            foreignKey: "productos_id"
+        })
+    }
     return Imagen
 }

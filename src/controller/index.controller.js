@@ -9,6 +9,9 @@ const {
     validationResult
 } = require('express-validator');
 const session = require('express-session');
+const {
+    nextTick
+} = require('process');
 
 
 controller = {
@@ -22,9 +25,15 @@ controller = {
     },
 
     products: (req, res) => {
-        res.render('products', {
-            "ingresan": productos
+        db.Productos.findAll({
+            include:["imagenes"]
         })
+            .then(ingresan => {
+                console.log(ingresan[1].imagenes.image)
+                res.render('products', {
+                    ingresan 
+                })
+            })
     },
 
     login: (req, res) => {
@@ -43,7 +52,15 @@ controller = {
             let nombre = req.body.username
             let contraseña = req.body.password
             //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
-            let usuario = db.Usuarios.findAll()
+            let usuario = db.Usuarios.findAll({
+                where: {
+                    username: nombre,
+                    password: contraseña
+                }
+            })
+            usuario.then(res => {
+                return res
+            })
             req.session.user = usuario
             if (req.body.checkbox != undefined) {
                 res.cookie('user', req.session.email, {
@@ -51,6 +68,7 @@ controller = {
                 })
             }
             if (req.session.user == undefined) {
+                console.log(req.session.user)
                 res.render('login', {
                     errores: {
                         problemUser: 'Usuario no econtrado',
@@ -58,7 +76,7 @@ controller = {
                     }
                 })
             } else {
-                console.log(req.session.user)
+                console.log(req.session.user.username)
                 res.redirect('/index')
             }
         }
@@ -178,7 +196,7 @@ controller = {
         let id = req.params.id
         for (let i = 0; i < productos.length; i++) {
             if (productos[i].id == id) {
-                    productos[i].name = req.body.name,
+                productos[i].name = req.body.name,
                     productos[i].description = req.body.description,
                     productos[i].image = '/images/productos/' + req.file.filename,
                     productos[i].category = req.body.category,

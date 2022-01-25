@@ -18,22 +18,10 @@ module.exports = (sequelize, dataTypes) => {
         categorias_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: "Categorias",
-                key: "id"
-            }
         },
         precio: {
             type: dataTypes.INTEGER,
             allowNull: false
-        },
-        usuarios_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: "Usuarios",
-                key: "id"
-            }
         }
     }
     const config = {
@@ -50,9 +38,9 @@ module.exports = (sequelize, dataTypes) => {
             as: "usuarios",
             foreignKey: "usuarios_id"
         })
-        Producto.hasMany(modelos.Imagenes, {
+        Producto.belongsTo(modelos.Imagenes, {
             as: "imagenes",
-            foreignKey: "productos_id"
+            foreignKey: "imagenes_id"
         })
       
     }

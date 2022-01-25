@@ -34,12 +34,12 @@
         <section class="main-products">
             <% for(i=0; i<ingresan.length; i++){%>
             <article class="main-articles">
-                <img src=<%=ingresan[i].image%>>
+                <img src=<%=ingresan[i].imagenes.image%>>
                 <div class="article-description">
-                    <p><%=ingresan[i].name%></p>
+                    <p><%=ingresan[i].nombre%></p>
                 </div>
                 <div class="article-cost">
-                    <p><%=ingresan[i].price%></p>
+                    <p><%=ingresan[i].precio+".00"%></p>
                 </div>
                 <div class="article-form">
                     <a href="/productCart">

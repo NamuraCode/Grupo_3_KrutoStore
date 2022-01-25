@@ -145,3 +145,6 @@
 
 ## Hacer menos
 * Dejar código comentado que no se va a utilizar.
+
+## Dejar de hacer
+* Olvidar hacer push cuando se termina una tarea.

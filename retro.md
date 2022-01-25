@@ -121,3 +121,30 @@
 ## Dejar de hacer
 
 * Olvidar hacer push cuando se termina una tarea.
+
+## RETROSPECTIVA SPRINT SEIS
+
+## Comenzar a hacer
+* Crear diagramas de relación.
+* Crear la base de datos del sitio
+* Crear el archivo data.sql
+* Crear carpeta database con modelos y configuraciones
+* Crear rutas, controladores y vistas necesarias.
+
+## Hacer más
+* Trabajar sincrónicamente.
+* Verificar el correcto funcionamiento de la página.
+* Incluir elementos que agreguen funcionalidad a la página.
+
+## Continuar haciendo
+* Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
+* Implementar estilos que hagan la página más atractiva.
+* Realizar los dailys
+* Comunicar las tareas hechas.
+
+## Hacer menos
+* Dejar código comentado que no se va a utilizar.
+
+## Dejar de hacer
+* Olvidar hacer push cuando se termina una tarea.

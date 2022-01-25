@@ -42,7 +42,8 @@ controller = {
         } else {
             let nombre = req.body.username
             let contraseña = req.body.password
-            let usuario = db.Usuarios.find(user => user.username == nombre && bcrypt.compareSync(contraseña, user.password))
+            //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
+            let usuario = db.Usuarios.findAll()
             req.session.user = usuario
             if (req.body.checkbox != undefined) {
                 res.cookie('user', req.session.email, {

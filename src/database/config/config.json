@@ -2,10 +2,10 @@
     "development": {
         "username": "root",
         "password": "12345",
-        "database": "kruto_Store_Grupo3",
+        "database": "Kruto_Store_Grupo3",
         "host": "localhost",
         "dialect": "mysql",
-        "port":"3307"
+        "port": "3307"
     },
     "test": {
         "username": "root",

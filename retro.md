@@ -125,3 +125,8 @@
 ## RETROSPECTIVA SPRINT SEIS
 
 ## Comenzar a hacer
+* Crear diagramas de relación.
+* Crear la base de datos del sitio
+* Crear el archivo data.sql
+* Crear carpeta database con modelos y configuraciones
+* Crear rutas, controladores y vistas necesarias.

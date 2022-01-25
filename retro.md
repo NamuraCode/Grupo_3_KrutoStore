@@ -142,3 +142,6 @@
 * Implementar estilos que hagan la página más atractiva.
 * Realizar los dailys
 * Comunicar las tareas hechas.
+
+## Hacer menos
+* Dejar código comentado que no se va a utilizar.

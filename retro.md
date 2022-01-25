@@ -135,3 +135,10 @@
 * Trabajar sincrónicamente.
 * Verificar el correcto funcionamiento de la página.
 * Incluir elementos que agreguen funcionalidad a la página.
+
+## Continuar haciendo
+* Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
+* Implementar estilos que hagan la página más atractiva.
+* Realizar los dailys
+* Comunicar las tareas hechas.

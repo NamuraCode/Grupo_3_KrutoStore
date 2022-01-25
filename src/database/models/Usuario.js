@@ -18,10 +18,6 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.STRING,
             allowNull: false
-        },
-        perfiles_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
         }
     }
     let config = {
@@ -38,10 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "productos",
             foreignKey: "usuarios_id"
         })
-        Usuario.belongsTo(modelos.Productos_Favoritos, {
-            as:"favoritos",
-            foreignKey: "usuarios_id"
-        })
+       
     }
     return Usuario
 }

@@ -1,6 +1,6 @@
 {
     "development": {
-        "mensaje":"perdir las credenciales de la base de datos"
+        "mensaje":"perdir las credenciales de la base de datoss"
     },
     "test": {
         "username": "root",

@@ -130,3 +130,8 @@
 * Crear el archivo data.sql
 * Crear carpeta database con modelos y configuraciones
 * Crear rutas, controladores y vistas necesarias.
+
+## Hacer más
+* Trabajar sincrónicamente.
+* Verificar el correcto funcionamiento de la página.
+* Incluir elementos que agreguen funcionalidad a la página.

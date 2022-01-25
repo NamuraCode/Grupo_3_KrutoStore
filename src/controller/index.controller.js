@@ -26,12 +26,12 @@ controller = {
 
     products: (req, res) => {
         db.Productos.findAll({
-            include:["imagenes"]
-        })
+                include: ["imagenes"]
+            })
             .then(ingresan => {
                 console.log(ingresan[1].imagenes.image)
                 res.render('products', {
-                    ingresan 
+                    ingresan
                 })
             })
     },
@@ -49,36 +49,38 @@ controller = {
             })
 
         } else {
-            let nombre = req.body.username
-            let contraseña = req.body.password
             //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
-            let usuario = db.Usuarios.findAll({
-                where: {
-                    username: nombre,
-                    password: contraseña
-                }
-            })
-            usuario.then(res => {
-                return res
-            })
-            req.session.user = usuario
-            if (req.body.checkbox != undefined) {
-                res.cookie('user', req.session.email, {
-                    maxAge: 300000
-                })
-            }
-            if (req.session.user == undefined) {
-                console.log(req.session.user)
-                res.render('login', {
-                    errores: {
-                        problemUser: 'Usuario no econtrado',
-                        problemPass: 'Contraseña incorrecta'
+            db.Usuarios.findOne({
+                    where: {
+                        username: req.body.username
                     }
                 })
-            } else {
-                console.log(req.session.user.username)
-                res.redirect('/index')
-            }
+                .then(res => {
+                    let contraseña = req.body.password
+                    console.log(res.password)
+                    if (bcrypt.compareSync(contraseña, res.password) == true) {
+                        req.session.user = res
+                        console.log(req.session.user.email)
+                    }
+
+                    if (req.session.user == undefined) {
+                        console.log(req.session.user)
+                        res.render('login', {
+                            errores: {
+                                problemUser: 'Usuario no econtrado',
+                                problemPass: 'Contraseña incorrecta'
+                            }
+                        })
+                    } else {
+                        console.log(req.session.user.email)
+                        res.redirect('/index')
+                    }
+                })
+                // if (req.body.checkbox != undefined) {
+                //     res.cookie('user', req.session.user, {
+                //         maxAge: 300000
+                //     })
+                // }
         }
     },
 
@@ -137,7 +139,6 @@ controller = {
             let p2 = req.body.coPassword
             console.log(req.file.filename)
             let register = {
-                id: (usuarios.length + 1),
                 username: req.body.username,
                 email: req.body.email,
                 image: '/images/avatars/' + req.file.filename,
@@ -145,14 +146,27 @@ controller = {
                 profile: "user",
             }
             if (p1 == p2) {
-                let auth = usuarios.filter(function (user) {
-                    user.email == req.body.email
-                })
+                let auth
+                db.Usuarios.findAll({
+                        where: {
+                            email: req.body.email
+                        }
+                    })
+                    .then(res => {
+                        auth = res
+                    })
+                //let auth = usuarios.filter(function (user) {
+                //user.email == req.body.email
+                //})
 
                 if (auth == undefined) {
-                    usuarios.push(register)
-                    let useres = JSON.stringify(usuarios, null, 6)
-                    fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+                    db.Usuarios.create({
+                        username: req.body.username,
+                        email: req.body.email,
+                        image: '/images/avatars/' + req.file.filename,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        perfiles_id: 2,
+                    })
                     res.redirect('/index')
                 } else {
                     res.render('register', {
@@ -185,8 +199,18 @@ controller = {
     },
 
     editProduct: (req, res) => {
-        let id = req.params.id
-        let producto = productos.find(productos => productos.id == id)
+        let idABuscar = req.params.id
+        let producto
+
+        db.Productos.findAll({
+                where: {
+                    id: idABuscar
+                }
+            })
+            .then(res => {
+                producto = res
+            })
+
         res.render('editProduct', {
             product: producto
         })

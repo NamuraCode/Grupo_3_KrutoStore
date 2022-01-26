@@ -1,10 +1,13 @@
 const path = require('path');
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
-const usuarios = require('../data/users.json')
+const db = require('../database/models')
+const {
+    productosLogica,
+    usuariosLogica
+} = require('../models')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const db = require('../database/models')
 const {
     validationResult
 } = require('express-validator');
@@ -12,6 +15,7 @@ const session = require('express-session');
 const {
     nextTick
 } = require('process');
+const { redirect } = require('express/lib/response');
 
 
 controller = {
@@ -26,12 +30,12 @@ controller = {
 
     products: (req, res) => {
         db.Productos.findAll({
-            include:["imagenes"]
-        })
+                include: ["imagenes"]
+            })
             .then(ingresan => {
                 console.log(ingresan[1].imagenes.image)
                 res.render('products', {
-                    ingresan 
+                    ingresan
                 })
             })
     },
@@ -40,45 +44,63 @@ controller = {
         res.render('login')
     },
 
-    log: (req, res) => {
-        const resultValidations = validationResult(req)
-        if (resultValidations.errors.length > 0) {
-            res.render('login', {
-                errors: resultValidations.mapped(),
-                oldData: req.body
-            })
-
-        } else {
-            let nombre = req.body.username
-            let contraseña = req.body.password
-            //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
-            let usuario = db.Usuarios.findAll({
-                where: {
-                    username: nombre,
-                    password: contraseña
-                }
-            })
-            usuario.then(res => {
-                return res
-            })
-            req.session.user = usuario
-            if (req.body.checkbox != undefined) {
-                res.cookie('user', req.session.email, {
-                    maxAge: 300000
+    log: async (req, res) => {
+        try {
+            const resultValidations = validationResult(req)
+            if (resultValidations.errors.length > 0) {
+                return res.render('login', {
+                    errors: resultValidations.mapped(),
+                    oldData: req.body
                 })
-            }
-            if (req.session.user == undefined) {
-                console.log(req.session.user)
-                res.render('login', {
-                    errores: {
-                        problemUser: 'Usuario no econtrado',
-                        problemPass: 'Contraseña incorrecta'
-                    }
-                })
+                        // errores: {
+                        //     problemUser: 'Usuario no econtrado',
+                        //     problemPass: 'Contraseña incorrecta'
+                        // }
+                        // if (req.body.checkbox != undefined) {
+                        //     res.cookie('user', usuario, {
+                        //     maxAge: 300000
+                        //     })
+                        // }
             } else {
-                console.log(req.session.user.username)
-                res.redirect('/index')
+                let nombreDeUsuarioBody = req.body.username
+                let contrasenaUsuarioBody = req.body.password
+                let respuestaFuncion = await usuariosLogica.getOne({
+                    where: {username : nombreDeUsuarioBody}
+                })
+                console.log(respuestaFuncion)
+                if(respuestaFuncion != null){
+                    let contrasenaCorrecta = bcrypt.compareSync(contrasenaUsuarioBody, respuestaFuncion.password)
+                    if(contrasenaCorrecta){
+                        req.session.user = respuestaFuncion
+                        let session = req.session.user
+                        console.log(session)
+                        if (req.body.checkbox != undefined) {
+                            res.cookie('user', respuestaFuncion.email, {
+                                maxAge: 300000
+                            })
+                            res.redirect('./index')
+                        }else{
+                            res.redirect('./index')
+                        }
+                    }else {
+                        res.render('login', {
+                            errores: {
+                                 problemUser: 'Usuario no econtrado',
+                                 problemPass: 'Contraseña incorrecta'
+                            }
+                        })
+                    }
+                }else {
+                    res.render('login', {
+                        errores: {
+                             problemUser: 'Usuario no econtrado',
+                             problemPass: 'Contraseña incorrecta'
+                        }
+                    })
+                }
             }
+        } catch (error) {
+            res.status(401).render('error')
         }
     },
 
@@ -122,8 +144,6 @@ controller = {
         res.render('agregarProducto')
     },
 
-
-
     register: (req, res) => {
         const resultValidations = validationResult(req)
         if (resultValidations.errors.length > 0) {
@@ -137,7 +157,6 @@ controller = {
             let p2 = req.body.coPassword
             console.log(req.file.filename)
             let register = {
-                id: (usuarios.length + 1),
                 username: req.body.username,
                 email: req.body.email,
                 image: '/images/avatars/' + req.file.filename,
@@ -145,14 +164,27 @@ controller = {
                 profile: "user",
             }
             if (p1 == p2) {
-                let auth = usuarios.filter(function (user) {
-                    user.email == req.body.email
-                })
+                let auth
+                db.Usuarios.findAll({
+                        where: {
+                            email: req.body.email
+                        }
+                    })
+                    .then(res => {
+                        auth = res
+                    })
+                //let auth = usuarios.filter(function (user) {
+                //user.email == req.body.email
+                //})
 
                 if (auth == undefined) {
-                    usuarios.push(register)
-                    let useres = JSON.stringify(usuarios, null, 6)
-                    fs.writeFileSync(path.join(__dirname, '../data/users.json'), useres)
+                    db.Usuarios.create({
+                        username: req.body.username,
+                        email: req.body.email,
+                        image: '/images/avatars/' + req.file.filename,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        perfiles_id: 2,
+                    })
                     res.redirect('/index')
                 } else {
                     res.render('register', {
@@ -185,8 +217,18 @@ controller = {
     },
 
     editProduct: (req, res) => {
-        let id = req.params.id
-        let producto = productos.find(productos => productos.id == id)
+        let idABuscar = req.params.id
+        let producto
+
+        db.Productos.findAll({
+                where: {
+                    id: idABuscar
+                }
+            })
+            .then(res => {
+                producto = res
+            })
+
         res.render('editProduct', {
             product: producto
         })

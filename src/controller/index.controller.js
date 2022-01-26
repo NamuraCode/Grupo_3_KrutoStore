@@ -50,37 +50,38 @@ controller = {
 
         } else {
             //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
+            let usuarioEncontrado
+            let contraseña = req.body.password
             db.Usuarios.findOne({
                     where: {
                         username: req.body.username
                     }
                 })
-                .then(res => {
-                    let contraseña = req.body.password
-                    console.log(res.password)
-                    if (bcrypt.compareSync(contraseña, res.password) == true) {
-                        req.session.user = res
-                        console.log(req.session.user.email)
-                    }
-
-                    if (req.session.user == undefined) {
-                        console.log(req.session.user)
-                        res.render('login', {
-                            errores: {
-                                problemUser: 'Usuario no econtrado',
-                                problemPass: 'Contraseña incorrecta'
-                            }
-                        })
-                    } else {
-                        console.log(req.session.user.email)
-                        res.redirect('/index')
+                .then(resp => {
+                    if (bcrypt.compareSync(contraseña, resp.password)) {
+                        return usuarioEncontrado = {
+                            email : resp.email,
+                            
+                        }
                     }
                 })
-                // if (req.body.checkbox != undefined) {
-                //     res.cookie('user', req.session.user, {
-                //         maxAge: 300000
-                //     })
-                // }
+            
+            let usuario = req.session.user
+            if (req.body.checkbox != undefined) {
+                res.cookie('user', usuario, {
+                    maxAge: 300000
+                })
+            }
+            if (usuario == undefined) {
+                res.render('login', {
+                    errores: {
+                        problemUser: 'Usuario no econtrado',
+                        problemPass: 'Contraseña incorrecta'
+                    }
+                })
+            } else {
+                res.redirect('/index')
+            }
         }
     },
 

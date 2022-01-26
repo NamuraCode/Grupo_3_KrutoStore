@@ -1,11 +1,11 @@
-{
+module.exports = {
     "development": {
-        "username": "root",
-        "password": "12345",
-        "database": "Kruto_Store_Grupo3",
-        "host": "localhost",
+        "username": process.env.DBUSER,
+        "password": process.env.DBPASS,
+        "database": process.env.DBNAME,
+        "host": process.env.DBHOST,
         "dialect": "mysql",
-        "port": "3307"
+        "port": "3306"
     },
     "test": {
         "username": "root",

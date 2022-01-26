@@ -1,10 +1,13 @@
 const path = require('path');
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
-const usuarios = require('../data/users.json')
+const db = require('../database/models')
+const {
+    productosLogica,
+    usuariosLogica
+} = require('../models')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const db = require('../database/models')
 const {
     validationResult
 } = require('express-validator');
@@ -12,6 +15,7 @@ const session = require('express-session');
 const {
     nextTick
 } = require('process');
+const { redirect } = require('express/lib/response');
 
 
 controller = {
@@ -40,48 +44,63 @@ controller = {
         res.render('login')
     },
 
-    log: (req, res) => {
-        const resultValidations = validationResult(req)
-        if (resultValidations.errors.length > 0) {
-            res.render('login', {
-                errors: resultValidations.mapped(),
-                oldData: req.body
-            })
-
-        } else {
-            //user => user.username == nombre && bcrypt.compareSync(contraseña, user.password)
-            let usuarioEncontrado
-            let contraseña = req.body.password
-            db.Usuarios.findOne({
-                    where: {
-                        username: req.body.username
-                    }
+    log: async (req, res) => {
+        try {
+            const resultValidations = validationResult(req)
+            if (resultValidations.errors.length > 0) {
+                return res.render('login', {
+                    errors: resultValidations.mapped(),
+                    oldData: req.body
                 })
-                .then(resp => {
-                    if (bcrypt.compareSync(contraseña, resp.password)) {
-                        return usuarioEncontrado = {
-                            email : resp.email,
-                            
-                        }
-                    }
-                })
-            
-            let usuario = req.session.user
-            if (req.body.checkbox != undefined) {
-                res.cookie('user', usuario, {
-                    maxAge: 300000
-                })
-            }
-            if (usuario == undefined) {
-                res.render('login', {
-                    errores: {
-                        problemUser: 'Usuario no econtrado',
-                        problemPass: 'Contraseña incorrecta'
-                    }
-                })
+                        // errores: {
+                        //     problemUser: 'Usuario no econtrado',
+                        //     problemPass: 'Contraseña incorrecta'
+                        // }
+                        // if (req.body.checkbox != undefined) {
+                        //     res.cookie('user', usuario, {
+                        //     maxAge: 300000
+                        //     })
+                        // }
             } else {
-                res.redirect('/index')
+                let nombreDeUsuarioBody = req.body.username
+                let contrasenaUsuarioBody = req.body.password
+                let respuestaFuncion = await usuariosLogica.getOne({
+                    where: {username : nombreDeUsuarioBody}
+                })
+                console.log(respuestaFuncion)
+                if(respuestaFuncion != null){
+                    let contrasenaCorrecta = bcrypt.compareSync(contrasenaUsuarioBody, respuestaFuncion.password)
+                    if(contrasenaCorrecta){
+                        req.session.user = respuestaFuncion
+                        let session = req.session.user
+                        console.log(session)
+                        if (req.body.checkbox != undefined) {
+                            res.cookie('user', respuestaFuncion.email, {
+                                maxAge: 300000
+                            })
+                            res.redirect('./index')
+                        }else{
+                            res.redirect('./index')
+                        }
+                    }else {
+                        res.render('login', {
+                            errores: {
+                                 problemUser: 'Usuario no econtrado',
+                                 problemPass: 'Contraseña incorrecta'
+                            }
+                        })
+                    }
+                }else {
+                    res.render('login', {
+                        errores: {
+                             problemUser: 'Usuario no econtrado',
+                             problemPass: 'Contraseña incorrecta'
+                        }
+                    })
+                }
             }
+        } catch (error) {
+            res.status(401).render('error')
         }
     },
 
@@ -124,8 +143,6 @@ controller = {
     agregarProducto: (req, res) => {
         res.render('agregarProducto')
     },
-
-
 
     register: (req, res) => {
         const resultValidations = validationResult(req)

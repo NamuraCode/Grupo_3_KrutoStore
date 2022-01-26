@@ -85,16 +85,16 @@ controller = {
                     }else {
                         res.render('login', {
                             errores: {
-                                 problemUser: 'Usuario no econtrado',
-                                 problemPass: 'Contraseña incorrecta'
+                                problemUser: 'Usuario no econtrado',
+                                problemPass: 'Contraseña incorrecta'
                             }
                         })
                     }
                 }else {
                     res.render('login', {
                         errores: {
-                             problemUser: 'Usuario no econtrado',
-                             problemPass: 'Contraseña incorrecta'
+                            problemUser: 'Usuario no econtrado',
+                            problemPass: 'Contraseña incorrecta'
                         }
                     })
                 }

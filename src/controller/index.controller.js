@@ -70,12 +70,10 @@ controller = {
                     if(contrasenaCorrecta ){
                         req.session.user = respuestaFuncion
                         let session = req.session.user
-                        console.log(session)
                         if (req.body.checkbox != undefined) {
                             res.cookie('user', respuestaFuncion.email, {
                                 maxAge: 300000
                             })
-                            console.log(req.cookies.user)
                             res.redirect('./index')
                         }else{
                             res.redirect('./index')

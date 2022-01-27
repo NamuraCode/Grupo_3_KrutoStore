@@ -6,12 +6,13 @@ const multer = require('multer');
 /* Path para las rutas */
 const path = require('path')
 /* Controller un objeto con metodos de respuesta (res) */
-const controller = require('../controller/index.controller');
+const controller = require('../controller');
 const productController = require('../controller/product.controller')
 const { body } = require('express-validator')
 const admin = require('../middlewares/adminSessionMiddleware')
 const autenticacionRegistro = require('../middlewares/usuarioRegistradoMiddleware')
 const registrado = require('../middlewares/usuarioNoRegistradoMiddleware')
+const verificacionCookie = require('../middlewares/cokieAuthMiddleware')
  
 /*Variable de validaciones */
 

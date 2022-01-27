@@ -3,7 +3,7 @@ const usuariosController = require('./usuario.controller')
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
 const db = require('../database/models')
-const {productosLogica,usuariosLogica} = require('../models')
+const {productosLogica, usuariosLogica} = require('../models')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
@@ -13,7 +13,7 @@ const {redirect} = require('express/lib/response');
 
 
 controller = {
-    index: (req, res) => {
+    index: async (req, res) => {
             res.render('index')
     },
     productCart: (req, res) => {
@@ -61,17 +61,15 @@ controller = {
                 let respuestaFuncion = await usuariosLogica.getOne({
                     where: {username : nombreDeUsuarioBody}
                 })
-                console.log(respuestaFuncion)
                 if(respuestaFuncion != null){
                     let contrasenaCorrecta = bcrypt.compareSync(contrasenaUsuarioBody, respuestaFuncion.password)
                     if(contrasenaCorrecta ){
                         req.session.user = respuestaFuncion
-                        let session = req.session.user
                         if (req.body.checkbox != undefined) {
                             res.cookie('user', respuestaFuncion.email, {
                                 maxAge: 300000
                             })
-                            res.redirect('./index')
+                            res.redirect('/')
                         }else{
                             res.redirect('./index')
                         }
@@ -137,7 +135,7 @@ controller = {
         res.render('agregarProducto')
     },
 
-    register: (req, res) => {
+    register: async (req, res) => {
         const resultValidations = validationResult(req)
         if (resultValidations.errors.length > 0) {
             res.render('register', {
@@ -148,14 +146,6 @@ controller = {
         } else {
             let p1 = req.body.password
             let p2 = req.body.coPassword
-            console.log(req.file.filename)
-            let register = {
-                username: req.body.username,
-                email: req.body.email,
-                image: '/images/avatars/' + req.file.filename,
-                password: bcrypt.hashSync(req.body.password, 10),
-                profile: "user",
-            }
             if (p1 == p2) {
                 let auth
                 db.Usuarios.findAll({
@@ -171,6 +161,20 @@ controller = {
                 //})
 
                 if (auth == undefined) {
+                    let todosLosUsuarios = await usuariosLogica.getAll()
+                    let ultimoUsuario = await usuariosLogica.getAll({
+                        where:{
+                            id:todosLosUsuarios
+                        }
+                    })
+                    let usuario = {
+                        id: ultimoUsuario.id,
+                        username: req.body.username,
+                        email: req.body.email,
+                        image: '/images/avatars/' + req.file.filename,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        perfiles_id: 2,
+                    }
                     db.Usuarios.create({
                         username: req.body.username,
                         email: req.body.email,
@@ -178,6 +182,7 @@ controller = {
                         password: bcrypt.hashSync(req.body.password, 10),
                         perfiles_id: 2,
                     })
+                    req.session.user = usuario
                     res.redirect('/index')
                 } else {
                     res.render('register', {
@@ -232,10 +237,10 @@ controller = {
         for (let i = 0; i < productos.length; i++) {
             if (productos[i].id == id) {
                 productos[i].name = req.body.name,
-                    productos[i].description = req.body.description,
-                    productos[i].image = '/images/productos/' + req.file.filename,
-                    productos[i].category = req.body.category,
-                    productos[i].price = req.body.price
+                productos[i].description = req.body.description,
+                productos[i].image = '/images/productos/' + req.file.filename,
+                productos[i].category = req.body.category,
+                productos[i].price = req.body.price
             }
         }
         let producto = JSON.stringify(productos, null, 4);

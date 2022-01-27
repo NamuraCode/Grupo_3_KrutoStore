@@ -1,13 +1,22 @@
 <%- include ('./partials/header-azul')%>
-    <section>
-        <nav class="nav">
-            <ul>
-                <li><i class="far fa-user-circle"></i></li>
-                <li><a href="#">Actualizar datos</a></li>
-                <li><a href="#">Eliminar cuenta</a></li>
-                <li><button>Cerrar Sesion</button></li>
-            </ul>
-        </nav>
-    </section>
+<div id="Imagen">
+    <img src=<%=usuario.image%>>
+</div>
+<form action="/user/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" value="<%=usuario.username%>">
+    <label for="email">Correo:</label>
+    <input type="email" id="email" name="email" value="<%=usuario.email%>">
+    <label for="password">Nueva contraseña:</label>
+    <input type="password" id="password" name="password" placeholder="Nueva contraseña">
+    <button type="submit" class="perfil_boton1">Actualizar</button>
+</form>
+<form action="/user/perfil?_method=DELETE" method="POST">
+    <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
+</form>
+<section>
+    <button>Cerrar Sesion</button>
+</section>
 </body>
+
 </html>

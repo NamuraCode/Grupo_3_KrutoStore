@@ -78,8 +78,9 @@ router.get('/products', controller.products)
 
 //usuarios
 router.use('/user', userRouter)
-router.get('/login', verificacionCookie, autenticacionRegistro, controller.login)
-router.post('/login', validation, controller.log)
+
+router.get('/user/login', verificacionCookie, autenticacionRegistro, controller.login)
+router.post('/user/login', validation, controller.log)
 
 router.get('/productDetail/:id', controller.productDetail)
 

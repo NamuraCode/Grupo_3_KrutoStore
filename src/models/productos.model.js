@@ -13,6 +13,7 @@ const metodosProductos = {
             return console.log(error)
         }
     },
+<<<<<<< HEAD
 
     newProductos: async function (Producto, files) {
         try {
@@ -50,6 +51,13 @@ const metodosProductos = {
             await db.Productos.destroy({where: {id:id}})
         } catch (error) {
             console.error(error);
+=======
+    getOne: async function (query) {
+        try {
+            
+        } catch (error) {
+            console.log()
+>>>>>>> bf7e6a3e162b4aab373c4c748c5a4c341f4be22d
         }
     }
 }

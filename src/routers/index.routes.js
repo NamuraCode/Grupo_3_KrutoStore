@@ -12,7 +12,11 @@ const { body } = require('express-validator')
 const admin = require('../middlewares/adminSessionMiddleware')
 const autenticacionRegistro = require('../middlewares/usuarioRegistradoMiddleware')
 const registrado = require('../middlewares/usuarioNoRegistradoMiddleware')
+<<<<<<< HEAD
 
+=======
+const verificacionCookie = require('../middlewares/cokieAuthMiddleware')
+>>>>>>> bf7e6a3e162b4aab373c4c748c5a4c341f4be22d
  
 /*Variable de validaciones */
 
@@ -77,7 +81,7 @@ router.get('/productCart', registrado, controller.productCart);
 
 router.get('/products', controller.products)
 
-router.get('/login', autenticacionRegistro, controller.login)
+router.get('/login', verificacionCookie, autenticacionRegistro, controller.login)
 router.post('/login', validation, controller.log)
 
 router.get('/productDetail/:id', controller.productDetail)
@@ -86,7 +90,7 @@ router.get('/check', (req, res) => {
     res.send(req.session.user)
 })
 
-router.get('/register', autenticacionRegistro, controller.regi)
+router.get('/register', verificacionCookie, autenticacionRegistro, controller.regi)
 router.post('/register', fileUpload.single('file'), validations, controller.register)
 
 

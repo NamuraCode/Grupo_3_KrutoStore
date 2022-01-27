@@ -2,10 +2,7 @@ const path = require('path');
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
 const db = require('../database/models')
-const {
-    productosLogica,
-    usuariosLogica
-} = require('../models')
+const {productosLogica,usuariosLogica} = require('../models')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const {
@@ -20,7 +17,7 @@ const { redirect } = require('express/lib/response');
 
 controller = {
     index: (req, res) => {
-        res.render('index')
+            res.render('index')
     },
     productCart: (req, res) => {
         res.render('productCart', {
@@ -70,7 +67,7 @@ controller = {
                 console.log(respuestaFuncion)
                 if(respuestaFuncion != null){
                     let contrasenaCorrecta = bcrypt.compareSync(contrasenaUsuarioBody, respuestaFuncion.password)
-                    if(contrasenaCorrecta){
+                    if(contrasenaCorrecta ){
                         req.session.user = respuestaFuncion
                         let session = req.session.user
                         console.log(session)
@@ -78,6 +75,7 @@ controller = {
                             res.cookie('user', respuestaFuncion.email, {
                                 maxAge: 300000
                             })
+                            console.log(req.cookies.user)
                             res.redirect('./index')
                         }else{
                             res.redirect('./index')

@@ -21,8 +21,9 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(methodOverride('_method'));
 app.use(session({secret:"kruto secret",
-resave: false,
-	saveUninitialized: false,}))
+        resave: false,
+	    saveUninitialized: false
+    }))
 
 app.use(express.json())
 

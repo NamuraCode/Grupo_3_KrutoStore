@@ -5,14 +5,10 @@ const db = require('../database/models')
 const {productosLogica,usuariosLogica} = require('../models')
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const {
-    validationResult
-} = require('express-validator');
+const {validationResult} = require('express-validator');
 const session = require('express-session');
-const {
-    nextTick
-} = require('process');
-const { redirect } = require('express/lib/response');
+const {nextTick} = require('process');
+const {redirect} = require('express/lib/response');
 
 
 controller = {

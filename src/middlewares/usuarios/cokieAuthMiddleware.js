@@ -1,6 +1,6 @@
 const {
     usuariosLogica
-} = require('../models')
+} = require('../../models')
 
 const cookieAuth = async function (req, res, next) {
     try {

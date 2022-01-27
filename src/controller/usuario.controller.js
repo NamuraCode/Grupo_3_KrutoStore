@@ -1,5 +1,5 @@
 const usuariosController = {
-    enviarVistaPerfil: function (res, req) {
+    enviarVistaPerfil: (req, res) => {
         res.render('profile')
     }
 }

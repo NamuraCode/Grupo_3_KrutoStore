@@ -8,7 +8,7 @@ require('dotenv').config()
 const session = require('express-session');
 const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');
-const remember = require('./middlewares/cokieAuthMiddleware')
+const {verificacionCookie} = require('./middlewares')
 
 app.use(express.static(publicPath));
 
@@ -29,41 +29,13 @@ app.use(express.json())
 
 app.use(cookieParser())
 
-app.use(remember)
+app.use(verificacionCookie)
 
 app.set('views',path.join(__dirname,'./views'))
 app.set('view engine', 'ejs')
 
 
 app.use('/', routers);
-
-app.use('/productCart', routers);
-
-app.use('/products', routers);
-
-app.use('/login', routers);
-
-app.use('/productDetail', routers);
-
-app.use('/productForm', routers);
-
-app.use('/register', routers);
-
-app.use('/index', routers);
-
-app.use('/addProduct', routers);
-
-app.use('/editProduct', routers);
-
-app.use('/removeProduct', routers);
-
-app.use('/aboutUs', routers);
-
-app.use('/opcionesPagos', routers);
-
-app.use('/opcionesEnvios', routers);
-
-app.use('/politicaDevoluciones', routers);
 
 app.use((req, res, next) => {
     res.status(404).render('error')

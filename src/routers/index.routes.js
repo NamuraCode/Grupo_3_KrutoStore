@@ -5,14 +5,13 @@ const router = express.Router();
 const multer = require('multer');
 /* Path para las rutas */
 const path = require('path')
+/* rutas usuari */
+const userRouter = require('./usuario.routes') 
 /* Controller un objeto con metodos de respuesta (res) */
-const controller = require('../controller');
+const {controller} = require('../controller');
 const productController = require('../controller/product.controller')
 const { body } = require('express-validator')
-const admin = require('../middlewares/adminSessionMiddleware')
-const autenticacionRegistro = require('../middlewares/usuarioRegistradoMiddleware')
-const registrado = require('../middlewares/usuarioNoRegistradoMiddleware')
-const verificacionCookie = require('../middlewares/cokieAuthMiddleware')
+const {admin, autenticacionRegistro, registrado, verificacionCookie} = require('../middlewares')
  
 /*Variable de validaciones */
 
@@ -77,6 +76,8 @@ router.get('/productCart', registrado, controller.productCart);
 
 router.get('/products', controller.products)
 
+//usuarios
+router.use('/user', userRouter)
 router.get('/login', verificacionCookie, autenticacionRegistro, controller.login)
 router.post('/login', validation, controller.log)
 
@@ -125,10 +126,10 @@ router.post('/products', controller.agregarCart)
 
 /* ADMINISTRADOR */
 router.get('/admin/dashboard', admin, controller.dashboard)
-router.post('/admin/agregarProducto', admin, controller.agregarProducto)
+router.get('/admin/agregarProducto', admin, controller.agregarProducto)
 router.post('/admin/agregarProducto', admin,fileUploa.single('image'), controller.create)
-router.post('/admin/eliminarProducto', admin, controller.eliminarProducto)
-router.post('/admin/editarProducto', admin, controller.editarProducto)
+router.get('/admin/eliminarProducto', admin, controller.eliminarProducto)
+router.get('/admin/editarProducto', admin, controller.editarProducto)
 
 module.exports = router;
 

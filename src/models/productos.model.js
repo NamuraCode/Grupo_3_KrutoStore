@@ -10,6 +10,9 @@ const metodosProductos = {
         } catch (error) {
             return console.log(error)
         }
+    },
+    getOne: async function (query) {
+
     }
 }
 

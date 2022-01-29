@@ -1,4 +1,5 @@
 const path = require('path');
+const productController = require('./product.controller')
 const usuariosController = require('./usuario.controller')
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
@@ -10,6 +11,7 @@ const {validationResult} = require('express-validator');
 const session = require('express-session');
 const {nextTick} = require('process');
 const {redirect} = require('express/lib/response');
+const models = require('../models')
 
 
 controller = {
@@ -135,6 +137,12 @@ controller = {
 
     agregarProducto: (req, res) => {
         res.render('agregarProducto')
+        // try {
+        //     let productos = await models.productoModel.create()
+        //     res.render('agregarProducto', {productos})
+        // } catch (error) {
+        //     next(error);
+        // }
     },
 
     register: (req, res) => {

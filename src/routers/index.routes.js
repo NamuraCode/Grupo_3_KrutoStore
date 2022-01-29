@@ -9,9 +9,11 @@ const path = require('path')
 const userRouter = require('./usuario.routes') 
 /* Controller un objeto con metodos de respuesta (res) */
 const {controller} = require('../controller');
-const productController = require('../controller/product.controller')
+const {productController} = require('../controller')
 const { body } = require('express-validator')
 const {admin, autenticacionRegistro, registrado, verificacionCookie} = require('../middlewares')
+/* Modelos */
+const model = require('../models')
  
 /*Variable de validaciones */
 
@@ -130,6 +132,9 @@ router.get('/admin/agregarProducto', admin, controller.agregarProducto)
 router.post('/admin/agregarProducto', admin,fileUploa.single('image'), controller.create)
 router.get('/admin/eliminarProducto', admin, controller.eliminarProducto)
 router.get('/admin/editarProducto', admin, controller.editarProducto)
+
+
+/* PRODUCTOS */
 
 module.exports = router;
 

@@ -1,20 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const db = require('../database/models')
+const models = require('../models');
 
 const productController = {
-    dashboard: (req,res) => {
-        res.render('dashboard');
-    },
-    agregarProducto: (req,res) => {
-        res.render('agregarProducto');
-    },
-    eliminarProducto: (req,res) => {
-        res.render('eliminarProducto');
-    },
-    editarProducto: (req,res) => {
-        res.render('editarProducto');
-    },
+    agregarProducto: async(req, res, next) => {
+        try {
+            let producto = await models.productoModel.create(producto)
+            res.render("agregarProducto", {producto})
+        } catch (error) {
+            next(error);
+        }
+    }
 }
 
 module.exports = productController;

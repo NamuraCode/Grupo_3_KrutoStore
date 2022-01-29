@@ -1,15 +1,39 @@
-const db = require('../database/models')
+const db = require('../database/models');
 
-const productModel = {
+const productoModel = {
     getAll: async () => {
         try {
-            const result = await db.Productos.findAll()
+            const result = await db.productos.findAll()
             console.log(result);
-        } catch (error) {
-            console.log('Ocurrio un error ${error.message}');
+        }catch (error) {
+            console.log(error);
         }
     },
-}
+    getOne: async (id) => {
+        try {
+            const result = await db.productos.findByPk(id)
+            console.log(result);
+        }catch (error) {
+            console.log(error);
+        }
+    },
+    create: async (producto) => {
+        try {
+            const result = await db.productos.create(producto);
+            console.log(result);
+        }catch (error) {
+            console.log(error);
+        }
+    },
+    update: async (producto) => {
+        try {
+            const result = await db.productos.update(producto);
+            console.log(result);
+        }catch (error) {
+            console.log(error);
+        }
+    },
+};
 
 
 
@@ -66,4 +90,4 @@ const productModel = {
 //     }
 // }
 
-// module.exports = metodosProductos
+module.exports = productoModel

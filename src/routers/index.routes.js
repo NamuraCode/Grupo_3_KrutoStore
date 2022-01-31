@@ -8,6 +8,8 @@ const {controller} = require('../controller');
 router.use('/', userRouter)
 router.use('/', productRouter)
 
+router.get('/', controller.index)
+
 router.get('/aboutUs', controller.aboutUs)
 
 router.get('/opcionesPagos', controller.opcionesPagos)

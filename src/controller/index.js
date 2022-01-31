@@ -139,7 +139,7 @@ controller = {
         //res.render('agregarProducto')
         try {
             let productos = await productController.agregarProducto()
-            res.render('agregarProducto', {productos})
+            res.render('agregarProducto', {title: "Agregar Producto"})
         } catch (error) {
             next(error);
         }

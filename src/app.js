@@ -10,8 +10,6 @@ const methodOverride = require('method-override')
 const cookieParser = require('cookie-parser');
 const {verificacionCookie} = require('./middlewares')
 
-app.use(express.static(publicPath));
-
 app.listen(port,()=>{
     console.log(`listen on ${port}`)
 });

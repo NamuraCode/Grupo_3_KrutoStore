@@ -8,7 +8,7 @@ const path = require('path')
 /* rutas usuari */
 const userRouter = require('./usuario.routes') 
 /* Controller un objeto con metodos de respuesta (res) */
-const {controller} = require('../controller');
+const {controller, usuariosController} = require('../controller');
 const productController = require('../controller/product.controller')
 const { body } = require('express-validator')
 const {admin, autenticacionRegistro, registrado, verificacionCookie} = require('../middlewares')
@@ -79,8 +79,8 @@ router.get('/products', controller.products)
 //usuarios
 router.use('/user', userRouter)
 
-router.get('/user/login', verificacionCookie, autenticacionRegistro, controller.login)
-router.post('/user/login', validation, controller.log)
+router.get('/user/login', verificacionCookie, autenticacionRegistro, usuariosController.login)
+router.post('/user/login', validation, usuariosController.log)
 
 router.get('/productDetail/:id', controller.productDetail)
 

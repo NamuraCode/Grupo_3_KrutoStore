@@ -7,7 +7,7 @@ const metodosUsuarios = {
             let usuarios = await db.Usuarios.findOne(where)
             return usuarios
         } catch (error) {
-            return console.log(error)
+            return console.log(error.message)
         }
     },
     editOne: async function (what, where) {
@@ -15,7 +15,7 @@ const metodosUsuarios = {
             let todos = await db.Usuarios.update(what, where)
             return todos
         } catch (e) {
-            return console.log(e)
+            return console.log(e.message)
         }
     },
     deleteUser: async function (req){
@@ -28,7 +28,7 @@ const metodosUsuarios = {
             })
             return usuarios
         }catch(e){
-            return console.log(e)
+            return console.log(e.message)
         }
     },
     getAll: async () => {
@@ -36,8 +36,16 @@ const metodosUsuarios = {
             let todos = await db.Usuarios.findAll()
             return todos
         }catch(e){
-            return console.log(e)
+            return console.log(e.message)
         }       
+    },
+    getId: async (id) => {
+        try{
+            let usuarioBuscadoPorId = await db.Usuarios.findByPk(id)
+            return usuarioBuscadoPorId
+        }catch(error){
+            return console.log(error.message)
+        }
     }
 }
 

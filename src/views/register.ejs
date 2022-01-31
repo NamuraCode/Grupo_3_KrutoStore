@@ -43,10 +43,7 @@
                 </div>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
                 <form action="/register" method="post" id="register" class="input-group" enctype="multipart/form-data">
-                    <input 
-                        name="username" 
-                        type="text"
-                        class="input-field <%= locals.errors && errors.username ? 'is-invalid' : null %>"
+                    <input name="username" type="text" class="input-field <%= locals.errors && errors.username ? 'is-invalid' : null %>"
                         placeholder="username" 
                         value="<%= locals.oldData ? oldData.username : null %>">
                         <div class=text-danger style="color: rgb(170, 23, 23);">

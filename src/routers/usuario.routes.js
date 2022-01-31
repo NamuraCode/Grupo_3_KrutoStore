@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const { usuariosController } = require('../controller')
 
+
 let multerDiskStorag = multer.diskStorage({
     /* Destino de los archivos */
     destination: (req, file, callback) => {

@@ -9,7 +9,6 @@ const path = require('path')
 const userRouter = require('./usuario.routes') 
 /* Controller un objeto con metodos de respuesta (res) */
 const {controller} = require('../controller');
-const {productController} = require('../controller')
 const { body } = require('express-validator')
 const {admin, autenticacionRegistro, registrado, verificacionCookie} = require('../middlewares')
 /* Modelos */

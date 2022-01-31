@@ -4,7 +4,7 @@ const productoModel = {
     getAll: async () => {
         try {
             const result = await db.productos.findAll()
-            console.log(result);
+            return result;
         }catch (error) {
             console.log(error);
         }
@@ -12,25 +12,33 @@ const productoModel = {
     getOne: async (id) => {
         try {
             const result = await db.productos.findByPk(id)
-            console.log(result);
+            return result;
         }catch (error) {
             console.log(error);
         }
     },
     create: async (producto) => {
         try {
-            const result = await db.productos.create(producto);
-            console.log(result);
+            const result = await db.productos.create(producto)
+            return result;
         }catch (error) {
             console.log(error);
         }
     },
     update: async (producto) => {
         try {
-            const result = await db.productos.update(producto);
-            console.log(result);
+            const result = await db.productos.update(producto)
+            return result;
         }catch (error) {
             console.log(error);
+        }
+    },
+    delete: async (id) => {
+        try {
+            const result = await db.productos.destroy({where: {id:id}})
+            return result;
+        } catch (error) {
+            next(error)
         }
     },
 };

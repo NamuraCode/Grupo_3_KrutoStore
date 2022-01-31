@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {fileUploa} = require('../models')
-const path = require('path');
 const { usuariosController } = require('../controller')
-const {admin, autenticacionRegistro, registrado, verificacionCookie, validationLogin, validationsRegister, fileUploadAvatars} = require('../middlewares')
+const {autenticacionRegistro, registrado, verificacionCookie, validationLogin, validationsRegister, fileUploadAvatars} = require('../middlewares')
 
 
 router.get('/index', usuariosController.getIndex)

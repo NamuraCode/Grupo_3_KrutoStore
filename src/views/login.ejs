@@ -31,7 +31,7 @@
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
-                    <a href="/user/login">
+                    <a href="/login">
                         <button type="button" class="toggle-btn" onclick="login()">Login</button>
                     </a>
                     <a href="/register">
@@ -44,7 +44,7 @@
                     <img src="/images/productos/twitter.png">
                 </div>
                 <!-- -------------------------------- LOGIN -------------------------------- -->
-                <form id="login" action="/user/login" class="input-group" method="post">
+                <form id="login" action="/login" class="input-group" method="post">
                     <input type="text" class="input-field" name="username" placeholder="username">
                     <div class=text-danger style="color: rgb(170, 23, 23);">
                         <% if(locals.errors && errors.username) { %>
@@ -88,7 +88,7 @@
                     <li><a href="/productCart"><span class="iconify"
                                 data-icon="ic:baseline-local-grocery-store"></span></a></li>
                     <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
-                    <li><a href="/user/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
+                    <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
                 </ul>
             </nav>
         </div>
@@ -147,7 +147,7 @@
                     <p>
                         Enter your personal details and start journey with us
                     </p>
-                    <a href="./register.html"><button class="ghost" id="signUp">Sign Up</button></a>
+                    <a href="/register.html"><button class="ghost" id="signUp">Sign Up</button></a>
                 </div>
             </div>
         </div>

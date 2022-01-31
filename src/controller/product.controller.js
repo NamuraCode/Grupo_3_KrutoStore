@@ -15,7 +15,7 @@ const productController = {
         res.render('editarProducto');
     },
     productsList: (req, res) => {
-        db.Productos.findAll({
+        productosLogica.getAll({
                 include: ["imagenes"]
             })
             .then(ingresan => {

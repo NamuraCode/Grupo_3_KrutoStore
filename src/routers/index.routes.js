@@ -8,8 +8,7 @@ const path = require('path')
 /* rutas usuari */
 const userRouter = require('./usuario.routes') 
 /* Controller un objeto con metodos de respuesta (res) */
-const {controller, usuariosController} = require('../controller');
-const productController = require('../controller/product.controller')
+const {controller, usuariosController, productController} = require('../controller');
 const { body } = require('express-validator')
 const {admin, autenticacionRegistro, registrado, verificacionCookie} = require('../middlewares')
  
@@ -29,28 +28,9 @@ const validations = [
     body('checkbox')
         .notEmpty().withMessage('Acepta terminos y condiciones'),
 ]
-
-const validation = [
-    body('username')
-        .notEmpty().withMessage('Campo username vacio'),
-    body('password')
-        .notEmpty().withMessage('Campo contraseña vacio').bail()
-        .isLength({min: 8}).withMessage('Campo contraseña minimo 8 caracteres'),
-]
 /* diskStorage para decirle a multer donde guardar los archivos y que queremos agregarles a esos archivos */
 
-let multerDiskStorage = multer.diskStorage({
-    /* Destino de los archivos */
-    destination: (req, file, callback) => {
-        let folder = path.join(__dirname, '../../public/images/avatars');
-        callback(null, folder);
-    },
-    /* renombrar los archivos */
-    filename: (req, file, callback)=>{
-        let imagName= Date.now() + path.extname(file.originalname);
-        callback(null, imagName);
-    }
-})
+
 let multerDiskStorag = multer.diskStorage({
     /* Destino de los archivos */
     destination: (req, file, callback) => {
@@ -65,8 +45,15 @@ let multerDiskStorag = multer.diskStorage({
 })
 
 /* Guardarlo en variable para llamarlo como middleware */
-let fileUpload = multer({ storage: multerDiskStorage})
 let fileUploa = multer({ storage: multerDiskStorag})
+
+
+//usuarios
+router.use('/user', userRouter)
+
+
+
+
 //
 /* GET */
 /* Get es un metodo HTTP para obtener las vistas y enviar datos no seguros de formulario */
@@ -76,21 +63,11 @@ router.get('/productCart', registrado, controller.productCart);
 
 router.get('/products', controller.products)
 
-//usuarios
-router.use('/user', userRouter)
-
-router.get('/user/login', verificacionCookie, autenticacionRegistro, usuariosController.login)
-router.post('/user/login', validation, usuariosController.log)
-
 router.get('/productDetail/:id', controller.productDetail)
 
 router.get('/check', (req, res) => {
     res.send(req.session.user)
 })
-
-router.get('/register', verificacionCookie, autenticacionRegistro, controller.regi)
-router.post('/register', fileUpload.single('file'), validations, controller.register)
-
 
 router.get('/index', controller.index)
 

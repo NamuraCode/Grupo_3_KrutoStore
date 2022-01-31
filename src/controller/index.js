@@ -1,5 +1,6 @@
 const path = require('path');
 const usuariosController = require('./usuario.controller')
+const productController = require('./product.controller')
 const productos = require('../data/product.json');
 const favorites = require('../data/shoppingCart.json')
 const db = require('../database/models')
@@ -295,5 +296,6 @@ controller = {
 
 module.exports = {
     controller,
-    usuariosController
+    usuariosController,
+    productController
 }

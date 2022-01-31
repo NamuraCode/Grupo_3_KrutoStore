@@ -42,7 +42,7 @@
                     <img src="./images/productos/twitter.png">
                 </div>
                 <!-- ------------------------------ REGISTER ------------------------------- -->
-                <form action="/register" method="post" id="register" class="input-group" enctype="multipart/form-data">
+                <form action="/user/register" method="post" id="register" class="input-group" enctype="multipart/form-data">
                     <input name="username" type="text" class="input-field <%= locals.errors && errors.username ? 'is-invalid' : null %>"
                         placeholder="username" 
                         value="<%= locals.oldData ? oldData.username : null %>">

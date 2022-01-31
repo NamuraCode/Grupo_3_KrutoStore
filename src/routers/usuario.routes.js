@@ -1,25 +1,11 @@
 const express = require('express');
-const router = express.Router();4
-const {registrado} = require('../middlewares')
-const multer = require('multer');
+const router = express.Router();
+const {fileUploa} = require('../models')
 const path = require('path');
 const { usuariosController } = require('../controller')
+const {admin, autenticacionRegistro, registrado, verificacionCookie, validationLogin, validationsRegister, fileUploadAvatars} = require('../middlewares')
 
 
-let multerDiskStorag = multer.diskStorage({
-    /* Destino de los archivos */
-    destination: (req, file, callback) => {
-        let folder = path.join(__dirname, '../../public/images/avatars');
-        callback(null, folder);
-    },
-    /* renombrar los archivos */
-    filename: (req, file, callback)=>{
-        let imagName= Date.now() + path.extname(file.originalname);
-        callback(null, imagName);
-    }
-})
-
-let fileUploa = multer({ storage: multerDiskStorag})
 router.get('/index', usuariosController.getIndex)
 
 router.get('/perfil', registrado, usuariosController.enviarVistaPerfil)
@@ -27,5 +13,14 @@ router.get('/perfil', registrado, usuariosController.enviarVistaPerfil)
 router.put('/perfil', usuariosController.actualizarDatosPerfil)
 
 router.delete('/perfil', usuariosController.deleteUser)
+
+router.get('/login', verificacionCookie, autenticacionRegistro, usuariosController.login)
+
+router.post('/login', validationLogin, usuariosController.log)
+
+router.get('/register', verificacionCookie, autenticacionRegistro, usuariosController.regi)
+
+router.post('/register', fileUploadAvatars.single('file'), validationsRegister, usuariosController.register)
+
 
 module.exports = router

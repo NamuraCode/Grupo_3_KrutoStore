@@ -136,6 +136,74 @@ const usuariosController = {
             res.status(401).render('error')
         }
     },
+    register: async (req, res) => {
+        const resultValidations = validationResult(req)
+        if (resultValidations.errors.length > 0) {
+            res.render('register', {
+                errors: resultValidations.mapped(),
+                oldData: req.body
+            })
+
+        } else {
+            let p1 = req.body.password
+            let p2 = req.body.coPassword
+            if (p1 == p2) {
+                let auth
+                db.Usuarios.findAll({
+                        where: {
+                            email: req.body.email
+                        }
+                    })
+                    .then(res => {
+                        auth = res
+                    })
+                //let auth = usuarios.filter(function (user) {
+                //user.email == req.body.email
+                //})
+
+                if (auth == undefined) {
+                    let todosLosUsuarios = await usuariosLogica.getAll()
+                    let ultimoUsuario = await usuariosLogica.getAll({
+                        where:{
+                            id:todosLosUsuarios
+                        }
+                    })
+                    let usuario = {
+                        id: ultimoUsuario.id,
+                        username: req.body.username,
+                        email: req.body.email,
+                        image: '/images/avatars/' + req.file.filename,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        perfiles_id: 2,
+                    }
+                    db.Usuarios.create({
+                        username: req.body.username,
+                        email: req.body.email,
+                        image: '/images/avatars/' + req.file.filename,
+                        password: bcrypt.hashSync(req.body.password, 10),
+                        perfiles_id: 2,
+                    })
+                    req.session.user = usuario
+                    res.redirect('/index')
+                } else {
+                    res.render('register', {
+                        problem: "El correo ya existe",
+                        oldData: req.body
+                    })
+                }
+
+            } else {
+                res.render('register', {
+                    problema: "Las contraseñas no son iguales",
+                    oldData: req.body
+                })
+            }
+        }
+    },
+
+    regi: (req, res) => {
+        res.render('register')
+    }
 }
 
 module.exports = usuariosController

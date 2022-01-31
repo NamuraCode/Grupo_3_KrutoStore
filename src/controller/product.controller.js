@@ -22,7 +22,7 @@ const productController = {
     agregarProducto: async(req, res, next) => {
         try {
             let producto = await productoModel.create(producto)
-            res.render("agregarProducto", {producto})
+            res.render("agregarProducto", {title: "Agregar Producto"})
         } catch (error) {
             next(error);
         }
@@ -31,12 +31,11 @@ const productController = {
     editarProducto: async (req, res, next) => {
         try{
             let producto = await productoModel.update(producto)
-            res.render('editarProducto')
+            res.render('editarProducto', {title: "Editar Producto"})
         } catch (error) {
             next(error);
         }
     },
-
 
 }
 

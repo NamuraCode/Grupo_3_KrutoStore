@@ -1,5 +1,5 @@
 const favorites = require('../data/shoppingCart.json')
-const { productosLogica } = require('../models')
+const { productosLogica, generosLogica } = require('../models')
 
 const productController = {
     dashboard: (req, res) => {
@@ -48,16 +48,19 @@ const productController = {
     editProduct: (req, res) => {
         console.log('Desarrolla la logica para editar productos plis')
     },
-    productDetail: (req, res) => {
-        try{let idBody = req.params.id
-            let producto = productosLogica.getAll({
-                where: {
-                    id: idBody
+    productDetail: async (req, res) => {
+        try{
+            
+            let productos = await productosLogica.getDetail(req.params.id)
+            let categoria = await generosLogica.getAll({
+                where:{
+                    id: productos.categorias_id
                 }
             })
             res.render('productDetail', {
-                ingresan: producto
+                ingresan: productos, categoria: categoria
             })
+            console.log(productos, categoria.categoria)
         }catch(e){
             next(e)
         }

@@ -50,6 +50,14 @@ const metodosProductos = {
         } catch (error) {
             console.error(error);
         }
+    },
+    getDetail: async (id, where) => {
+        try{
+            let getOne = await db.Productos.findByPk(id)
+            return getOne
+        }catch(e){
+            console.error(e)
+        }
     }
 }
 

@@ -24,6 +24,7 @@ const metodosProductos = {
             }
 
             await db.Productos.create({
+                image: req.file.filename,
                 productName: Producto.nombre,
                 productCategory: Producto.categorias_id,
                 productPrice: Producto.precio,

@@ -40,7 +40,17 @@ const productController = {
         res.redirect('/productCart')
     },
     create: (req, res) => {
-        console.log('Desarrolla la logica para cerar productos plis')
+        try{
+            productosLogica.newProductos({
+                nombre: req.body.nombre,
+                categoria: req.body.categorias_id,
+                precio: req.body.precio,
+                descripcion: req.body.descripcion
+            })
+            res.render('AgregarProducto')
+        } catch(e){
+            next(e)
+        }
     },
     deleteProduct: (req, res) => {
         console.log('Desarrolla la logica para eliminar productos plis')

@@ -35,7 +35,16 @@ const metodosProductos = {
     },
     editProductos: async function (Producto) {
         try {
+            const images = [];
+
+            if (files["imagesUpload"]) {
+                images = files["imagesUpload"].map((image) => {
+                    return image.filename;
+                });
+            }
+
             await db.Productos.edit({
+                image: req.file.filename,
                 productName: Producto.nombre,
                 productCategory: Producto.categorias_id,
                 productPrice: Producto.precio,

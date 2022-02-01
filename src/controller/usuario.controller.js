@@ -1,11 +1,7 @@
-const {
-    usuariosLogica
-} = require('../models')
 const bcrypt = require('bcryptjs');
-const {
-    validationResult
-} = require('express-validator');
-const path = require('path')
+const { usuariosLogica } = require('../models')
+const { validationResult } = require('express-validator');
+
 const usuariosController = {
     enviarVistaPerfil: (req, res) => {
         try {
@@ -81,7 +77,6 @@ const usuariosController = {
     login: (req, res) => {
         res.render('login')
     },
-
     log: async (req, res) => {
         try {
             const resultValidations = validationResult(req)
@@ -137,70 +132,63 @@ const usuariosController = {
         }
     },
     register: async (req, res) => {
-        const resultValidations = validationResult(req)
-        if (resultValidations.errors.length > 0) {
-            res.render('register', {
-                errors: resultValidations.mapped(),
-                oldData: req.body
-            })
+        try{
+            const resultValidations = validationResult(req)
+            if (resultValidations.errors.length > 0) {
+                res.render('register', {
+                    errors: resultValidations.mapped(),
+                    oldData: req.body
+                })
 
-        } else {
-            let p1 = req.body.password
-            let p2 = req.body.coPassword
-            if (p1 == p2) {
-                let auth
-                db.Usuarios.findAll({
-                        where: {
-                            email: req.body.email
-                        }
-                    })
-                    .then(res => {
-                        auth = res
-                    })
-                //let auth = usuarios.filter(function (user) {
-                //user.email == req.body.email
-                //})
+            } else {
+                let p1 = req.body.password
+                let p2 = req.body.coPassword
+                if (p1 == p2) {
+                    let auth
+                    usuariosLogica.getOne({
+                            where: {
+                                email: req.body.email
+                            }
+                        })
+                        .then(res => {
+                            auth = res
+                        })
+                    if (auth == undefined) {
 
-                if (auth == undefined) {
-                    let todosLosUsuarios = await usuariosLogica.getAll()
-                    let ultimoUsuario = await usuariosLogica.getAll({
-                        where:{
-                            id:todosLosUsuarios
-                        }
-                    })
-                    let usuario = {
-                        id: ultimoUsuario.id,
-                        username: req.body.username,
-                        email: req.body.email,
-                        image: '/images/avatars/' + req.file.filename,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        perfiles_id: 2,
+                        let bodyNombre = req.body.username;
+                        let bodyEmail = req.body.email;
+                        let bodyImage = req.file ? '/images/avatars/' + req.file.filename : '/images/avatars/52.png';
+                        let bodyPassword = bcrypt.hashSync(req.body.password, 10);
+                        
+                        usuariosLogica.create(bodyNombre, bodyEmail, bodyImage, bodyPassword)
+
+                        let usuario = usuariosLogica.getOne({
+                            where: {
+                                email: bodyEmail
+                            }
+                        })
+                            
+                        req.session.user = usuario
+                        res.redirect('/index')
+                        
+                    } else {
+                        res.render('register', {
+                            problem: "El correo ya existe",
+                            oldData: req.body
+                        })
                     }
-                    db.Usuarios.create({
-                        username: req.body.username,
-                        email: req.body.email,
-                        image: '/images/avatars/' + req.file.filename,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        perfiles_id: 2,
-                    })
-                    req.session.user = usuario
-                    res.redirect('/index')
+
                 } else {
                     res.render('register', {
-                        problem: "El correo ya existe",
+                        problema: "Las contraseñas no son iguales",
                         oldData: req.body
                     })
                 }
-
-            } else {
-                res.render('register', {
-                    problema: "Las contraseñas no son iguales",
-                    oldData: req.body
-                })
             }
+        }catch(e){
+            res.status(404).render(`error: ${e}`)
         }
     },
-
     regi: (req, res) => {
         res.render('register')
     }

@@ -46,6 +46,20 @@ const metodosUsuarios = {
         }catch(error){
             return console.log(error.message)
         }
+    },
+    create: async (usernameParam, emailParam, imageParam, passwordParam) => {
+        try{
+            db.Usuarios.create({
+                username: usernameParam,
+                email: emailParam,
+                image: imageParam,
+                password: passwordParam,
+                perfiles_id: 2,
+            })
+
+        }catch{
+            return console.log(error.message)
+        }
     }
 }
 

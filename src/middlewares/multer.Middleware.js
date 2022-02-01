@@ -1,4 +1,5 @@
 const multer = require('multer');
+const path = require('path')
 
 let multerDiskStorage = multer.diskStorage({
     /* Destino de los archivos */

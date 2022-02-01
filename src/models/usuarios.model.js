@@ -18,7 +18,7 @@ const metodosUsuarios = {
             return console.log(e.message)
         }
     },
-    deleteUser: async function (req){
+    deleteUser: async function (req, res){
         try {
             let user = req.session.user 
             let usuarios = await db.Usuarios.destroy({

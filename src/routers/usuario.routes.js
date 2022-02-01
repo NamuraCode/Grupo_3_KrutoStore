@@ -6,18 +6,17 @@ const {autenticacionRegistro, registrado, verificacionCookie, validationLogin, v
 
 router.get('/index', usuariosController.getIndex)
 
+
 router.get('/perfil', registrado, usuariosController.enviarVistaPerfil)
+router.put('/perfil', registrado, fileUploadAvatars.single('image'), usuariosController.actualizarDatosPerfil)
+router.delete('/perfil', registrado, usuariosController.deleteUser)
 
-router.put('/perfil', usuariosController.actualizarDatosPerfil)
-
-router.delete('/perfil', usuariosController.deleteUser)
 
 router.get('/login', verificacionCookie, autenticacionRegistro, usuariosController.login)
-
 router.post('/login', validationLogin, usuariosController.log)
 
-router.get('/register', verificacionCookie, autenticacionRegistro, usuariosController.regi)
 
+router.get('/register', verificacionCookie, autenticacionRegistro, usuariosController.regi)
 router.post('/register', fileUploadAvatars.single('file'), validationsRegister, usuariosController.register)
 
 

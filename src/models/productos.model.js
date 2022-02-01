@@ -15,13 +15,6 @@ const metodosProductos = {
 
     newProductos: async function (Producto) {
         try {
-            // const images = [];
-
-            // if (files["imagesUpload"]) {
-            //     images = files["imagesUpload"].map((image) => {
-            //         return image.filename;
-            //     });
-            // }
             await db.Productos.create(Producto)
         } catch (error) {
             console.error(error);}

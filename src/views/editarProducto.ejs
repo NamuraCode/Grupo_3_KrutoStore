@@ -29,30 +29,44 @@
                 <div class="container-form add-container">
                     <h2>Editar producto</h2>
             
-                    <form action="/addProduct" method="post">
-                        <div class="newProduct-container">
-                            <img src="../images/productos/unnamed.png" class="producto">
-                            <input class="file" type="file" name="image" id="product">
+                    <form action="/editarProducto/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <div class="editProduct-container">
+                            <input class="file" type="file" name="image">
                             <p>
-                                <label for="product-name">Nombre del Producto</label>
-                                <input type="text" name="product" id="name">
+                                <label for="nombre">Nombre del Producto</label>
+                                <input type="text" name="nombre">
                             </p>
+                            <% if(locals.errors && errors.product) { %>
+                                <%= errors.product.msg %>
+                            <% } %>
                             <p>
                                 <label for="product-price">Categoria</label>
-                                <input type="text" name="category" id="price">
+                                <select name="select"> 
+                                    <%for(let i=0; i<categorias.length; i++){%>
+                                        <option value="<%=[i+1]%>"><%=categorias[i].categoria%></option>
+                                    <%} %>
+                                </select>
                             </p>
                             <p>
-                                <label for="product-price">Precio</label>
-                                <input type="text" name="price" id="price">
+                                <label for="precio">Precio</label>
+                                <input type="text" name="precio">
                             </p>
+                            <div class=text-danger style="color: rgb(170, 23, 23);">
+                                <% if(locals.errors && errors.price) { %>
+                                    <%= errors.price.msg %>
+                                <% } %>
+                            </div>
                             <p>
-                                <label for="product-price">Descripción</label>
-                                <textarea name="description" id="description"></textarea>
+                                <label for="descripcion">Descripción</label>
+                                <textarea name="descripcion" value="<%=producto.categoria%>"></textarea>
                             </p>
+                            <div class=text-danger style="color: rgb(170, 23, 23);">
+                                <% if(locals.errors && errors.description) { %>
+                                    <%= errors.description.msg %>
+                                <% } %>
+                            </div>
                             <div class="btn">
-                                <p class="btn-left">
-                                    <a href="/dashboard"><button type="button">Editar</button></a>
-                                </p>
+                                    <a href="/dashboard"><button type="submit">Actualizar</button></a>
                                 <p class="btn-right">
                                     <a href="/dashboard"><button type="button">Volver</button></a>
                                 </p>

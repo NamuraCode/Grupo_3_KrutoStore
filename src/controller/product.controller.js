@@ -22,8 +22,27 @@ const productController = {
             res.status(404).render('error')
         }
     },
-    editarProducto: (req, res) => {
-        res.render('editarProducto');
+    editarProducto: async (req, res) => {
+        let categorias = await generosLogica.getAll()
+        let producto = await productosLogica.getOne({
+            where:{
+                id: req.parms.id
+            }
+        })
+        res.render('editarProducto', {categorias: categorias, producto:producto});
+        // try{
+        //     let categorias = await generosLogica.getAll()
+        //     let idParams = req.params.id
+        //     await  productosLogica.getDetail(idParams)
+        //     console.log(product.id)
+        //     res.render('editarProducto',{ 
+        //         producto
+        //     },
+        //     { categorias: categorias}
+        //     );
+        // }catch(e){
+        //     res.status(404).render('error')
+        // }
     },
     productsList: (req, res) => {
         productosLogica.getAll({
@@ -93,19 +112,47 @@ const productController = {
             res.status(404).render('error')
         }
     },
-    editProduct: (req, res) => {
+    listProductsEdit: (req, res) => {
         try{
-            let editProduct = productosLogica.editarProducto({
-                id: req.body.id,
-                image:  '/images/productos/'+req.file.filename,
-                nombre: req.body.nombre,
-                categoria: req.body.categorias_id,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion
+            productosLogica.getAll({
+                include: ["imagenes"]
             })
-            res.render('editarProducto')
+            .then(ingresan => {
+                res.render('listaProductosEditar', {
+                    ingresan
+                })
+            })
+        }catch(e){
+            res.status(404).render('error')
+        }
+    },
+    editProduct: async (req, res) => {
+        // try{
+        //     let idParams = req.params.id
+        //     productosLogica.editProductos(idParams)
+        //     res.render('editarProducto')
+        // }catch(e){
+        //     res.status(404).render('error')
+        // } 
+
+        try{
+            let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
+            imagenesModels.create(file)
+            let productos = await productosLogica.getAll()
+            let pro = productos.length
+            let session = req.session.user
+            productosLogica.editProductos({
+                nombre: req.body.product,
+                descripcion: req.body.description,
+                categorias_id: req.body.select,
+                precio: req.body.price,
+                Usuarios_id: session.perfiles_id,
+                imagenes_id: productos[pro-1].id + 1
+            })
+            
+            res.redirect('./products')
         } catch(e){
-            next(e)
+            res.status(404).render('error')
         }
     },
     productDetail: async (req, res) => {

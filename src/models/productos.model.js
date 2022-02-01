@@ -19,15 +19,9 @@ const metodosProductos = {
         } catch (error) {
             console.error(error);}
     },
-    editProductos: async function (producto, idParams) {
+    editProductos: async function (Producto) {
         try{
-            await db.Productos.update({
-                ...producto
-            },{
-                where: {
-                    id: idParams
-                }
-            })
+            await db.Productos.update(Producto)
         }catch(error){
             console.log(error)
         }

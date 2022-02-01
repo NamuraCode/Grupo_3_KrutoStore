@@ -23,15 +23,21 @@ const productController = {
         }
     },
     editarProducto: async (req, res) => {
-        try{
-            let idParams = req.params.id
-            let producto = await  productosLogica.getDetail(idParams)
-            res.render('editarProducto',{
-                producto
-            });
-        }catch(e){
-            res.status(404).render('error')
-        }
+        let categorias = await generosLogica.getAll()
+        res.render('editarProducto', {categorias: categorias});
+        // try{
+        //     let categorias = await generosLogica.getAll()
+        //     let idParams = req.params.id
+        //     await  productosLogica.getDetail(idParams)
+        //     console.log(product.id)
+        //     res.render('editarProducto',{ 
+        //         producto
+        //     },
+        //     { categorias: categorias}
+        //     );
+        // }catch(e){
+        //     res.status(404).render('error')
+        // }
     },
     productsList: (req, res) => {
         productosLogica.getAll({
@@ -115,12 +121,32 @@ const productController = {
             res.status(404).render('error')
         }
     },
-    editProduct: (req, res) => {
+    editProduct: async (req, res) => {
+        // try{
+        //     let idParams = req.params.id
+        //     productosLogica.editProductos(idParams)
+        //     res.render('editarProducto')
+        // }catch(e){
+        //     res.status(404).render('error')
+        // } 
+
         try{
-            let idParams = req.params.id
-            productosLogica.editProductos(idParams)
-            res.render('editarProducto')
-        }catch(e){
+            let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
+            imagenesModels.create(file)
+            let productos = await productosLogica.getAll()
+            let pro = productos.length
+            let session = req.session.user
+            productosLogica.editProductos({
+                nombre: req.body.product,
+                descripcion: req.body.description,
+                categorias_id: req.body.select,
+                precio: req.body.price,
+                Usuarios_id: session.perfiles_id,
+                imagenes_id: productos[pro-1].id + 1
+            })
+            
+            res.redirect('./products')
+        } catch(e){
             res.status(404).render('error')
         }
     },

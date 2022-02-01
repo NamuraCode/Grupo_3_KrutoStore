@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_AZUL.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link rel="stylesheet" href="/css/agregar.css">
-    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="/css/editar.css">
+    <title>Editar Producto</title>
 </head>
 
 <body>
@@ -27,29 +27,29 @@
         <div class="box">
             <div class="container" id="container">
                 <div class="container-form add-container">
-                    <h2>Agrega un nuevo producto</h2>
+                    <h2>Editar producto</h2>
             
-                    <form action="/editarProducto?_method=PUT" method="post" enctype="multipart/form-data">
+                    <form action="/editarProducto/:id?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div class="editProduct-container">
-                            <input class="file" type="file" name="image" id="product">
+                            <input class="file" type="file" name="image">
                             <p>
-                                <label for="product-name">Nombre del Producto</label>
-                                <input type="text" name="product" id="name">
+                                <label for="nombre">Nombre del Producto</label>
+                                <input type="text" name="nombre">
                             </p>
                             <% if(locals.errors && errors.product) { %>
                                 <%= errors.product.msg %>
                             <% } %>
-                            <!-- <p>
+                            <p>
                                 <label for="product-price">Categoria</label>
                                 <select name="select"> 
-                                    <%for(let i=0; i<categoria.length; i++){%>
+                                    <%for(let i=0; i<categorias.length; i++){%>
                                         <option value="<%=[i+1]%>"><%=categorias[i].categoria%></option>
                                     <%} %>
                                 </select>
-                            </p> -->
+                            </p>
                             <p>
-                                <label for="product-price">Precio</label>
-                                <input type="text" name="price" id="price">
+                                <label for="precio">Precio</label>
+                                <input type="text" name="precio">
                             </p>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.price) { %>
@@ -57,8 +57,8 @@
                                 <% } %>
                             </div>
                             <p>
-                                <label for="product-price">Descripción</label>
-                                <textarea name="description" id="description"></textarea>
+                                <label for="descripcion">Descripción</label>
+                                <textarea name="descripcion"></textarea>
                             </p>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.description) { %>
@@ -66,7 +66,7 @@
                                 <% } %>
                             </div>
                             <div class="btn">
-                                    <a href="/editarProducto?_method=PUT"><button type="submit">Actualizar</button></a>
+                                    <a href="/dashboard"><button type="submit">Actualizar</button></a>
                                 <p class="btn-right">
                                     <a href="/dashboard"><button type="button">Volver</button></a>
                                 </p>

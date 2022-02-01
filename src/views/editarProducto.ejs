@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_AZUL.png" type="image/png">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link rel="stylesheet" href="/css/editar.css">
-    <title>Editar Producto</title>
+    <link rel="stylesheet" href="/css/agregar.css">
+    <title>Agregar Producto</title>
 </head>
 
 <body>
@@ -27,32 +27,46 @@
         <div class="box">
             <div class="container" id="container">
                 <div class="container-form add-container">
-                    <h2>Editar producto</h2>
+                    <h2>Agrega un nuevo producto</h2>
             
-                    <form action="/addProduct" method="post">
-                        <div class="newProduct-container">
-                            <img src="../images/productos/unnamed.png" class="producto">
+                    <form action="/editarProducto?_method=PUT" method="post" enctype="multipart/form-data">
+                        <div class="editProduct-container">
                             <input class="file" type="file" name="image" id="product">
                             <p>
                                 <label for="product-name">Nombre del Producto</label>
                                 <input type="text" name="product" id="name">
                             </p>
-                            <p>
+                            <% if(locals.errors && errors.product) { %>
+                                <%= errors.product.msg %>
+                            <% } %>
+                            <!-- <p>
                                 <label for="product-price">Categoria</label>
-                                <input type="text" name="category" id="price">
-                            </p>
+                                <select name="select"> 
+                                    <%for(let i=0; i<categoria.length; i++){%>
+                                        <option value="<%=[i+1]%>"><%=categorias[i].categoria%></option>
+                                    <%} %>
+                                </select>
+                            </p> -->
                             <p>
                                 <label for="product-price">Precio</label>
                                 <input type="text" name="price" id="price">
                             </p>
+                            <div class=text-danger style="color: rgb(170, 23, 23);">
+                                <% if(locals.errors && errors.price) { %>
+                                    <%= errors.price.msg %>
+                                <% } %>
+                            </div>
                             <p>
                                 <label for="product-price">Descripción</label>
                                 <textarea name="description" id="description"></textarea>
                             </p>
+                            <div class=text-danger style="color: rgb(170, 23, 23);">
+                                <% if(locals.errors && errors.description) { %>
+                                    <%= errors.description.msg %>
+                                <% } %>
+                            </div>
                             <div class="btn">
-                                <p class="btn-left">
-                                    <a href="/dashboard"><button type="button">Editar</button></a>
-                                </p>
+                                    <a href="/editarProducto?_method=PUT"><button type="submit">Actualizar</button></a>
                                 <p class="btn-right">
                                     <a href="/dashboard"><button type="button">Volver</button></a>
                                 </p>

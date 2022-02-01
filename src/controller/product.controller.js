@@ -22,8 +22,16 @@ const productController = {
             res.status(404).render('error')
         }
     },
-    editarProducto: (req, res) => {
-        res.render('editarProducto');
+    editarProducto: async (req, res) => {
+        try{
+            let idParams = req.params.id
+            let producto = await  productosLogica.getDetail(idParams)
+            res.render('editarProducto',{
+                producto
+            });
+        }catch(e){
+            res.status(404).render('error')
+        }
     },
     productsList: (req, res) => {
         productosLogica.getAll({
@@ -93,19 +101,27 @@ const productController = {
             res.status(404).render('error')
         }
     },
+    listProductsEdit: (req, res) => {
+        try{
+            productosLogica.getAll({
+                include: ["imagenes"]
+            })
+            .then(ingresan => {
+                res.render('listaProductosEditar', {
+                    ingresan
+                })
+            })
+        }catch(e){
+            res.status(404).render('error')
+        }
+    },
     editProduct: (req, res) => {
         try{
-            let editProduct = productosLogica.editarProducto({
-                id: req.body.id,
-                image:  '/images/productos/'+req.file.filename,
-                nombre: req.body.nombre,
-                categoria: req.body.categorias_id,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion
-            })
+            let idParams = req.params.id
+            productosLogica.editProductos(idParams)
             res.render('editarProducto')
-        } catch(e){
-            next(e)
+        }catch(e){
+            res.status(404).render('error')
         }
     },
     productDetail: async (req, res) => {

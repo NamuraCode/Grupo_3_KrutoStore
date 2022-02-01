@@ -13,9 +13,9 @@ router.get('/productDetail/:id', productController.productDetail)
 
 router.get('/productCart', registrado, productController.productCart);
 
-
-router.get('/editarProducto', admin, productController.editarProducto)
-router.put('/editProduct/:id', admin, fileUploadProductos.single('image'), productController.editProduct)
+router.get('/listaEditar', admin, productController.listProductsEdit)
+router.get('/editarProducto/:id', admin, productController.editarProducto)
+router.put('/editarProducto', admin, fileUploadProductos.single('image'), productController.editProduct)
 
 
 router.get('/listaEliminar', admin, productController.listProductsDelete)

@@ -15,36 +15,21 @@ const metodosProductos = {
 
     newProductos: async function (Producto) {
         try {
-            // const images = [];
-
-            // if (files["imagesUpload"]) {
-            //     images = files["imagesUpload"].map((image) => {
-            //         return image.filename;
-            //     });
-            // }
             await db.Productos.create(Producto)
         } catch (error) {
             console.error(error);}
     },
-    editProductos: async function (Producto) {
-        try {
-            const images = [];
-
-            if (files["imagesUpload"]) {
-                images = files["imagesUpload"].map((image) => {
-                    return image.filename;
-                });
-            }
-
-            await db.Productos.edit({
-                image: req.file.filename,
-                productName: Producto.nombre,
-                productCategory: Producto.categorias_id,
-                productPrice: Producto.precio,
-                productDescription: Producto.descripcion
+    editProductos: async function (producto, idParams) {
+        try{
+            await db.Productos.update({
+                ...producto
+            },{
+                where: {
+                    id: idParams
+                }
             })
-        } catch (error) {
-            console.error(error);
+        }catch(error){
+            console.log(error)
         }
     },
     deleteProductos: async function (idParams) {

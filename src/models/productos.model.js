@@ -26,23 +26,17 @@ const metodosProductos = {
         } catch (error) {
             console.error(error);}
     },
-    editProductos: async function (Producto) {
+    editProductos: async function (what, where) {
         try {
-            const images = [];
+            // const images = [];
 
-            if (files["imagesUpload"]) {
-                images = files["imagesUpload"].map((image) => {
-                    return image.filename;
-                });
-            }
+            // if (files["imagesUpload"]) {
+            //     images = files["imagesUpload"].map((image) => {
+            //         return image.filename;
+            //     });
+            // }
 
-            await db.Productos.edit({
-                image: req.file.filename,
-                productName: Producto.nombre,
-                productCategory: Producto.categorias_id,
-                productPrice: Producto.precio,
-                productDescription: Producto.descripcion
-            })
+            await db.Productos.update(what, where)
         } catch (error) {
             console.error(error);
         }

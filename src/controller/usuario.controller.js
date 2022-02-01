@@ -1,68 +1,52 @@
-const {
-    usuariosLogica
-} = require('../models')
 const bcrypt = require('bcryptjs');
-const {
-    validationResult
-} = require('express-validator');
-const path = require('path')
+const { usuariosLogica } = require('../models')
+const { validationResult } = require('express-validator');
+
 const usuariosController = {
-    enviarVistaPerfil: (req, res) => {
+    enviarVistaPerfil: async (req, res) => {
         try {
             let session = req.session.user
-            res.render('profile', {
-                usuario: session
+            let usuarioAEditar = await usuariosLogica.getOne({
+                where:{
+                    email: session.email
+                }
+            })
+            res.render('perfil', {
+                usuario: usuarioAEditar
             })
         } catch (e) {
             res.render('error')
         }
 
     },
-    actualizarDatosPerfil: async (req, res) => {
+    actualizarDatosPerfil: (req, res) => {
+        console.log(req.file)
         try {
-            let session = req.session.user
-            console.log(session)
-            console.log(session.id, req.body.name, req.body.correo, session.email, session.password, session.perfiles_id)
-            if (session != undefined) {
-                if (req.body.password != undefined) {
-                    usuariosLogica.editOne({
-                        username: req.body.name,
-                        email: req.body.correo,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        perfiles_id: session.perfiles_id
-                    }, {
-                        where: {
-                            email: session.email
-                        }
-                    })
-                } else {
-                    usuariosLogica.editOne({
-                        username: req.body.name,
-                        email: req.body.correo,
-                        password: session.password,
-                        perfiles_id: session.perfiles_id
-                    }, {
-                        where: {
-                            email: session.email
-                        }
-                    })
+            let name = req.body.name && req.body.name.length >= 5 ? req.body.name : req.session.user.username;
+            let correo = req.body.correo ? req.body.correo : req.session.user.email;
+            let contrasena = req.body.password && req.body.password.length > 10 ? bcrypt.hashSync(req.body.password, 10) : req.session.user.password;
+            let imagen = req.file != undefined ?  '/images/avatars/' + req.file.filename : req.session.user.image;
+            
+            usuariosLogica.editOne({
+                username: name,
+                email: correo,
+                image: imagen,
+                password: contrasena
+                
+            },{
+                where:{
+                    email: req.session.user.email
                 }
-                let usuarioEncontrado = await usuariosLogica.getOne({
-                    where: {
-                        email: session.email
-                    }
-                })
-                req.session.user = ""
-                req.session.user = usuarioEncontrado
-                res.redirect('./index')
-            }
+            })
+            
+            res.redirect('./perfil')
         } catch (e) {
             res.render('error')
         }
     },
     deleteUser: (req, res) => {
         try {
-            usuariosLogica.deleteUser(req)
+            usuariosLogica.deleteUser(req, res)
             res.clearCookie('user')
             req.session.destroy();
             res.redirect('login')
@@ -81,7 +65,6 @@ const usuariosController = {
     login: (req, res) => {
         res.render('login')
     },
-
     log: async (req, res) => {
         try {
             const resultValidations = validationResult(req)
@@ -98,14 +81,11 @@ const usuariosController = {
                         username: nombreDeUsuarioBody
                     }
                 })
-                console.log(contrasenaUsuarioBody)
                 if (respuestaFuncion) {
                     let contrasenaCorrecta = bcrypt.compareSync(contrasenaUsuarioBody, respuestaFuncion.password)
-                    console.log(respuestaFuncion.password)
                     if (contrasenaCorrecta) {
                         req.session.user = respuestaFuncion
                         let session = req.session.user
-                        console.log(session)
                         if (req.body.checkbox != undefined) {
                             res.cookie('user', respuestaFuncion.email, {
                                 maxAge: 300000
@@ -132,75 +112,67 @@ const usuariosController = {
                 }
             }
         } catch (error) {
-            console.log('f')
             res.status(401).render('error')
         }
     },
     register: async (req, res) => {
-        const resultValidations = validationResult(req)
-        if (resultValidations.errors.length > 0) {
-            res.render('register', {
-                errors: resultValidations.mapped(),
-                oldData: req.body
-            })
+        try{
+            const resultValidations = validationResult(req)
+            if (resultValidations.errors.length > 0) {
+                res.render('register', {
+                    errors: resultValidations.mapped(),
+                    oldData: req.body
+                })
 
-        } else {
-            let p1 = req.body.password
-            let p2 = req.body.coPassword
-            if (p1 == p2) {
-                let auth
-                db.Usuarios.findAll({
-                        where: {
-                            email: req.body.email
-                        }
-                    })
-                    .then(res => {
-                        auth = res
-                    })
-                //let auth = usuarios.filter(function (user) {
-                //user.email == req.body.email
-                //})
+            } else {
+                let p1 = req.body.password
+                let p2 = req.body.coPassword
+                if (p1 == p2) {
+                    let auth
+                    usuariosLogica.getOne({
+                            where: {
+                                email: req.body.email
+                            }
+                        })
+                        .then(res => {
+                            auth = res
+                        })
+                    if (auth == undefined) {
 
-                if (auth == undefined) {
-                    let todosLosUsuarios = await usuariosLogica.getAll()
-                    let ultimoUsuario = await usuariosLogica.getAll({
-                        where:{
-                            id:todosLosUsuarios
-                        }
-                    })
-                    let usuario = {
-                        id: ultimoUsuario.id,
-                        username: req.body.username,
-                        email: req.body.email,
-                        image: '/images/avatars/' + req.file.filename,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        perfiles_id: 2,
+                        let bodyNombre = req.body.username;
+                        let bodyEmail = req.body.email;
+                        let bodyImage = req.file ? '/images/avatars/' + req.file.filename : '/images/avatars/52.png';
+                        let bodyPassword = bcrypt.hashSync(req.body.password, 10);
+                        
+                        usuariosLogica.create(bodyNombre, bodyEmail, bodyImage, bodyPassword)
+
+                        let usuario = usuariosLogica.getOne({
+                            where: {
+                                email: bodyEmail
+                            }
+                        })
+                            
+                        req.session.user = usuario
+                        res.redirect('/index')
+                        
+                    } else {
+                        res.render('register', {
+                            problem: "El correo ya existe",
+                            oldData: req.body
+                        })
                     }
-                    db.Usuarios.create({
-                        username: req.body.username,
-                        email: req.body.email,
-                        image: '/images/avatars/' + req.file.filename,
-                        password: bcrypt.hashSync(req.body.password, 10),
-                        perfiles_id: 2,
-                    })
-                    req.session.user = usuario
-                    res.redirect('/index')
+
                 } else {
                     res.render('register', {
-                        problem: "El correo ya existe",
+                        problema: "Las contraseñas no son iguales",
                         oldData: req.body
                     })
                 }
-
-            } else {
-                res.render('register', {
-                    problema: "Las contraseñas no son iguales",
-                    oldData: req.body
-                })
             }
+        }catch(e){
+            res.status(404).render(`error: ${e}`)
         }
     },
-
     regi: (req, res) => {
         res.render('register')
     }

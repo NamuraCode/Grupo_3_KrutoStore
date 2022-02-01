@@ -26,7 +26,7 @@ router.get('/agregarProducto', admin, productController.agregarProducto)
 router.post('/addProduct', fileUploadProductos.single('image'), productController.create)
 
 
-router.get('/dashboard', admin, productController.dashboard)
+router.get('/admin/dashboard', admin, productController.dashboard)
 
 
 

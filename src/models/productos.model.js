@@ -13,23 +13,16 @@ const metodosProductos = {
         }
     },
 
-    newProductos: async function (Producto, files) {
+    newProductos: async function (Producto) {
         try {
-            const images = [];
+            // const images = [];
 
-            if (files["imagesUpload"]) {
-                images = files["imagesUpload"].map((image) => {
-                    return image.filename;
-                });
-            }
-
-            await db.Productos.create({
-                image: req.file.filename,
-                productName: Producto.nombre,
-                productCategory: Producto.categorias_id,
-                productPrice: Producto.precio,
-                productDescription: Producto.descripcion
-            })
+            // if (files["imagesUpload"]) {
+            //     images = files["imagesUpload"].map((image) => {
+            //         return image.filename;
+            //     });
+            // }
+            await db.Productos.create(Producto)
         } catch (error) {
             console.error(error);}
     },

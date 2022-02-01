@@ -23,7 +23,17 @@ const validationLogin = [
         .isLength({min: 8}).withMessage('Campo contraseña minimo 8 caracteres'),
 ]
 
+const validationsProductCreate = [
+    body('product')
+        .notEmpty().withMessage('Campo nombre de producto vacio'),
+    body('price')
+        .notEmpty().withMessage('Campo precio vacio'),
+    body('description')
+        .notEmpty().withMessage('Campo descripción vacio'),
+]
+
 module.exports ={
     validationsRegister,
-    validationLogin
+    validationLogin,
+    validationsProductCreate
 }

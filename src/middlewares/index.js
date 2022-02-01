@@ -3,7 +3,7 @@ const autenticacionRegistro = require('./usuarios/usuarioRegistradoMiddleware')
 const registrado = require('./usuarios/usuarioNoRegistradoMiddleware')
 const verificacionCookie = require('./usuarios/cokieAuthMiddleware')
 const {fileUploadProductos, fileUploadAvatars} = require('./multer.Middleware')
-const {validationsRegister, validationLogin} = require('./validations.middleware')
+const {validationsRegister, validationLogin, validationsProductCreate} = require('./validations.middleware')
 
 
 
@@ -17,6 +17,7 @@ module.exports = {
     fileUploadProductos,
     fileUploadAvatars,
     validationsRegister,
-    validationLogin
+    validationLogin,
+    validationsProductCreate
 
 }

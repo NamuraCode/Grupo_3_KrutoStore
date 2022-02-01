@@ -1,12 +1,14 @@
 const favorites = require('../data/shoppingCart.json')
-const { productosLogica, generosLogica } = require('../models')
+const { productosLogica, generosLogica, imagenesModels } = require('../models')
 
 const productController = {
-    dashboard: (req, res) => {
+    dashboard:  (req, res) => {
+       
         res.render('dashboard');
     },
-    agregarProducto: (req, res) => {
-        res.render('agregarProducto');
+    agregarProducto: async (req, res) => {
+        let categorias = await generosLogica.getAll()
+        res.render('agregarProducto', { categorias: categorias});
     },
     eliminarProducto: async (req, res) => {
         try{
@@ -47,16 +49,23 @@ const productController = {
         fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
         res.redirect('/productCart')
     },
-    create: (req, res) => {
+    create: async (req, res) => {
         try{
+            let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
+            imagenesModels.create(file)
+            let productos = await productosLogica.getAll()
+            let pro = productos.length
+            let session = req.session.user
             productosLogica.newProductos({
-                image: '/images/productos/'+req.file.filename,
-                nombre: req.body.nombre,
-                categoria: req.body.categorias_id,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion
+                nombre: req.body.product,
+                descripcion: req.body.description,
+                categorias_id: req.body.select,
+                precio: req.body.price,
+                Usuarios_id: session.perfiles_id,
+                imagenes_id: productos[pro-1].id + 1
             })
-            res.render('agregarProducto')
+            
+            res.redirect('./products')
         } catch(e){
             res.status(404).render('error')
         }

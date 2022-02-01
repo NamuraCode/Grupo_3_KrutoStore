@@ -1,9 +1,9 @@
 const db = require('../database/models')
 
 const generosModels = {
-    getAll: async (where) => {
+    getAll: async () => {
         try{
-            let todosLosGeneros = await db.Categorias.findOne(where)
+            let todosLosGeneros = await db.Categorias.findAll()
             return todosLosGeneros
         }catch(error){
             console.log(`error ${error}`)

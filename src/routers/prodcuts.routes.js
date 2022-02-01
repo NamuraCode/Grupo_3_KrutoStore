@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { productController } = require('../controller')
-const {admin, registrado, fileUploadProductos} = require('../middlewares')
+const {admin, registrado, fileUploadProductos, validationsProductCreate} = require('../middlewares')
 
 /* This is a route that will call the productController and the productsList function. */
 router.get('/products', productController.productsList)
@@ -28,9 +28,5 @@ router.post('/addProduct', fileUploadProductos.single('image'), productControlle
 
 
 router.get('/dashboard', admin, productController.dashboard)
-
-
-
-
 
 module.exports = router

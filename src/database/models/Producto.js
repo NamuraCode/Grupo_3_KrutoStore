@@ -22,6 +22,14 @@ module.exports = (sequelize, dataTypes) => {
         precio: {
             type: dataTypes.INTEGER,
             allowNull: false
+        },
+        Usuarios_id: {
+            type:dataTypes.INTEGER,
+            allowNull: false
+        },
+        imagenes_id: {
+            type:dataTypes.INTEGER,
+            allowNull: false
         }
     }
     const config = {

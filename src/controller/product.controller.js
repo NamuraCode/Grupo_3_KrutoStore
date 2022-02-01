@@ -42,7 +42,7 @@ const productController = {
     create: (req, res) => {
         try{
             let newProduct = productosLogica.newProductos({
-                image: req.file.filename,
+                image: '/images/productos/'+req.file.filename,
                 nombre: req.body.nombre,
                 categoria: req.body.categorias_id,
                 precio: req.body.precio,
@@ -60,7 +60,7 @@ const productController = {
         try{
             let editProduct = productosLogica.editarProducto({
                 id: req.body.id,
-                image: req.file.filename,
+                image:  '/images/productos/'+req.file.filename,
                 nombre: req.body.nombre,
                 categoria: req.body.categorias_id,
                 precio: req.body.precio,

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    <link rel="stylesheet" href="./css/stylesProducts.css">
+    <link rel="stylesheet" href="./images/logos/FAVICON_2_ROJO.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
+    <title>Kruto Store</title>
+</head>
+
+<body>
+<!-- ------------------------------- HEADER -------------------------------- -->
+    <header>
+        <section>
+            <div class="top-bar">
+            </div>
+            <div class="logo-kruto">
+                <a href="/"><img class="logo" src=".\images\logos\logo-kruto-azul.png" alt="kruto_rojo"></a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="title text-focus-in">
+            <img class="title-img" src=".\images\logos\anime.png" alt="">
+            <!-- <h1>ANIME</h1> -->
+        </div>
+<!-- ------------------------------ PRODUCTOS ------------------------------ -->
+        <section class="main-products">
+            <% for(i=0; i<ingresan.length; i++){%>
+            <article class="main-articles">
+                <img src=<%=ingresan[i].imagenes.image%>>
+                <div class="article-description">
+                    <p><%=ingresan[i].nombre%></p>
+                </div>
+                <div class="article-cost">
+                    <p><%=ingresan[i].precio+".00"%></p>
+                </div>
+                <div class="article-form">
+                    <a href="/eliminarProducto/<%=ingresan[i].id%>">
+                        <button id="detalles">Delete</button>
+                    </a>
+                </div>
+            </article>
+            <% } %>
+        </section>
+    </main>
+
+<!-- -------------------------------- MENU --------------------------------- -->
+    <footer>
+        <section>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
+                        <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
+                        <li><a href="/productCart"><span class="iconify"
+                                    data-icon="ic:baseline-local-grocery-store"></span></a></li>
+                        <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
+                        <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <div class="top-bar">
+        </div>
+    </footer>
+</body>
+
+</html>

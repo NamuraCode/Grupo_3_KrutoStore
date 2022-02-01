@@ -54,14 +54,14 @@ const metodosProductos = {
             console.error(error);
         }
     },
-    deleteProductos: async function (id) {
+    deleteProductos: async function (idParams) {
         try {
-            await db.Productos.destroy({where: {id:id}})
+            await db.Productos.destroy({where: {id:idParams}})
         } catch (error) {
             console.error(error);
         }
     },
-    getDetail: async (id, where) => {
+    getDetail: async (id) => {
         try{
             let getOne = await db.Productos.findByPk(id)
             return getOne

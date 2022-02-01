@@ -18,15 +18,16 @@ router.get('/editarProducto', admin, productController.editarProducto)
 router.put('/editProduct/:id', admin, fileUploadProductos.single('image'), productController.editProduct)
 
 
-router.get('/eliminarProducto', admin, productController.eliminarProducto)
-router.delete('/removeProduct/delete/:id', admin, productController.deleteProduct)
+router.get('/listaEliminar', admin, productController.listProductsDelete)
+router.get('/eliminarProducto/:id', admin, productController.eliminarProducto)
+router.delete('/eliminarProducto/:id/delete', admin, productController.deleteProduct)
 
 
 router.get('/agregarProducto', admin, productController.agregarProducto)
 router.post('/addProduct', fileUploadProductos.single('image'), productController.create)
 
 
-router.get('/admin/dashboard', admin, productController.dashboard)
+router.get('/dashboard', admin, productController.dashboard)
 
 
 

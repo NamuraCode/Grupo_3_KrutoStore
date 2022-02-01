@@ -8,8 +8,17 @@ const productController = {
     agregarProducto: (req, res) => {
         res.render('agregarProducto');
     },
-    eliminarProducto: (req, res) => {
-        res.render('eliminarProducto');
+    eliminarProducto: async (req, res) => {
+        try{
+            let idParams = req.params.id
+            let producto = await  productosLogica.getDetail(idParams)
+            console.log(producto.id)
+            res.render('eliminarProducto',{
+                producto
+            });
+        }catch(e){
+            res.status(404).render('error')
+        }
     },
     editarProducto: (req, res) => {
         res.render('editarProducto');
@@ -19,7 +28,6 @@ const productController = {
                 include: ["imagenes"]
             })
             .then(ingresan => {
-                console.log(ingresan[1].imagenes.image)
                 res.render('products', {
                     ingresan
                 })
@@ -41,7 +49,7 @@ const productController = {
     },
     create: (req, res) => {
         try{
-            let newProduct = productosLogica.newProductos({
+            productosLogica.newProductos({
                 image: '/images/productos/'+req.file.filename,
                 nombre: req.body.nombre,
                 categoria: req.body.categorias_id,
@@ -50,11 +58,31 @@ const productController = {
             })
             res.render('agregarProducto')
         } catch(e){
-            next(e)
+            res.status(404).render('error')
+        }
+    },
+    listProductsDelete: (req, res) => {
+        try{
+            productosLogica.getAll({
+                include: ["imagenes"]
+            })
+            .then(ingresan => {
+                res.render('listaProductosEliminar', {
+                    ingresan
+                })
+            })
+        }catch(e){
+            res.status(404).render('error')
         }
     },
     deleteProduct: (req, res) => {
-        console.log('Desarrolla la logica para eliminar productos plis')
+        try{
+            let idParams = req.params.id
+            productosLogica.deleteProductos(idParams)
+            res.render('dashboard')
+        }catch(e){
+            res.status(404).render('error')
+        }
     },
     editProduct: (req, res) => {
         try{

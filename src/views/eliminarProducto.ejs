@@ -27,27 +27,16 @@
         <div class="box">
             <div class="container" id="container">
                 <div class="container-form add-container">
-                    <h2>Eliminar un producto</h2>
+                    <h2>¿Estas seguro de eliminar este producto?</h2>
             
-                    <form action="/addProduct" method="post">
+                    <form action="/eliminarProducto/<%=producto.id%>/delete?_method=DELETE" method="POST">
                         <div class="newProduct-container">
-                            <img src="..\images\productos\unnamed.png" class="producto">
                             <p>
-                                <label for="product-name">Nombre del Producto</label>
-                                <input type="text" name="product" id="name">
+                                Nombre del Producto: <%=producto.nombre%>
                             </p>
-                            <p>
-                                <label for="product-price">Categoria</label>
-                                <input type="text" name="category" id="price">
-                            </p>
-                            <p>
-                                <label for="product-price">Referencia</label>
-                                <input type="text" name="price" id="price">
-                            </p>
+                            <p>¿Estas seguro de eliminar este producto?</p>
                             <div class="btn">
-                                <p class="btn-left">
-                                    <a href="/dashboard"><button type="button">Eliminar</button></a>
-                                </p>
+                                <button type="submit">Eliminar</button>
                                 <p class="btn-right">
                                     <a href="/dashboard"><button type="button">Volver</button></a>
                                 </p>

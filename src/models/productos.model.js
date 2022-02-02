@@ -21,14 +21,6 @@ const metodosProductos = {
     },
     editProductos: async function (what, where) {
         try {
-            // const images = [];
-
-            // if (files["imagesUpload"]) {
-            //     images = files["imagesUpload"].map((image) => {
-            //         return image.filename;
-            //     });
-            // }
-
             await db.Productos.update(what, where)
         } catch (error) {
             console.error(error);

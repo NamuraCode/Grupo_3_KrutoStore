@@ -24,25 +24,8 @@ const productController = {
     },
     editarProducto: async (req, res) => {
         let categorias = await generosLogica.getAll()
-        let producto = await productosLogica.getOne({
-            where:{
-                id: req.parms.id
-            }
-        })
+        let producto = await productosLogica.getDetail(req.params.id)
         res.render('editarProducto', {categorias: categorias, producto:producto});
-        // try{
-        //     let categorias = await generosLogica.getAll()
-        //     let idParams = req.params.id
-        //     await  productosLogica.getDetail(idParams)
-        //     console.log(product.id)
-        //     res.render('editarProducto',{ 
-        //         producto
-        //     },
-        //     { categorias: categorias}
-        //     );
-        // }catch(e){
-        //     res.status(404).render('error')
-        // }
     },
     productsList: (req, res) => {
         productosLogica.getAll({
@@ -127,27 +110,24 @@ const productController = {
         }
     },
     editProduct: async (req, res) => {
-        // try{
-        //     let idParams = req.params.id
-        //     productosLogica.editProductos(idParams)
-        //     res.render('editarProducto')
-        // }catch(e){
-        //     res.status(404).render('error')
-        // } 
-
         try{
-            let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
-            imagenesModels.create(file)
+            console.log(req.params.id)
+            // let file = req.file ? '/images/productos/' + req.file.filename : req.body.image
+            // imagenesModels.create(file)
             let productos = await productosLogica.getAll()
             let pro = productos.length
             let session = req.session.user
             productosLogica.editProductos({
-                nombre: req.body.product,
-                descripcion: req.body.description,
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
                 categorias_id: req.body.select,
-                precio: req.body.price,
+                precio: req.body.precio,
                 Usuarios_id: session.perfiles_id,
                 imagenes_id: productos[pro-1].id + 1
+            },{
+                where:{
+                    id:req.params.id
+                }
             })
             
             res.redirect('./products')

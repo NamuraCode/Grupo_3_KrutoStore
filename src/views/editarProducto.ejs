@@ -29,12 +29,11 @@
                 <div class="container-form add-container">
                     <h2>Editar producto</h2>
             
-                    <form action="/editarProducto/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form action="/editarProducto?_method=PUT" method="POST" >
                         <div class="editProduct-container">
-                            <input class="file" type="file" name="image">
                             <p>
-                                <label for="nombre">Nombre del Producto</label>
-                                <input type="text" name="nombre">
+                                <label for="nombre">Nombre producto</label>
+                                <input type="text" name="nombre" value="<%=producto.nombre%>">
                             </p>
                             <% if(locals.errors && errors.product) { %>
                                 <%= errors.product.msg %>
@@ -49,7 +48,7 @@
                             </p>
                             <p>
                                 <label for="precio">Precio</label>
-                                <input type="text" name="precio">
+                                <input type="text" name="precio" value="<%=producto.precio%>.00">
                             </p>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.price) { %>
@@ -58,7 +57,7 @@
                             </div>
                             <p>
                                 <label for="descripcion">Descripción</label>
-                                <textarea name="descripcion" value="<%=producto.categoria%>"></textarea>
+                                <textarea name="descripcion" value="<%=producto.descripcion%>"><%=producto.descripcion%></textarea>
                             </p>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.description) { %>
@@ -66,9 +65,9 @@
                                 <% } %>
                             </div>
                             <div class="btn">
-                                    <a href="/dashboard"><button type="submit">Actualizar</button></a>
+                                    <button type="submit">Actualizar</button>
                                 <p class="btn-right">
-                                    <a href="/dashboard"><button type="button">Volver</button></a>
+                                    <button type="reset">Volver</button>
                                 </p>
                             </div>
                         </div>

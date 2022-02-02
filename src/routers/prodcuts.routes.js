@@ -15,7 +15,7 @@ router.get('/productCart', registrado, productController.productCart);
 
 router.get('/listaEditar', admin, productController.listProductsEdit)
 router.get('/editarProducto/:id', admin, productController.editarProducto)
-router.put('/editarProducto/:id/update', admin, fileUploadProductos.single('image'), productController.editProduct)
+router.put('/editarProducto', admin, fileUploadProductos.single('image'), productController.editProduct)
 
 
 router.get('/listaEliminar', admin, productController.listProductsDelete)

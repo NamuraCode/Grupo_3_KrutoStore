@@ -57,7 +57,15 @@ const usuariosController = {
     },
     getIndex: (req, res) => {
         try {
-            res.render('index')
+            if(req.session.user!=undefined){
+                let user={
+                    perfil:req.session.user.perfiles_id,
+                    image:req.session.user.image
+                }
+                res.render('index', {user})
+            }else{
+                res.render('index')
+            }
         } catch (error) {
             console.log(error)
         }

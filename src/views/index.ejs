@@ -22,16 +22,7 @@
 
 <body>
 <!-- ------------------------------- HEADER -------------------------------- -->
-    <header>
-        <section>
-            <div class="top-bar">
-            </div>
-            <div class="logo-kruto">
-                <!-- <img class="mascota" src=".\images\logos\MASCOTA_BLANCO.png"> -->
-                <img class="logo" src="\images\logos\logo-kruto-rojo.png" alt="kruto_rojo">
-            </div>
-        </section>
-    </header>
+<%- include ('./partials/header-rojo')%>
     <main>
 
         <!---------------------------------------SLIDESHOW---------------------------------------------->
@@ -160,30 +151,7 @@
     </main>
 
 <!-- -------------------------------- MENU --------------------------------- -->
-    <footer>
-        <section>
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
-                        <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
-                        <li><a href="/productCart"><span class="iconify"
-                                    data-icon="ic:baseline-local-grocery-store"></span></a></li>
-                        <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
-                        <% if (locals.isLogged) { %>
-                            <li><a href="/profile"><img src="/images/avatars/<%= locals.userlogged.image%>" width="40" style="border-radius: 100%;"></a></li>
-                            <li><a href="/login"> <span class="iconify" data-icon="fa-solid:power-off"></span></a></li>
-                        <% } else {%> 
-                        <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
-                        
-                        <% } %> 
-                       
-                    </ul>
-                </nav>
-            </div>
-        </section>
-        <div class="top-bar"></div>
-    </footer>
+<%- include ('./partials/menu')%>
 </body>
 
 </html>

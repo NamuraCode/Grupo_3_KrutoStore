@@ -1,9 +1,22 @@
 const usuariosController = require('./usuario.controller')
 const productController = require('./product.controller')
+const session = require('express-session')
 
 let controller = {
     index: (req, res) => {
-            res.render('index')
+        try {
+            if(req.session.user!=undefined){
+                let user={
+                    perfil:req.session.user.perfiles_id,
+                    image:req.session.user.image
+                }
+                res.render('index', {user})
+            }else{
+                res.render('index')
+            }
+        } catch (error) {
+            console.log(error)
+        }
     },
     aboutUs: (req, res) => {
         res.render('aboutUs')

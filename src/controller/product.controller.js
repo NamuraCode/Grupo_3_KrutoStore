@@ -6,8 +6,11 @@ const { productosLogica, generosLogica, imagenesModels } = require('../models')
 
 const productController = {
     dashboard:  (req, res) => {
-       
-        res.render('dashboard');
+       try{
+           res.render('dashboard');
+       }catch(error){
+           res.render("error")
+       }
     },
     agregarProducto: async (req, res) => {
         let categorias = await generosLogica.getAll()
@@ -17,7 +20,6 @@ const productController = {
         try{
             let idParams = req.params.id
             let producto = await  productosLogica.getDetail(idParams)
-            console.log(producto.id)
             res.render('eliminarProducto',{
                 producto
             });
@@ -28,7 +30,7 @@ const productController = {
     editarProducto: async (req, res) => {
         let categorias = await generosLogica.getAll()
         let producto = await productosLogica.getDetail(req.params.id)
-        res.render('editarProducto', {categorias: categorias, producto:producto});
+        res.render('editarProducto', {categorias: categorias, articuloAEditar:producto});
     },
     productsList: (req, res) => {
         productosLogica.getAll({
@@ -48,7 +50,6 @@ const productController = {
     agregarCart: (req, res) => {
         let id = req.body.id
         let favorite = productos.find(element => element.id == id);
-        console.log(favorite)
         favorites.push(favorite)
         let favor = JSON.stringify(favorites, null, 6)
         fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
@@ -114,26 +115,28 @@ const productController = {
     },
     editProduct: async (req, res) => {
         try{
-            console.log(req.params.id)
             // let file = req.file ? '/images/productos/' + req.file.filename : req.body.image
             // imagenesModels.create(file)
             let productos = await productosLogica.getAll()
             let pro = productos.length
             let session = req.session.user
+            console.log(req.params.id)
+            console.log("la longitud es de: "+pro)
             productosLogica.editProductos({
+                id:req.params.id,
                 nombre: req.body.nombre,
                 descripcion: req.body.descripcion,
                 categorias_id: req.body.select,
                 precio: req.body.precio,
                 Usuarios_id: session.perfiles_id,
-                imagenes_id: productos[pro-1].id + 1
+                imagenes_id: productos[req.params.id-1].imagenes_id
             },{
                 where:{
                     id:req.params.id
                 }
             })
             
-            res.redirect('./products')
+            res.render('dashboard')
         } catch(e){
             res.status(404).render('error')
         }
@@ -150,7 +153,6 @@ const productController = {
             res.render('productDetail', {
                 ingresan: productos, categoria: categoria
             })
-            console.log(productos, categoria.categoria)
         }catch(e){
             next(e)
         }

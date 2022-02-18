@@ -199,4 +199,6 @@
 * Realizar el Sprint cerca de la fecha máxima de entrega.
 
 ## Dejar de hacer
+* Aplazar las reuniones o weeklys
+
 

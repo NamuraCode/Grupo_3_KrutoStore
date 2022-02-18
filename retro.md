@@ -148,3 +148,57 @@
 
 ## Dejar de hacer
 * Olvidar hacer push cuando se termina una tarea.
+
+
+## RETROSPECTIVA SPRINT SIETE
+
+## Comenzar a hacer
+* Validaciones del back-end con Express Validator
+* USUARIOS
+* 1- Nombre: obligatorio con mínimo dos caracteres.
+* 2- Email: obligatorio con formato email y sin repetición
+* 3- Contraseña (password): obligatoria, con mínimo 8 caracteres, opcional mezclar mayúculas, minúsculas y caracter especial.
+* 4- Imagen: archivo válido (png, jpg, jpeg, gif)
+* LOGIN
+* 1- Email: obligatorio, válido y existente
+* 2- Contraseña: obligatoria y que coincida con una ya existente.
+* CREACIÓN Y MODIFICACIÓN DE PRODUCTOS
+* 1- Nombre: obligatorio, mínimo 5 caracteres
+* 2- Descripción: mínimo 20 caracteres
+* 3- Imagen: archivo válido (png, jpg, jpeg, gif)
+* 4- Tablas secundarias(opcional): verificar que la información sea válida.
+
+* Validaciones del front-end: con feedback inmediato con JavaScript
+* USUARIOS
+* 1- Nombre y apellido: obligatorio con mínimo dos caracteres.
+* 2- Email: obligatorio con formato email y sin repetición
+* 3- Contraseña (password): obligatoria, con mínimo 8 caracteres, opcional mezclar mayúculas, minúsculas y caracter especial.
+* 4- Imagen: archivo válido (png, jpg, jpeg, gif)
+* LOGIN
+* 1- Email: obligatorio, válido y existente
+* 2- Contraseña: obligatoria y que coincida con una ya existente.
+* CREACIÓN Y MODIFICACIÓN DE PRODUCTOS
+* 1- Nombre: obligatorio, mínimo 5 caracteres.
+* 2- Descripción: mínimo 20 caracteres.
+* 3- Imagen: archivo válido (png, jpg, jpeg, gif).
+* 4- Tablas secundarias(opcional): verificar que la información sea válida.
+
+## Hacer más
+* Comunicarse y hacer consultas acerca del proyecto.
+* Verificar el funcionamiento de la página.
+* Realizar las reuniones semanales o weeklys.
+* Más trabajo en equipo.
+
+## Continuar haciendo
+* Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
+* Implementar estilos que hagan la página más atractiva.
+* Comunicar las tareas hechas.
+
+## Hacer menos
+* Realizar el Sprint cerca de la fecha máxima de entrega.
+
+## Dejar de hacer
+* Aplazar las reuniones o weeklys
+
+

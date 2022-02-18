@@ -153,7 +153,21 @@
 ## RETROSPECTIVA SPRINT SIETE
 
 ## Comenzar a hacer
-* 
+* Validaciones del back-end
+* USUARIOS
+* 1- Nombre: obligatorio con mínimo dos caracteres.
+* 2- Email: obligatorio con formato email y sin repetición
+* 3- Contraseña (password): obligatoria, con mínimo 8 caracteres, opcional mezclar mayúculas, minúsculas y caracter especial.
+* 4- Imagen: archivo válido (png, jpg, jpeg, gif)
+* LOGIN
+* 1- Email: obligatorio, válido y existente
+* 2- Contraseña: obligatoria y que coincida con una ya existente.
+* CREACIÓN Y MODIFICACIÓN DE PRODUCTOS
+* 1- Nombre: obligatorio, mínimo 5 caracteres
+* 2- Descripción: mínimo 20 caracteres
+* 3- Imagen: archivo válido (png, jpg, jpeg, gif)
+* 4- Tablas secundarias(opcional): verificar que la información sea válida.
+
 
 ## Hacer más
 

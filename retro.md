@@ -148,3 +148,21 @@
 
 ## Dejar de hacer
 * Olvidar hacer push cuando se termina una tarea.
+
+
+## RETROSPECTIVA SPRINT SIETE
+
+## Comenzar a hacer
+* 
+
+## Hacer más
+
+
+## Continuar haciendo
+
+
+## Hacer menos
+
+
+## Dejar de hacer
+

@@ -168,6 +168,13 @@
 * 3- Imagen: archivo válido (png, jpg, jpeg, gif)
 * 4- Tablas secundarias(opcional): verificar que la información sea válida.
 
+* Validaciones del front-end: con feedback inmediato
+* USUARIOS
+* 1- Nombre y apellido: obligatorio con mínimo dos caracteres.
+* 2- Email: obligatorio con formato email y sin repetición
+* 3- Contraseña (password): obligatoria, con mínimo 8 caracteres, opcional mezclar mayúculas, minúsculas y caracter especial.
+* 4- Imagen: archivo válido (png, jpg, jpeg, gif)
+
 
 ## Hacer más
 

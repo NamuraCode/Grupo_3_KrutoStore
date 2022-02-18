@@ -1,4 +1,7 @@
 const favorites = require('../data/shoppingCart.json')
+const productos = require("../data/shoppingCart.json")
+const fs = require("fs")
+const path = require("path")
 const { productosLogica, generosLogica, imagenesModels } = require('../models')
 
 const productController = {

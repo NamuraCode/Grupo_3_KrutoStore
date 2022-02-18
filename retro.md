@@ -190,11 +190,13 @@
 * Más trabajo en equipo.
 
 ## Continuar haciendo
-
-
+* Continuar implementando diferentes funcionalidades a la página.
+* Hacer las correcciones necesarias a la página.
+* Implementar estilos que hagan la página más atractiva.
+* Comunicar las tareas hechas.
 
 ## Hacer menos
-
+* Realizar el Sprint cerca de la fecha máxima de entrega.
 
 ## Dejar de hacer
 

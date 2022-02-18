@@ -1,5 +1,6 @@
 const usuariosController = require('./usuario.controller')
 const productController = require('./product.controller')
+const apiController = require('./api.controller')
 const session = require('express-session')
 
 let controller = {
@@ -37,5 +38,6 @@ let controller = {
 module.exports = {
     controller,
     usuariosController,
-    productController
+    productController,
+    apiController
 }

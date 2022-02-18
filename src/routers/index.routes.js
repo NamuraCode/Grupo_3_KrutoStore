@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const userRouter = require('./usuario.routes') 
-const productRouter = require('./prodcuts.routes')
+const productRouter = require('./products.routes')
+const apiRouter = require(`./api.routes`)
 const {controller} = require('../controller');
  
 
 router.use('/', userRouter)
 router.use('/', productRouter)
+router.use('/', apiRouter)
 
 router.get('/', controller.index)
 

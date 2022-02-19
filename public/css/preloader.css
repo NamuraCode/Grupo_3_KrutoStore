@@ -1,0 +1,464 @@
+:root {
+    --eye-size: 100px;
+    --eye-backcolor: #ad0000;
+    --eye-color: #000;
+    --eye-shadow: #adadad59;
+    --eye-ball-shadow: rgb(27, 27, 27);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+body {
+    /*background-color: #000 #515372*/
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+h2 {
+    text-align: center;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin-bottom: 100px;
+    opacity: 0;
+}
+
+.card {
+    /* background-color: white; */
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.center {
+    margin: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.eye {
+    height: var(--eye-size);
+    width: var(--eye-size);
+    background-color: var(--eye-backcolor);
+    border: 6px solid var(--eye-color);
+    position: relative;
+}
+
+.eye-ball {
+    height: 55%;
+    width: 55%;
+    position: relative;
+}
+
+.eye-ball>div:first-of-type {
+    height: 100%;
+    width: 100%;
+    border: 4px solid var(--eye-ball-shadow);
+    opacity: .5;
+    position: absolute;
+}
+
+.eye-ball>div:nth-of-type(2) {
+    position: absolute;
+    height: 45%;
+    width: 45%;
+    background-color: var(--eye-color);
+    box-shadow: 0 0 21px 3px var(--eye-ball-shadow);
+}
+
+.sp {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    font-size: 65px;
+}
+
+.sp span {
+    font-weight: bolder;
+    position: absolute;
+    display: block;
+    top: -44px;
+    color: var(--eye-color)
+}
+
+.eye-ball>div:nth-of-type(3) {
+    top: -46%;
+    left: 66%;
+    transform: rotate(243deg);
+}
+
+.eye-ball>div:nth-of-type(4) {
+    bottom: -46%;
+    right: -20%;
+    transform: rotate(-1deg);
+}
+
+.eye-ball>div:last-of-type {
+    bottom: 18%;
+    left: -60%;
+    transform: rotate(112deg);
+}
+
+
+/** -------------------------------- ANIMATION ------------------------------- **/
+@keyframes animation1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    70%, 100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.sharingan1 {
+    animation: animation1 10s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+
+/** ------------------------------- SHARINGAN 2 ------------------------------ **/
+.sharingan2 .sp {
+    width: 100%;
+    height: 100%;
+    font-size: 165px;
+}
+
+.sharingan2 .eye-ball>div:first-of-type {
+    opacity: 1;
+    background-color: var(--eye-color);
+    width: 85%;
+    height: 85%;
+    margin: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: rotate(243deg); */
+}
+
+.sharingan2 .eye-ball>div:nth-of-type(2) {
+    background-color: var(--eye-backcolor);
+    z-index: 777;
+    width: 25%;
+    height: 25%;
+}
+
+.sharingan2 .eye-ball>div:nth-of-type(3) {
+    top: -15%;
+    left: 12%;
+    /* transform: rotate(243deg); */
+}
+
+.sharingan2 .eye-ball>div:nth-of-type(4) {
+    top: 16%;
+    right: -9%;
+    /* transform: rotate(243deg); */
+}
+
+.sharingan2 .eye-ball>div:last-of-type {
+    bottom: 4%;
+    left: -17%;
+    /* transform: rotate(112deg); */
+}
+
+.sharingan2 {
+    animation: animation1 10s ease-in-out infinite;
+}
+
+
+/** --------------------- ANIMATION FROM SHARINGAN 1 TO 2 -------------------- **/
+
+.sharingan1to2 .eye-ball>div {
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+.sharingan1to2 {
+    animation: animation1 12s ease-in-out infinite;
+    animation-fill-mode: infinite;
+}
+
+.sharingan1to2 .eye-ball>div:first-of-type{
+    animation-name: an_div_first;
+}
+
+.sharingan1to2 .eye-ball>div:nth-of-type(2){
+    animation-name: an_div_2;
+}
+
+.sharingan1to2 .eye-ball>div:nth-of-type(3){
+    animation-name: an_div_3;
+}
+
+.sharingan1to2 .eye-ball>div:nth-of-type(4){
+    animation-name: an_div_4;
+}
+
+.sharingan1to2 .eye-ball>div:last-of-type{
+    animation-name: an_div_last;
+}
+
+@keyframes an_div_first {
+    0%, 30%, 80%, 100% {
+        /* sharingan 1 style */
+        height: 100%;
+        width: 100%;
+        border: 4px solid var(--eye-color);
+        opacity: .5;
+    }
+    
+    40%, 70% {
+        /* sharingan 2 style */
+        opacity: 1;
+        background-color: var(--eye-color);
+        width: 85%;
+        height: 85%;
+        margin: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes an_div_2 {
+    0%, 30%, 80%, 100% {
+        /* sharingan 1 style */
+        height: 45%;
+        width: 45%;
+        background-color: var(--eye-color);
+        z-index: auto;
+    }
+
+    40%, 70% {
+        /* sharingan 2 style */
+        background-color: var(--eye-backcolor);
+        z-index: 777;
+        width: 25%;
+        height: 25%;
+    }
+}
+
+@keyframes  an_div_3 {
+    0%, 30%, 80%, 100% {
+        /* sharingan 1 style */
+        top: -46%;
+        left: 66%;
+        height: 50%;
+        width: 50%;
+        font-size: 65px;
+    }
+
+    40%, 70% {
+        /* sharingan 2 style */
+        top: -15%;
+        left: 12%;
+        width: 100%;
+        height: 100%;
+        font-size: 165px;
+    }
+}
+
+@keyframes  an_div_4 {
+    0%, 30%, 80%, 100% {
+        /* sharingan 1 style */
+        bottom: -46%;
+        right: -20%;
+        height: 50%;
+        width: 50%;
+        font-size: 65px;
+    }
+
+    40%, 70% {
+        /* sharingan 2 style */
+        bottom: -16%;
+        right: -9%;
+        width: 100%;
+        height: 100%;
+        font-size: 165px;
+    }
+}
+
+@keyframes  an_div_last {
+    0%, 30%, 80%, 100% {
+        /* sharingan 1 style */
+        bottom: 18%;
+        left: -60%;
+        height: 50%;
+        width: 50%;
+        font-size: 65px;
+    }
+
+    40%, 70% {
+        /* sharingan 2 style */
+        bottom: 4%;
+        left: -17%;
+        width: 100%;
+        height: 100%;
+        font-size: 165px;
+    }
+}
+
+
+/** -------------------------------- MANGEKYOU ------------------------------- **/
+
+.mangekyou {
+    background: #050505;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border: 5px #000 solid;
+    animation: spin 10s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+.mangekyou .point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 70px;
+    width: 70px;
+    background: var(--eye-backcolor);
+    animation: shine 10s ease-in-out infinite;
+}
+
+.mangekyou .point:nth-child(1) {
+    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.mangekyou .point:nth-child(2) {
+    border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.mangekyou .point:nth-child(3) {
+    border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border: 3px #000 solid;
+}
+
+.mangekyou .point:nth-child(3)::before,
+.mangekyou .point:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.mangekyou .point:nth-child(3)::before {
+    transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.mangekyou .point:nth-child(3)::after {
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.mangekyou .circle1 {
+    border-radius: 50%;
+    position: absolute;
+    background: var(--eye-color);
+    width: 15px;
+    height: 15px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background: var(--eye-backcolor);
+        opacity: 0;
+    }
+
+    50% {
+        background: #f03a3a;
+        box-shadow: 0 0 4px 4px #f03a3a;
+    }
+
+    100% {
+        box-shadow: none;
+        background: var(--eye-backcolor);
+        opacity: 1;
+    }
+}
+
+/** ----------------------------- EYES ----------------------------- **/
+.box {
+    overflow: hidden;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye-box {
+    background-color: #fff;
+    width: 220px;
+    height: 130px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 50px;
+    padding-top: 20px;
+    border-radius: 100% 0 54% 46%/ 93% 1% 99% 7%;
+    box-shadow: -4px 21px 1px 6px var(--eye-shadow) inset;
+
+    animation: eye_animation 9s ease-in-out infinite;
+    transition: height .2s ease-in-out,
+                padding-top .2s ease-in-out;
+}
+
+.eye-box .eye {
+    position: absolute;
+    top: 18%;
+    right: 25%;
+}
+
+.left-eye {
+    transform: scalex(-1);
+}
+
+
+/** ------------------------------ EYE ANIMATION ----------------------------- **/
+
+@keyframes eye_animation {
+    0%, 36%, 55%, 100% {
+        height: 130px;
+        padding-top: 20px;
+        opacity: 1;
+    }
+
+    43%, 47% {
+        height: 0px;
+        padding-top: 0;
+        opacity: .5;
+    }
+}

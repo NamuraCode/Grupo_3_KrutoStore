@@ -8,7 +8,7 @@ const {controller} = require('../controller');
 
 router.use('/', userRouter)
 router.use('/', productRouter)
-router.use('/', apiRouter)
+router.use('/api', apiRouter)
 
 router.get('/', controller.index)
 

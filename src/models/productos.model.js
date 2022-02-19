@@ -35,7 +35,9 @@ const metodosProductos = {
     },
     getDetail: async (id) => {
         try{
-            let getOne = await db.Productos.findByPk(id)
+            let getOne = await db.Productos.findByPk(id,{
+                include: ["categorias", "usuarios", "imagenes"]
+            })
             return getOne
         }catch(e){
             console.error(e)

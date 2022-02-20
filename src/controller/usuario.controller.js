@@ -9,6 +9,8 @@ const usuariosController = {
             let usuarioAEditar = await usuariosLogica.getOne({
                 where:{
                     email: session.email
+
+                    
                 }
             })
             res.render('perfil', {

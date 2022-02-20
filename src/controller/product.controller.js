@@ -32,8 +32,8 @@ const productController = {
         let producto = await productosLogica.getDetail(req.params.id)
         res.render('editarProducto', {categorias: categorias, articuloAEditar:producto});
     },
-    productsList: (req, res) => {
-        productosLogica.getAll({
+    productsList: async (req, res) => {
+       await productosLogica.getAll({
                 include: ["imagenes"]
             })
             .then(ingresan => {

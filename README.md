@@ -33,3 +33,6 @@ El mercado objetivo de KRUTO STORE, es un público con nivel socioeconómico med
 ## instalar
 * ### npm nodemon
 * ### npm express
+
+## Base de datos
+* ### Pedir credenciales al team dev

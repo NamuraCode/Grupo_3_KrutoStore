@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 @font-face {
     font-family: 'aArigatouGozaimasu';
     src: url(../fonts/aArigatouGozaimasu.ttf);
@@ -12,33 +14,13 @@ body {
     font-family: 'Montserrat', 'Raleway';
 }
 
-/*HEADER----------------------------------------------------------------*/
-header{
-    width: 100vw;
-    background: #515372;
-}
-
-.top-bar{
-    width: 100%;
-    height: 30px;
-    color: #515372;
-    background: #515372;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /** ---------------------------------- TITLE --------------------------------- **/
 .title-list {
     font-family: 'aArigatouGozaimasu';
     font-size: 25px;
     text-align: center;
     margin-bottom: 20px;
-    color: #ef233c;
-    letter-spacing: 5px;
+    color: #515372;
 }
 
 
@@ -102,7 +84,7 @@ main .main-products .main-articles img:hover {
     box-shadow: 0px 8px 6px 1px rgb(0 0 0 / 10%);
 }
 
-main .main-products .article-name p {
+main .main-products .article-description p {
     width: 90%;
     text-align: center;
     margin: auto;
@@ -138,12 +120,12 @@ main .main-products .main-articles .article-form {
 main .main-products .main-articles .article-form a button {
     border-radius: 10px;
     border: none;
-    background-color: #515372;
+    background-color: #767375;
     color: white;
     margin: 20px 10px 30px 10px;
     width: 110px;
     height: 40px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 main .main-products .main-articles .article-form a #anadir {

@@ -6,31 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <link rel="stylesheet" href="./css/stylesProducts.css">
+    <link rel="stylesheet" href="./css/listEditDelete.css">
     <link rel="stylesheet" href="./images/logos/FAVICON_2_ROJO.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
-    <title>Kruto Store</title>
+    <title>Productos a Eliminar | Kruto Store</title>
 </head>
 
 <body>
 <!-- ------------------------------- HEADER -------------------------------- -->
     <header>
-        <section>
-            <div class="top-bar">
-            </div>
-            <div class="logo-kruto">
-                <a href="/"><img class="logo" src=".\images\logos\logo-kruto-azul.png" alt="kruto_rojo"></a>
-            </div>
-        </section>
+        <%- include ('./partials/header-blue')%>
     </header>
+    <div class="title-list">
+        <h1>LISTADO DE PRODUCTOS</h1>
+    </div>
 
+    <!-- ------------------------------ PRODUCTOS ------------------------------ -->
     <main>
-        <div class="title text-focus-in">
-            <img class="title-img" src=".\images\logos\anime.png" alt="">
-            <!-- <h1>ANIME</h1> -->
-        </div>
-<!-- ------------------------------ PRODUCTOS ------------------------------ -->
         <section class="main-products">
             <% for(i=0; i<ingresan.length; i++){%>
             <article class="main-articles">

@@ -18,17 +18,18 @@
     <header>
         <%- include ('./partials/header-red')%>
     </header>
+
+<!-- -------------------------------- TITLE -------------------------------- -->
+    <div class="title-list">
+        <h1>ANIME</h1>
+    </div>
 <!-- ------------------------------ PRODUCTOS ------------------------------ -->
     <main>
-        <!-- <div class="title text-focus-in">
-            <img class="title-img" src=".\images\logos\anime.png" alt="">
-        </div> -->
-    <!-- ------------------------------ PRODUCTOS ------------------------------ -->
         <section class="main-products">
             <% for(i=0; i<ingresan.length; i++){%>
             <article class="main-articles">
                 <img src=<%=ingresan[i].imagenes.image%>>
-                <div class="article-description">
+                <div class="article-name">
                     <p><%=ingresan[i].nombre%></p>
                 </div>
                 <div class="article-cost">

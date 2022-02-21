@@ -295,33 +295,6 @@ footer ul li a {
 
 }
 
-
-
-/*DETALLES-PRODUCTO--------------------------------------------------------------------------------------------*/
-.bodyP {
-    width: 100vw;
-}
-
-.logoo {
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    width: 28%;
-}
-
-.main-productDetail .main-producto .producto-detalle .imagee {
-    width: 20vw;
-}
-
-.main-producto {
-    background-color: #393D3F;
-    position: relative;
-}
-
-main article img {
-    width:56%;
-}
-
 /*PRICE TAG*/
 .heartbeat {
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;

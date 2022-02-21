@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100vw;
+    background: #ef233c;
+}
+
+.top-bar{
+    width: 100%;
+    height: 30px;
+    color: #ef233c;
+    background: #ef233c;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

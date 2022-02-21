@@ -15,14 +15,21 @@
 
 <body>
 <!-- ------------------------------- HEADER -------------------------------- -->
-<%- include ('./partials/header-azul')%>
-
-    <main>
-        <div class="title text-focus-in">
-            <img class="title-img" src=".\images\logos\anime.png" alt="">
-            <!-- <h1>ANIME</h1> -->
-        </div>
+    <header>
+        <section>
+            <div class="top-bar">
+            </div>
+            <div class="logo-kruto">
+                <a href="/"><img class="logo" src="..\images\logos\logo-kruto-azul.png" alt="kruto_azul"></a>
+            </div>
+        </section>
+    </header>
 <!-- ------------------------------ PRODUCTOS ------------------------------ -->
+    <main>
+        <!-- <div class="title text-focus-in">
+            <img class="title-img" src=".\images\logos\anime.png" alt="">
+        </div> -->
+    <!-- ------------------------------ PRODUCTOS ------------------------------ -->
         <section class="main-products">
             <% for(i=0; i<ingresan.length; i++){%>
             <article class="main-articles">
@@ -50,21 +57,7 @@
     </main>
 
 <!-- -------------------------------- MENU --------------------------------- -->
-    <footer>
-        <section>
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="/index"><span class="iconify" data-icon="cil:home"></span></a></li>
-                        <li><a href="/products"><span class="iconify" data-icon="bx:bx-store"></span></a></li>
-                        <li><a href="/productCart"><span class="iconify" data-icon="ic:baseline-local-grocery-store"></span></a></li>
-                        <li><a href="#"><span class="iconify" data-icon="ant-design:search-outlined"></span></a></li>
-                        <li><a href="/login"><span class="iconify" data-icon="gg:profile"></span></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-    </footer>
+<%- include ('./partials/menu')%>
 </body>
 
 </html>

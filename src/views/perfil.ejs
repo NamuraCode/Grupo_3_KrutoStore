@@ -1,29 +1,40 @@
-<%- include ('./partials/header-azul')%>
-<div id="Imagen">
-    <img src=<%=usuario.image%>>
-</div>
-<form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
-    <label for="name">Nombre de usuario:</label>
-    <input type="text" id="name" name="name" value="<%=usuario.username%>">
-    <p>Usuario mayor a 5 caracteres</p>
-
-    <label for="correo">Correo:</label>
-    <input type="email" id="correo" name="correo" value="<%=usuario.email%>">
-
-    <label for="password">Nueva contraseña:</label>
-    <input type="password" id="password" name="password" placeholder="Nueva contraseña">
-    <p>Contraseña mayor a 10 caracteres</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <title>Profile | Kruto Store</title>
+</head>
+<body>
+    <header>
+        <%- include ('./partials/header-red')%>
+    </header>
+    <div id="Imagen">
+        <img src=<%=usuario.image%>>
+    </div>
+    <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+        <label for="name">Nombre de usuario:</label>
+        <input type="text" id="name" name="name" value="<%=usuario.username%>">
+        <p>Usuario mayor a 5 caracteres</p>
     
-    <input type="file" id="image" name="image" >
-
-    <button type="submit" class="perfil_boton1">Actualizar</button>
-</form>
-<form action="/perfil?_method=DELETE" method="POST" >
-    <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
-</form>
-<section>
-    <button>Cerrar Sesion</button>
-</section>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" value="<%=usuario.email%>">
+    
+        <label for="password">Nueva contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Nueva contraseña">
+        <p>Contraseña mayor a 10 caracteres</p>
+        
+        <input type="file" id="image" name="image" >
+    
+        <button type="submit" class="perfil_boton1">Actualizar</button>
+    </form>
+    <form action="/perfil?_method=DELETE" method="POST" >
+        <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
+    </form>
+    <section>
+        <button>Cerrar Sesion</button>
+    </section>
 </body>
-
 </html>

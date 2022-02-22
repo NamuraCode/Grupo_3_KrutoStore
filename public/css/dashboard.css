@@ -112,19 +112,19 @@ body {
         justify-content: space-around;
 }
 
-.card-footer-social {
+.card-footer-action {
     text-align: center;
     margin-top: 1.3rem;
     margin-bottom: 1rem;
 }
 
-.card-footer-social h3 {
+.card-footer-action h3 {
     font-weight: 700;
     margin-top: 1.5rem;
     margin-bottom: 0;
 }
 
-.card-footer-social p {
+.card-footer-action p {
     letter-spacing: 1px;
     margin-top: 0.8rem;
     margin-bottom: 1.8rem;
@@ -132,6 +132,25 @@ body {
 
 .card-footer i {
     font-size: 3rem;
+    color: #515372;
 }
 
 /** --------------------------------- RETURN --------------------------------- **/
+
+.return-dashboard {
+    background-color: #515372;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    margin-top: -200px;
+    margin-left: 45%;
+}
+
+.return-dashboard a{
+    text-decoration: none;
+    color: white;
+}

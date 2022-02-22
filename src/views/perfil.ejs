@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/perfil.css">
     <title>Profile | Kruto Store</title>
     <link rel="shortcut icon" href="/images/logos/FAVICON_2_ROJO.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -45,13 +45,13 @@
         </div>
         <div class="rightbox">
             <div class="profile tabShow">
-                <h1>Personal Info</h1>
+                <h1>Informacion Personal</h1>
                 <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
                     <div class="image-profile">
                         <img src=<%=usuario.image%>>
                     </div>
                     <div class="profile-name profile-div">
-                        <label for="name">User name:</label>
+                        <label for="name">Nombre de usuario:</label>
                         <input type="text" id="name" name="name" value="<%=usuario.username%>">
                         <p>Usuario mayor a 5 caracteres</p>
                     </div>
@@ -60,8 +60,17 @@
                         <input type="email" id="correo" name="correo" value="<%=usuario.email%>">
                     </div>
                     <div class="profile-date profile-div">
-                        <label for="birthday">Birthday date</label>
+                        <label for="birthday">Fecha de nacimiento:</label>
                         <input type="date" id="date" name="birthday" value="Birthday date">
+                    </div>
+                    <div class="gender-profile profile-div">
+                        <label for="gender">Genero</label>
+                        <select name="gender-option" id="gender-option">
+                            <option value="selected">Select</option>
+                            <option value="female">Femenino</option>
+                            <option value="masculine">Masculino</option>
+                            <option value="non-binary">No Binario</option>
+                        </select>
                     </div>
                     <div class="password-profile profile-div">
                         <label for="password">Nueva contraseña:</label>
@@ -72,19 +81,138 @@
                         <input type="file" id="image" name="image" >
                     </div>
                     <div class="btn-profile profile-div">
-                        <button type="submit" class="btn-1">Actualizar</button>
+                        <button type="submit" class="btn-profile-1">Actualizar</button>
                         <form action="/perfil?_method=DELETE" method="POST" >
-                            <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
+                            <button type="submit" class="bt-profile-2">Eliminar mi cuenta</button>
                         </form>
                     </div>
                 </form>
                 <div class="close-session">
-                    <a href="/index"><i class="fas fa-power-off"></i></a>
+                    <a href="/index"><i class="fas fa-power-off"> Cerrar Sesión</i></a>
+                </div>
+            </div>
+
+
+            <div class="payment tabShow">
+                <h1>Metodo de Pago</h1>
+                <div class="card-name">
+                    <label for="card-name">Nombre en la tarjeta</label>
+                    <input type="text" class="card-name" placeholder="Nombre tal como aparece en la tarjeta">
+                </div>
+                <div class="card-name profile-div">
+                    <label for="card-number">Numero de la tarjeta</label>
+                    <input type="number" id="card-info" name="card-info" placeholder="XXXX-XXXX-XXXX-1234">
+                </div>
+                <div class="date-card profile-div">
+                    <label for="date-card">Fecha de expiración</label>
+                    <input type="number" id="card-date" name="card-date" placeholder="dd/mm">
+                </div>
+                <div class="code-card profile*">
+                    <label for="card-code">Codigo de seguridad</label>
+                    <input type="number" id="card-code" name="card-code" placeholder="###">
+                </div>
+                <div class="btn-payment">
+                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                </div>
+            </div>
+
+            <div class="subscription tabShow">
+                <h1>Archivo de la Cuenta</h1>
+                <div class="last-shop">
+                    <h3>Ultima compra</h3>
+                    <div class="last-details">
+                        <div class="last-date details">
+                            <p>Fecha</p>
+                            <p>12/23/2022</p>
+                        </div>
+                        <div class="last-id details">
+                            <p> Referencia</p>
+                            <p>#123456</p>
+                        </div>
+                        <div class="last-price details">
+                            <p>Valor</p>
+                            <p>$123.456</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shops-profile">
+                    <h3>Historial de compras</h3>
+                    <div class="shops-square">
+                        <div class="dates-list">
+                            <p>Fecha</p>
+                            <span>12/23/2022</span>
+                            <span>12/23/2022</span>
+                            <span>12/23/2022</span>
+                        </div>
+                        <div class="id-list">
+                            <p>Referencia</p>
+                            <span>#123456</span>
+                            <span>#123456</span>
+                            <span>#123456</span>
+                        </div>
+                        <div class="price-list">
+                            <p>Valor</p>
+                            <span>$123.456</span>
+                            <span>$123.456</span>
+                            <span>$123.456</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="favorites-shops">
+                    <h3>Favoritos</h3>
+                    <span><i class="far fa-grin-hearts"></i>Lista de Deseos</span>
+                </div>
+                <div class="btn-shops">
+                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                </div>
+            </div>
+
+            <div class="privacy tabShow">
+                <h1>Detalles de la cuenta</h1>
+                <div class="notification">
+                    <h3>Notificaciones</h3>
+                    <p>Configurar Notificaciones</p>
+                </div>
+                <div class="help">
+                    <h3>Centro de ayuda</h3>
+                    <p>Quejas y Reclamos</p>
+                    <p>Chat</p>
+                </div>
+                <div class="lenguage">
+                    <h3>Idioma / Lenguaje</h3>
+                    <p>Configurar idioma</p>
+                </div>
+                <div class="privacy">
+                    <h3>Privacidad</h3>
+                    <p>Configuración de Privacidad</p>
+                </div>
+                <div class="btn-details">
+                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                </div>
+            </div>
+
+            <div class="settings tabShow">
+                <h1>Configuración de la Cuenta</h1>
+                <p class="setting-1">Sincronización de la cuenta</p>
+                <p class="setting-2">Newsletter</p>
+                <p class="setting-3">Dispositivos</p>
+                <p class="setting-4">Eliminar Cuenta</p>
+                <div class="btn-setting">
+                    <button type="submit" class="btn-payment-1">Actualizar</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div id="Imagen">
+
+
+
+
+
+
+    <!-- 
+                
+                
+        <div id="Imagen">
         <img src=<%=usuario.image%>>
     </div>
     <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">

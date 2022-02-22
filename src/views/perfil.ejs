@@ -16,13 +16,78 @@
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 </head>
 <body>
+    <!-- ------------------------------- HEADER -------------------------------- -->
     <header>
         <%- include ('./partials/header-red')%>
     </header>
-    <div id="Imagen">
+
+    <!-- -------------------------------- MAIN --------------------------------- -->
+
+    <div class="container">
+        <div class="leftbox">
+            <nav>
+                <a onclick="tabs(0)" class="tab active">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a onclick="tabs(1)" class="tab">
+                    <i class="fa fa-credit-card"></i>
+                </a>
+                <a onclick="tabs(2)" class="tab">
+                    <i class="fa fa-tv"></i>
+                </a>
+                <a onclick="tabs(3)" class="tab">
+                    <i class="fa fa-tasks"></i>
+                </a>
+                <a onclick="tabs(4)" class="tab">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </nav>
+        </div>
+        <div class="rightbox">
+            <div class="profile tabShow">
+                <h1>Personal Info</h1>
+                <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
+                    <div class="image-profile">
+                        <img src=<%=usuario.image%>>
+                    </div>
+                    <div class="profile-name profile-div">
+                        <label for="name">User name:</label>
+                        <input type="text" id="name" name="name" value="<%=usuario.username%>">
+                        <p>Usuario mayor a 5 caracteres</p>
+                    </div>
+                    <div class="email-profile profile-div">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" value="<%=usuario.email%>">
+                    </div>
+                    <div class="profile-date profile-div">
+                        <label for="birthday">Birthday date</label>
+                        <input type="date" id="date" name="birthday" value="Birthday date">
+                    </div>
+                    <div class="password-profile profile-div">
+                        <label for="password">Nueva contraseña:</label>
+                        <input type="password" id="password" name="password" placeholder="Nueva contraseña">
+                        <p>Contraseña mayor a 10 caracteres</p>
+                    </div>
+                    <div class="newImage-profile">
+                        <input type="file" id="image" name="image" >
+                    </div>
+                    <div class="btn-profile profile-div">
+                        <button type="submit" class="btn-1">Actualizar</button>
+                        <form action="/perfil?_method=DELETE" method="POST" >
+                            <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
+                        </form>
+                    </div>
+                </form>
+                <div class="close-session">
+                    <a href="/index"><i class="fas fa-power-off"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="Imagen">
         <img src=<%=usuario.image%>>
     </div>
-    <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
         <label for="name">Nombre de usuario:</label>
         <input type="text" id="name" name="name" value="<%=usuario.username%>">
         <p>Usuario mayor a 5 caracteres</p>
@@ -43,6 +108,12 @@
     </form>
     <section>
         <button>Cerrar Sesion</button>
-    </section>
+    </section> -->
+
+    <script src="jquery/jquery.js"></script>
+
+    <script></script>
+
+    <script></script>
 </body>
 </html>

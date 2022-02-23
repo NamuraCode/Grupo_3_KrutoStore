@@ -80,7 +80,7 @@
                         <input type="password" id="password" name="password" placeholder="*******">
                         <p>Contraseña mayor a 10 caracteres</p>
                     </div>
-                    <div class="btn-profile profile-div">
+                    <div class="btn-profile">
                         <button type="submit" class="btn-profile-1">Actualizar</button>
                     </div>
                 </form>
@@ -201,11 +201,23 @@
     </div>
 
 
+    <script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tabShow");
 
-    <script src="jquery/jquery.js"></script>
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none"
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
 
-    <script></script>
-
-    <script></script>
+    <script>
+        $(".tab").click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    </script>
 </body>
 </html>

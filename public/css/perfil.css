@@ -359,3 +359,42 @@ input {
     cursor: pointer;
     margin-top: 35px;
 }
+
+
+/** ------------------------------ CERRAR SESION ----------------------------- **/
+.closed h1 {
+    padding-top: 35px;
+}
+
+.closed p {
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+
+.btn-closed button {
+    font-family: 'Poppins';
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #7ed386;
+    width: 60%;
+    padding: 7px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.btn-closed2 button {
+    font-family: 'Poppins';
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #777;
+    width: 60%;
+    padding: 7px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    margin-top: 35px;
+}

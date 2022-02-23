@@ -18,7 +18,7 @@
 <body>
     <!-- ------------------------------- HEADER -------------------------------- -->
     <header>
-        <%- include ('./partials/header-red')%>
+        <%- include ('./partials/header-blue')%>
     </header>
 
     <!-- -------------------------------- MAIN --------------------------------- -->
@@ -49,6 +49,9 @@
                 <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
                     <div class="image-profile">
                         <img src=<%=usuario.image%>>
+                        <div class="newImage-profile">
+                            <input type="file" id="image" name="image" >
+                        </div>
                     </div>
                     <div class="profile-name profile-div">
                         <label for="name">Nombre de usuario:</label>
@@ -74,22 +77,13 @@
                     </div>
                     <div class="password-profile profile-div">
                         <label for="password">Nueva contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="Nueva contraseña">
+                        <input type="password" id="password" name="password" placeholder="*******">
                         <p>Contraseña mayor a 10 caracteres</p>
-                    </div>
-                    <div class="newImage-profile">
-                        <input type="file" id="image" name="image" >
                     </div>
                     <div class="btn-profile profile-div">
                         <button type="submit" class="btn-profile-1">Actualizar</button>
-                        <form action="/perfil?_method=DELETE" method="POST" >
-                            <button type="submit" class="bt-profile-2">Eliminar mi cuenta</button>
-                        </form>
                     </div>
                 </form>
-                <div class="close-session">
-                    <a href="/index"><i class="fas fa-power-off"> Cerrar Sesión</i></a>
-                </div>
             </div>
 
 
@@ -196,47 +190,17 @@
                 <p class="setting-1">Sincronización de la cuenta</p>
                 <p class="setting-2">Newsletter</p>
                 <p class="setting-3">Dispositivos</p>
-                <p class="setting-4">Eliminar Cuenta</p>
                 <div class="btn-setting">
                     <button type="submit" class="btn-payment-1">Actualizar</button>
                 </div>
+                <form action="/perfil?_method=DELETE" method="POST" >
+                    <button type="submit" class="bt-profile-2">Eliminar mi cuenta</button>
+                </form>
             </div>
         </div>
     </div>
 
 
-
-
-
-
-    <!-- 
-                
-                
-        <div id="Imagen">
-        <img src=<%=usuario.image%>>
-    </div>
-    <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
-        <label for="name">Nombre de usuario:</label>
-        <input type="text" id="name" name="name" value="<%=usuario.username%>">
-        <p>Usuario mayor a 5 caracteres</p>
-    
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" value="<%=usuario.email%>">
-    
-        <label for="password">Nueva contraseña:</label>
-        <input type="password" id="password" name="password" placeholder="Nueva contraseña">
-        <p>Contraseña mayor a 10 caracteres</p>
-        
-        <input type="file" id="image" name="image" >
-    
-        <button type="submit" class="perfil_boton1">Actualizar</button>
-    </form>
-    <form action="/perfil?_method=DELETE" method="POST" >
-        <button type="submit" class="perfil_boton2">Eliminar mi cuenta</button>
-    </form>
-    <section>
-        <button>Cerrar Sesion</button>
-    </section> -->
 
     <script src="jquery/jquery.js"></script>
 

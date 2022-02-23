@@ -9,11 +9,6 @@
     <link rel="shortcut icon" href="/images/logos/FAVICON_2_ROJO.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet" />
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 </head>
 <body>
     <!-- ------------------------------- HEADER -------------------------------- -->
@@ -33,7 +28,7 @@
                     <i class="fa fa-credit-card"></i>
                 </a>
                 <a onclick="tabs(2)" class="tab">
-                    <i class="fa fa-tv"></i>
+                    <i class="fas fa-shopping-bag"></i>
                 </a>
                 <a onclick="tabs(3)" class="tab">
                     <i class="fa fa-tasks"></i>
@@ -41,10 +36,15 @@
                 <a onclick="tabs(4)" class="tab">
                     <i class="fa fa-cog"></i>
                 </a>
+                <a onclick="tabs(5)" class="tab">
+                    <i class="fa fa-power-off"></i>
+                </a>
             </nav>
         </div>
         <div class="rightbox">
             <div class="profile tabShow">
+
+                <!-- ------------------------ INFORMACION PERSONAL ------------------------- -->
                 <h1>Informacion Personal</h1>
                 <form action="PUT" method="POST" enctype=/perfil?_method="multipart/form-data">
                     <div class="image-profile">
@@ -87,45 +87,51 @@
             </div>
 
 
+            <!-- --------------------------- METODOS DE PAGO --------------------------- -->
             <div class="payment tabShow">
                 <h1>Metodo de Pago</h1>
+                <div class="card-img">
+                    <i class="fa fa-credit-card"></i>
+                </div>
                 <div class="card-name">
                     <label for="card-name">Nombre en la tarjeta</label>
                     <input type="text" class="card-name" placeholder="Nombre tal como aparece en la tarjeta">
                 </div>
                 <div class="card-name profile-div">
                     <label for="card-number">Numero de la tarjeta</label>
-                    <input type="number" id="card-info" name="card-info" placeholder="XXXX-XXXX-XXXX-1234">
+                    <input type="text" id="card-info" name="card-info" placeholder="XXXX-XXXX-XXXX-1234">
                 </div>
                 <div class="date-card profile-div">
                     <label for="date-card">Fecha de expiración</label>
-                    <input type="number" id="card-date" name="card-date" placeholder="dd/mm">
+                    <input type="text" id="card-date" name="card-date" placeholder="dd/mm">
                 </div>
-                <div class="code-card profile*">
+                <div class="code-card profile-div">
                     <label for="card-code">Codigo de seguridad</label>
-                    <input type="number" id="card-code" name="card-code" placeholder="###">
+                    <input type="text" id="card-code" name="card-code" placeholder="###">
                 </div>
                 <div class="btn-payment">
                     <button type="submit" class="btn-payment-1">Actualizar</button>
                 </div>
             </div>
 
-            <div class="subscription tabShow">
-                <h1>Archivo de la Cuenta</h1>
+
+            <!-- ------------------------ ARCHIVOS DE LA CUENTA ------------------------ -->
+            <div class="archive tabShow">
+                <h1>Historial de la Cuenta</h1>
                 <div class="last-shop">
                     <h3>Ultima compra</h3>
                     <div class="last-details">
-                        <div class="last-date details">
+                        <div class="last-date archive">
                             <p>Fecha</p>
-                            <p>12/23/2022</p>
+                            <span>12/23/2022</span>
                         </div>
-                        <div class="last-id details">
-                            <p> Referencia</p>
-                            <p>#123456</p>
+                        <div class="last-id archive">
+                            <p> Ref</p>
+                            <span>#123456</span>
                         </div>
-                        <div class="last-price details">
+                        <div class="last-price archive">
                             <p>Valor</p>
-                            <p>$123.456</p>
+                            <span>$123.456</span>
                         </div>
                     </div>
                 </div>
@@ -139,7 +145,7 @@
                             <span>12/23/2022</span>
                         </div>
                         <div class="id-list">
-                            <p>Referencia</p>
+                            <p>Ref</p>
                             <span>#123456</span>
                             <span>#123456</span>
                             <span>#123456</span>
@@ -152,16 +158,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="favorites-shops">
+                <div class="shops-favorites">
                     <h3>Favoritos</h3>
-                    <span><i class="far fa-grin-hearts"></i>Lista de Deseos</span>
+                    <span>Lista de Deseos<i class="fas fa-heart"></i></span>
                 </div>
                 <div class="btn-shops">
                     <button type="submit" class="btn-payment-1">Actualizar</button>
                 </div>
             </div>
 
-            <div class="privacy tabShow">
+
+            <!-- ------------------------ DETALLES DE LA CUENTA ------------------------ -->
+            <div class="details tabShow">
                 <h1>Detalles de la cuenta</h1>
                 <div class="notification">
                     <h3>Notificaciones</h3>
@@ -185,11 +193,14 @@
                 </div>
             </div>
 
+
+            <!-- --------------------- CONFIGURACION DE LA CUENTA ---------------------- -->
             <div class="settings tabShow">
                 <h1>Configuración de la Cuenta</h1>
-                <p class="setting-1">Sincronización de la cuenta</p>
-                <p class="setting-2">Newsletter</p>
-                <p class="setting-3">Dispositivos</p>
+                <p class="setting-1">Facturas</p>
+                <p class="setting-2">Sincronización de la cuenta</p>
+                <p class="setting-3">Newsletter</p>
+                <p class="setting-4">Dispositivos</p>
                 <div class="btn-setting">
                     <button type="submit" class="btn-payment-1">Actualizar</button>
                 </div>

@@ -37,9 +37,9 @@ body {
 
 nav a {
     list-style: none;
-    padding: 35px;
+    padding: 34px;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 20px;
     display: block;
     transition: all .3s ease-in;
     margin-bottom: 10px;
@@ -52,7 +52,7 @@ nav a:hover {
 }
 
 nav a:first-child {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 nav a.active {
@@ -64,6 +64,8 @@ nav a.active {
     margin-left: 27%;
 }
 
+
+/** -------------------------- INFORMACION PERSONAL -------------------------- **/
 .profile h1 {
     padding-top: 30px;
 }
@@ -96,9 +98,15 @@ nav a.active {
 h1 {
     font-family: 'Poppins';
     color: #7ed386;
-    font-size: 1.2rem;
+    font-size: 23px;
     margin-top: 40px;
     margin-bottom: 25px;
+}
+
+h3 {
+    font-family: 'Poppins';
+    color: #7ed386;
+    font-size: 18px;
 }
 
 label {
@@ -155,9 +163,37 @@ input {
     border-radius: 20px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .tabShow {
     display: none;
 }
+
+
+/** ----------------------------- METODOS DE PAGO ---------------------------- **/
+.payment h1 {
+    padding-top: 35px;
+}
+
+.card-img i{
+    font-size: 70px;
+    padding-bottom: 20px;
+    color: #3fb6a8;
+}
+
+.btn-payment button {
+    font-family: 'Poppins';
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #7ed386;
+    width: 60%;
+    padding: 7px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+

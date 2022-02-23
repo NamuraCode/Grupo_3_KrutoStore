@@ -330,3 +330,32 @@ input {
     cursor: pointer;
     margin-top: 35px;
 }
+
+
+/** ----------------------- CONFIGURACION DE LA CUENTA ----------------------- **/
+
+.settings h1 {
+    padding-top: 35px;
+}
+
+.settings p {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-settings button {
+    font-family: 'Poppins';
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #7ed386;
+    width: 60%;
+    padding: 7px 15px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    margin-top: 35px;
+}

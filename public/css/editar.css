@@ -89,6 +89,16 @@ input {
     font-family: 'Poppins';
 }
 
+select {
+    border: 1px solid hsl(353, 82%, 70%);
+    border-radius: 15px;
+    padding-right: 5px;
+}
+
+label {
+    margin-right: 5px;
+}
+
 .space {
     margin-bottom: 15px;
 }
@@ -99,14 +109,25 @@ input {
     border: 1px solid hsl(353, 82%, 80%);
 }
 
+.product-description {
+    display: flex;
+    align-items: baseline;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid hsl(353, 82%, 70%);
+}
+
 button {
     margin-top: 20px;
-    padding: 12px 40px;
+    padding: 8px 40px;
     text-transform: uppercase;
     border-radius: 20px;
 	border: 1px solid hsl(353, 82%, 70%);
 	background-color: hsl(353, 82%, 70%);
 	color: #FFFFFF;
+    cursor: pointer;
 }
 
 .btn {
@@ -124,6 +145,8 @@ button {
     margin-left: 5px;
 }
 
+
+/** ------------------------------- RESPONSIVE ------------------------------- **/
 
 @media (min-width: 769px) {
     .container{

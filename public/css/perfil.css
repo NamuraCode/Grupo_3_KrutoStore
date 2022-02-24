@@ -7,10 +7,6 @@
 }
 
 body {
-    /*background: #e53935; 
-    background: -webkit-linear-gradient(to right, #e35d5b, #e53935);  
-    background: linear-gradient(to right, #e35d5b, #e53935);*/
-    /*background: linear-gradient(to right, #2ed573, #f9ca24);*/
     overflow: hidden;
     background: url(../images/productos/fondo-ppal30.png);
 }
@@ -23,6 +19,7 @@ body {
     position: relative;
     margin-top: 7%;
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
+    border-radius: 20px;
 }
 
 .leftbox {
@@ -34,6 +31,7 @@ body {
     height: 110%;
     background: #ef233c;
     box-shadow: 3px 3px 10px rgba(119, 119, 119, .5);
+    border-radius: 20px;
 }
 
 nav a {
@@ -149,8 +147,11 @@ input {
 }
 
 .gender-profile select {
-    width: 80px;
+    width: 90px;
     margin-top: 10px;
+    font-family: 'Poppins';
+    border: 1px solid #777;
+    border-radius: 8px;
 }
 
 .btn-profile button {

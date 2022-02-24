@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
-
-@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 
 @font-face {
-    font-family: 'Arigatou';
-    src: url(./fonts/Arigatou.ttf);
+    font-family: 'aArigatouGozaimasu';
+    src: url(../fonts/aArigatouGozaimasu.ttf);
 }
-
-@font-face {
-    font-family: "futura std book";
-    src: url(./FuturaStdBook.otf);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     padding: 0;
@@ -72,7 +63,7 @@ main {
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'aArigatouGozaimasu';
     text-align: center;
     padding: 20px;
 }
@@ -95,7 +86,11 @@ input {
     height: 25px;
     border-radius: 20px;
     border: 1px solid hsl(353, 82%, 80%);
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
+}
+
+.space {
+    margin-bottom: 15px;
 }
 
 .file{

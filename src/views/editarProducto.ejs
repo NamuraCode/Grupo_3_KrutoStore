@@ -24,34 +24,34 @@
                     <% let id=articuloAEditar.id %>
                     <form action="/editarProducto/<%=id%>/edit?_method=PUT" method="POST" >
                         <div class="editProduct-container">
-                            <p>
-                                <label for="nombre">Nombre producto</label>
+                            <div class="product-name space">
+                                <label for="nombre">Nombre producto:</label>
                                 <input type="text" name="nombre" value="<%=articuloAEditar.nombre%>">
-                            </p>
+                            </div>
                             <% if(locals.errors && errors.product) { %>
                                 <%= errors.product.msg %>
                             <% } %>
-                            <p>
-                                <label for="product-price">Categoria</label>
+                            <div class="product-category space">
+                                <label for="product-price">Categoria:</label>
                                 <select name="select"> 
                                     <%for(let i=0; i<categorias.length; i++){%>
                                         <option value="<%=[i+1]%>"><%=categorias[i].categoria%></option>
                                     <%} %>
                                 </select>
-                            </p>
-                            <p>
-                                <label for="precio">Precio</label>
+                            </div>
+                            <div class="product-price space">
+                                <label for="precio">Precio:</label>
                                 <input type="text" name="precio" value="<%=articuloAEditar.precio%>.00">
-                            </p>
+                            </div>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.price) { %>
                                     <%= errors.price.msg %>
                                 <% } %>
                             </div>
-                            <p>
-                                <label for="descripcion">Descripción</label>
+                            <div class="product-description space">
+                                <label for="descripcion">Descripción:</label>
                                 <textarea name="descripcion" value="<%=articuloAEditar.descripcion%>"><%=articuloAEditar.descripcion%></textarea>
-                            </p>
+                            </div>
                             <div class=text-danger style="color: rgb(170, 23, 23);">
                                 <% if(locals.errors && errors.description) { %>
                                     <%= errors.description.msg %>
@@ -59,9 +59,9 @@
                             </div>
                             <div class="btn">
                                     <button type="submit">Actualizar</button>
-                                <p class="btn-right">
+                                <div class="btn-right">
                                     <button type="reset">Volver</button>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </form>

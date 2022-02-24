@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
-
-@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 
 @font-face {
-    font-family: 'Arigatou';
-    src: url(./fonts/Arigatou.ttf);
+    font-family: 'aArigatouGozaimasu';
+    src: url(../fonts/aArigatouGozaimasu.ttf);
 }
-
-@font-face {
-    font-family: "futura std book";
-    src: url(./FuturaStdBook.otf);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     padding: 0;
@@ -62,10 +53,11 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'aArigatouGozaimasu';
     text-align: center;
     padding: 20px;
 }
@@ -88,30 +80,32 @@ input {
     height: 25px;
     border-radius: 20px;
     border: 1px solid hsl(353, 82%, 80%);
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
 }
 
 .file{
     width: 90%;
     border-radius: 20px;
     border: 1px solid hsl(353, 82%, 80%);
+    padding-right: 20px;
 }
 
 button {
     margin-top: 20px;
-    padding: 12px 40px;
+    padding: 8px 40px;
     text-transform: uppercase;
     border-radius: 20px;
 	border: 1px solid hsl(353, 82%, 70%);
 	background-color: hsl(353, 82%, 70%);
 	color: #FFFFFF;
+    cursor: pointer;
 }
 
 .btn {
     display: flex;
     align-content: row;
     justify-content: center;
-    margin: 10px;
+    margin: 8px;
 }
 
 .btn-left {
@@ -120,6 +114,25 @@ button {
 
 .btn-right {
     margin-left: 5px;
+}
+
+.product-description {
+    display: flex;
+    align-items: baseline;
+}
+
+label {
+    margin-right: 5px;
+}
+
+select {
+    border: 1px solid hsl(353, 82%, 70%);
+    border-radius: 15px;
+    padding-right: 5px;
+}
+
+textarea {
+    border: 1px solid hsl(353, 82%, 70%);
 }
 
 /** ------------------------------- RESPONSIVE ------------------------------- **/

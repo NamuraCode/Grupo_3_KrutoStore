@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400, 800');
-
-@import url(https://www.fontspace.com/a-arigatou-gozaimasu-font-f45259);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 
 @font-face {
-    font-family: 'Arigatou';
-    src: url(./fonts/Arigatou.ttf);
+    font-family: 'aArigatouGozaimasu';
+    src: url(../fonts/aArigatouGozaimasu.ttf);
 }
-
-@font-face {
-    font-family: "futura std book";
-    src: url(./FuturaStdBook.otf);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     padding: 0;
@@ -55,13 +46,14 @@ main {
 }
 
 .container {
-    width: 60%;
+    width: 90%;
     height: 60%;
     margin: auto;
     border-radius: 30px;
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    margin-bottom: 50px;
 }
 
 .producto {
@@ -72,9 +64,10 @@ main {
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'aArigatouGozaimasu';
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    color: #515372;
 }
 
 .container-form {
@@ -104,14 +97,36 @@ input {
     border: 1px solid hsl(353, 82%, 80%);
 }
 
+label {
+    font-family: 'Poppins';
+    font-weight: bold;
+    color:#ef233c;
+    font-size: 18px;
+}
+
+.product-name p {
+    font-size: 16px;
+}
+
+.product-price p {
+    font-size: 16px;
+}
+
 button {
     margin-top: 20px;
-    padding: 12px 40px;
+    padding: 8px 40px;
     text-transform: uppercase;
     border-radius: 20px;
-	border: 1px solid hsl(353, 82%, 70%);
-	background-color: hsl(353, 82%, 70%);
 	color: #FFFFFF;
+}
+
+.question {
+    border-top: 1px solid #777;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .btn {
@@ -128,6 +143,19 @@ button {
 .btn-right {
     margin-left: 5px;
 }
+
+.btn-right button {
+    background-color: #515372;
+    border: none;
+}
+
+.btn-left button {
+    background-color: #ef233c;
+    border: none;
+}
+
+
+/** ------------------------------- RESPONSIVE ------------------------------- **/
 
 @media (min-width: 769px) {
     .container{

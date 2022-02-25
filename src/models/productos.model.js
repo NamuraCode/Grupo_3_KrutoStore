@@ -4,7 +4,7 @@ const metodosProductos = {
     getAll: async function () {
         try {
             let productos = await db.Productos.findAll({
-                include: ["categorias", "usuarios", "imagenes"]
+                include: ["categorias", "usuarios", "imagenes", "productos_favortios"]
             })
             return productos
         } catch (error) {

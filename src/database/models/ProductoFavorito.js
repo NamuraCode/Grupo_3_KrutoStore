@@ -2,15 +2,19 @@ module.exports = (sequelize, DataTypes)=>{
     let alias = "Productos_Favoritos"
 
     let colums = {  
-        id:{
-            type:DataTypes.INTEGER,
-            primaryKey: true
-        },
         usuario_id:{
-            type:DataTypes.INTEGER
+            type:DataTypes.INTEGER,
+            allowNull: false
         },
         producto_id:{
-            type:DataTypes.INTEGER
+            type:DataTypes.INTEGER,
+            allowNull: false
+        },
+        id:{
+            type:DataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
         }
     }
 

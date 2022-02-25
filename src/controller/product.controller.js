@@ -47,7 +47,7 @@ const productController = {
         let id = req.body.id
         let user = req.session.user
         console.log(id)
-        let favoritos = await ProductosFavoritosModels.getAll()
+        let favoritos = await productosLogica.getAll()
         console.log(favoritos)
         res.redirect('/productCart')
     },

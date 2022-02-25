@@ -5,7 +5,7 @@ const {admin, registrado, fileUploadProductos, validationsProductCreate} = requi
 
 /* This is a route that will call the productController and the productsList function. */
 router.get('/products', productController.productsList)
-router.post('/products', productController.agregarCart)
+router.post('/products/:id', registrado, productController.agregarCart)
 
 
 router.get('/productDetail/:id', productController.productDetail)

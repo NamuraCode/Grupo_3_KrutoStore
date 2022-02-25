@@ -37,7 +37,7 @@
                 </div>
                 <div class="article-form">
                     <a href="/productCart">
-                        <form action="/products" method="post">
+                        <form action="/products/<%=ingresan[i].id%>" method="post">
                             <input type="hidden" name="id" value=<%=ingresan[i].id%>>
                             <button id="anadir" class="heartbeat">Añadir</button>
                         </form>

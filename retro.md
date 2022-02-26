@@ -201,4 +201,21 @@
 ## Dejar de hacer
 * Aplazar las reuniones o weeklys
 
+## RETROSPECTIVA SPRINT OCHO
 
+## Comenzar a hacer
+* Endpoints de usuarios con listado de usuarios y detalle de usuario.
+* Endpoints de productos con listado de productos.
+* Detalle de producto.
+* Dashboard del sitio hecho en React con 3 a 6 paneles simples con totales.
+* Panel de detalle de último producto o usuario creado.
+* Panel de categorías con el total de productos de cada una.
+* Panel con el listado de productos.
+* (Opcional) Funcionalidades adicionales.
+
+## Hacer más
+* Agregar funcionalidades.
+* Comunicarse y hacer consultas acerca del proyecto.
+* Verificar el funcionamiento de la página.
+* Realizar las reuniones weeklys.
+* Trabajo en equipo.

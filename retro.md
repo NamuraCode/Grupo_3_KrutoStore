@@ -221,6 +221,9 @@
 * Trabajo en equipo.
 
 ## Continuar haciendo
-* Trabajar en el Carrito, mejorar la funcionalidad
-* Validación del formulario
-* Correcciones a la funcionalidades ya implementadas
+* Trabajar en el Carrito, mejorar la funcionalidad.
+* Validación del formulario.
+* Correcciones a la funcionalidades ya implementadas.
+
+## Hacer menos
+* Aplazar las tareas

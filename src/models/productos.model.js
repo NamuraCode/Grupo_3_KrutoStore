@@ -1,4 +1,3 @@
-const path = require('path');
 const db = require('../database/models')
 
 const metodosProductos = {
@@ -12,7 +11,6 @@ const metodosProductos = {
             return console.log(error)
         }
     },
-
     newProductos: async function (Producto) {
         try {
             await db.Productos.create(Producto)

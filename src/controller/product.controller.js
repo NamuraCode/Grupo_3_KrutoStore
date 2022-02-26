@@ -1,8 +1,6 @@
-const favorites = require('../data/shoppingCart.json')
-const productos = require("../data/shoppingCart.json")
 const fs = require("fs")
 const path = require("path")
-const { productosLogica, generosLogica, imagenesModels } = require('../models')
+const { productosLogica, generosLogica, imagenesModels, ProductosFavoritosModels, usuariosLogica } = require('../models')
 
 const productController = {
     dashboard:  (req, res) => {
@@ -43,16 +41,13 @@ const productController = {
             })
     },
     productCart: (req, res) => {
-        res.render('productCart', {
-            favorite: favorites
-        })
+        res.render('productCart')
     },
-    agregarCart: (req, res) => {
+    agregarCart: async (req, res) => {
         let id = req.body.id
-        let favorite = productos.find(element => element.id == id);
-        favorites.push(favorite)
-        let favor = JSON.stringify(favorites, null, 6)
-        fs.writeFileSync(path.join(__dirname, '../data/shoppingCart.json'), favor)
+        let user = req.session.user
+        let favortios = await usuariosLogica.getAll()
+        console.log(favortios.favoritos)
         res.redirect('/productCart')
     },
     create: async (req, res) => {

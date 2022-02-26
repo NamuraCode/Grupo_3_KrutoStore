@@ -219,3 +219,8 @@
 * Verificar el funcionamiento de la página.
 * Realizar las reuniones weeklys.
 * Trabajo en equipo.
+
+## Continuar haciendo
+* Trabajar en el Carrito, mejorar la funcionalidad
+* Validación del formulario
+* Correcciones a la funcionalidades ya implementadas

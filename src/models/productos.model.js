@@ -4,14 +4,13 @@ const metodosProductos = {
     getAll: async function () {
         try {
             let productos = await db.Productos.findAll({
-                include: ["categorias", "usuarios", "imagenes", "productos_favortios"]
+                include: ["categorias", "usuarios", "imagenes"]
             })
             return productos
         } catch (error) {
             return console.log(error)
         }
     },
-
     newProductos: async function (Producto) {
         try {
             await db.Productos.create(Producto)

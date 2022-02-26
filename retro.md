@@ -227,3 +227,7 @@
 
 ## Hacer menos
 * Aplazar las tareas
+
+# Dejar de hacer
+* Aplazar las reuniones
+* No comunicar dudas

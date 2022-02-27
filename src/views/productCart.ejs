@@ -47,21 +47,21 @@
                         </div>
                     </div>
                 </article>
-                <% for(let i = 0; i <favorite.length; i++) {%>
+                <!-- <% for(let i = 0; i <favorite.length; i++) {%> -->
                     <article class="product1">
                         <div class="product_icon">
                             <div class="icon">
                                 <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
                             </div>
                             <ul class="product_ref">
-                                <li><%= favorite[i].name%></li>
-                                <li>ref: <%= favorite[i].category%></li>
+                                <!-- <li><%= favorite[i].name%></li>
+                                <li>ref: <%= favorite[i].category%></li> -->
                             </ul>
                         </div>
                         <div class="product_det">
                             <ul class="price">
                                 <li>
-                                    <p><%=favorite[i].price%></p>
+                                    <!-- <p><%=favorite[i].price%></p> -->
                                 </li>
                                 <li>
                                     <form class="quantity" action="/quantity" method="GET">
@@ -76,7 +76,7 @@
                                         </form>
                                 </li>
                                 <li>
-                                    <p><%=favorite[i].price%></p>
+                                    <!-- <p><%=favorite[i].price%></p> -->
                                 </li>
                                 <div class="clear">
                                     <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
@@ -84,16 +84,16 @@
                             </ul>
                         </div>
                     </article>
-                <% } %>
+                <!-- <% } %> -->
             </section>
 
             <article class="subtotal">
                 <div class="subtotal_item">
-                    <%let contador = 0%>
+                    <!-- <%let contador = 0%>
                     <% for (let i = 0; i < favorite.length; i++) {%>
                         <% contador = contador + favorite[i].price %>
-                    <% } %>
-                    <p><%= contador %></p>
+                    <% } %> -->
+                    <!-- <p><%= contador %></p> -->
                     <p>IVA: % 19</p>
                     <p>Descuento $0</p>
                 </div>
@@ -161,7 +161,6 @@
     <footer id="shoppingCart">
         <section>
             <div class="bottom-bar">
-                " "
             </div>
         </section>
     </footer>

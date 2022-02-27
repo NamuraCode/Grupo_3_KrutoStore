@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const { productosLogica, generosLogica, imagenesModels, ProductosFavoritosModels, usuariosLogica } = require('../models')
+const { productosLogica, generosLogica, imagenesLogica, FavoritosLogica, usuariosLogica } = require('../models')
 
 const productController = {
     dashboard:  (req, res) => {
@@ -46,17 +46,19 @@ const productController = {
     agregarCart: async (req, res) => {
         let id = req.body.id
         let user = req.session.user
-        let favortios = await usuariosLogica.getAll()
-        console.log(favortios.favoritos)
+        let favortios = await FavoritosLogica.getAll()
+        console.log(favortios)
         res.redirect('/productCart')
     },
     create: async (req, res) => {
         try{
             let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
-            imagenesModels.create(file)
+
             let productos = await productosLogica.getAll()
+
             let pro = productos.length
             let session = req.session.user
+
             productosLogica.newProductos({
                 nombre: req.body.product,
                 descripcion: req.body.description,
@@ -65,10 +67,12 @@ const productController = {
                 Usuarios_id: session.perfiles_id,
                 imagenes_id: productos[pro-1].id + 1
             })
-            
-            res.redirect('./products')
+
+            imagenesModels.create(file)
+
+            res.redirect('./dashboard')
         } catch(e){
-            res.status(404).render('error')
+            res.status(404).send('error')
         }
     },
     listProductsDelete: (req, res) => {

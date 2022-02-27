@@ -4,7 +4,7 @@ const metodosProductos = {
     getAll: async function () {
         try {
             let productos = await db.Productos.findAll({
-                include: ["categorias", "usuarios", "imagenes"]
+                include: ["categorias", "usuarios"]
             })
             return productos
         } catch (error) {
@@ -42,5 +42,7 @@ const metodosProductos = {
         }
     }
 }
+
+metodosProductos.getAll()
 
 module.exports = metodosProductos

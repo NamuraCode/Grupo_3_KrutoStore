@@ -1,40 +1,53 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = function(sequelize, DataTypes) {
+
     let alias = "Productos_Favoritos"
 
-    let colums = {  
-        id:{
-            type:dataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        usuario_id:{
-            type:dataTypes.INTEGER,
-            allowNull: false
-        },
-        producto_id:{
-            type:dataTypes.INTEGER,
-            allowNull: false
-        },
+    let colums = {
+      id: {
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true
+      },
+      usuario_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'usuarios',
+          key: 'id'
+        }
+      },
+      producto_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'productos',
+          key: 'id'
+        }
+      }
     }
 
     let config = {
-        tableName: "productos_favoritos",
-        timestamps: false
+      tableName: 'productos_favoritos',
+      timestamps: false,
     }
 
-    const productosFavortios = sequelize.define(alias, colums, config)
+    let productos_favoritos = sequelize.define(alias, colums, config);
 
-    productosFavortios.associate =(modelos) => {
-        productosFavortios.belongsTo(modelos.Productos, {
-            as: "productos",
-            foreignKey: "producto_id"
-        })
-        productosFavortios.belongsTo(modelos.Usuarios, {
-            as: "usuarios",
-            foreignKey: "usuario_id"
-        })
+    productos_favoritos.associate = (modelos) => {
+        // productos_favoritos.hasMany(modelos.Usuarios, { 
+        //     as: "usuario", 
+        //     foreignKey: "usuario_id"
+        // });
+        // productos_favoritos.hasMany(modelos.Productos, {
+        //     as: "producto", 
+        //     foreignKey: "producto_id"
+        // });
     }
 
-    return productosFavortios
-}
+    return productos_favoritos
+
+  };
+  

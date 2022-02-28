@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        Usuarios_id: {
+        usuarios_id: {
             type:dataTypes.INTEGER,
             allowNull: false
         },
@@ -38,30 +38,28 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Producto = sequelize.define(alias, colums, config)
     Producto.associate = (modelos) => {
-        Producto.belongsTo(modelos.Categorias, {
-            as: "categorias",
+        Producto.belongsTo(modelos.Categorias, { 
+            as: "categorias", 
             foreignKey: "categorias_id"
-        })
+        });
         Producto.belongsTo(modelos.Usuarios, {
             as: "usuarios",
             foreignKey: "usuarios_id"
         })
-        Producto.belongsTo(modelos.Imagenes, {
-            as: "imagenes",
+        Producto.belongsTo(modelos.Imagenes, { 
+            as: "imagenes", 
             foreignKey: "imagenes_id"
-        })
-        Producto.belongsToMany(modelos.Usuarios, {
-            as: "productos_favortios",
-            through: "productos_favoritos",
-            foreignKey: "producto_id",
-            otherKey: "usuario_id",
-            timestamps: false,
-        })
-        Producto.hasMany(modelos.Productos_Favoritos, {
-            as: "producto_cart",
-            foreignKey: "producto_id"
-        })
-      
+        });
+        // Producto.belongsToMany(modelos.Usuarios, { 
+        //     as: 'usuario_id_usuarios', 
+        //     through: "productos_favoritos", 
+        //     foreignKey: "producto_id", 
+        //     otherKey: "usuario_id" 
+        // });
+        // Producto.belongsTo(modelos.Productos_Favoritos, { 
+        //     as: "favoritos", 
+        //     foreignKey: "producto_id"
+        // });
     }
     return Producto
 }

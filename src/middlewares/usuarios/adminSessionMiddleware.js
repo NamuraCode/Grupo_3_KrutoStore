@@ -3,7 +3,7 @@ function authMiddleware(req, res, next) {
         if (req.session.user != undefined && req.session.user.perfiles_id == 1) {
             next()
         } else {
-            res.render('register')
+            res.send('Pagina solo para administrador')
         }
     } catch (error) {
         next(error)

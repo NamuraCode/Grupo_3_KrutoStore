@@ -31,6 +31,7 @@ const productController = {
         res.render('editarProducto', {categorias: categorias, articuloAEditar:producto});
     },
     productsList: async (req, res) => {
+        await FavoritosLogica.getAll()
        await productosLogica.getAll({
                 include: ["imagenes"]
             })

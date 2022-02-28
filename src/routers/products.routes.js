@@ -21,7 +21,7 @@ router.delete('/eliminarProducto/:id/delete', admin, productController.deletePro
 
 
 router.get('/agregarProducto', admin, productController.agregarProducto)
-router.post('/addProduct', fileUploadProductos.single('image'), productController.create)
+router.post('/addProduct', fileUploadProductos.single('image'), productController.crearProducto)
 
 
 router.get('/dashboard', admin, productController.dashboard)

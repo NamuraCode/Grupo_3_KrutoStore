@@ -50,24 +50,25 @@ const productController = {
         user.favoritos.push(favortios)
         res.redirect('/productCart')
     },
-    create: async (req, res) => {
+    crearProducto: async (req, res) => {
         try{
             let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
-            imagenesModels.create(file)
+            imagenesLogica.create(file)
             let productos = await productosLogica.getAll()
             let pro = productos.length
             let session = req.session.user
+            console.log(productos[pro-1].id + 1)
             productosLogica.newProductos({
                 nombre: req.body.product,
                 descripcion: req.body.description,
                 categorias_id: req.body.select,
                 precio: req.body.price,
-                Usuarios_id: session.perfiles_id,
+                usuarios_id: session.perfiles_id,
                 imagenes_id: productos[pro-1].id + 1
             })
 
-            res.render('dashboard')
-        } catch(e){
+            res.redirect('./dashboard')
+        }catch(e){
             res.status(404).render('error')
         }
     },

@@ -15,7 +15,8 @@ const metodosProductos = {
         try {
             await db.Productos.create(Producto)
         } catch (error) {
-            console.error(error);}
+            console.error(error);
+        }
     },
     editProductos: async function (what, where) {
         try {

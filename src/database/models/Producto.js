@@ -60,7 +60,6 @@ module.exports = (sequelize, dataTypes) => {
         //     as: "favoritos", 
         //     foreignKey: "producto_id"
         // });
-      
     }
     return Producto
 }

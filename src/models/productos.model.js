@@ -6,7 +6,6 @@ const metodosProductos = {
             let productos = await db.Productos.findAll({
                 include: ["categorias", "usuarios", "imagenes"]
             })
-            console.log(productos)
             return productos
         } catch (error) {
             return console.log(error)

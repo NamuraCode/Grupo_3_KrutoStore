@@ -22,7 +22,6 @@ const usuariosController = {
 
     },
     actualizarDatosPerfil: (req, res) => {
-        console.log(req.file)
         try {
             let name = req.body.name && req.body.name.length >= 5 ? req.body.name : req.session.user.username;
             let correo = req.body.correo ? req.body.correo : req.session.user.email;

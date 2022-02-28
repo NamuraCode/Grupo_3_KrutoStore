@@ -40,25 +40,23 @@ const productController = {
                 })
             })
     },
-    productCart: (req, res) => {
+    productCart: async (req, res) => {
         res.render('productCart')
     },
     agregarCart: async (req, res) => {
         let id = req.body.id
+        let favortios = await productosLogica.getDetail(id)
         let user = req.session.user
-        let favortios = await FavoritosLogica.getAll()
-        console.log(favortios)
+        user.favoritos.push(favortios)
         res.redirect('/productCart')
     },
     create: async (req, res) => {
         try{
             let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
-
+            imagenesModels.create(file)
             let productos = await productosLogica.getAll()
-
             let pro = productos.length
             let session = req.session.user
-
             productosLogica.newProductos({
                 nombre: req.body.product,
                 descripcion: req.body.description,
@@ -68,11 +66,9 @@ const productController = {
                 imagenes_id: productos[pro-1].id + 1
             })
 
-            imagenesModels.create(file)
-
-            res.redirect('./dashboard')
+            res.render('dashboard')
         } catch(e){
-            res.status(404).send('error')
+            res.status(404).render('error')
         }
     },
     listProductsDelete: (req, res) => {
@@ -119,8 +115,6 @@ const productController = {
             let productos = await productosLogica.getAll()
             let pro = productos.length
             let session = req.session.user
-            console.log(req.params.id)
-            console.log("la longitud es de: "+pro)
             productosLogica.editProductos({
                 id:req.params.id,
                 nombre: req.body.nombre,

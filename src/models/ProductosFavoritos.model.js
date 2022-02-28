@@ -4,9 +4,9 @@ const metodosProductosFavoritos = {
     getAll: async function () {
         try{
 
-            let productosFavoritos = await db.productos_favoritos.findAll({include:["productos","usuarios"]})
+            let productosFavoritos = await db.Productos_Favoritos.findAll()
             return productosFavoritos
-
+            
         }catch(error){
             console.log(error)
         }
@@ -20,5 +20,7 @@ const metodosProductosFavoritos = {
         }
     }
 }
+
+metodosProductosFavoritos.getAll()
 
 module.exports = metodosProductosFavoritos

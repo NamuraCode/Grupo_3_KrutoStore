@@ -41,7 +41,11 @@ const productController = {
             })
     },
     productCart: async (req, res) => {
-        res.render('productCart')
+        // let favoritos = FavoritosLogica.getAll()
+        // let productosFavoritos = productosLogica.getDetail(favoritos[0].producto_id)
+        res.render('productCart', {
+            favorite:productosFavoritos
+        })
     },
     agregarCart: async (req, res) => {
         let id = req.body.id

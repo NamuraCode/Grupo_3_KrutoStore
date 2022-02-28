@@ -5,6 +5,7 @@ const metodosProductosFavoritos = {
         try{
 
             let productosFavoritos = await db.Productos_Favoritos.findAll()
+            console.log(productosFavoritos)
             return productosFavoritos
             
         }catch(error){
@@ -13,7 +14,7 @@ const metodosProductosFavoritos = {
     },
     create: async function(objet){
         try{
-            let productosFavoritos = await db.productos_favoritos.create(objet)
+            let productosFavoritos = await db.Productos_Favoritos.create(objet)
             return productosFavoritos
         }catch(error){
             console.log(error)

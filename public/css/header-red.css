@@ -5,20 +5,20 @@
 }
 
 header{
-    width: 100vw;
+    width: 1920px;
     background: #ef233c;
 }
 
 .top-bar{
-    width: 100%;
+    width: 1920px;
     height: 30px;
     color: #ef233c;
-    background: #ef233c;
+    background:#EF233C;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
 }

@@ -14,13 +14,12 @@
 
 /** --------------------------------- HEADER --------------------------------- **/
 header{
-    width: 100vw;
+    width: 1920px;
     background: #ef233c;
-	margin-top: -10px;
 }
 
 .top-bar{
-    width: 100%;
+    width: 1920px;
     height: 30px;
     color: #ef233c;
     background:#EF233C;

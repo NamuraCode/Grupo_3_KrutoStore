@@ -33,7 +33,7 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0",
     "sequelize-auto": "^0.8.8",
-    "sequelize-auto-models": "^0.2.14"
+    "sequelize-auto-models": "^0.2.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

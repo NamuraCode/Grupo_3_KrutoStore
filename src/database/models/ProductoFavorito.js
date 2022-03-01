@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
 
-    const alias = "Productos_Favoritos"
+    let alias = "Productos_Favoritos"
 
-    const colums = {
+    let colums = {
       id: {
         autoIncrement: true,
         type: DataTypes.INTEGER,
@@ -12,26 +12,36 @@ module.exports = function(sequelize, DataTypes) {
       usuario_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'usuarios',
+          key: 'id'
+        }
       },
       producto_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'productos',
+          key: 'id'
+        }
       }
     }
 
-    const config = {
+    let config = {
       tableName: 'productos_favoritos',
       timestamps: false,
     }
 
-    const productos_favoritos = sequelize.define(alias, colums, config);
+    let productos_favoritos = sequelize.define(alias, colums, config);
 
     productos_favoritos.associate = (modelos) => {
-        productos_favoritos.hasMany(modelos.Usuarios, { 
+        productos_favoritos.belongsTo(modelos.Usuarios, { 
             as: "usuario", 
             foreignKey: "usuario_id"
         });
-        productos_favoritos.hasMany(modelos.Productos, {
+        productos_favoritos.belongsTo(modelos.Productos, {
             as: "producto", 
             foreignKey: "producto_id"
         });

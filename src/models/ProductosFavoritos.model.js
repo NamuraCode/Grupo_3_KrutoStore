@@ -7,7 +7,7 @@ const metodosProductosFavoritos = {
             let productosFavoritos = await db.Productos_Favoritos.findAll()
             console.log(productosFavoritos)
             return productosFavoritos
-
+            
         }catch(error){
             console.log(error)
         }
@@ -21,5 +21,7 @@ const metodosProductosFavoritos = {
         }
     }
 }
+
+metodosProductosFavoritos.getAll()
 
 module.exports = metodosProductosFavoritos

@@ -37,14 +37,14 @@ module.exports = function(sequelize, DataTypes) {
     let productos_favoritos = sequelize.define(alias, colums, config);
 
     productos_favoritos.associate = (modelos) => {
-        // productos_favoritos.hasMany(modelos.Usuarios, { 
-        //     as: "usuario", 
-        //     foreignKey: "usuario_id"
-        // });
-        // productos_favoritos.hasMany(modelos.Productos, {
-        //     as: "producto", 
-        //     foreignKey: "producto_id"
-        // });
+        productos_favoritos.belongsTo(modelos.Usuarios, { 
+            as: "usuario", 
+            foreignKey: "usuario_id"
+        });
+        productos_favoritos.belongsTo(modelos.Productos, {
+            as: "producto", 
+            foreignKey: "producto_id"
+        });
     }
 
     return productos_favoritos

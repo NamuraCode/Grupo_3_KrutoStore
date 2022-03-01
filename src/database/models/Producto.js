@@ -50,16 +50,16 @@ module.exports = (sequelize, dataTypes) => {
             as: "imagenes", 
             foreignKey: "imagenes_id"
         });
-        // Producto.belongsToMany(modelos.Usuarios, { 
-        //     as: 'usuario_id_usuarios', 
-        //     through: "productos_favoritos", 
-        //     foreignKey: "producto_id", 
-        //     otherKey: "usuario_id" 
-        // });
-        // Producto.belongsTo(modelos.Productos_Favoritos, { 
-        //     as: "favoritos", 
-        //     foreignKey: "producto_id"
-        // });
+        Producto.belongsToMany(modelos.Usuarios, { 
+            as: 'usuario_id_usuarios', 
+            through: "productos_favoritos", 
+            foreignKey: "producto_id", 
+            otherKey: "usuario_id" 
+        });
+        Producto.hasMany(modelos.Productos_Favoritos, { 
+            as: "favoritos", 
+            foreignKey: "producto_id"
+        });
     }
     return Producto
 }

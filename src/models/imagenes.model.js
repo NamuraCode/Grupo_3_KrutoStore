@@ -11,7 +11,35 @@ const imagenesModels = {
             console.log(`error ${error}`)
         }
         
+    },
+    getOne: async (query) =>{
+        try{
+            let todosLosGeneros = await db.Imagenes.findOne({
+                where:{
+                    id:query
+                }
+            })
+            return todosLosGeneros
+        }catch(error){
+            console.log(`error ${error}`)
+        }
+    },
+    update: async (what, where) =>{
+        try{
+            let todosLosGeneros = await db.Imagenes.update({
+                image:what
+            },
+                {
+                where:{
+                    id:where
+                }
+            })
+            return todosLosGeneros
+        }catch(error){
+            console.log(`error ${error}`)
+        }
     }
+
 }
 
 module.exports = imagenesModels

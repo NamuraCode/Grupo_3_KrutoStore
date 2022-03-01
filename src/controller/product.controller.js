@@ -28,10 +28,9 @@ const productController = {
     editarProducto: async (req, res) => {
         let categorias = await generosLogica.getAll()
         let producto = await productosLogica.getDetail(req.params.id)
-        res.render('editarProducto', {categorias: categorias, articuloAEditar:producto});
+        res.render('editarProducto', {categorias: categorias, articuloAEditar:producto, image:producto.imagenes.image});
     },
     productsList: async (req, res) => {
-        await FavoritosLogica.getAll()
        await productosLogica.getAll({
                 include: ["imagenes"]
             })
@@ -42,8 +41,6 @@ const productController = {
             })
     },
     productCart: async (req, res) => {
-        // let favoritos = FavoritosLogica.getAll()
-        // let productosFavoritos = productosLogica.getDetail(favoritos[0].producto_id)
         res.render('productCart', {
             favorite:productosFavoritos
         })
@@ -116,10 +113,10 @@ const productController = {
     },
     editProduct: async (req, res) => {
         try{
-            // let file = req.file ? '/images/productos/' + req.file.filename : req.body.image
-            // imagenesModels.create(file)
-            let productos = await productosLogica.getAll()
-            let pro = productos.length
+            let producto = await productosLogica.getDetail(req.params.id)
+            let file = req.file ? '/images/productos/' + req.file.filename : producto.imagenes.image;
+            let imagenId = producto.imagenes.id
+            imagenesLogica.update(file, imagenId)
             let session = req.session.user
             productosLogica.editProductos({
                 id:req.params.id,
@@ -128,16 +125,16 @@ const productController = {
                 categorias_id: req.body.select,
                 precio: req.body.precio,
                 Usuarios_id: session.perfiles_id,
-                imagenes_id: productos[req.params.id-1].imagenes_id
+                imagenes_id: producto.imagenes.id
             },{
                 where:{
-                    id:req.params.id
+                    id:producto.id
                 }
             })
             
             res.render('dashboard')
         } catch(e){
-            res.status(404).render('error')
+            res.status(404).render("error")
         }
     },
     productDetail: async (req, res) => {

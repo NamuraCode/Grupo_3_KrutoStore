@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Perfil = sequelize.define(alias, colums, config)
     Perfil.associate = (modelos) => {
-        Perfil.hasMany(modelos.Usuarios, {
+        Perfil.belongsTo(modelos.Usuarios, {
             as: "Usuarios",
             foreignKey: "perfiles_id"
         })

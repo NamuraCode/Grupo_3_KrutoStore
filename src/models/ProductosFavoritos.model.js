@@ -21,6 +21,5 @@ const metodosProductosFavoritos = {
     }
 }
 
-metodosProductosFavoritos.getAll()
 
 module.exports = metodosProductosFavoritos

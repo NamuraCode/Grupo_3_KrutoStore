@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const { productosLogica, generosLogica, imagenesLogica, usuariosLogica } = require('../models')
+const { productosLogica, generosLogica, imagenesLogica, favoritosLogica, usuariosLogica } = require('../models')
 
 const productController = {
     dashboard:  (req, res) => {
@@ -41,8 +41,9 @@ const productController = {
             })
     },
     productCart: async (req, res) => {
+        let productosFavoritos = await favoritosLogica.getAll()
         res.render('productCart', {
-            favorite
+            favorite:productosFavoritos
         })
     },
     agregarCart: async (req, res) => {

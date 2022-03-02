@@ -30,27 +30,21 @@ const productController = {
         let producto = await productosLogica.getDetail(req.params.id)
         res.render('editarProducto', {categorias: categorias, articuloAEditar:producto, image:producto.imagenes.image});
     },
-    productsList: async (req, res) => {
-       await productosLogica.getAll({
-                include: ["imagenes"]
-            })
-            .then(ingresan => {
-                res.render('products', {
-                    ingresan
-                })
-            })
+    productsList:  async (req, res) => {
+        let ingresanP = await productosLogica.getAll({
+            include: ["imagenes"]
+        })
+        console.log(ingresanP.length)
+        res.render('products', {ingresan:ingresanP})
     },
     productCart: async (req, res) => {
         let productosFavoritos = await favoritosLogica.getAll()
+        console.log(productosFavoritos)
         res.render('productCart', {
             favorite:productosFavoritos
         })
     },
     agregarCart: async (req, res) => {
-        let id = req.body.id
-        let favortios = await productosLogica.getDetail(id)
-        let user = req.session.user
-        user.favoritos.push(favortios)
         res.redirect('/productCart')
     },
     crearProducto: async (req, res) => {

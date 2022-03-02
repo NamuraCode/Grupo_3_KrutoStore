@@ -51,7 +51,8 @@ header #shoppingCart {
 
 #shop .top-section {
     width: 90%;
-    margin: auto; 
+    height: 580px;
+    margin: auto;
     margin-bottom: 10px;
     background: white;
     border: 2px solid #E5E5E5;
@@ -270,8 +271,7 @@ header #shoppingCart {
 
 #shop .clientInfo {
     width: 90%;
-    height: 590px;
-    margin: auto;
+    height: 577px;
     background: hsl(238, 16%, 93%);
     border-radius: 30px;
 }

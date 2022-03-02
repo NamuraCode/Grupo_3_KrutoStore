@@ -6,6 +6,28 @@
     box-sizing: border-box;
 }
 
+/** --------------------------------- HEADER --------------------------------- **/
+header{
+    width: 100vw;
+    background: #ef233c;
+}
+
+.top-bar{
+    width: 100%;
+    height: 30px;
+    color: #ef233c;
+    background:#EF233C;
+}
+
+.logo {
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/** --------------------------- CONTENIDO PRINCIPAL -------------------------- **/
+
 body {
     overflow: hidden;
     background: url(../images/productos/fondo-ppal30.png);

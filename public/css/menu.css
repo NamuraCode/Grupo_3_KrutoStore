@@ -5,24 +5,21 @@
 }
 
 footer {
-    width: 100vw;
+    width: 1920px;
     margin: auto;
     margin-top: 20px;
 }
 
 footer .menu {
     background: #ef233c;
-    width: 383px;
-    height: 51px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin: auto;
+    margin: auto;
     margin-bottom: 20px;
     border-radius: 40px;
     position: fixed;
+    bottom: 20px;
+    width: 385px;
+    height: 45px;
     right: 40%;
-    bottom: 20px; */
 }
 
 footer nav {
@@ -36,6 +33,7 @@ footer ul {
     display: flex;
     align-content: center;
     padding: 0px;
+    margin: 8px;
 }
 
 footer ul li a {
@@ -45,59 +43,9 @@ footer ul li a {
     padding: 15px;
 }
 
-.navigation ul li a .icon {
-    position: relative;
-    display: block;
-    /* line-height: 75px; */
+.iconify {
+    width: 25px;
+    height: 25px;
     text-align: center;
-    transition: 0.5s;
-}
-
-/*.navigation ul li:hover a .icon,*/
-.navigation ul li.active a .icon {
-    color: #f53b57;
-}
-
-.navigation ul li a .icon ion-icon {
-    font-size: 24px;
-}
-
-.navigation ul li a .title {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    
-    background: #fff;
-    width: auto;
-    padding: 5px 10px;
-    border-radius: 6px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0,0.1);
-    transition: 0.5s;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.navigation ul li:hover a .title {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 50%);
-}
-
-.navigation ul li a .title::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    bottom: -8px;
-    left: 48%;
-    transform: rotate(45deg) translateX(-50%);
-    border-radius: 2px;
-}
-
-.navigation ul .indicator {
-    position: absolute;
-    left: 0;
-    width: 70px;
-    height: 70px;
+    align-items: center;
 }

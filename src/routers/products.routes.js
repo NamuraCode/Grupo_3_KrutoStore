@@ -12,7 +12,7 @@ router.get('/productDetail/:id', productController.productDetail)
 
 router.get('/listaEditar', admin, productController.listProductsEdit)
 router.get('/editarProducto/:id', admin, productController.editarProducto)
-router.put('/editarProducto/:id/edit', admin, productController.editProduct)
+router.put('/editarProducto/:id/edit', fileUploadProductos.single('file'), admin, productController.editProduct)
 
 
 router.get('/listaEliminar', admin, productController.listProductsDelete)

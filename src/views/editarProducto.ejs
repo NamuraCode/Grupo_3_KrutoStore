@@ -22,7 +22,7 @@
                 <div class="container-form add-container">
                     <h2>Editar producto</h2>
                     <% let id=articuloAEditar.id %>
-                    <form action="/editarProducto/<%=id%>/edit?_method=PUT" method="POST" >
+                    <form action="/editarProducto/<%=id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="editProduct-container">
                             <div class="product-name space">
                                 <label for="nombre">Nombre producto:</label>
@@ -47,6 +47,12 @@
                                 <% if(locals.errors && errors.price) { %>
                                     <%= errors.price.msg %>
                                 <% } %>
+                            </div>
+                            <div class="image_content">
+                                    <img src="<%=image%>" alt="" name="imagenValue">
+                            </div>
+                            <div class="">
+                                <input type="file" name="file">
                             </div>
                             <div class="product-description space">
                                 <label for="descripcion">Descripción:</label>

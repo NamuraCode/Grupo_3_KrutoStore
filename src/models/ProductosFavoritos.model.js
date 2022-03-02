@@ -5,7 +5,6 @@ const metodosProductosFavoritos = {
         try{
 
             let productosFavoritos = await db.Productos_Favoritos.findAll()
-            console.log(productosFavoritos)
             return productosFavoritos
             
         }catch(error){

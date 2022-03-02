@@ -167,9 +167,8 @@ footer .menu {
     border-radius: 40px;
     position: fixed;
     bottom: 20px;
-    width: 385px;
-    height: 45px;
-    right: 40%;
+    max-width: 60vw;
+    right: 20vw
 }
 
 footer nav {

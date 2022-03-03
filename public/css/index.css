@@ -2,13 +2,8 @@
 
 
 @font-face {
-    font-family: 'Arigatou';
-    src: url(./Arigatou.ttf);
-}
-
-@font-face {
-    font-family: "futura std book";
-    src: url(./FuturaStdBook.otf);
+    font-family: 'aArigatouGozaimasu';
+    src: url(../fonts/aArigatouGozaimasu.ttf);
 }
 
 
@@ -69,7 +64,7 @@ main{
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: "aArigatouGozaimasu", sans-serif;
+    font-family: 'aArigatouGozaimasu';
     background: #EF233C;
 }
 
@@ -141,7 +136,7 @@ main{
 }
 
 .ofertas h2 {
-    font-family: 'Arigatou';
+    font-family: 'aArigatouGozaimasu';
     font-weight: 900;
     text-align: center;
     font-size: 50px;
@@ -196,7 +191,7 @@ main{
     margin-top: -280px;
     margin-bottom: 170px;
     margin-left: 90px;
-    font-family: 'Montserrat';
+    font-family: 'aArigatouGozaimasu';
     color: #fff;
     font-weight: 900;
     font-size: 60px;
@@ -220,7 +215,7 @@ main{
 
 
 .category-title {
-    font-family: 'Arigatou';
+    font-family: 'aArigatouGozaimasu';
     font-size: 50px;
     text-align: center;
     color: #fff;

@@ -12,27 +12,6 @@
 }
 
 
-/** --------------------------------- HEADER --------------------------------- **/
-header{
-    width: 1920px;
-    background: #ef233c;
-}
-
-.top-bar{
-    width: 1920px;
-    height: 30px;
-    color: #ef233c;
-    background:#EF233C;
-}
-
-.logo {
-    display: block;
-    width: 20%;
-    margin: auto;
-    padding-bottom: 20px;
-}
-
-
 /** ------------------------------- FORMULARIO ------------------------------- **/
 body {
 	background-image: url(../images/productos/fondo-manga-30.png);
@@ -143,49 +122,4 @@ span {
 }
 
 
-
-/** ---------------------------------- MENU ---------------------------------- **/
-footer {
-    width: 100vw;
-    margin: auto;
-    margin-top: 20px;
-}
-
-footer .menu {
-    background: #ef233c;
-    max-width: 20%;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 40px;
-    position: fixed;
-    right: 40%;
-    bottom: 20px;
-}
-
-footer nav {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    align-content: center;
-    padding: 0px;
-}
-
-footer ul li a {
-    text-decoration: none;
-    color: white;
-    margin: auto;
-    padding: 15px;
-}
-
-.iconify {
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    align-items: center;
-}
 

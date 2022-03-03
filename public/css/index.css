@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 @font-face {
-    font-family: 'aArigatouGozaimasu';
-    src: url(../fonts/aArigatouGozaimasu.ttf);
+    font-family: 'Arigatou';
+    src: url(./Arigatou.ttf);
 }
+
+@font-face {
+    font-family: "futura std book";
+    src: url(./FuturaStdBook.otf);
+}
+
 
 *{
     margin: 0;
@@ -11,36 +18,257 @@
     box-sizing: border-box;
 }
 
-/** --------------------------------- HEADER --------------------------------- **/
-header{
-    width: 1920px;
+
+main{
+    width: 100vw;
+}
+
+.imagen{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.imagen img {
+    width: 600px;
+}
+
+.productos{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    background: hsl(236, 17%, 80%);
+}
+
+.productos img {
+    display: block;
+    margin: auto;
+    width: 10%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.sales_pic {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.sales {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    margin: auto;
+}
+
+.categories {
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: "aArigatouGozaimasu", sans-serif;
+    background: #EF233C;
+}
+
+.categories_prod {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+.categories_prod div {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    padding-top: 20px;
+    border: 1px solid hsl(353, 82%, 90%);
+}
+
+.categories_prod img {
+    width: 160px;
+}
+
+.options {
+    width: 100vw;
+    margin: auto;
+    margin-bottom: 80px;
+    background: #515372;
+}
+
+.options nav {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    color: white;    
+}
+
+.options ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+ .iconify {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+/**************************************************OFERTAS*******************************************************************************/
+.ofertas {
+    background: #fff;
+}
+
+.ofertas h2 {
+    font-family: 'Arigatou';
+    font-weight: 900;
+    text-align: center;
+    font-size: 50px;
+    color: #EF233C;
+    margin-bottom: 50px;
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#marquee {
+    padding: 50px 0px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+#marquee .ofertas {
+    overflow: hidden;
+    width: 100%;
+}
+
+#marquee .pic-container {
+    display: flex;
+    animation: marquee 50s infinite linear;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/**************************************************CATEGORIAS*******************************************************************************/
+#categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.category-name p {
+    text-align: center;
+    margin-top: -280px;
+    margin-bottom: 170px;
+    margin-left: 90px;
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 900;
+    font-size: 60px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.548);
+}
+
+.category-name {
+    opacity: 0;
+}
+
+.category-name:hover {
+    opacity: 1;
+}
+
+#categories img {
+    margin: 80px;
+    width: 90%;
+    /* opacity: 0.8; */
+}
+
+
+.category-title {
+    font-family: 'Arigatou';
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#category-title {
     background: #ef233c;
 }
 
-.top-bar{
-    width: 1920px;
-    height: 30px;
-    color: #ef233c;
-    background:#EF233C;
+#categories a, p {
+    text-decoration: none;
 }
 
-.logo {
-    display: block;
-    width: 20%;
-    margin: auto;
-    padding-bottom: 20px;
+/**************************************************BRANDS*******************************************************************************/
+
+.marcas {
+    background: hsl(236, 17%, 80%);;
 }
 
-/** --------------------------- CONTENIDO PRINCIPAL -------------------------- **/
-
-main{
-    width: 1920px;
+.brands {
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    justify-content: center;
 }
 
-/** -------------------------------- SLIDESHOW ------------------------------- **/
+.brands img {
+    margin: 20px;
+    width: 10%;
+}
+
+.marvel {
+    height: 75%;
+}
+
+
+#about-us {
+    margin-top: 200px;
+}
+
+
+/**************************************************SLIDESHOW*******************************************************************************/
 #slider {
     overflow: hidden;
-    width: 1700PX;
+    width: 85%;
     margin: auto;
     margin-top: 20px;
 }
@@ -71,142 +299,7 @@ main{
     100% { left: -400% }
 }
 
-/** --------------------------------- BRANDS --------------------------------- **/
-
-.marcas {
-    background: hsl(236, 17%, 80%);;
-}
-
-.brands {
-    width: 1920px;
-    height: 180px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
-    justify-content: center;
-}
-
-.brands img {
-    margin: 20px;
-    width: 10%;
-}
-
-.marvel {
-    height: 75%;
-}
-
-
-/** --------------------------------- OFFERS --------------------------------- **/
-.ofertas {
-    background: #fff;
-}
-
-.ofertas h2 {
-    font-family: 'aArigatouGozaimasu';
-    font-weight: 900;
-    text-align: center;
-    font-size: 50px;
-    color: #EF233C;
-    margin-bottom: 50px;
-}
-
-.pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#marquee {
-    padding: 50px 0px;
-    width: 1920px;
-    margin-top: 70px;
-}
-
-#marquee .ofertas {
-    overflow: hidden;
-    width: 1920px;
-}
-
-#marquee .pic-container {
-    display: flex;
-    animation: marquee 50s infinite linear;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-
-/** ------------------------------- CATEGORIES ------------------------------- **/
-.category {
-    width: 1920px;
-    margin-bottom: 80px;
-}
-
-#categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    width: 1440px;
-}
-
-.gif {
-    margin-right: 40px;
-    margin-left: 40px;
-}
-
-.gif-1 {
-    width: 480px;
-    height: 275px;
-    margin-bottom: 80px;
-}
-
-.gif-2 {
-    width: 480px;
-    height: 275px;
-    margin-bottom: 80px;
-}
-
-.gif-3 {
-    width: 480px;
-    height: 275px;
-}
-
-.gif-4 {
-    width: 480px;
-    height: 275px;
-}
-
-.category-title {
-    font-family: 'aArigatouGozaimasu';
-    font-size: 50px;
-    text-align: center;
-    color: #fff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 80px;
-}
-
-#category-title {
-    background: #ef233c;
-}
-
-#categories a {
-    text-decoration: none;
-}
-
-/** ---------------------------------- ABOUT --------------------------------- **/
-
-#about {
-    width: 1920px;
-}
-
+/**************************************************SLIDESHOW*******************************************************************************/
 .options {
     background: #515372;
     height: 80px;
@@ -231,7 +324,7 @@ main{
 
 .info p {
     font-size: 20px;
-    font-family: 'Poppins';
+    font-family: 'Montserrat';
 }
 
 .opciones-pago {
@@ -263,51 +356,63 @@ main{
 }
 
 
-/** ---------------------------------- MENU ---------------------------------- **/
-footer {
-    width: 1920px;
-    margin: auto;
-    margin-top: 20px;
-}
+/**************************************************MENU*******************************************************************************/
 
-footer .menu {
-    background: #ef233c;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 40px;
-    position: fixed;
-    bottom: 20px;
-    width: 385px;
-    height: 45px;
-    right: 40%;
-}
-
-footer nav {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    align-content: center;
-    padding: 0px;
-    margin: 8px;
-}
-
-footer ul li a {
-    text-decoration: none;
-    color: white;
-    margin: auto;
-    padding: 15px;
-}
-
-.iconify {
-    width: 25px;
-    height: 25px;
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    /* line-height: 75px; */
     text-align: center;
-    align-items: center;
+    transition: 0.5s;
+}
+
+/*.navigation ul li:hover a .icon,*/
+.navigation ul li.active a .icon {
+    color: #f53b57;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    
+    background: #fff;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0,0.1);
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation ul li:hover a .title {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 50%);
+}
+
+.navigation ul li a .title::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    bottom: -8px;
+    left: 48%;
+    transform: rotate(45deg) translateX(-50%);
+    border-radius: 2px;
+}
+
+.navigation ul .indicator {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
 }
 
 
@@ -377,7 +482,6 @@ footer ul li a {
         width: 95vw;
     }
 
-    /*FOOTER*/
 
     .opciones-pago {
         display: flex;
@@ -405,10 +509,6 @@ footer ul li a {
         margin-right: 0px; 
     }
 
-    footer .menu {
-        width: 40vw;
-        right: 30vw
-    }
     #shop {
         display: flex;
         width: 90%;
@@ -488,8 +588,6 @@ footer ul li a {
     width: 95vw;
     }
 
-    /*FOOTER*/
-
     .opciones-pago {
         display: flex;
         justify-content: center;
@@ -515,9 +613,5 @@ footer ul li a {
     .politica {
         margin-right: 0px; 
     }
-
-    footer .menu {
-        width: 60vw;
-        right: 20vw
-    }
+   
 }

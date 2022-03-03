@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 
 @font-face {
     font-family: 'Arigatou';
@@ -16,6 +18,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
 }
  .iconify {
     width: 25px;
@@ -51,7 +56,6 @@ header #shoppingCart {
 
 #shop .top-section {
     width: 90%;
-    height: 580px;
     margin: auto;
     margin-bottom: 10px;
     background: white;
@@ -93,7 +97,8 @@ header #shoppingCart {
 
 .logoBlue {
     width: 20%;
-    text-align: right;
+    position: relative;
+    left: -124px;
 }
 
 .logoBlue img{
@@ -105,7 +110,6 @@ header #shoppingCart {
 
 .product_detail {
     width: 100%;
-    height: 60%;
 }
 
 .details {
@@ -135,7 +139,7 @@ header #shoppingCart {
 .desc ul li {
     display: block;
     margin: auto;
-    margin-right: 15px;
+    margin-right: 49px;
     margin-left: 10px;
     justify-content: space-between;
 } 
@@ -199,12 +203,15 @@ header #shoppingCart {
     display: block;
     width: 65px;
     margin: 5px;
-    margin-right: 20px;
+    margin-right: 19px;
     padding: 8px;
-    justify-content:flex-start;
+    justify-content: flex-start;
     background: white;
     color: black;
     border-radius: 10px;
+    position: relative;
+    left: 72px;
+    top: -4px;
 }
 
 .price li .quantity {
@@ -223,29 +230,30 @@ header #shoppingCart {
     background: hsl(353, 82%, 90%);
 }
 
-.product1 .clear .iconify{
-    color: #515372;
-    font-size: 25px;
-    margin-top: 10px;
-    position: absolute;
-    right: 0px;
+.clear li{
+    position: relative;
+    left: 100%;
+    top: -3%;
 }
 
-.product2 .clear .iconify {
-    color: #EF233C;
-    font-size: 25px;
-    margin-top: 10px;
-    position: absolute;
-    right: 0px;
+.clear li form button{
+    padding: 10px;
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.clear li form button:hover {
+    background-color: red;
+    color: white;
 }
 
 .subtotal {
     width: 90%;
-    height: 10%;
     margin: auto;
     display: flex;
     padding: 20px;
-    position: relative;
 }
 
 .subtotal p{
@@ -253,18 +261,16 @@ header #shoppingCart {
 }
 
  .subtotal .continue {
-    position: absolute;
-    right: 50px;
-    bottom: 25px;
+    position: relative;
     margin: auto;
 }
 
 .continue form button {
     width: 120px;
-    padding: 5px;
+    padding: 10px;
     font-size: 18px;
-    border-radius: 20px;
-    border: 0px;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 65%);
     background: hsl(236, 17%, 60%);
     color: white;
 }
@@ -279,28 +285,31 @@ header #shoppingCart {
 .clientProfile {
     width: 90%;
     height: 150px;
-    padding: 20px;
-    padding-left: 20px;
-    margin-left: 20px;
+    padding: 19px;
     display: flex;
-    justify-content: space-around;
+    margin: auto;
+    align-items: center;
 }
 
 .profile img {
     display: block;
-    width: 55%;
-    border: 0.5px solid hsl(236, 17%, 80%);
-    border-radius: 7px;
+    width: 90px;
+    height: 90px;
+    border: 0.5px solid hsl(236, 0%, 0%);
+    border-radius: 14px;
 }
 
 .clientProfile h3 {
     width: 70%;
-    height: 110px;
     margin: auto;
+    font-size: 25px;
     background: white;
     border-radius: 10px;
     padding: 40px;
-    text-align: center;    
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;  
 }
 
 .payment {
@@ -377,15 +386,14 @@ input placeholder {
 }
 
 .total {
-    width: 60%;
     height: 40px;
     margin: auto;
     margin-top: 20px;
     background: hsl(353, 82%, 80%);
-    border-radius: 40px;
+    padding: 0px 80px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
-    
 }
 
 .total .total-p {
@@ -398,26 +406,31 @@ input placeholder {
     font-size: 14px;
     padding-left: 10px;
     text-align: center;
+    width: -webkit-max-content;
 } 
 
-.total-p .total-price {
-    margin: auto;
+.total-price {
     background: white;
     color: black;
-    border-radius: 10px;
-    width: 75px;
-    font-size: 12px;
+    border-radius: 5px;
+    width: 105px;
+    display: flex;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+    margin: 0px 12px;
 }
 
 .total button {
     color: white;
     background: hsl(353, 82%, 50%);
-    width: 80px;
+    width: 113px;
     height: 25px;
     font-size: 12px;
     border: 0px;
-    border-radius: 20px;
+    border-radius: 8px;
     margin: auto;
 }
 
@@ -431,12 +444,6 @@ footer {
     margin:auto;
     background: #515372;
     color: #515372;
-}
-
-.product_icon .clear .iconify {
-    text-align: left;
-    position: absolute;
-    right: 0px;
 }
 
 @media (min-width: 480px) {
@@ -466,7 +473,7 @@ footer {
     .details .elements .desc {
         display: block;
         position: absolute;
-        right: 10px;
+        right: 8%;
     }
 
 .top-section {

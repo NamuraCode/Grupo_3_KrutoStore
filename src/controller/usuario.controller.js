@@ -40,7 +40,7 @@ const usuariosController = {
                 }
             })
             
-            res.redirect('./perfil')
+            res.redirect('./index')
         } catch (e) {
             res.render('error')
         }

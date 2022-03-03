@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <link rel="shortcut icon" href="./images/logos/FAVICON_2_ROJO.png" type="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="./css/shoppingCart.css">
     <title>Shopping Cart</title>
 </head>
@@ -41,66 +42,57 @@
                         <div class="desc">
                             <ul>
                                 <li>Precio</li>
-                                <li>Cantidad</li>
                                 <li>Total</li>
                             </ul>
                         </div>
                     </div>
                 </article>
-                <!-- <% for(let i = 0; i <favorite.length; i++) {%> -->
+                <%%>
+                 <% for(let i = 0; i <favorite.length; i++) {%>
                     <article class="product1">
                         <div class="product_icon">
                             <div class="icon">
                                 <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
                             </div>
                             <ul class="product_ref">
-                                <!-- <li><%= favorite[i].name%></li>
-                                <li>ref: <%= favorite[i].category%></li> -->
+                                <li><%= favorite[i].producto.nombre%></li>
                             </ul>
                         </div>
                         <div class="product_det">
                             <ul class="price">
                                 <li>
-                                    <!-- <p><%=favorite[i].price%></p> -->
+                                    <p>$<%=favorite[i].producto.precio%>.00</p>
                                 </li>
                                 <li>
-                                    <form class="quantity" action="/quantity" method="GET">
-                                            <select name="quantity">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </form>
-                                </li>
-                                <li>
-                                    <!-- <p><%=favorite[i].price%></p> -->
+                                    <p>$<%=favorite[i].producto.precio%>.00</p>
                                 </li>
                                 <div class="clear">
-                                    <li><span class="iconify" data-icon="mdi:trash-can" width=30px></span></li>
+                                    <li>
+                                        <form action="./productCart/<%=favorite[i].producto.id%>/delete?_method=DELETE" method="POST">
+                                            <button type="submit">eliminar</button>
+                                        </form>
+                                    </li>
                                 </div>
                             </ul>
                         </div>
                     </article>
-                <!-- <% } %> -->
+               <% } %>
             </section>
 
             <article class="subtotal">
                 <div class="subtotal_item">
-                    <!-- <%let contador = 0%>
+                    <%let contador = 0%>
                     <% for (let i = 0; i < favorite.length; i++) {%>
-                        <% contador = contador + favorite[i].price %>
-                    <% } %> -->
-                    <!-- <p><%= contador %></p> -->
+                        <% contador = contador + favorite[i].producto.precio %>
+                        <% } %>
+                    <p>$<%= contador + ".00" %></p>
                     <p>IVA: % 19</p>
                     <p>Descuento $0</p>
                 </div>
 
 
                 <div class="continue">
-                    <form action="/pago" method="POST">
+                    <form action="./opcionesPagos" method="GET">
                         <button type="submit">Continuar</button>
                     </form>
                 </div>
@@ -110,9 +102,9 @@
         <section class="clientInfo">
             <article class="clientProfile">
                 <div class="profile">
-                    <img src="./images/logos/perfil.png" alt="perfil">
+                    <img src="<%=favorite[1].usuario.image%>" alt="perfil">
                 </div>
-                <h3>Detalles del cliente</h3>
+                <h3><%=favorite[1].usuario.username%></h3>
             </article>
             <article class="payment">
                 <div><span class="iconify" data-icon="logos:visa"></span></div>
@@ -123,7 +115,7 @@
             </article>
 
             <article class="clientCard">
-                <form action="form" method="post">
+                <form action="./opcionesPagos" method="GET">
                     <div class="mainInfo">
                         <p>
                             <label for="name">Nombre</label>
@@ -148,10 +140,8 @@
                                 <div class="total-p">
                                     <p>TOTAL : </p>
                                 </div>
-                                <form action="/pago" method="POST">
-                                    <P class="total-price">$123.456</P>
+                                    <P class="total-price">$<%= contador + ".00" %></P>
                                     <button type="submit">PAGAR</button>
-                            </form>
                         </div>
                 </form>
             </article>

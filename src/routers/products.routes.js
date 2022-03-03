@@ -7,6 +7,7 @@ const {admin, registrado, fileUploadProductos, validationsProductCreate} = requi
 router.get('/products', productController.productsList)
 router.post('/products/:id', registrado, productController.agregarCart)
 router.get('/productCart', registrado, productController.productCart);
+router.delete('/productCart/:id/delete', registrado, productController.eliminarFavorito)
 
 router.get('/productDetail/:id', productController.productDetail)
 

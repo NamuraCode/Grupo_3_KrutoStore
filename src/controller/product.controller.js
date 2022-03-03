@@ -34,17 +34,19 @@ const productController = {
         let ingresanP = await productosLogica.getAll({
             include: ["imagenes"]
         })
-        console.log(ingresanP.length)
         res.render('products', {ingresan:ingresanP})
     },
     productCart: async (req, res) => {
-        let productosFavoritos = await favoritosLogica.getAll()
-        console.log(productosFavoritos)
+        let usuarioId = req.session.user.id
+        let productosFavoritos = await favoritosLogica.getOne(usuarioId)
         res.render('productCart', {
             favorite:productosFavoritos
         })
     },
     agregarCart: async (req, res) => {
+        let usuarioId = req.session.user.id
+        let producto = req.params.id
+        favoritosLogica.createOne(usuarioId, producto)
         res.redirect('/productCart')
     },
     crearProducto: async (req, res) => {
@@ -54,7 +56,6 @@ const productController = {
             let productos = await productosLogica.getAll()
             let pro = productos.length
             let session = req.session.user
-            console.log(productos[pro-1].id + 1)
             productosLogica.newProductos({
                 nombre: req.body.product,
                 descripcion: req.body.description,
@@ -145,10 +146,24 @@ const productController = {
                 ingresan: productos, categoria: categoria
             })
         }catch(e){
-            next(e)
+            res.status(404).render('error')
         }
         
     },
+    eliminarFavorito: async (req, res)=> {
+        try{
+            let idParams = req.params.id
+            console.log(idParams)
+            favoritosLogica.eliminar({
+                where:{
+                    producto_id:idParams
+                }
+            })
+            res.render('productCart')
+        }catch(e){
+            res.status(404).render('error')
+        }
+    }
 }
 
 module.exports = productController;

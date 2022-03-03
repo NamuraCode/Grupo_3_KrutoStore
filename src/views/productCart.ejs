@@ -26,8 +26,7 @@
                 <ul>
                     <li><span class="iconify" data-icon="akar-icons:arrow-back-thick-fill"></span><a
                             href="/index">REGRESAR</a></li>
-                    <li><span class="iconify" data-icon="ic:round-shopping-cart"></span><a href="#">Tienes en tu
-                            shopping cart...</a></li>
+                    <li><span class="iconify" data-icon="ic:round-shopping-cart"></span><a href="/products">Agrega productos aqui</a></li>
                 </ul>
                 <div class="logoBlue">
                     <img src=".\images\logos\MASCOTA_AZUL.png" alt="kruto_azul">
@@ -47,106 +46,106 @@
                         </div>
                     </div>
                 </article>
-                <%%>
-                 <% for(let i = 0; i <favorite.length; i++) {%>
-                    <article class="product1">
-                        <div class="product_icon">
-                            <div class="icon">
-                                <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
+                <%if(favorite != undefined){%>
+                    <% for(let i = 0; i <favorite.length; i++) {%>
+                        <article class="product1">
+                            <div class="product_icon">
+                                <div class="icon">
+                                    <span class="iconify" data-icon="bx:bxl-shopify" width=30px></span>
+                                </div>
+                                <ul class="product_ref">
+                                    <li><%= favorite[i].producto.nombre%></li>
+                                </ul>
                             </div>
-                            <ul class="product_ref">
-                                <li><%= favorite[i].producto.nombre%></li>
-                            </ul>
-                        </div>
-                        <div class="product_det">
-                            <ul class="price">
-                                <li>
-                                    <p>$<%=favorite[i].producto.precio%>.00</p>
-                                </li>
-                                <li>
-                                    <p>$<%=favorite[i].producto.precio%>.00</p>
-                                </li>
-                                <div class="clear">
+                            <div class="product_det">
+                                <ul class="price">
                                     <li>
-                                        <form action="./productCart/<%=favorite[i].producto.id%>/delete?_method=DELETE" method="POST">
-                                            <button type="submit">eliminar</button>
-                                        </form>
+                                        <p>$<%=favorite[i].producto.precio%>.00</p>
                                     </li>
-                                </div>
-                            </ul>
-                        </div>
-                    </article>
-               <% } %>
+                                    <li>
+                                        <p>$<%=favorite[i].producto.precio%>.00</p>
+                                    </li>
+                                    <div class="clear">
+                                        <li>
+                                            <form action="./productCart/<%=favorite[i].producto.id%>/delete?_method=DELETE" method="POST">
+                                                <button type="submit">eliminar</button>
+                                            </form>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </article>
+                    <%}%>
+               <%}%>
             </section>
-
-            <article class="subtotal">
-                <div class="subtotal_item">
-                    <%let contador = 0%>
-                    <% for (let i = 0; i < favorite.length; i++) {%>
-                        <% contador = contador + favorite[i].producto.precio %>
-                        <% } %>
-                    <p>$<%= contador + ".00" %></p>
-                    <p>IVA: % 19</p>
-                    <p>Descuento $0</p>
-                </div>
-
-
-                <div class="continue">
-                    <form action="./opcionesPagos" method="GET">
-                        <button type="submit">Continuar</button>
-                    </form>
-                </div>
-            </article>
-        </section>
-
-        <section class="clientInfo">
-            <article class="clientProfile">
-                <div class="profile">
-                    <img src="<%=favorite[1].usuario.image%>" alt="perfil">
-                </div>
-                <h3><%=favorite[1].usuario.username%></h3>
-            </article>
-            <article class="payment">
-                <div><span class="iconify" data-icon="logos:visa"></span></div>
-                <div><span class="iconify" data-icon="logos:mastercard"></span></div>
-                <div><span class="iconify" data-icon="fontisto:american-express"></span></div>
-                <div><span class="iconify" data-icon="logos:paypal"></span></div>
-                <div><img src="./images/logos/pse.jfif" alt="pse" width="45px"></div>
-            </article>
-
-            <article class="clientCard">
-                <form action="./opcionesPagos" method="GET">
-                    <div class="mainInfo">
-                        <p>
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" placeholder="Como aparece en la tarjeta">
-                        </p>
-                        <p>
-                            <label for="number">Número de la tarjeta</label>
-                            <input type="number" id="number" name="number" placeholder="Como aparece en la tarjeta">
-                        </p>
+            <%let contador = 0%>
+            <%if(favorite != undefined){%>
+                <article class="subtotal">
+                    <div class="subtotal_item">
+                        <% for (let i = 0; i < favorite.length; i++) {%>
+                            <% contador = contador + favorite[i].producto.precio %>
+                            <% } %>
+                        <p>$<%= contador + ".00" %></p>
+                        <p>IVA: % 19</p>
+                        <p>Descuento $0</p>
                     </div>
-                    <div class="cardInfo">
-                        <p>
-                            <label for="month">Fecha Exp.</label><br>
-                            <input type="month" id="date" name="month" placeholder=" MM/YY ">
-                        </p>
-                        <p>
-                            <label for="cvv">CVV</label><br>
-                            <input type="number" id="number" name="number" placeholder="###">
-                        </p>
-                        </div>
-                            <article class="total">
-                                <div class="total-p">
-                                    <p>TOTAL : </p>
-                                </div>
-                                    <P class="total-price">$<%= contador + ".00" %></P>
-                                    <button type="submit">PAGAR</button>
-                        </div>
-                </form>
-            </article>
-            </article>
+                    <div class="continue">
+                        <form action="./opcionesPagos" method="GET">
+                            <button type="submit">Continuar</button>
+                        </form>
+                    </div>
+                </article>
+            <%}%>
         </section>
+        <%if(favorite != undefined){%>
+            <section class="clientInfo">
+                <article class="clientProfile">
+                    <% for(let i = 1; i <=1; i++) {%>
+                      
+                    <%}%>
+                </article>
+                <article class="payment">
+                    <div><span class="iconify" data-icon="logos:visa"></span></div>
+                    <div><span class="iconify" data-icon="logos:mastercard"></span></div>
+                    <div><span class="iconify" data-icon="fontisto:american-express"></span></div>
+                    <div><span class="iconify" data-icon="logos:paypal"></span></div>
+                    <div><img src="./images/logos/pse.jfif" alt="pse" width="45px"></div>
+                </article>
+
+                <article class="clientCard">
+                    <form action="./opcionesPagos" method="GET">
+                        <div class="mainInfo">
+                            <p>
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Como aparece en la tarjeta">
+                            </p>
+                            <p>
+                                <label for="number">Número de la tarjeta</label>
+                                <input type="number" id="number" name="number" placeholder="Como aparece en la tarjeta">
+                            </p>
+                        </div>
+                        <div class="cardInfo">
+                            <p>
+                                <label for="month">Fecha Exp.</label><br>
+                                <input type="month" id="date" name="month" placeholder=" MM/YY ">
+                            </p>
+                            <p>
+                                <label for="cvv">CVV</label><br>
+                                <input type="number" id="number" name="number" placeholder="###">
+                            </p>
+                            </div>
+                                <article class="total">
+                                    <div class="total-p">
+                                        <p>TOTAL : </p>
+                                    </div>
+                                        <P class="total-price">$<%= contador + ".00" %></P>
+                                        <button type="submit">PAGAR</button>
+                            </div>
+                    </form>
+                </article>
+                </article>
+            </section>
+        <%}%>
     </main>
     <footer id="shoppingCart">
         <section>

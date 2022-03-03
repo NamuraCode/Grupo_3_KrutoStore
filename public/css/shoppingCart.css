@@ -86,6 +86,8 @@ header #shoppingCart {
 .intro li .iconify {
     color: #515372;
     margin: 3px;
+    position: relative;
+    top: 11px;
 }
 
 .intro li a {

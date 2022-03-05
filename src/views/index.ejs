@@ -141,10 +141,11 @@
     <%- include ('./partials/menu')%>
     <%if(user){%>
         <%- include ('./partials/menuRegisted')%>
+        <%if(user.perfil_id=1){%>
+            <%- include ('./partials/menuAdmin')%>
+        <%}%>
     <%}%>
-    <%if(user.perfil_id=1){%>
-        <%- include ('./partials/menuAdmin')%>
-    <%}%>
+
 </body>
 
 </html>

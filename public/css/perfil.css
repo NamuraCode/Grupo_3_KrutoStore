@@ -29,7 +29,6 @@ header{
 /** --------------------------- CONTENIDO PRINCIPAL -------------------------- **/
 
 body {
-    overflow: hidden;
     background: url(../images/productos/fondo-ppal30.png);
 }
 
@@ -37,7 +36,7 @@ body {
     background: #fff;
     width: 540px;
     height: 630px;
-    margin: 0 auto;
+    margin: 80px auto;
     position: relative;
     margin-top: 7%;
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);

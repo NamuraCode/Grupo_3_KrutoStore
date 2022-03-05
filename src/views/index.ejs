@@ -24,7 +24,6 @@
 <!-- ------------------------------- HEADER -------------------------------- -->
 <%- include ('./partials/header-red')%>
     <main>
-
         <!---------------------------------------SLIDESHOW---------------------------------------------->
 
         <div id="slider">
@@ -139,7 +138,13 @@
     </main>
 
 <!-- -------------------------------- MENU --------------------------------- -->
-<%- include ('./partials/menu')%>
+    <%- include ('./partials/menu')%>
+    <%if(user){%>
+        <%- include ('./partials/menuRegisted')%>
+    <%}%>
+    <%if(user.perfil_id=1){%>
+        <%- include ('./partials/menuAdmin')%>
+    <%}%>
 </body>
 
 </html>

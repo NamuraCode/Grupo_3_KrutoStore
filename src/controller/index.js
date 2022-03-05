@@ -6,15 +6,8 @@ const session = require('express-session')
 let controller = {
     index: (req, res) => {
         try {
-            if(req.session.user!=undefined){
-                let user={
-                    perfil:req.session.user.perfiles_id,
-                    image:req.session.user.image
-                }
-                res.render('index', {user})
-            }else{
-                res.render('index')
-            }
+            let user=req.session.user
+            res.render('index', {user})
         } catch (error) {
             console.log(error)
         }

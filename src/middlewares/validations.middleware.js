@@ -2,7 +2,7 @@ const { body } = require('express-validator')
 
 const validationsRegister = [
     body('username')
-        .notEmpty().withMessage('Campo username vacio'),
+        .notEmpty().withMessage('Campo username vacio').bail,
     body('email')
         .notEmpty().withMessage('Campo email vacio').bail()
         .isEmail().withMessage('Formato de correo no valido'),

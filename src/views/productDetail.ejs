@@ -26,9 +26,15 @@
                 <h2><%=ingresan.nombre%></h2>
                 <p><%=ingresan.descripcion%></p>
                 <h3><%=categoria.categoria%></h3>
-                <a href="/productCart">Buy Now</a>
+                <form action="/products/<%=ingresan.id%>" method="POST">
+                    <button type="submit">Buy Now</button>
+                </form>
             </div>
-            <img src="<%=ingresan.imagenes.image%>">
+            <%if(ingresan.imagenes.image){%>
+                <img src="<%=ingresan.imagenes.image%>">
+            <%}else{%>
+                <img src="../../public/images/logos/FAVICON_2_AZUL.png">
+            <%}%>
         </div>
     </div>
 

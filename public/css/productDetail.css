@@ -124,7 +124,7 @@ header{
     margin-bottom: 20px;
 }
 
-.card .content a {
+.card .content button {
     position: relative;
     color: #fff;
     padding: 10px 20px;
@@ -168,48 +168,3 @@ header{
     }
 }
 
-/** ------------------------------ MENU --------------------------------**/
-footer {
-    width: 100vw;
-    margin: auto;
-    margin-top: 20px;
-}
-
-footer .menu {
-    background: #ef233c;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 40px;
-    position: fixed;
-    bottom: 20px;
-    width: 18vw;
-    right: 40vw
-}
-
-footer nav {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    align-content: center;
-    padding: 0px;
-    margin: 8px;
-}
-
-footer ul li a {
-    text-decoration: none;
-    color: white;
-    margin: auto;
-    padding: 15px;
-}
-
-.iconify {
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    align-items: center;
-}

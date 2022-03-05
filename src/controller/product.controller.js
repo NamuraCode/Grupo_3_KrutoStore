@@ -40,7 +40,7 @@ const productController = {
         let usuarioId = req.session.user.id
         let productosFavoritos = await favoritosLogica.getOne(usuarioId)
         res.render('productCart', {
-            favorite:productosFavoritos
+            favorite:productosFavoritos ? productosFavoritos : undefined
         })
     },
     agregarCart: async (req, res) => {

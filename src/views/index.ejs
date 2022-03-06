@@ -139,12 +139,15 @@
 
 <!-- -------------------------------- MENU --------------------------------- -->
     <%- include ('./partials/menu')%>
-    <%if(user.perfil_id === 1){%>
-        <%- include ('./partials/menuRegisted')%>
+    <%if(user){%>
+        <%if(user.perfil_id !== 1){%>
+            <%- include ('./partials/menuRegisted')%>
+        <%}%>
+        <%if(user.perfil_id === 1){%>
+            <%- include ('./partials/menuAdmin')%>
+        <%}%>
     <%}%>
-    <%if(user.perfil_id === 1){%>
-        <%- include ('./partials/menuAdmin')%>
-    <%}%>
+    
 
 </body>
 

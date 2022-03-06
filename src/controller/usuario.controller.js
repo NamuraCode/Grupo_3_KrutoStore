@@ -138,7 +138,7 @@ const usuariosController = {
                 let p2 = req.body.coPassword
                 if (p1 == p2) {
                     let auth
-                    await usuariosLogica.getOne({
+                    usuariosLogica.getOne({
                             where: {
                                 email: req.body.email
                             }
@@ -152,11 +152,10 @@ const usuariosController = {
                         let bodyEmail = req.body.email;
                         let bodyImage = req.file ? '/images/avatars/' + req.file.filename : '/images/avatars/52.png';
                         let bodyPassword = bcrypt.hashSync(req.body.password, 10);
-
                         
                         usuariosLogica.create(bodyNombre, bodyEmail, bodyImage, bodyPassword)
 
-                        let usuario = await usuariosLogica.getOne({
+                        let usuario = usuariosLogica.getOne({
                             where: {
                                 email: bodyEmail
                             }

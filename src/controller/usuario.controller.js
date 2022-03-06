@@ -58,15 +58,9 @@ const usuariosController = {
     },
     getIndex: (req, res) => {
         try {
-            if(req.session.user!=undefined){
-                let user={
-                    perfil:req.session.user.perfiles_id,
-                    image:req.session.user.image
-                }
-                res.render('index', {user})
-            }else{
-                res.render('index')
-            }
+
+            let user=req.session.user
+            res.render('index', {user})
         } catch (error) {
             console.log(error)
         }
@@ -155,14 +149,23 @@ const usuariosController = {
                         
                         usuariosLogica.create(bodyNombre, bodyEmail, bodyImage, bodyPassword)
 
-                        let usuario = usuariosLogica.getOne({
+                        let usuario = await usuariosLogica.getOne({
                             where: {
                                 email: bodyEmail
                             }
                         })
                             
-                        req.session.user = usuario
-                        res.redirect('/index')
+                        req.session.user = usuario;
+                        if(usuario != undefined){
+
+                            req.session.user = usuario
+
+                            res.redirect('/loign')  
+                        }else{
+
+                            res.render("login")
+                        }
+                        
                         
                     } else {
                         res.render('register', {

@@ -32,8 +32,21 @@ const validationsProductCreate = [
         .notEmpty().withMessage('Campo descripción vacio'),
 ]
 
+const validationsPerfil=[
+    body("name")
+        .notEmpty().withMessage('Campo nombre vacio'),
+    body("correo")
+        .notEmpty().withMessage('Campo email vacio').bail()
+        .isEmail().withMessage('Campo email invalido'),
+    body("birthday")   
+        .notEmpty().withMessage('Campo fecha vacio'),
+    body("password")
+        .isLength({min: 8}).withMessage('Campo contraseña minimo 8 caracteres'),
+]
+
 module.exports ={
     validationsRegister,
     validationLogin,
-    validationsProductCreate
+    validationsProductCreate,
+    validationsPerfil
 }

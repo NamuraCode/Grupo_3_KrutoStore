@@ -23,6 +23,7 @@ const usuariosController = {
     },
     actualizarDatosPerfil: (req, res) => {
         try {
+
             let name = req.body.name && req.body.name.length >= 5 ? req.body.name : req.session.user.username;
             let correo = req.body.correo ? req.body.correo : req.session.user.email;
             let contrasena = req.body.password && req.body.password.length > 10 ? bcrypt.hashSync(req.body.password, 10) : req.session.user.password;
@@ -58,9 +59,13 @@ const usuariosController = {
     },
     getIndex: (req, res) => {
         try {
-
-            let user=req.session.user
-            res.render('index', {user})
+            let user = req.session.user.perfiles_id
+            if(user){
+                res.render('index', {user})
+            }else{
+                user=2
+                res.render('index', {user})
+            }
         } catch (error) {
             console.log(error)
         }

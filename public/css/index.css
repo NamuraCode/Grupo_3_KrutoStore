@@ -66,6 +66,43 @@ main{
     margin-bottom: 10px;
     font-family: 'aArigatouGozaimasu';
     background: #EF233C;
+    position: relative;
+}
+
+.series:hover::before{
+    content: "SERIES";
+    color: #ef233c;
+    font-family: 'aArigatouGozaimasu';
+    font-size: 60px;
+    position: absolute;
+    left: 323px;
+}
+
+.peliculas:hover::before{
+    content: "PELICUAS";
+    color: #ef233c;
+    font-family: 'aArigatouGozaimasu';
+    font-size: 60px;
+    position: absolute;
+    left: 969px;
+}
+
+.anime:hover::before{
+    content: "ANIME";
+    color: #ef233c;
+    font-family: 'aArigatouGozaimasu';
+    font-size: 60px;
+    position: absolute;
+    left: 323px;
+}
+
+.libros:hover::before{
+    content: "LIBROS";
+    color: #ef233c;
+    font-family: 'aArigatouGozaimasu';
+    font-size: 60px;
+    position: absolute;
+    left: 969px;
 }
 
 .categories_prod {
@@ -208,7 +245,7 @@ main{
 }
 
 #categories img {
-    margin: 80px;
+    margin: 60px 80px;
     width: 90%;
     /* opacity: 0.8; */
 }
@@ -221,6 +258,7 @@ main{
     color: #fff;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 #category-title {

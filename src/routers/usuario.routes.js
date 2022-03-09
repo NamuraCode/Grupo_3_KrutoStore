@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const { usuariosController } = require('../controller')
-const {autenticacionRegistro, registrado, verificacionCookie, validationLogin, validationsRegister, fileUploadAvatars} = require('../middlewares')
+const {autenticacionRegistro, registrado, verificacionCookie, validationLogin, validationsRegister, validationsPerfil, fileUploadAvatars} = require('../middlewares')
 
 
 router.get('/index', usuariosController.getIndex)
 
 
 router.get('/perfil', registrado, usuariosController.enviarVistaPerfil)
-router.put('/perfil', registrado, fileUploadAvatars.single('image'), usuariosController.actualizarDatosPerfil)
+router.put('/perfil', registrado, validationsPerfil, fileUploadAvatars.single('image'), usuariosController.actualizarDatosPerfil)
 router.delete('/perfil', registrado, usuariosController.deleteUser)
 
 

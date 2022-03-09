@@ -38,7 +38,6 @@ const productController = {
     },
     productCart: async (req, res) => {
         let usuarioId = req.session.user.id
-        console.log(req.session.user)
         let productosFavoritos = await favoritosLogica.getOne(usuarioId)
         res.render('productCart', {
             favorite:productosFavoritos
@@ -154,7 +153,6 @@ const productController = {
     eliminarFavorito: async (req, res)=> {
         try{
             let idParams = req.params.id
-            console.log(idParams)
             favoritosLogica.eliminar({
                 where:{
                     id:idParams

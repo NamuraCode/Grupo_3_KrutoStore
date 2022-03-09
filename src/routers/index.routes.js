@@ -12,6 +12,8 @@ router.use('/api', apiRouter)
 
 router.get('/', controller.index)
 
+router.post('/salir', controller.salir)
+
 router.get('/aboutUs', controller.aboutUs)
 
 router.get('/opcionesPagos', controller.opcionesPagos)

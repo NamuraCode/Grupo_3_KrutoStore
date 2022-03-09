@@ -90,16 +90,16 @@
             </div>
             
             <div id="categories">
-                <div class="gif">
+                <div class="gif series">
                     <a href="/products"><img class="gif-1" src="\images\productos\gif1.gif"></a>
                 </div>
-                <div class="gif">
+                <div class="gif peliculas">
                     <a href="/products"><img src="\images\productos\gif2.gif" class="gif-2"></a>
                 </div>
-                <div class="gif">
+                <div class="gif anime">
                     <a href="/products"><img src="\images\productos\gif3.gif" class="gif-3"></a>
                 </div>
-                <div class="gif">
+                <div class="gif libros">
                     <a href="/products"><img src="\images\productos\gif4.gif" class="gif-4"></a>
                 </div>
             </div>
@@ -139,16 +139,10 @@
 
 <!-- -------------------------------- MENU --------------------------------- -->
     <%- include ('./partials/menu')%>
-    <%if(user){%>
-        <%if(user.perfil_id !== 1){%>
-            <%- include ('./partials/menuRegisted')%>
-        <%}%>
-        <%if(user.perfil_id === 1){%>
-            <%- include ('./partials/menuAdmin')%>
-        <%}%>
+    <%if(user == 1){%>
+        <%- include ('./partials/menuAdmin')%>
     <%}%>
     
-
 </body>
 
 </html>

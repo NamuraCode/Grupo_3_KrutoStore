@@ -107,7 +107,9 @@
                     <input type="text" id="card-code" name="card-code" placeholder="###">
                 </div>
                 <div class="btn-payment">
-                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                    <form action="/perfil" method="get">
+                        <button type="submit" class="btn-payment-1">Actualizar</button>
+                    </form>
                 </div>
             </div>
 
@@ -157,10 +159,12 @@
                 </div>
                 <div class="shops-favorites">
                     <h3>Favoritos</h3>
-                    <span>Lista de Deseos<i class="fas fa-heart"></i></span>
+                    <a href="/index"><span>Lista de Deseos<i class="fas fa-heart"></i></span></a>
                 </div>
                 <div class="btn-shops">
-                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                    <form action="/perfil" method="get">
+                        <button type="submit" class="btn-payment-1">Actualizar</button>
+                    </form>
                 </div>
             </div>
 
@@ -186,7 +190,9 @@
                     <p>Configuración de Privacidad</p>
                 </div>
                 <div class="btn-details">
-                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                    <form action="/perfil" method="get">
+                        <button type="submit" class="btn-payment-1">Actualizar</button>
+                    </form>
                 </div>
             </div>
 
@@ -199,7 +205,9 @@
                 <p class="setting-3">Newsletter</p>
                 <p class="setting-4">Dispositivos</p>
                 <div class="btn-settings">
-                    <button type="submit" class="btn-payment-1">Actualizar</button>
+                    <form action="/perfil" method="get">
+                        <button type="submit" class="btn-payment-1">Actualizar</button>
+                    </form>
                 </div>
                 <div class="btn-settings2">
                     <form action="/perfil?_method=DELETE" method="POST" >
@@ -214,10 +222,14 @@
                 <h1>Cerrar Sesion</h1>
                 <p>¿Estas seguro de querer cerrar sesion?</p>
                 <div class="btn-closed">
-                    <button type="submit" class="btn-closed-1">Cerrar Sesion</button>
+                    <form action="/salir" method="post">
+                        <button type="submit" class="btn-closed-1">Cerrar Sesion</button>
+                    </form> 
                 </div>
                 <div class="btn-closed2">
-                    <button type="submit" class="btn-closed-2">Cancelar</button>
+                    <form action="/perfil" method="get">
+                        <button type="submit" class="btn-closed-2">Cancelar</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,13 +1,20 @@
 const usuariosController = require('./usuario.controller')
 const productController = require('./product.controller')
 const apiController = require('./api.controller')
-const session = require('express-session')
 
 let controller = {
     index: (req, res) => {
         try {
-            let user=req.session.user
-            res.render('index', {user})
+            let user;
+            if(req.session.user){
+                user = req.session.user.perfiles_id;
+                console.log(req.session.user.perfiles_id);
+            }
+            if(user){
+                res.render('index', {user})
+            }else{
+                res.render('index', {user})
+            }
         } catch (error) {
             console.log(error)
         }
@@ -27,6 +34,11 @@ let controller = {
     dashboard: (req, res) => {
         res.render('dashboard')
     },
+    salir: (req, res)=>{
+        res.clearCookie('user')
+        req.session.destroy();
+        res.redirect('/')
+    }
 }
 module.exports = {
     controller,

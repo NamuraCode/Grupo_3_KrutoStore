@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const { productosLogica, generosLogica, imagenesLogica, favoritosLogica, usuariosLogica } = require('../models')
+const { productosLogica, generosLogica, imagenesLogica, favoritosLogica } = require('../models')
 
 const productController = {
     dashboard:  (req, res) => {
@@ -53,8 +53,9 @@ const productController = {
         try{
             let file = req.file ? '/images/productos/' + req.file.filename : '/images/productos/kruto-rojo.png' 
             imagenesLogica.create(file)
-            let productos = await productosLogica.getAll()
+            let productos = await imagenesLogica.getAll()
             let pro = productos.length
+            console.log(pro)
             let session = req.session.user
             productosLogica.newProductos({
                 nombre: req.body.product,
@@ -62,7 +63,7 @@ const productController = {
                 categorias_id: req.body.select,
                 precio: req.body.price,
                 usuarios_id: session.perfiles_id,
-                imagenes_id: productos[pro-1].id + 1
+                imagenes_id: pro+1
             })
 
             res.redirect('./dashboard')

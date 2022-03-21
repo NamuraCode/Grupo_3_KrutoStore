@@ -38,6 +38,14 @@ const imagenesModels = {
         }catch(error){
             console.log(`error ${error}`)
         }
+    },
+    getAll: async ()=>{
+        try{
+            let all = await db.Imagenes.findAll()
+            return all
+        }catch(error){
+            console.log(`error ${error}`)
+        }
     }
 
 }

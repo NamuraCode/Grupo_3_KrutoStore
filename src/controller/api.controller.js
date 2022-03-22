@@ -23,14 +23,14 @@ const apiController = {
           name: resultado.nombre,
           description: resultado.descripcion,
           relations: [categoria, nombreDeUsuario, imagen],
-          detailUrl: `localhost:3001/api/products/${resultado.id}`,
+          detailUrl: `https://kruto.herokuapp.com/api/products/${resultado.id}`,
         };
 
         arrayItems.push(producto);
       });
 
       res.json({
-        link: "localhost:3001/api/products",
+        link: "https://kruto.herokuapp.com/api/products",
         count: totalitems,
         data: arrayItems,
       });
@@ -61,7 +61,7 @@ const apiController = {
           name: product.nombre,
           description: product.descripcion,
           relations: [categoria, nombreDeUsuario, imagen],
-          imagenlUrl: `${product.imagenes.image}`,
+          imagenlUrl: `../../public/${product.imagenes.image}`,
         });
       } else {
         res.json({
@@ -85,12 +85,12 @@ const apiController = {
           id: resultado.id,
           name: resultado.username,
           email: resultado.email,
-          detailUrl: `localhost:3001/api/users/${resultado.id}`,
+          detailUrl: `https://kruto.herokuapp.com/api/users/${resultado.id}`,
         };
         arrayItems.push(usuario);
       });
       res.json({
-        link: "localhost:3001/api/users",
+        link: "https://kruto.herokuapp.com/api/users",
         count: totalitems,
         data: arrayItems,
       });
@@ -110,7 +110,7 @@ const apiController = {
                 "id":user.id,
                 "username":user.username,
                 "email":user.email,
-                "urlImage":user.image
+                "urlImage":`../../public/${user.image}`
             }
         });
       }catch(e){

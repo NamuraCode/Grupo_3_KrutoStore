@@ -61,7 +61,7 @@ const apiController = {
           name: product.nombre,
           description: product.descripcion,
           relations: [categoria, nombreDeUsuario, imagen],
-          imagenlUrl: `../../public/${product.imagenes.image}`,
+          imagenlUrl: `../../public${product.imagenes.image}`,
         });
       } else {
         res.json({
@@ -110,7 +110,7 @@ const apiController = {
                 "id":user.id,
                 "username":user.username,
                 "email":user.email,
-                "urlImage":`../../public/${user.image}`
+                "urlImage":`../../public${user.image}`
             }
         });
       }catch(e){

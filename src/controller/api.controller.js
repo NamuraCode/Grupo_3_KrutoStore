@@ -61,7 +61,7 @@ const apiController = {
           name: product.nombre,
           description: product.descripcion,
           relations: [categoria, nombreDeUsuario, imagen],
-          imagenlUrl: `../../public${product.imagenes.image}`,
+          imagenlUrl: `https://kruto.herokuapp.com${product.imagenes.image}`,
         });
       } else {
         res.json({
@@ -110,7 +110,7 @@ const apiController = {
                 "id":user.id,
                 "username":user.username,
                 "email":user.email,
-                "urlImage":`../../public${user.image}`
+                "urlImage":`https://kruto.herokuapp.com${user.image}`
             }
         });
       }catch(e){
